@@ -1,0 +1,777 @@
+/* ============================================
+   Uvagai Foundation - Vision & Mission Page
+   Professional Design - No Icons
+   Colors: Red, Leaf Green, Water Dark Blue, Black
+   ============================================ */
+
+:root {
+  --vm-red: #DC2626;
+  --vm-red-light: #FEE2E2;
+  --vm-red-pale: #FFF5F5;
+  --vm-red-dark: #B91C1C;
+  
+  --vm-green: #16A34A;
+  --vm-green-light: #DCFCE7;
+  --vm-green-pale: #F0FDF4;
+  --vm-green-dark: #15803D;
+  
+  --vm-blue: #1E3A5F;
+  --vm-blue-light: #E8F0FE;
+  --vm-blue-pale: #F5F8FC;
+  --vm-blue-dark: #152E4A;
+  
+  --vm-black: #171717;
+  --vm-black-light: #F5F5F5;
+  
+  --vm-white: #FFFFFF;
+  --vm-cream: #FEFCFB;
+  --vm-soft-bg: #F9F8F6;
+  --vm-warm-bg: #FFFBF9;
+  
+  --vm-text-primary: #171717;
+  --vm-text-secondary: #525252;
+  --vm-text-tertiary: #737373;
+  --vm-text-muted: #A3A3A3;
+  
+  --vm-border: #E8E4DE;
+  --vm-border-light: #F0EDE8;
+  
+  --vm-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
+  --vm-shadow-md: 0 8px 30px rgba(0, 0, 0, 0.05);
+  --vm-shadow-lg: 0 15px 50px rgba(0, 0, 0, 0.07);
+  --vm-shadow-xl: 0 25px 70px rgba(0, 0, 0, 0.09);
+  
+  --vm-font-display: 'Georgia', 'Times New Roman', 'Playfair Display', serif;
+  --vm-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  
+  --vm-ease-out: cubic-bezier(0.33, 0.1, 0.25, 1);
+}
+
+/* ============================================
+   Global
+   ============================================ */
+
+.vision-mission-page {
+  font-family: var(--vm-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.vm-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+
+.vm-hero {
+  position: relative;
+  padding: 8rem 0 5rem;
+  background: var(--vm-cream);
+  overflow: hidden;
+}
+
+.vm-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--vm-white) 0%, var(--vm-cream) 50%, var(--vm-soft-bg) 100%);
+}
+
+.vm-hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.vm-hero-glow-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--vm-red);
+  top: -10%;
+  right: -5%;
+  opacity: 0.06;
+}
+
+.vm-hero-glow-2 {
+  width: 350px;
+  height: 350px;
+  background: var(--vm-green);
+  bottom: -15%;
+  left: -5%;
+  opacity: 0.05;
+}
+
+.vm-hero-content {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.vm-hero-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.vm-hero-tag-line {
+  width: 30px;
+  height: 2px;
+  background: var(--vm-red);
+  border-radius: 1px;
+}
+
+.vm-hero-tag-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--vm-red);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.vm-hero-headline {
+  font-family: var(--vm-font-display);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--vm-text-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.vm-hero-headline-accent {
+  color: var(--vm-red);
+}
+
+.vm-hero-subtitle {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--vm-text-tertiary);
+}
+
+/* ============================================
+   Vision & Mission Cards
+   ============================================ */
+
+.vm-core-section {
+  padding: 5rem 0;
+  background: var(--vm-white);
+}
+
+.vm-core-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.vm-core-card {
+  position: relative;
+  background: var(--vm-white);
+  border: 1px solid var(--vm-border-light);
+  border-radius: 14px;
+  padding: 2.5rem;
+  box-shadow: var(--vm-shadow-sm);
+  transition: all 0.4s var(--vm-ease-out);
+  overflow: hidden;
+}
+
+.vm-core-card:hover {
+  box-shadow: var(--vm-shadow-lg);
+  border-color: transparent;
+}
+
+.vm-core-card-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--vm-ease-out);
+}
+
+.vm-vision-card .vm-core-card-accent { background: var(--vm-red); }
+.vm-mission-card .vm-core-card-accent { background: var(--vm-green); }
+
+.vm-core-card:hover .vm-core-card-accent {
+  transform: scaleX(1);
+}
+
+.vm-core-card-header {
+  margin-bottom: 1.5rem;
+}
+
+.vm-core-card-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.vm-vision-card .vm-core-card-label { color: var(--vm-red); }
+.vm-mission-card .vm-core-card-label { color: var(--vm-green); }
+
+.vm-core-card-title {
+  font-family: var(--vm-font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--vm-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.vm-core-card-body p {
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: var(--vm-text-secondary);
+  margin-bottom: 0.85rem;
+}
+
+.vm-core-card-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Motto */
+.vm-motto {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--vm-green-pale);
+  border-radius: 10px;
+  border-left: 3px solid var(--vm-green);
+}
+
+.vm-motto-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--vm-green);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.vm-motto-text {
+  font-family: var(--vm-font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--vm-text-primary);
+  font-style: italic;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================
+   Strategic Pillars
+   ============================================ */
+
+.vm-pillars-section {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.vm-pillars-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--vm-soft-bg);
+}
+
+.vm-section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.vm-section-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.vm-section-tag-line {
+  width: 26px;
+  height: 2px;
+  background: var(--vm-red);
+  border-radius: 1px;
+}
+
+.vm-section-tag-text {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--vm-red);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.vm-section-headline {
+  font-family: var(--vm-font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: var(--vm-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.vm-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.vm-pillar-card {
+  background: var(--vm-white);
+  border: 1px solid var(--vm-border-light);
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
+  box-shadow: var(--vm-shadow-sm);
+  transition: all 0.4s var(--vm-ease-out);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.vm-pillar-card:hover {
+  box-shadow: var(--vm-shadow-lg);
+  border-color: transparent;
+}
+
+.pillar-card-number {
+  font-family: var(--vm-font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  opacity: 0.08;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  transition: all 0.4s var(--vm-ease-out);
+}
+
+.pillar-red .pillar-card-number { color: var(--vm-red); }
+.pillar-green .pillar-card-number { color: var(--vm-green); }
+.pillar-blue .pillar-card-number { color: var(--vm-blue); }
+
+.vm-pillar-card:hover .pillar-card-number {
+  opacity: 0.15;
+  transform: scale(1.1);
+}
+
+.pillar-card-title {
+  font-family: var(--vm-font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--vm-text-primary);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.pillar-card-description {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--vm-text-tertiary);
+  position: relative;
+  z-index: 1;
+}
+
+.pillar-card-line {
+  width: 24px;
+  height: 2.5px;
+  border-radius: 2px;
+  margin-top: 1.25rem;
+  transition: all 0.4s var(--vm-ease-out);
+  position: relative;
+  z-index: 1;
+}
+
+.pillar-red .pillar-card-line { background: var(--vm-red); }
+.pillar-green .pillar-card-line { background: var(--vm-green); }
+.pillar-blue .pillar-card-line { background: var(--vm-blue); }
+
+.vm-pillar-card:hover .pillar-card-line {
+  width: 40px;
+}
+
+/* ============================================
+   Objectives
+   ============================================ */
+
+.vm-objectives-section {
+  padding: 6rem 0;
+  background: var(--vm-white);
+}
+
+.vm-objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.vm-objective-card {
+  background: var(--vm-white);
+  border: 1px solid var(--vm-border-light);
+  border-radius: 10px;
+  padding: 1.75rem;
+  box-shadow: var(--vm-shadow-sm);
+  transition: all 0.4s var(--vm-ease-out);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.vm-objective-card:hover {
+  box-shadow: var(--vm-shadow-md);
+  border-color: transparent;
+}
+
+.objective-card-stripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  border-radius: 0 3px 3px 0;
+  transform: scaleY(0.3);
+  transform-origin: center;
+  transition: transform 0.4s var(--vm-ease-out);
+  opacity: 0.4;
+}
+
+.vm-objective-card:hover .objective-card-stripe {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.objective-red .objective-card-stripe { background: var(--vm-red); }
+.objective-green .objective-card-stripe { background: var(--vm-green); }
+.objective-blue .objective-card-stripe { background: var(--vm-blue); }
+
+.objective-card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--vm-text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  padding-left: 0.75rem;
+}
+
+.objective-card-description {
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--vm-text-tertiary);
+  padding-left: 0.75rem;
+}
+
+/* ============================================
+   Values
+   ============================================ */
+
+.vm-values-section {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.vm-values-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--vm-soft-bg);
+}
+
+.vm-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.vm-value-card {
+  background: var(--vm-white);
+  border: 1px solid var(--vm-border-light);
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
+  box-shadow: var(--vm-shadow-sm);
+  transition: all 0.4s var(--vm-ease-out);
+  cursor: default;
+}
+
+.vm-value-card:hover {
+  box-shadow: var(--vm-shadow-lg);
+  border-color: transparent;
+}
+
+.value-card-number {
+  font-family: var(--vm-font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--vm-text-muted);
+  opacity: 0.2;
+  margin-bottom: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.vm-value-card:hover .value-card-number {
+  color: var(--vm-red);
+  opacity: 0.5;
+}
+
+.value-card-title {
+  font-family: var(--vm-font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--vm-text-primary);
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.value-card-description {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--vm-text-tertiary);
+}
+
+/* ============================================
+   CTA Section
+   ============================================ */
+
+.vm-cta-section {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.vm-cta-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--vm-red-pale);
+}
+
+.vm-cta-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: var(--vm-red);
+  border-radius: 50%;
+  filter: blur(150px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.vm-cta-content {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.vm-cta-headline {
+  font-family: var(--vm-font-display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--vm-text-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.vm-cta-description {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--vm-text-secondary);
+  margin-bottom: 2.5rem;
+}
+
+.vm-cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.vm-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: var(--vm-red);
+  color: var(--vm-white);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.4s var(--vm-ease-out);
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 30px -10px rgba(220, 38, 38, 0.35);
+}
+
+.vm-cta-primary:hover {
+  background: var(--vm-red-dark);
+  box-shadow: 0 15px 40px -12px rgba(220, 38, 38, 0.45);
+}
+
+.vm-cta-primary svg {
+  transition: transform 0.3s ease;
+}
+
+.vm-cta-primary:hover svg {
+  transform: translateX(3px);
+}
+
+.vm-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.75rem;
+  background: var(--vm-white);
+  color: var(--vm-text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1.5px solid var(--vm-border);
+  border-radius: 10px;
+  transition: all 0.4s var(--vm-ease-out);
+  letter-spacing: 0.02em;
+}
+
+.vm-cta-secondary:hover {
+  border-color: var(--vm-red);
+  color: var(--vm-red);
+  background: var(--vm-red-pale);
+}
+
+.vm-cta-secondary-arrow {
+  transition: transform 0.3s ease;
+}
+
+.vm-cta-secondary:hover .vm-cta-secondary-arrow {
+  transform: translateX(4px);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .vm-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .vm-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .vm-hero {
+    padding: 6rem 0 4rem;
+  }
+  
+  .vm-container {
+    padding: 0 1.5rem;
+  }
+  
+  .vm-core-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .vm-core-card {
+    padding: 2rem;
+  }
+  
+  .vm-objectives-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .vm-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .vm-section-headline {
+    font-size: 1.7rem;
+  }
+  
+  .vm-hero-headline {
+    font-size: 1.8rem;
+  }
+  
+  .vm-cta-headline {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vm-container {
+    padding: 0 1.25rem;
+  }
+  
+  .vm-hero {
+    padding: 5rem 0 3rem;
+  }
+  
+  .vm-core-section,
+  .vm-pillars-section,
+  .vm-objectives-section,
+  .vm-values-section,
+  .vm-cta-section {
+    padding: 4rem 0;
+  }
+  
+  .vm-core-card {
+    padding: 1.5rem;
+  }
+  
+  .vm-core-card-title {
+    font-size: 1.6rem;
+  }
+  
+  .vm-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .vm-objectives-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .vm-values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .vm-cta-buttons {
+    flex-direction: column;
+  }
+  
+  .vm-cta-primary,
+  .vm-cta-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   Reduced Motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .vm-core-card,
+  .vm-pillar-card,
+  .vm-objective-card,
+  .vm-value-card {
+    transition: none;
+  }
+  
+  .vm-core-card-accent,
+  .objective-card-stripe,
+  .pillar-card-line {
+    transition: none;
+  }
+}

@@ -1,61 +1,182 @@
-
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import "./ImpactStats.css";
 
 export default function ImpactStats() {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
+
   const stats = [
     {
-      number: "5000+",
-      label: "Lives Impacted",
+      number: "2019",
+      label: "Foundation Established",
+      description: "Years of dedicated service",
+      accent: "red",
     },
     {
-      number: "300+",
-      label: "Students Supported",
+      number: "06+",
+      label: "Core Social Impact Areas",
+      description: "Comprehensive approach",
+      accent: "green",
     },
     {
-      number: "150+",
-      label: "Programs Conducted",
+      number: "Education",
+      label: "Child & Youth Empowerment",
+      description: "Building future leaders",
+      accent: "blue",
     },
     {
-      number: "500+",
-      label: "Volunteers Engaged",
+      number: "Healthcare",
+      label: "Community Wellness",
+      description: "Accessible medical support",
+      accent: "red",
     },
     {
-      number: "25+",
-      label: "CSR & Community Partners",
+      number: "Elder Care",
+      label: "Dignity & Support Programs",
+      description: "Honoring our seniors",
+      accent: "green",
     },
     {
-      number: "50+",
-      label: "Communities Reached",
+      number: "CSR",
+      label: "Partnership Opportunities",
+      description: "Collaborative impact",
+      accent: "blue",
     },
   ];
 
-  return (
-    <section className="impact-stats">
-      <div className="container">
-        <div className="section-heading">
-          <span className="section-tag">Our Impact</span>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.2,
+      },
+    },
+  };
 
-          <h2>
-            Creating Meaningful Change Through Community Action
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 40,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.7,
+        ease: [0.33, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  const headingVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.33, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  return (
+    <section className="impact-stats" ref={sectionRef}>
+      {/* Background */}
+      <div className="impact-bg" />
+      
+      {/* Ambient elements */}
+      <div className="impact-ambient impact-ambient-1" />
+      <div className="impact-ambient impact-ambient-2" />
+
+      {/* Grid texture */}
+      <div className="impact-grid-texture" />
+
+      <div className="impact-container">
+        {/* Section Heading */}
+        <motion.div 
+          className="impact-heading"
+          variants={headingVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          <div className="impact-tag">
+            <span className="impact-tag-line" />
+            <span className="impact-tag-text">Our Focus Areas</span>
+          </div>
+
+          <h2 className="impact-headline">
+            Creating Lasting Social Impact Through
+            <span className="impact-headline-accent"> Compassion & Action</span>
           </h2>
 
-          <p>
-            Every initiative we undertake contributes to building
-            stronger communities and transforming lives across
-            Tamil Nadu and beyond.
+          <p className="impact-subtitle">
+            Uvagai Foundation works towards building stronger communities
+            through education, healthcare, child welfare, elderly care,
+            environmental responsibility, humanitarian support, and
+            sustainable development initiatives.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="stats-grid">
+        {/* Stats Grid */}
+        <motion.div 
+          className="impact-grid"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           {stats.map((item, index) => (
-            <div className="stat-card" key={index}>
-              <h3>{item.number}</h3>
-              <p>{item.label}</p>
-            </div>
+            <motion.div 
+              className={`impact-card impact-card-${item.accent}`}
+              key={index}
+              variants={cardVariants}
+              whileHover={{ 
+                y: -6,
+                transition: { duration: 0.3, ease: [0.33, 0.1, 0.25, 1] },
+              }}
+            >
+              {/* Card top accent line */}
+              <div className="impact-card-accent" />
+              
+              {/* Card content */}
+              <div className="impact-card-content">
+                <span className="impact-card-number">
+                  {item.number}
+                </span>
+                <span className="impact-card-label">
+                  {item.label}
+                </span>
+                <span className="impact-card-description">
+                  {item.description}
+                </span>
+              </div>
+
+              {/* Card bottom indicator */}
+              <div className="impact-card-indicator" />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        {/* Bottom CTA */}
+        <motion.div 
+          className="impact-cta-wrapper"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8, ease: [0.33, 0.1, 0.25, 1] }}
+        >
+          <a href="/our-work" className="impact-cta">
+            <span>Explore Our Impact Areas</span>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
+        </motion.div>
       </div>
     </section>
   );
 }
-

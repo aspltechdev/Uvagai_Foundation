@@ -1,0 +1,648 @@
+/* ============================================
+   Uvagai Foundation - About Us Page
+   Professional Design - No Emoji Icons
+   Colors: Red, Leaf Green, Water Dark Blue, Black
+   ============================================ */
+
+:root {
+  --ab-red: #DC2626;
+  --ab-red-light: #FEE2E2;
+  --ab-red-pale: #FFF5F5;
+  --ab-red-dark: #B91C1C;
+  
+  --ab-green: #16A34A;
+  --ab-green-light: #DCFCE7;
+  --ab-green-pale: #F0FDF4;
+  
+  --ab-blue: #1E3A5F;
+  --ab-blue-light: #E8F0FE;
+  --ab-blue-pale: #F5F8FC;
+  
+  --ab-black: #171717;
+  
+  --ab-white: #FFFFFF;
+  --ab-cream: #FEFCFB;
+  --ab-soft-bg: #F9F8F6;
+  
+  --ab-text-primary: #171717;
+  --ab-text-secondary: #525252;
+  --ab-text-tertiary: #737373;
+  --ab-text-muted: #A3A3A3;
+  
+  --ab-border: #E8E4DE;
+  --ab-border-light: #F0EDE8;
+  
+  --ab-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
+  --ab-shadow-md: 0 8px 30px rgba(0, 0, 0, 0.05);
+  --ab-shadow-lg: 0 15px 50px rgba(0, 0, 0, 0.07);
+  --ab-shadow-xl: 0 25px 70px rgba(0, 0, 0, 0.09);
+  
+  --ab-font-display: 'Georgia', 'Times New Roman', 'Playfair Display', serif;
+  --ab-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  
+  --ab-ease-out: cubic-bezier(0.33, 0.1, 0.25, 1);
+}
+
+/* ============================================
+   Global
+   ============================================ */
+
+.about-page {
+  font-family: var(--ab-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.about-section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.about-section-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.about-section-tag-line {
+  width: 28px;
+  height: 2px;
+  background: var(--ab-red);
+  border-radius: 1px;
+}
+
+.about-section-tag-text {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ab-red);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.about-section-headline {
+  font-family: var(--ab-font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: var(--ab-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.about-section-headline-accent {
+  color: var(--ab-red);
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+
+.about-hero {
+  position: relative;
+  padding: 8rem 0 5rem;
+  background: var(--ab-cream);
+  overflow: hidden;
+}
+
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--ab-white) 0%, var(--ab-cream) 50%, var(--ab-soft-bg) 100%);
+}
+
+.about-hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.about-hero-glow-1 { width: 450px; height: 450px; background: var(--ab-red); top: -15%; right: -8%; opacity: 0.05; }
+.about-hero-glow-2 { width: 380px; height: 380px; background: var(--ab-green); bottom: -18%; left: -6%; opacity: 0.05; }
+
+.about-hero-content { text-align: center; max-width: 750px; margin: 0 auto; }
+
+.about-hero-tag { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+.about-hero-tag-line { width: 32px; height: 2px; background: var(--ab-red); border-radius: 1px; }
+.about-hero-tag-text { font-size: 0.72rem; font-weight: 600; color: var(--ab-red); text-transform: uppercase; letter-spacing: 0.15em; }
+
+.about-hero-headline {
+  font-family: var(--ab-font-display);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ab-text-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.about-hero-headline-accent { color: var(--ab-red); }
+.about-hero-subtitle { font-size: 1rem; line-height: 1.7; color: var(--ab-text-tertiary); }
+
+/* ============================================
+   Who We Are Section
+   ============================================ */
+
+.about-who-section {
+  padding: 6rem 0;
+  background: var(--ab-white);
+}
+
+.about-who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-who-image-wrapper {
+  position: relative;
+}
+
+.about-who-image-glow {
+  position: absolute;
+  inset: -15px;
+  border-radius: 6px;
+  background: radial-gradient(ellipse at center, rgba(220, 38, 38, 0.12) 0%, transparent 70%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.about-who-image-frame {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: var(--ab-shadow-xl);
+  z-index: 1;
+}
+
+.about-who-image-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  transition: transform 0.6s var(--ab-ease-out);
+}
+
+.about-who-image-wrapper:hover .about-who-image-frame img {
+  transform: scale(1.03);
+}
+
+.about-who-image-border {
+  position: absolute;
+  inset: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.about-who-text p {
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: var(--ab-text-secondary);
+  margin-bottom: 0.85rem;
+}
+
+.about-who-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   Vision & Mission
+   ============================================ */
+
+.about-vm-section {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.about-vm-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--ab-soft-bg);
+}
+
+.about-vm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.about-vm-card {
+  position: relative;
+  background: var(--ab-white);
+  border: 1px solid var(--ab-border-light);
+  border-radius: 14px;
+  padding: 2.5rem;
+  box-shadow: var(--ab-shadow-sm);
+  transition: all 0.4s var(--ab-ease-out);
+  overflow: hidden;
+}
+
+.about-vm-card:hover {
+  box-shadow: var(--ab-shadow-lg);
+  border-color: transparent;
+}
+
+.about-vm-card-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--ab-ease-out);
+}
+
+.about-vision-card .about-vm-card-accent { background: var(--ab-red); }
+.about-mission-card .about-vm-card-accent { background: var(--ab-green); }
+
+.about-vm-card:hover .about-vm-card-accent {
+  transform: scaleX(1);
+}
+
+.about-vm-card-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+.about-vision-card .about-vm-card-label { color: var(--ab-red); }
+.about-mission-card .about-vm-card-label { color: var(--ab-green); }
+
+.about-vm-card-title {
+  font-family: var(--ab-font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ab-text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.about-vm-card-text {
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: var(--ab-text-secondary);
+}
+
+/* ============================================
+   Focus Areas
+   ============================================ */
+
+.about-focus-section {
+  padding: 6rem 0;
+  background: var(--ab-white);
+}
+
+.about-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.about-focus-card {
+  background: var(--ab-white);
+  border: 1px solid var(--ab-border-light);
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
+  box-shadow: var(--ab-shadow-sm);
+  transition: all 0.4s var(--ab-ease-out);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-focus-card:hover {
+  box-shadow: var(--ab-shadow-lg);
+  border-color: transparent;
+}
+
+.focus-card-number {
+  font-family: var(--ab-font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  opacity: 0.06;
+  position: absolute;
+  top: 0.75rem;
+  right: 1.25rem;
+  transition: all 0.4s var(--ab-ease-out);
+}
+
+.focus-red .focus-card-number { color: var(--ab-red); }
+.focus-green .focus-card-number { color: var(--ab-green); }
+.focus-blue .focus-card-number { color: var(--ab-blue); }
+
+.about-focus-card:hover .focus-card-number {
+  opacity: 0.12;
+  transform: scale(1.15);
+}
+
+.focus-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ab-text-primary);
+  margin-bottom: 0.65rem;
+  position: relative;
+  z-index: 1;
+}
+
+.focus-card-description {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--ab-text-tertiary);
+  position: relative;
+  z-index: 1;
+}
+
+.focus-card-line {
+  width: 24px;
+  height: 2.5px;
+  border-radius: 2px;
+  margin-top: 1.25rem;
+  transition: all 0.4s var(--ab-ease-out);
+  position: relative;
+  z-index: 1;
+}
+
+.focus-red .focus-card-line { background: var(--ab-red); }
+.focus-green .focus-card-line { background: var(--ab-green); }
+.focus-blue .focus-card-line { background: var(--ab-blue); }
+
+.about-focus-card:hover .focus-card-line {
+  width: 40px;
+}
+
+/* ============================================
+   Values
+   ============================================ */
+
+.about-values-section {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.about-values-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--ab-soft-bg);
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.about-value-card {
+  background: var(--ab-white);
+  border: 1px solid var(--ab-border-light);
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
+  box-shadow: var(--ab-shadow-sm);
+  transition: all 0.4s var(--ab-ease-out);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-value-card:hover {
+  box-shadow: var(--ab-shadow-lg);
+  border-color: transparent;
+}
+
+.value-card-stripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  border-radius: 0 3px 3px 0;
+  transform: scaleY(0.3);
+  transform-origin: center;
+  transition: transform 0.4s var(--ab-ease-out);
+  opacity: 0.4;
+}
+
+.value-red .value-card-stripe { background: var(--ab-red); }
+.value-green .value-card-stripe { background: var(--ab-green); }
+.value-blue .value-card-stripe { background: var(--ab-blue); }
+
+.about-value-card:hover .value-card-stripe {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.value-card-number {
+  font-family: var(--ab-font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ab-text-muted);
+  opacity: 0.2;
+  margin-bottom: 0.75rem;
+  transition: all 0.3s ease;
+  padding-left: 0.5rem;
+}
+
+.about-value-card:hover .value-card-number {
+  color: var(--ab-red);
+  opacity: 0.5;
+}
+
+.value-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ab-text-primary);
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.value-card-description {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--ab-text-tertiary);
+  padding-left: 0.5rem;
+}
+
+/* ============================================
+   Stats
+   ============================================ */
+
+.about-stats-section {
+  padding: 6rem 0;
+  background: var(--ab-white);
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.about-stat-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: var(--ab-white);
+  border: 1px solid var(--ab-border-light);
+  border-radius: 12px;
+  box-shadow: var(--ab-shadow-sm);
+  transition: all 0.4s var(--ab-ease-out);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-stat-card:hover {
+  box-shadow: var(--ab-shadow-lg);
+  border-color: transparent;
+}
+
+.about-stat-number {
+  display: block;
+  font-family: var(--ab-font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.02em;
+}
+
+.stat-red .about-stat-number { color: var(--ab-red); }
+.stat-green .about-stat-number { color: var(--ab-green); }
+.stat-blue .about-stat-number { color: var(--ab-blue); }
+
+.about-stat-label {
+  font-size: 0.82rem;
+  color: var(--ab-text-muted);
+  font-weight: 500;
+}
+
+.about-stat-accent {
+  width: 24px;
+  height: 2.5px;
+  border-radius: 2px;
+  margin: 1rem auto 0;
+  transition: all 0.4s var(--ab-ease-out);
+}
+
+.stat-red .about-stat-accent { background: var(--ab-red); }
+.stat-green .about-stat-accent { background: var(--ab-green); }
+.stat-blue .about-stat-accent { background: var(--ab-blue); }
+
+.about-stat-card:hover .about-stat-accent {
+  width: 40px;
+}
+
+/* ============================================
+   CTA
+   ============================================ */
+
+.about-cta-section {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.about-cta-bg { position: absolute; inset: 0; background: var(--ab-red-pale); }
+.about-cta-glow {
+  position: absolute;
+  width: 500px; height: 500px;
+  background: var(--ab-red);
+  border-radius: 50%;
+  filter: blur(150px);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.about-cta-content { text-align: center; max-width: 650px; margin: 0 auto; }
+
+.about-cta-headline {
+  font-family: var(--ab-font-display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--ab-text-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.about-cta-description { font-size: 0.95rem; line-height: 1.75; color: var(--ab-text-secondary); margin-bottom: 2.5rem; }
+
+.about-cta-buttons { display: flex; align-items: center; justify-content: center; gap: 1.25rem; flex-wrap: wrap; }
+
+.about-cta-primary {
+  display: inline-flex; align-items: center; gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: var(--ab-red); color: var(--ab-white);
+  font-size: 0.9rem; font-weight: 500;
+  text-decoration: none; border-radius: 10px;
+  transition: all 0.4s var(--ab-ease-out);
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 30px -10px rgba(220, 38, 38, 0.35);
+}
+.about-cta-primary:hover { background: var(--ab-red-dark); box-shadow: 0 15px 40px -12px rgba(220, 38, 38, 0.45); }
+.about-cta-primary svg { transition: transform 0.3s ease; }
+.about-cta-primary:hover svg { transform: translateX(3px); }
+
+.about-cta-secondary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 1rem 1.75rem;
+  background: var(--ab-white); color: var(--ab-text-primary);
+  font-size: 0.9rem; font-weight: 500;
+  text-decoration: none;
+  border: 1.5px solid var(--ab-border); border-radius: 10px;
+  transition: all 0.4s var(--ab-ease-out);
+}
+.about-cta-secondary:hover { border-color: var(--ab-red); color: var(--ab-red); background: var(--ab-red-pale); }
+.about-cta-secondary-arrow { transition: transform 0.3s ease; }
+.about-cta-secondary:hover .about-cta-secondary-arrow { transform: translateX(4px); }
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .about-who-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-who-image { max-width: 500px; margin: 0 auto; }
+  .about-values-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-focus-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .about-hero { padding: 6rem 0 4rem; }
+  .about-container { padding: 0 1.5rem; }
+  .about-who-section, .about-vm-section, .about-focus-section, .about-values-section, .about-stats-section { padding: 4rem 0; }
+  .about-vm-grid { grid-template-columns: 1fr; }
+  .about-hero-headline { font-size: 1.8rem; }
+  .about-section-headline { font-size: 1.7rem; }
+}
+
+@media (max-width: 540px) {
+  .about-container { padding: 0 1.25rem; }
+  .about-hero { padding: 5rem 0 3rem; }
+  .about-values-grid { grid-template-columns: 1fr; }
+  .about-focus-grid { grid-template-columns: 1fr; }
+  .about-stats-grid { grid-template-columns: 1fr; }
+  .about-cta-buttons { flex-direction: column; }
+  .about-cta-primary, .about-cta-secondary { width: 100%; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-vm-card, .about-focus-card, .about-value-card, .about-stat-card { transition: none; }
+  .about-vm-card-accent, .value-card-stripe, .focus-card-line, .about-stat-accent { transition: none; }
+  .about-who-image-frame img { transition: none; }
+}

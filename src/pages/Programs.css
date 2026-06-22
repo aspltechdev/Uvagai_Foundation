@@ -1,0 +1,442 @@
+/* ============================================
+   Uvagai Foundation - Programs Page
+   Professional Design - No Emoji Icons
+   Colors: Red, Leaf Green, Water Dark Blue, Black
+   ============================================ */
+
+:root {
+  --prg-red: #DC2626;
+  --prg-red-light: #FEE2E2;
+  --prg-red-pale: #FFF5F5;
+  --prg-red-dark: #B91C1C;
+  
+  --prg-green: #16A34A;
+  --prg-green-light: #DCFCE7;
+  --prg-green-pale: #F0FDF4;
+  
+  --prg-blue: #1E3A5F;
+  --prg-blue-light: #E8F0FE;
+  --prg-blue-pale: #F5F8FC;
+  
+  --prg-black: #171717;
+  
+  --prg-white: #FFFFFF;
+  --prg-cream: #FEFCFB;
+  --prg-soft-bg: #F9F8F6;
+  
+  --prg-text-primary: #171717;
+  --prg-text-secondary: #525252;
+  --prg-text-tertiary: #737373;
+  --prg-text-muted: #A3A3A3;
+  
+  --prg-border: #E8E4DE;
+  --prg-border-light: #F0EDE8;
+  
+  --prg-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
+  --prg-shadow-md: 0 8px 30px rgba(0, 0, 0, 0.05);
+  --prg-shadow-lg: 0 15px 50px rgba(0, 0, 0, 0.07);
+  --prg-shadow-xl: 0 25px 70px rgba(0, 0, 0, 0.09);
+  
+  --prg-font-display: 'Georgia', 'Times New Roman', 'Playfair Display', serif;
+  --prg-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  
+  --prg-ease-out: cubic-bezier(0.33, 0.1, 0.25, 1);
+}
+
+/* ============================================
+   Global
+   ============================================ */
+
+.programs-page {
+  font-family: var(--prg-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.programs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.programs-section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.programs-section-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.programs-section-tag-line {
+  width: 28px;
+  height: 2px;
+  background: var(--prg-red);
+  border-radius: 1px;
+}
+
+.programs-section-tag-text {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--prg-red);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.programs-section-headline {
+  font-family: var(--prg-font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: var(--prg-text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.programs-section-subtitle {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--prg-text-tertiary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+
+.programs-hero {
+  position: relative;
+  padding: 8rem 0 5rem;
+  background: var(--prg-cream);
+  overflow: hidden;
+}
+
+.programs-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--prg-white) 0%, var(--prg-cream) 50%, var(--prg-soft-bg) 100%);
+}
+
+.programs-hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.programs-hero-glow-1 { width: 450px; height: 450px; background: var(--prg-red); top: -15%; right: -8%; opacity: 0.05; }
+.programs-hero-glow-2 { width: 380px; height: 380px; background: var(--prg-green); bottom: -18%; left: -6%; opacity: 0.05; }
+
+.programs-hero-content { text-align: center; max-width: 750px; margin: 0 auto; }
+
+.programs-hero-tag { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+.programs-hero-tag-line { width: 32px; height: 2px; background: var(--prg-red); border-radius: 1px; }
+.programs-hero-tag-text { font-size: 0.72rem; font-weight: 600; color: var(--prg-red); text-transform: uppercase; letter-spacing: 0.15em; }
+
+.programs-hero-headline {
+  font-family: var(--prg-font-display);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--prg-text-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.programs-hero-headline-accent { color: var(--prg-red); }
+.programs-hero-subtitle { font-size: 1rem; line-height: 1.7; color: var(--prg-text-tertiary); }
+
+/* ============================================
+   Intro Section
+   ============================================ */
+
+.programs-intro-section {
+  padding: 4rem 0 2rem;
+  background: var(--prg-white);
+}
+
+/* ============================================
+   Programs Grid
+   ============================================ */
+
+.programs-grid-section {
+  padding: 3rem 0 5rem;
+  background: var(--prg-white);
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.program-card {
+  background: var(--prg-white);
+  border: 1px solid var(--prg-border-light);
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
+  box-shadow: var(--prg-shadow-sm);
+  transition: all 0.4s var(--prg-ease-out);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.program-card:hover {
+  box-shadow: var(--prg-shadow-lg);
+  border-color: transparent;
+}
+
+.program-card-number {
+  font-family: var(--prg-font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  opacity: 0.06;
+  position: absolute;
+  top: 0.75rem;
+  right: 1.25rem;
+  transition: all 0.4s var(--prg-ease-out);
+}
+
+.card-red .program-card-number { color: var(--prg-red); }
+.card-green .program-card-number { color: var(--prg-green); }
+.card-blue .program-card-number { color: var(--prg-blue); }
+
+.program-card:hover .program-card-number {
+  opacity: 0.12;
+  transform: scale(1.15);
+}
+
+.program-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--prg-text-primary);
+  margin-bottom: 0.65rem;
+  line-height: 1.3;
+  position: relative;
+  z-index: 1;
+}
+
+.program-card-description {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--prg-text-tertiary);
+  position: relative;
+  z-index: 1;
+}
+
+.program-card-line {
+  width: 24px;
+  height: 2.5px;
+  border-radius: 2px;
+  margin-top: 1.25rem;
+  transition: all 0.4s var(--prg-ease-out);
+  position: relative;
+  z-index: 1;
+}
+
+.card-red .program-card-line { background: var(--prg-red); }
+.card-green .program-card-line { background: var(--prg-green); }
+.card-blue .program-card-line { background: var(--prg-blue); }
+
+.program-card:hover .program-card-line {
+  width: 40px;
+}
+
+/* ============================================
+   Objectives Section
+   ============================================ */
+
+.programs-objectives-section {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.programs-objectives-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--prg-soft-bg);
+}
+
+.programs-objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.programs-objective-card {
+  background: var(--prg-white);
+  border: 1px solid var(--prg-border-light);
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
+  box-shadow: var(--prg-shadow-sm);
+  transition: all 0.4s var(--prg-ease-out);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.programs-objective-card:hover {
+  box-shadow: var(--prg-shadow-lg);
+  border-color: transparent;
+}
+
+.objective-card-accent {
+  position: absolute;
+  top: 0;
+  left: 1.75rem;
+  right: 1.75rem;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--prg-ease-out);
+}
+
+.objective-red .objective-card-accent { background: var(--prg-red); }
+.objective-green .objective-card-accent { background: var(--prg-green); }
+.objective-blue .objective-card-accent { background: var(--prg-blue); }
+
+.programs-objective-card:hover .objective-card-accent {
+  transform: scaleX(1);
+}
+
+.objective-card-title {
+  font-family: var(--prg-font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--prg-text-primary);
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.objective-red:hover .objective-card-title { color: var(--prg-red); }
+.objective-green:hover .objective-card-title { color: var(--prg-green); }
+.objective-blue:hover .objective-card-title { color: var(--prg-blue); }
+
+.objective-card-description {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--prg-text-tertiary);
+  margin-bottom: 1.25rem;
+}
+
+.objective-card-arrow {
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 0.4s var(--prg-ease-out);
+}
+
+.objective-red .objective-card-arrow { color: var(--prg-red); }
+.objective-green .objective-card-arrow { color: var(--prg-green); }
+.objective-blue .objective-card-arrow { color: var(--prg-blue); }
+
+.programs-objective-card:hover .objective-card-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================================
+   Impact Banner
+   ============================================ */
+
+.programs-impact-section {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.programs-impact-bg { position: absolute; inset: 0; background: var(--prg-red-pale); }
+.programs-impact-glow {
+  position: absolute;
+  width: 500px; height: 500px;
+  background: var(--prg-red);
+  border-radius: 50%;
+  filter: blur(150px);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.programs-impact-content { text-align: center; max-width: 650px; margin: 0 auto; }
+
+.programs-impact-headline {
+  font-family: var(--prg-font-display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--prg-text-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.programs-impact-description { font-size: 0.95rem; line-height: 1.75; color: var(--prg-text-secondary); margin-bottom: 2.5rem; }
+
+.programs-impact-buttons { display: flex; align-items: center; justify-content: center; gap: 1.25rem; flex-wrap: wrap; }
+
+.programs-impact-primary {
+  display: inline-flex; align-items: center; gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: var(--prg-red); color: var(--prg-white);
+  font-size: 0.9rem; font-weight: 500;
+  text-decoration: none; border-radius: 10px;
+  transition: all 0.4s var(--prg-ease-out);
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 30px -10px rgba(220, 38, 38, 0.35);
+}
+.programs-impact-primary:hover { background: var(--prg-red-dark); box-shadow: 0 15px 40px -12px rgba(220, 38, 38, 0.45); }
+.programs-impact-primary svg { transition: transform 0.3s ease; }
+.programs-impact-primary:hover svg { transform: translateX(3px); }
+
+.programs-impact-secondary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 1rem 1.75rem;
+  background: var(--prg-white); color: var(--prg-text-primary);
+  font-size: 0.9rem; font-weight: 500;
+  text-decoration: none;
+  border: 1.5px solid var(--prg-border); border-radius: 10px;
+  transition: all 0.4s var(--prg-ease-out);
+}
+.programs-impact-secondary:hover { border-color: var(--prg-red); color: var(--prg-red); background: var(--prg-red-pale); }
+.programs-impact-secondary-arrow { transition: transform 0.3s ease; }
+.programs-impact-secondary:hover .programs-impact-secondary-arrow { transform: translateX(4px); }
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 1100px) {
+  .programs-grid { grid-template-columns: repeat(2, 1fr); }
+  .programs-objectives-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .programs-hero { padding: 6rem 0 4rem; }
+  .programs-container { padding: 0 1.5rem; }
+  .programs-intro-section { padding: 3rem 0 1.5rem; }
+  .programs-grid-section { padding: 2rem 0 4rem; }
+  .programs-objectives-section, .programs-impact-section { padding: 4rem 0; }
+  .programs-hero-headline { font-size: 1.8rem; }
+  .programs-section-headline { font-size: 1.7rem; }
+}
+
+@media (max-width: 540px) {
+  .programs-container { padding: 0 1.25rem; }
+  .programs-hero { padding: 5rem 0 3rem; }
+  .programs-grid { grid-template-columns: 1fr; }
+  .programs-objectives-grid { grid-template-columns: 1fr; }
+  .programs-impact-buttons { flex-direction: column; }
+  .programs-impact-primary, .programs-impact-secondary { width: 100%; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .program-card, .programs-objective-card { transition: none; }
+  .program-card-line, .objective-card-accent, .objective-card-arrow { transition: none; }
+}

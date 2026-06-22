@@ -14,6 +14,7 @@ import CSRPartnership from "./CSRPartnership";
 import Volunteer from "../components/home/Volunteer/Volunteer";
 import Gallery from "./Gallery";
 import Donate from "./Donate";
+import VisionMission from "./VisionMission";
 
 export default function Home() {
   return (
@@ -28,9 +29,10 @@ export default function Home() {
 
       {/* Programs */}
       <Programs />
+      <VisionMission/>
 
       {/* Success Stories */}
-      <ImpactSection />
+      {/* <ImpactSection /> */}
 
       {/* Events */}
       <Events />
@@ -43,6 +45,7 @@ export default function Home() {
 
       {/* Gallery */}
       <Gallery />
+    
 
       {/* Testimonials */}
       {/* <Testimoansl /> */}

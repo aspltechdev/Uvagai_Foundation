@@ -1,0 +1,525 @@
+/* ============================================
+   Uvagai Foundation - About Section
+   Professional Light Theme
+   Colors: Red, Leaf Green, Water Dark Blue, Black
+   ============================================ */
+
+:root {
+  --about-red: #DC2626;
+  --about-red-light: #FEE2E2;
+  --about-red-pale: #FFF5F5;
+  
+  --about-green: #16A34A;
+  --about-green-light: #DCFCE7;
+  --about-green-pale: #F0FDF4;
+  
+  --about-blue: #1E3A5F;
+  --about-blue-light: #E8F0FE;
+  --about-blue-pale: #F5F8FC;
+  
+  --about-black: #171717;
+  --about-black-light: #F5F5F5;
+  
+  --about-white: #FFFFFF;
+  --about-cream: #FEFCFB;
+  --about-warm-bg: #FFFBF9;
+  --about-soft-bg: #F9F8F6;
+  
+  --about-text-primary: #171717;
+  --about-text-secondary: #525252;
+  --about-text-tertiary: #737373;
+  --about-text-muted: #A3A3A3;
+  
+  --about-border: #E5E5E5;
+  --about-border-light: #F0EDE8;
+  
+  --about-shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.04);
+  --about-shadow-md: 0 8px 30px rgba(0, 0, 0, 0.06);
+  --about-shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
+  --about-shadow-xl: 0 30px 80px rgba(0, 0, 0, 0.1);
+  
+  --about-font-display: 'Georgia', 'Times New Roman', 'Playfair Display', serif;
+  --about-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  
+  --about-ease-out: cubic-bezier(0.33, 0.1, 0.25, 1);
+  --about-ease-spring: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* ============================================
+   Section Container
+   ============================================ */
+
+.about-section {
+  position: relative;
+  padding: 7rem 0;
+  background: var(--about-cream);
+  overflow: hidden;
+  font-family: var(--about-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================
+   Background Elements
+   ============================================ */
+
+.about-bg {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(
+      180deg,
+      var(--about-white) 0%,
+      var(--about-cream) 30%,
+      var(--about-soft-bg) 100%
+    );
+}
+
+/* Ambient glows */
+.about-ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.about-ambient-glow-top {
+  width: 450px;
+  height: 450px;
+  background: var(--about-red);
+  top: -10%;
+  right: -5%;
+  opacity: 0.35;
+}
+
+.about-ambient-glow-bottom {
+  width: 350px;
+  height: 350px;
+  background: var(--about-green);
+  bottom: -8%;
+  left: -5%;
+  opacity: 0.3;
+}
+
+/* Grid texture */
+.about-grid-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.02;
+}
+
+.about-grid-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--about-text-primary);
+}
+
+/* ============================================
+   Container
+   ============================================ */
+
+.about-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+/* ============================================
+   Grid Layout
+   ============================================ */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* ============================================
+   Image Column
+   ============================================ */
+
+.about-image-column {
+  position: relative;
+}
+
+.about-image-wrapper {
+  position: relative;
+}
+
+/* Image glow behind */
+.about-image-glow {
+  position: absolute;
+  inset: -15px;
+  border-radius: 6px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(220, 38, 38, 0.12) 0%,
+    transparent 70%
+  );
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+/* Image frame */
+.about-image-frame {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: var(--about-shadow-xl);
+  z-index: 1;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  transition: transform 0.6s var(--about-ease-out);
+}
+
+.about-image-wrapper:hover .about-image {
+  transform: scale(1.03);
+}
+
+/* Image border accent */
+.about-image-border {
+  position: absolute;
+  inset: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ============================================
+   Badges
+   ============================================ */
+
+.about-badge {
+  position: absolute;
+  z-index: 3;
+  background: var(--about-white);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--about-shadow-lg);
+  border: 1px solid var(--about-border-light);
+}
+
+.about-badge {
+  top: 2rem;
+  right: -2.5rem;
+}
+
+.about-badge-impact {
+  top: auto;
+  bottom: 3rem;
+  right: auto;
+  left: -2.5rem;
+}
+
+.about-badge-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.about-badge-number {
+  font-family: var(--about-font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--about-text-primary);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.about-badge-label {
+  font-size: 0.72rem;
+  color: var(--about-text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.about-badge-line {
+  width: 30px;
+  height: 3px;
+  background: var(--about-red);
+  border-radius: 2px;
+  margin-top: 0.75rem;
+}
+
+.about-badge-impact .about-badge-line {
+  background: var(--about-green);
+}
+
+/* ============================================
+   Content Column
+   ============================================ */
+
+.about-content-column {
+  position: relative;
+}
+
+/* Section tag */
+.about-section-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-tag-line {
+  width: 32px;
+  height: 2px;
+  background: var(--about-red);
+  border-radius: 1px;
+}
+
+.about-tag-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--about-red);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* Headline */
+.about-headline {
+  font-family: var(--about-font-display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--about-text-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.about-headline-highlight {
+  color: var(--about-red);
+}
+
+/* Description */
+.about-description {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--about-text-secondary);
+  margin-bottom: 1rem;
+  max-width: 560px;
+}
+
+/* ============================================
+   Features List
+   ============================================ */
+
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1.5rem;
+  margin: 2rem 0 2.5rem;
+}
+
+.about-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  cursor: default;
+  transition: transform 0.3s var(--about-ease-out);
+}
+
+.about-feature-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: var(--about-red-pale);
+  color: var(--about-red);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.about-feature-item:nth-child(even) .about-feature-marker {
+  background: var(--about-green-pale);
+  color: var(--about-green);
+}
+
+.about-feature-item:nth-child(3) .about-feature-marker {
+  background: var(--about-blue-pale);
+  color: var(--about-blue);
+}
+
+.about-feature-item:nth-child(4) .about-feature-marker {
+  background: var(--about-green-pale);
+  color: var(--about-green);
+}
+
+.about-feature-text {
+  font-size: 0.88rem;
+  font-weight: 450;
+  color: var(--about-text-secondary);
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.about-feature-item:hover .about-feature-text {
+  color: var(--about-text-primary);
+}
+
+/* ============================================
+   CTA Button
+   ============================================ */
+
+.about-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2rem;
+  background: var(--about-red);
+  color: var(--about-white);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.4s var(--about-ease-out);
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 30px -10px rgba(220, 38, 38, 0.3);
+}
+
+.about-cta:hover {
+  background: #B91C1C;
+  box-shadow: 0 15px 40px -12px rgba(220, 38, 38, 0.4);
+  transform: translateY(-1px);
+}
+
+.about-cta svg {
+  transition: transform 0.3s ease;
+}
+
+.about-cta:hover svg {
+  transform: translateX(3px);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 1100px) {
+  .about-grid {
+    gap: 3rem;
+  }
+  
+  .about-badge {
+    right: -1rem;
+  }
+  
+  .about-badge-impact {
+    left: -1rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .about-image-column {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .about-image {
+    aspect-ratio: 4/3;
+  }
+  
+  .about-badge {
+    right: 1rem;
+    top: 1.5rem;
+    padding: 1rem 1.25rem;
+  }
+  
+  .about-badge-impact {
+    left: 1rem;
+    bottom: 2rem;
+    padding: 1rem 1.25rem;
+  }
+  
+  .about-badge-number {
+    font-size: 1.5rem;
+  }
+  
+  .about-features {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-section {
+    padding: 4rem 0;
+  }
+  
+  .about-container {
+    padding: 0 1.25rem;
+  }
+  
+  .about-headline {
+    font-size: 1.7rem;
+  }
+  
+  .about-description {
+    font-size: 0.88rem;
+  }
+  
+  .about-features {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .about-badge {
+    right: 0.5rem;
+    top: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .about-badge-impact {
+    left: 0.5rem;
+    bottom: 1rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .about-badge-number {
+    font-size: 1.3rem;
+  }
+  
+  .about-badge-label {
+    font-size: 0.65rem;
+  }
+  
+  .about-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   Reduced Motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-image {
+    transition: none;
+  }
+  
+  .about-feature-item {
+    transition: none;
+  }
+}

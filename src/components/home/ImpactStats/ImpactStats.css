@@ -1,0 +1,436 @@
+/* ============================================
+   Uvagai Foundation - Impact Stats Section
+   Professional Design with Brand Colors
+   Red, Leaf Green, Water Dark Blue, Black
+   ============================================ */
+
+:root {
+  --impact-red: #DC2626;
+  --impact-red-light: #FEE2E2;
+  --impact-red-pale: #FFF5F5;
+  
+  --impact-green: #16A34A;
+  --impact-green-light: #DCFCE7;
+  --impact-green-pale: #F0FDF4;
+  
+  --impact-blue: #1E3A5F;
+  --impact-blue-light: #E8F0FE;
+  --impact-blue-pale: #F5F8FC;
+  
+  --impact-black: #171717;
+  --impact-black-light: #F5F5F5;
+  
+  --impact-white: #FFFFFF;
+  --impact-cream: #FEFCFB;
+  --impact-warm-bg: #FFFBF9;
+  --impact-soft-bg: #F8F7F5;
+  
+  --impact-text-primary: #171717;
+  --impact-text-secondary: #525252;
+  --impact-text-tertiary: #737373;
+  --impact-text-muted: #A3A3A3;
+  
+  --impact-border: #E8E4DE;
+  --impact-border-light: #F0EDE8;
+  
+  --impact-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
+  --impact-shadow-md: 0 8px 30px rgba(0, 0, 0, 0.05);
+  --impact-shadow-lg: 0 15px 50px rgba(0, 0, 0, 0.07);
+  --impact-shadow-xl: 0 25px 70px rgba(0, 0, 0, 0.09);
+  
+  --impact-font-display: 'Georgia', 'Times New Roman', 'Playfair Display', serif;
+  --impact-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  
+  --impact-ease-out: cubic-bezier(0.33, 0.1, 0.25, 1);
+}
+
+/* ============================================
+   Section Container
+   ============================================ */
+
+.impact-stats {
+  position: relative;
+  padding: 7rem 0;
+  background: var(--impact-white);
+  overflow: hidden;
+  font-family: var(--impact-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================
+   Background
+   ============================================ */
+
+.impact-bg {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(
+      180deg,
+      var(--impact-white) 0%,
+      var(--impact-cream) 50%,
+      var(--impact-soft-bg) 100%
+    );
+}
+
+/* Ambient glows */
+.impact-ambient {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.impact-ambient-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--impact-red);
+  top: 15%;
+  left: -8%;
+  opacity: 0.04;
+}
+
+.impact-ambient-2 {
+  width: 350px;
+  height: 350px;
+  background: var(--impact-green);
+  bottom: 10%;
+  right: -6%;
+  opacity: 0.04;
+}
+
+/* Grid texture */
+.impact-grid-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.015;
+  background-image: 
+    linear-gradient(var(--impact-text-primary) 1px, transparent 1px),
+    linear-gradient(90deg, var(--impact-text-primary) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ============================================
+   Container
+   ============================================ */
+
+.impact-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+/* ============================================
+   Section Heading
+   ============================================ */
+
+.impact-heading {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* Tag */
+.impact-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.impact-tag-line {
+  width: 28px;
+  height: 2px;
+  background: var(--impact-red);
+  border-radius: 1px;
+}
+
+.impact-tag-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--impact-red);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* Headline */
+.impact-headline {
+  font-family: var(--impact-font-display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--impact-text-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.impact-headline-accent {
+  color: var(--impact-red);
+}
+
+/* Subtitle */
+.impact-subtitle {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--impact-text-tertiary);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   Stats Grid
+   ============================================ */
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+/* ============================================
+   Stat Cards
+   ============================================ */
+
+.impact-card {
+  position: relative;
+  background: var(--impact-white);
+  border-radius: 12px;
+  padding: 2rem 1.75rem 1.75rem;
+  border: 1px solid var(--impact-border-light);
+  box-shadow: var(--impact-shadow-sm);
+  cursor: default;
+  transition: all 0.4s var(--impact-ease-out);
+  overflow: hidden;
+}
+
+.impact-card:hover {
+  box-shadow: var(--impact-shadow-lg);
+  border-color: transparent;
+}
+
+/* Card top accent line */
+.impact-card-accent {
+  position: absolute;
+  top: 0;
+  left: 1.75rem;
+  right: 1.75rem;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--impact-ease-out);
+}
+
+.impact-card:hover .impact-card-accent {
+  transform: scaleX(1);
+}
+
+.impact-card-red .impact-card-accent { background: var(--impact-red); }
+.impact-card-green .impact-card-accent { background: var(--impact-green); }
+.impact-card-blue .impact-card-accent { background: var(--impact-blue); }
+
+/* Card content */
+.impact-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.impact-card-number {
+  font-family: var(--impact-font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+.impact-card-red .impact-card-number { color: var(--impact-red); }
+.impact-card-green .impact-card-number { color: var(--impact-green); }
+.impact-card-blue .impact-card-number { color: var(--impact-blue); }
+
+.impact-card-label {
+  font-size: 0.95rem;
+  font-weight: 550;
+  color: var(--impact-text-primary);
+  line-height: 1.3;
+}
+
+.impact-card-description {
+  font-size: 0.8rem;
+  color: var(--impact-text-muted);
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/* Card bottom indicator */
+.impact-card-indicator {
+  width: 20px;
+  height: 2px;
+  border-radius: 1px;
+  margin-top: 1.25rem;
+  transition: all 0.4s var(--impact-ease-out);
+}
+
+.impact-card-red .impact-card-indicator { background: var(--impact-red); opacity: 0.2; }
+.impact-card-green .impact-card-indicator { background: var(--impact-green); opacity: 0.2; }
+.impact-card-blue .impact-card-indicator { background: var(--impact-blue); opacity: 0.2; }
+
+.impact-card:hover .impact-card-indicator {
+  width: 40px;
+  opacity: 0.6;
+}
+
+/* ============================================
+   Bottom CTA
+   ============================================ */
+
+.impact-cta-wrapper {
+  text-align: center;
+}
+
+.impact-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.95rem 2rem;
+  background: transparent;
+  color: var(--impact-text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1.5px solid var(--impact-border);
+  border-radius: 10px;
+  transition: all 0.4s var(--impact-ease-out);
+  letter-spacing: 0.02em;
+}
+
+.impact-cta:hover {
+  border-color: var(--impact-red);
+  background: var(--impact-red-pale);
+  color: var(--impact-red);
+}
+
+.impact-cta svg {
+  transition: transform 0.3s ease;
+}
+
+.impact-cta:hover svg {
+  transform: translateX(3px);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .impact-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .impact-card {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+  
+  .impact-card-number {
+    font-size: 1.7rem;
+  }
+  
+  .impact-card-label {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .impact-stats {
+    padding: 5rem 0;
+  }
+  
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .impact-heading {
+    margin-bottom: 2.5rem;
+  }
+  
+  .impact-headline {
+    font-size: 1.8rem;
+  }
+  
+  .impact-subtitle {
+    font-size: 0.88rem;
+  }
+  
+  .impact-card {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+  
+  .impact-card-accent {
+    left: 1.25rem;
+    right: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .impact-stats {
+    padding: 4rem 0;
+  }
+  
+  .impact-container {
+    padding: 0 1.25rem;
+  }
+  
+  .impact-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .impact-headline {
+    font-size: 1.6rem;
+  }
+  
+  .impact-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .impact-card {
+    padding: 1.25rem 1.25rem 1.25rem;
+  }
+  
+  .impact-card-number {
+    font-size: 1.5rem;
+  }
+  
+  .impact-card-label {
+    font-size: 0.85rem;
+  }
+  
+  .impact-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   Reduced Motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .impact-card {
+    transition: none;
+  }
+  
+  .impact-card-accent {
+    transition: none;
+  }
+}
