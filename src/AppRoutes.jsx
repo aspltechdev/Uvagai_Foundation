@@ -1,21 +1,22 @@
 import { Routes, Route } from "react-router-dom";
 
-import Home from "../pages/Home";
-import AboutUs from "../pages/AboutUs";
-import VisionMission from "../pages/VisionMission";
-import LeadershipTeam from "../pages/LeadershipTeam";
-import Programs from "../pages/Programs";
-import Impact from "../pages/Impact";
-import ImpactStories from "../pages/ImpactStories";
-import Gallery from "../pages/Gallery";
-import Events from "../pages/Events";
-import Blog from "../pages/Blog";
-import Volunteer from "../pages/Volunteer";
-import Internship from "../pages/Internship";
-import CSRPartnership from "../pages/CSRPartnership";
-import Donate from "../pages/Donate";
-import AnnualReports from "../pages/AnnualReports";
-import Contact from "../pages/Contact";
+import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import VisionMission from "./pages/VisionMission";
+import LeadershipTeam from "./pages/LeadershipTeam";
+import Programs from "./pages/Programs";
+import Impact from "./pages/Impact";
+import ImpactSection from "./pages/ImpactStories";
+import Gallery from "./pages/Gallery";
+import Events from "./pages/Events";
+import Blog from "./pages/Blog";
+import Volunteer from "./pages/Volunteer";
+import Internship from "./pages/Internship";
+import CSRPartnership from "./pages/CSRPartnership";
+import Donate from "./pages/Donate";
+import AnnualReports from "./pages/AnnualReports";
+import Contact from "./pages/Contact";
+
 
 export default function AppRoutes() {
   return (
@@ -26,7 +27,7 @@ export default function AppRoutes() {
       <Route path="/leadership-team" element={<LeadershipTeam />} />
       <Route path="/programs" element={<Programs />} />
       <Route path="/impact" element={<Impact />} />
-      <Route path="/impact-stories" element={<ImpactStories />} />
+      <Route path="/impact-stories" element={<ImpactSection />} />
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/events" element={<Events />} />
       <Route path="/blog" element={<Blog />} />
