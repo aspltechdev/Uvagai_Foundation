@@ -25,10 +25,10 @@ const programs = [
     image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1200&q=80",
     title: "Education & Youth Empowerment",
     description:
-      "Providing scholarships, building digital classrooms, and creating mentorship networks that empower the next generation of leaders.",
+      "Supporting students through educational assistance, learning resources, mentorship programs, and opportunities that help build brighter futures.",
     accent: "red",
-    stat: "5,284+",
-    statLabel: "Scholarships",
+    stat: "Core Initiative",
+    statLabel: "Education",
   },
   {
     id: 2,
@@ -36,56 +36,57 @@ const programs = [
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80",
     title: "Healthcare & Wellness",
     description:
-      "Operating mobile medical units, organizing health camps, and delivering preventive care to remote and underserved communities.",
+      "Organizing medical camps, health awareness drives, preventive healthcare initiatives, and community wellness programs for underserved communities.",
     accent: "green",
-    stat: "50,000+",
-    statLabel: "Patients",
+    stat: "Community Care",
+    statLabel: "Healthcare",
   },
   {
     id: 3,
-    category: "Community",
+    category: "Child Welfare",
     image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=1200&q=80",
-    title: "Child Welfare & Nutrition",
+    title: "Child Welfare & Development",
     description:
-      "Fighting malnutrition through daily meal programs, health monitoring, and holistic development activities for children.",
+      "Promoting child welfare through nutrition support, educational programs, health initiatives, and activities that encourage holistic development.",
     accent: "blue",
-    stat: "10,000+",
-    statLabel: "Daily Meals",
+    stat: "Future Focus",
+    statLabel: "Child Welfare",
   },
   {
     id: 4,
-    category: "Community",
+    category: "Elderly Care",
     image: "https://images.unsplash.com/photo-1516307365426-bea591f05011?w=1200&q=80",
     title: "Elderly Care & Support",
     description:
-      "Providing healthcare assistance, emotional support, and welfare programs that ensure dignity for senior citizens.",
+      "Enhancing the quality of life for senior citizens through healthcare support, community engagement, welfare programs, and compassionate care initiatives.",
     accent: "red",
-    stat: "2,500+",
-    statLabel: "Seniors",
+    stat: "Dignity & Care",
+    statLabel: "Senior Support",
   },
   {
     id: 5,
     category: "Environment",
     image: "https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?w=1200&q=80",
-    title: "Environmental Action",
+    title: "Environmental Sustainability",
     description:
-      "Leading reforestation drives, water conservation projects, and sustainability education across vulnerable regions.",
+      "Creating awareness about environmental responsibility through tree plantation drives, sustainability campaigns, clean-up initiatives, and green community projects.",
     accent: "green",
-    stat: "1M+",
-    statLabel: "Trees Planted",
+    stat: "Green Future",
+    statLabel: "Environment",
   },
   {
     id: 6,
-    category: "Community",
+    category: "CSR & Partnerships",
     image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
-    title: "CSR & Partnerships",
+    title: "CSR & Volunteer Partnerships",
     description:
-      "Collaborating with corporations to design and execute high-impact CSR initiatives that create measurable social change.",
+      "Collaborating with corporates, institutions, volunteers, and social organizations to create meaningful and long-lasting community impact.",
     accent: "blue",
-    stat: "500+",
-    statLabel: "Volunteers",
+    stat: "Collaborative Impact",
+    statLabel: "Partnerships",
   },
 ];
+
 
   const filteredPrograms = activeTab === 0 
     ? programs 

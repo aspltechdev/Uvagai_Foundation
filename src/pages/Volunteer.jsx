@@ -1,392 +1,389 @@
-import { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, useInView, AnimatePresence } from "framer-motion";
 import "./Volunteer.css";
 
-export default function Volunteer() {
+export default function VolunteerHome() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    opportunity: "",
-    message: "",
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
   });
 
-  const opportunities = [
+  const bgY = useTransform(scrollYProgress, [0, 1], [0, -20]);
+  const headingY = useTransform(scrollYProgress, [0, 0.3], [40, 0]);
+  const headingOpacity = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
+  const glowOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 0.5, 0.5, 0]);
+
+  // Volunteer stories/moments for slider
+  const volunteerMoments = [
     {
-      title: "Education & Mentorship Volunteer",
-      description:
-        "Support students through mentoring, tutoring, career guidance, digital literacy programs, and educational workshops that help shape brighter futures.",
+      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
+      quote: "The best way to find yourself is to lose yourself in the service of others.",
+      author: "Our Volunteer Community",
       accent: "red",
     },
     {
-      title: "Healthcare Volunteer",
-      description:
-        "Assist during medical camps, health awareness drives, blood donation initiatives, wellness programs, and community healthcare outreach activities.",
+      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80",
+      quote: "Volunteering is the ultimate exercise in democracy. You vote in elections once a year, but when you volunteer, you vote every day about the kind of community you want.",
+      author: "Uvagai Foundation",
       accent: "green",
     },
     {
-      title: "Child Welfare Volunteer",
-      description:
-        "Participate in programs focused on child education, nutrition, personal development, creative learning activities, and well-being support.",
+      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
+      quote: "Small acts, when multiplied by millions of people, can transform the world.",
+      author: "Community Changemakers",
       accent: "blue",
-    },
-    {
-      title: "Elderly Care Volunteer",
-      description:
-        "Spend time with senior citizens, support welfare programs, assist during events, and contribute to initiatives that promote dignity and care.",
-      accent: "red",
-    },
-    {
-      title: "Environmental Volunteer",
-      description:
-        "Join tree plantation drives, sustainability campaigns, clean-up activities, and environmental awareness initiatives.",
-      accent: "green",
-    },
-    {
-      title: "Community Outreach Volunteer",
-      description:
-        "Work directly with communities, support awareness programs, social campaigns, and community development projects.",
-      accent: "blue",
-    },
-    {
-      title: "Event & Campaign Volunteer",
-      description:
-        "Help organize social events, fundraising campaigns, workshops, awareness drives, and foundation activities.",
-      accent: "red",
-    },
-    {
-      title: "Digital & Creative Volunteer",
-      description:
-        "Contribute your skills in graphic design, content creation, photography, videography, social media, and digital marketing.",
-      accent: "green",
     },
   ];
 
+  // Why volunteer benefits
   const benefits = [
     {
-      title: "Create Lasting Impact",
-      description:
-        "Make a meaningful difference in the lives of children, families, senior citizens, and communities.",
+      image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&q=80",
+      title: "Make a Difference",
+      description: "Your time and skills can directly impact lives and create lasting positive change in communities.",
+      accent: "red",
     },
     {
-      title: "Connect With Changemakers",
-      description:
-        "Collaborate with passionate volunteers, professionals, and community leaders.",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80",
+      title: "Grow Personally",
+      description: "Develop new skills, gain valuable experience, and discover your true potential through service.",
+      accent: "green",
     },
     {
-      title: "Recognition & Certification",
-      description:
-        "Receive volunteer certificates and appreciation for your valuable contributions.",
-    },
-    {
-      title: "Develop Valuable Skills",
-      description:
-        "Strengthen leadership, communication, teamwork, project management, and social responsibility skills.",
-    },
-    {
-      title: "Serve With Purpose",
-      description:
-        "Contribute your time and talents to initiatives that create real and measurable social impact.",
-    },
-    {
-      title: "Personal Growth",
-      description:
-        "Gain new experiences, broaden perspectives, and become part of a purpose-driven journey.",
+      image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80",
+      title: "Build Community",
+      description: "Connect with like-minded individuals who share your passion for creating positive change.",
+      accent: "blue",
     },
   ];
 
-  const staggerContainer = {
+  // Ways to volunteer
+  const ways = [
+    {
+      title: "Individual Volunteering",
+      description: "Join as an individual and contribute your time and skills to various community initiatives.",
+      accent: "red",
+    },
+    {
+      title: "Group Volunteering",
+      description: "Bring your friends, family, or colleagues together for a meaningful group experience.",
+      accent: "green",
+    },
+    {
+      title: "Corporate Volunteering",
+      description: "Engage your organization in structured volunteering programs that create impact.",
+      accent: "blue",
+    },
+    {
+      title: "Remote Volunteering",
+      description: "Contribute from anywhere with virtual volunteering opportunities that fit your schedule.",
+      accent: "red",
+    },
+    {
+      title: "Skill-Based Volunteering",
+      description: "Use your professional expertise to support our programs and strengthen our impact.",
+      accent: "green",
+    },
+    {
+      title: "Event Volunteering",
+      description: "Participate in one-time events, campaigns, and special initiatives throughout the year.",
+      accent: "blue",
+    },
+  ];
+
+  useEffect(() => {
+    if (!isPaused) {
+      const interval = setInterval(() => {
+        setCurrentSlide((prev) => (prev === volunteerMoments.length - 1 ? 0 : prev + 1));
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [isPaused, volunteerMoments.length]);
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 4000);
+  };
+
+  const goNext = () => {
+    setCurrentSlide((prev) => (prev === volunteerMoments.length - 1 ? 0 : prev + 1));
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 4000);
+  };
+
+  const goPrev = () => {
+    setCurrentSlide((prev) => (prev === 0 ? volunteerMoments.length - 1 : prev - 1));
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 4000);
+  };
+
+  const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.08, delayChildren: 0.15 },
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 },
     },
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 35 },
+    hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.65, ease: [0.33, 0.1, 0.25, 1] },
+      transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] },
     },
   };
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission
+  const imageRevealVariants = {
+    hidden: { opacity: 0, scale: 1.1, clipPath: 'inset(0% 0% 100% 0%)' },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      clipPath: 'inset(0% 0% 0% 0%)',
+      transition: { duration: 0.9, ease: [0.76, 0, 0.24, 1] },
+    },
   };
 
   return (
-    <div className="volunteer-page" ref={sectionRef}>
-      {/* Hero Section */}
-      <section className="volunteer-hero">
-        <div className="volunteer-hero-bg" />
-        <div className="volunteer-hero-glow volunteer-hero-glow-1" />
-        <div className="volunteer-hero-glow volunteer-hero-glow-2" />
+    <section className="volunteer-section" ref={sectionRef}>
+      
+      <motion.div className="volunteer-section-bg" style={{ y: bgY }} />
+      <motion.div className="volunteer-section-orb volunteer-section-orb-1" style={{ opacity: glowOpacity }} />
+      <motion.div className="volunteer-section-orb volunteer-section-orb-2" style={{ opacity: glowOpacity }} />
+
+      <div className="volunteer-section-container">
         
-        <div className="volunteer-container">
+        {/* Header */}
+        <motion.div 
+          className="volunteer-section-header"
+          style={{ y: headingY, opacity: headingOpacity }}
+        >
           <motion.div 
-            className="volunteer-hero-content"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.33, 0.1, 0.25, 1] }}
-          >
-            <div className="volunteer-hero-tag">
-              <span className="volunteer-hero-tag-line" />
-              <span className="volunteer-hero-tag-text">Volunteer With Uvagai Foundation</span>
-            </div>
-
-            <h1 className="volunteer-hero-headline">
-              Together We Can Create
-              <span className="volunteer-hero-headline-accent"> Positive Change</span>
-            </h1>
-
-            <p className="volunteer-hero-subtitle">
-              Become part of a passionate community of changemakers
-              dedicated to empowering lives, strengthening communities,
-              and creating sustainable social impact through meaningful action.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Volunteer Opportunities */}
-      <section className="volunteer-opportunities-section">
-        <div className="volunteer-container">
-          <motion.div 
-            className="volunteer-section-header"
-            initial={{ opacity: 0, y: 30 }}
+            className="volunteer-section-eyebrow"
+            initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="volunteer-section-tag">
-              <span className="volunteer-section-tag-line" />
-              <span className="volunteer-section-tag-text">Volunteer Opportunities</span>
-            </div>
-            <h2 className="volunteer-section-headline">Find A Meaningful Way To Contribute</h2>
-            <p className="volunteer-section-subtitle">
-              Whether you're a student, professional, retiree, or
-              passionate individual, there's a place for you in our mission.
-            </p>
+            <motion.span 
+              className="volunteer-section-eyebrow-line"
+              animate={{ width: [20, 32, 20] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            />
+            <span>Get Involved</span>
+            <motion.span 
+              className="volunteer-section-eyebrow-line"
+              animate={{ width: [20, 32, 20] }}
+              transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
+            />
           </motion.div>
 
-          <motion.div 
-            className="volunteer-opportunities-grid"
-            variants={staggerContainer}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+          <motion.h2 
+            className="volunteer-section-title"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.15 }}
           >
-            {opportunities.map((item, index) => (
+            Volunteer Your <span className="text-red">Time</span>,
+            <br />
+            Change a <span className="text-green">Life</span>
+          </motion.h2>
+
+          <motion.p 
+            className="volunteer-section-subtitle"
+            initial={{ opacity: 0, y: 15 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Join a passionate community of individuals dedicated to making a 
+            difference. Every hour you give creates ripples of positive change.
+          </motion.p>
+        </motion.div>
+
+        {/* Benefits Cards */}
+        <motion.div 
+          className="volunteer-section-benefits"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          {benefits.map((benefit, index) => (
+            <motion.div 
+              className={`volunteer-section-benefit-card card-${benefit.accent}`}
+              key={index}
+              variants={cardVariants}
+              whileHover={{ y: -6 }}
+            >
               <motion.div 
-                className={`volunteer-opportunity-card opportunity-${item.accent}`}
+                className="volunteer-section-benefit-image"
+                variants={imageRevealVariants}
+              >
+                <img src={benefit.image} alt={benefit.title} />
+                <div className="volunteer-section-benefit-overlay" />
+              </motion.div>
+              <div className="volunteer-section-benefit-body">
+                <h3>{benefit.title}</h3>
+                <p>{benefit.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Quote Slider */}
+        <div 
+          className="volunteer-section-slider"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div className="volunteer-section-slider-stage">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentSlide}
+                className={`volunteer-section-slide slide-${volunteerMoments[currentSlide].accent}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="volunteer-section-slide-image">
+                  <img src={volunteerMoments[currentSlide].image} alt="" />
+                  <div className="volunteer-section-slide-overlay" />
+                </div>
+                <div className="volunteer-section-slide-content">
+                  <motion.blockquote
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    "{volunteerMoments[currentSlide].quote}"
+                  </motion.blockquote>
+                  <motion.span
+                    className="volunteer-section-slide-author"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    — {volunteerMoments[currentSlide].author}
+                  </motion.span>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Arrows */}
+          <motion.button 
+            className="volunteer-section-arrow volunteer-section-prev"
+            onClick={goPrev}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M12 5L7 10L12 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </motion.button>
+
+          <motion.button 
+            className="volunteer-section-arrow volunteer-section-next"
+            onClick={goNext}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M8 5L13 10L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </motion.button>
+
+          {/* Dots */}
+          <div className="volunteer-section-dots">
+            {volunteerMoments.map((slide, index) => (
+              <motion.button
+                key={index}
+                className={`volunteer-section-dot ${index === currentSlide ? 'dot-active' : ''}`}
+                onClick={() => goToSlide(index)}
+                animate={{
+                  width: index === currentSlide ? 28 : 8,
+                  backgroundColor: index === currentSlide ? slide.accent === 'red' ? '#DC2626' : slide.accent === 'green' ? '#059669' : '#1E3A8A' : 'rgba(0,0,0,0.2)',
+                }}
+                transition={{ duration: 0.3 }}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Ways to Volunteer */}
+        <motion.div 
+          className="volunteer-section-ways"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          <h3 className="volunteer-section-ways-title">
+            Ways to <span className="text-red">Get Involved</span>
+          </h3>
+          
+          <div className="volunteer-section-ways-grid">
+            {ways.map((way, index) => (
+              <motion.div 
+                className={`volunteer-section-way-card way-${way.accent}`}
                 key={index}
                 variants={cardVariants}
-                whileHover={{ y: -4 }}
+                whileHover={{ y: -4, scale: 1.02 }}
               >
-                <div className="opportunity-card-number">
-                  {(index + 1).toString().padStart(2, '0')}
-                </div>
-                <h3 className="opportunity-card-title">{item.title}</h3>
-                <p className="opportunity-card-description">{item.description}</p>
-                <div className="opportunity-card-line" />
+                <h4>{way.title}</h4>
+                <p>{way.description}</p>
+                <div className="volunteer-section-way-line" />
               </motion.div>
             ))}
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </motion.div>
 
-      {/* Registration Form */}
-      <section className="volunteer-form-section" id="volunteer-form">
-        <div className="volunteer-form-bg" />
-        <div className="volunteer-container">
-          <motion.div 
-            className="volunteer-form-card"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
-          >
-            <div className="form-card-header">
-              <h2 className="form-card-title">Volunteer Registration</h2>
-              <p className="form-card-subtitle">
-                Join our volunteer community and contribute your skills,
-                time, and passion to create meaningful social impact.
+        {/* CTA Banner */}
+        <motion.div 
+          className="volunteer-section-banner"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.6 }}
+        >
+          <div className="volunteer-section-banner-content">
+            <div className="volunteer-section-banner-text">
+              <h3>Ready to Make a Difference?</h3>
+              <p>
+                Join hundreds of volunteers creating lasting impact in communities 
+                across India. Your time can change lives.
               </p>
             </div>
-
-            <form onSubmit={handleSubmit} className="volunteer-form">
-              <div className="form-row">
-                <div className="form-group">
-                  <label className="form-label">Full Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Enter your full name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="form-input"
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label className="form-label">Email Address</label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Enter your email address"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="form-input"
-                  />
-                </div>
-              </div>
-
-              <div className="form-row">
-                <div className="form-group">
-                  <label className="form-label">Phone Number</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Enter your phone number"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="form-input"
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label className="form-label">Volunteer Opportunity</label>
-                  <select
-                    name="opportunity"
-                    value={formData.opportunity}
-                    onChange={handleChange}
-                    required
-                    className="form-select"
-                  >
-                    <option value="">Select an opportunity</option>
-                    <option value="education">Education & Mentorship</option>
-                    <option value="healthcare">Healthcare Volunteer</option>
-                    <option value="child">Child Welfare Volunteer</option>
-                    <option value="elderly">Elderly Care Volunteer</option>
-                    <option value="environmental">Environmental Volunteer</option>
-                    <option value="community">Community Outreach</option>
-                    <option value="event">Event & Campaign</option>
-                    <option value="digital">Digital & Creative</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="form-group form-group-full">
-                <label className="form-label">About You</label>
-                <textarea
-                  name="message"
-                  rows="5"
-                  placeholder="Tell us about yourself, your interests, skills, and how you would like to contribute."
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="form-textarea"
-                ></textarea>
-              </div>
-
-              <motion.button 
-                type="submit" 
-                className="form-submit-btn"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+            <div className="volunteer-section-banner-actions">
+              <motion.a 
+                href="/volunteer" 
+                className="volunteer-section-banner-cta"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <span>Submit Application</span>
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                Become a Volunteer
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M2 8H14M14 8L9 3M14 8L9 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </motion.button>
-            </form>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="volunteer-benefits-section">
-        <div className="volunteer-container">
-          <motion.div 
-            className="volunteer-section-header"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
-          >
-            <div className="volunteer-section-tag">
-              <span className="volunteer-section-tag-line" />
-              <span className="volunteer-section-tag-text">Volunteer Benefits</span>
-            </div>
-            <h2 className="volunteer-section-headline">Why Volunteer With Us?</h2>
-            <p className="volunteer-section-subtitle">
-              Volunteering is more than giving your time—it's about
-              creating impact, learning, growing, and becoming part of
-              something bigger than yourself.
-            </p>
-          </motion.div>
-
-          <motion.div 
-            className="volunteer-benefits-grid"
-            variants={staggerContainer}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          >
-            {benefits.map((benefit, index) => (
-              <motion.div 
-                className="volunteer-benefit-card"
-                key={index}
-                variants={cardVariants}
-                whileHover={{ y: -4 }}
+              </motion.a>
+              <motion.a 
+                href="/contact" 
+                className="volunteer-section-banner-secondary"
+                whileHover={{ x: 4 }}
               >
-                <div className="benefit-card-number">
-                  {(index + 1).toString().padStart(2, '0')}
-                </div>
-                <h3 className="benefit-card-title">{benefit.title}</h3>
-                <p className="benefit-card-description">{benefit.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+                Contact Us <span>→</span>
+              </motion.a>
+            </div>
+          </div>
+          
+          <div className="volunteer-section-banner-orb banner-orb-red" />
+          <div className="volunteer-section-banner-orb banner-orb-green" />
+        </motion.div>
 
-      {/* CTA Section */}
-      <section className="volunteer-cta-section">
-        <div className="volunteer-cta-bg" />
-        <div className="volunteer-cta-glow" />
-        
-        <div className="volunteer-container">
-          <motion.div 
-            className="volunteer-cta-content"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: [0.33, 0.1, 0.25, 1] }}
-          >
-            <h2 className="volunteer-cta-headline">
-              Start Your Volunteer Journey Today
-            </h2>
-            <p className="volunteer-cta-description">
-              Every act of kindness matters. Join Uvagai Foundation and
-              become a catalyst for positive change in communities that
-              need it most.
-            </p>
-            <a href="#volunteer-form" className="volunteer-cta-btn">
-              <span>Become A Volunteer</span>
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </a>
-          </motion.div>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

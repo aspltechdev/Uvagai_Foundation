@@ -64,53 +64,53 @@ export default function ImpactStats() {
   // ];
 
 
-  const stats = [
+const stats = [
   {
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80",
-    number: "5,284+",
-    label: "Scholarships Awarded",
+    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1200&q=80",
+    number: "2019",
+    label: "Founded",
     description:
-      "Empowering children through quality education and learning resources across communities",
+      "Serving communities through education, healthcare, and social impact initiatives since 2019.",
     accent: "red",
   },
   {
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80",
-    number: "50,000+",
-    label: "Patients Treated",
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80",
+    number: "08+",
+    label: "Focus Areas",
     description:
-      "Bringing accessible healthcare and medical support to underserved communities",
+      "Working across education, healthcare, child welfare, elderly care, environment, CSR, humanitarian aid, and volunteer engagement.",
     accent: "green",
   },
   {
     image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1200&q=80",
-    number: "10,000+",
-    label: "Meals Served Daily",
+    number: "100+",
+    label: "Community Initiatives",
     description:
-      "Fighting hunger and malnutrition with nutritious meals for children and families",
+      "Driving meaningful programs that support children, families, and underserved communities.",
     accent: "blue",
   },
   {
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80",
-    number: "25,000+",
-    label: "Women Empowered",
+    number: "500+",
+    label: "Volunteers & Supporters",
     description:
-      "Building financial independence through skill development and entrepreneurship",
+      "Passionate individuals contributing time, skills, and resources to create positive social change.",
     accent: "red",
   },
   {
     image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&q=80",
-    number: "1 Million+",
-    label: "Trees Planted",
+    number: "1000+",
+    label: "Lives Impacted",
     description:
-      "Creating sustainable environments and combating climate change for future generations",
+      "Supporting people through education support, healthcare access, welfare programs, and community development.",
     accent: "green",
   },
   {
     image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
-    number: "500+",
-    label: "Active Volunteers",
+    number: "01",
+    label: "Shared Mission",
     description:
-      "Passionate individuals driving meaningful change across communities nationwide",
+      "Creating hope, dignity, opportunity, and sustainable change through compassion and collective action.",
     accent: "blue",
   },
 ];

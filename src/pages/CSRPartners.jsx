@@ -16,20 +16,60 @@ export default function CSRPartnersHome() {
   const headingOpacity = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
   const glowOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 0.4, 0.4, 0]);
 
-  // Placeholder CSR Partners - Replace with actual partners
+  // Partner data with online logo images
   const csrPartners = [
-    { name: "TechForGood Inc.", category: "Technology", accent: "red" },
-    { name: "HealthFirst Foundation", category: "Healthcare", accent: "green" },
-    { name: "EduBright Partners", category: "Education", accent: "red" },
-    { name: "GreenEarth Alliance", category: "Environment", accent: "green" },
-    { name: "CommunityFirst Corp", category: "Community", accent: "blue" },
-    { name: "VolunteerConnect", category: "Volunteer", accent: "blue" },
-    { name: "ImpactInvest Group", category: "CSR", accent: "red" },
-    { name: "WellnessWorks", category: "Healthcare", accent: "green" },
+    { 
+      name: "TechForGood", 
+      logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=200&fit=crop&crop=center&q=80",
+      category: "Technology",
+      accent: "red" 
+    },
+    { 
+      name: "HealthFirst", 
+      logo: "https://images.unsplash.com/photo-1550831107-1553da8c8464?w=200&h=200&fit=crop&crop=center&q=80",
+      category: "Healthcare",
+      accent: "green" 
+    },
+    { 
+      name: "EduBright", 
+      logo: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=200&h=200&fit=crop&crop=center&q=80",
+      category: "Education",
+      accent: "red" 
+    },
+    { 
+      name: "GreenEarth", 
+      logo: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=200&h=200&fit=crop&crop=center&q=80",
+      category: "Environment",
+      accent: "green" 
+    },
+    { 
+      name: "CommunityFirst", 
+      logo: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=200&h=200&fit=crop&crop=center&q=80",
+      category: "Community",
+      accent: "blue" 
+    },
+    { 
+      name: "VolunteerConnect", 
+      logo: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=200&h=200&fit=crop&crop=center&q=80",
+      category: "Volunteer",
+      accent: "blue" 
+    },
+    { 
+      name: "ImpactInvest", 
+      logo: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=200&h=200&fit=crop&crop=center&q=80",
+      category: "CSR",
+      accent: "red" 
+    },
+    { 
+      name: "WellnessWorks", 
+      logo: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=200&h=200&fit=crop&crop=center&q=80",
+      category: "Healthcare",
+      accent: "green" 
+    },
   ];
 
   const partnershipStats = [
-    { number: "CSR", label: "Corporate Partners", accent: "red" },
+    { number: "CSR", label: "Corporate Partnerships", accent: "red" },
     { number: "NGO", label: "Implementation Partners", accent: "green" },
     { number: "Govt", label: "Community Collaborations", accent: "blue" },
     { number: "500+", label: "Volunteer Network", accent: "red" },
@@ -52,16 +92,13 @@ export default function CSRPartnersHome() {
     },
   };
 
-  // Duplicate for seamless marquee
   const marqueePartners = [...csrPartners, ...csrPartners];
 
   return (
     <section className="csr-partners" ref={sectionRef}>
       
-      {/* Background */}
       <motion.div className="csr-partners-bg" style={{ y: bgY }} />
       
-      {/* Ambient Orbs */}
       <motion.div className="csr-partners-orb csr-partners-orb-red" style={{ opacity: glowOpacity }} />
       <motion.div className="csr-partners-orb csr-partners-orb-green" style={{ opacity: glowOpacity }} />
 
@@ -134,51 +171,49 @@ export default function CSRPartnersHome() {
           ))}
         </motion.div>
 
-        {/* Partner Logo Marquee - Row 1 */}
+        {/* Partner Logo Grid */}
+        <motion.div 
+          className="csr-partners-grid"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          {csrPartners.map((partner, index) => (
+            <motion.div 
+              className={`csr-partners-logo-card card-${partner.accent}`}
+              key={index}
+              variants={cardVariants}
+              whileHover={{ y: -6, scale: 1.03 }}
+            >
+              <div className="csr-partners-logo-wrapper">
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name}
+                  className="csr-partners-logo-image"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="csr-partners-logo-fallback" style={{ display: 'none' }}>
+                  <span>{partner.name.charAt(0)}</span>
+                </div>
+              </div>
+              <div className="csr-partners-logo-info">
+                <h4>{partner.name}</h4>
+                <span>{partner.category}</span>
+              </div>
+              <div className="csr-partners-logo-accent" />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Marquee Row 1 */}
         <div className="csr-partners-marquee-wrapper">
           <motion.div 
             className="csr-partners-marquee"
             animate={{
               x: [0, -50 + "%"],
-            }}
-            transition={{
-              x: {
-                duration: 25,
-                repeat: Infinity,
-                ease: "linear",
-              },
-            }}
-          >
-            {marqueePartners.map((partner, index) => (
-              <motion.div 
-                className={`csr-partners-card card-${partner.accent}`}
-                key={`row1-${index}`}
-                whileHover={{ 
-                  y: -6,
-                  scale: 1.04,
-                  transition: { duration: 0.3 }
-                }}
-              >
-                <div className="csr-partners-card-logo">
-                  <div className="csr-partners-card-avatar">
-                    <span>{partner.name.charAt(0)}</span>
-                  </div>
-                </div>
-                <div className="csr-partners-card-info">
-                  <h4>{partner.name}</h4>
-                  <span>{partner.category}</span>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Partner Logo Marquee - Row 2 (Reverse) */}
-        <div className="csr-partners-marquee-wrapper">
-          <motion.div 
-            className="csr-partners-marquee"
-            animate={{
-              x: [-50 + "%", 0],
             }}
             transition={{
               x: {
@@ -188,25 +223,74 @@ export default function CSRPartnersHome() {
               },
             }}
           >
-            {marqueePartners.reverse().map((partner, index) => (
+            {marqueePartners.map((partner, index) => (
               <motion.div 
-                className={`csr-partners-card card-${partner.accent}`}
-                key={`row2-${index}`}
+                className={`csr-partners-marquee-card card-${partner.accent}`}
+                key={`marquee1-${index}`}
                 whileHover={{ 
-                  y: -6,
-                  scale: 1.04,
+                  y: -5,
+                  scale: 1.05,
                   transition: { duration: 0.3 }
                 }}
               >
-                <div className="csr-partners-card-logo">
-                  <div className="csr-partners-card-avatar">
+                <div className="csr-partners-marquee-logo">
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="csr-partners-marquee-fallback" style={{ display: 'none' }}>
                     <span>{partner.name.charAt(0)}</span>
                   </div>
                 </div>
-                <div className="csr-partners-card-info">
-                  <h4>{partner.name}</h4>
-                  <span>{partner.category}</span>
+                <span className="csr-partners-marquee-name">{partner.name}</span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Marquee Row 2 */}
+        <div className="csr-partners-marquee-wrapper">
+          <motion.div 
+            className="csr-partners-marquee"
+            animate={{
+              x: [-50 + "%", 0],
+            }}
+            transition={{
+              x: {
+                duration: 35,
+                repeat: Infinity,
+                ease: "linear",
+              },
+            }}
+          >
+            {[...csrPartners].reverse().concat([...csrPartners].reverse()).map((partner, index) => (
+              <motion.div 
+                className={`csr-partners-marquee-card card-${partner.accent}`}
+                key={`marquee2-${index}`}
+                whileHover={{ 
+                  y: -5,
+                  scale: 1.05,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <div className="csr-partners-marquee-logo">
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="csr-partners-marquee-fallback" style={{ display: 'none' }}>
+                    <span>{partner.name.charAt(0)}</span>
+                  </div>
                 </div>
+                <span className="csr-partners-marquee-name">{partner.name}</span>
               </motion.div>
             ))}
           </motion.div>
