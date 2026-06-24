@@ -15,6 +15,8 @@ import Volunteer from "../components/home/Volunteer/Volunteer";
 import Gallery from "./Gallery";
 import Donate from "./Donate";
 import VisionMission from "./VisionMission";
+import VisionMissionHome from "../components/home/Vision/MissionVision";
+import EventsHome from "../components/home/Events/Events";
 
 export default function Home() {
   return (
@@ -22,20 +24,22 @@ export default function Home() {
 
       {/* Hero Banner */}
       <Hero/>
-
+<AboutSection/>
       {/* Impact Numbers */}
       <ImpactStats />
-<AboutSection/>
 
       {/* Programs */}
       <Programs />
-      <VisionMission/>
+
+      <VisionMissionHome/>
+      {/* <VisionMission/> */}
 
       {/* Success Stories */}
       {/* <ImpactSection /> */}
 
       {/* Events */}
-      <Events />
+      {/* <Events /> */}
+      <EventsHome/>
 
       {/* CSR Partnership */}
       <CSRPartnership />
@@ -52,6 +56,7 @@ export default function Home() {
 
       {/* Donate CTA */}
       <Donate/>
+
 
     </main>
   );
