@@ -687,6 +687,10 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform, useScroll, useInView } from "framer-motion";
 import "./Hero.css";
+import hero1 from "../../../assets/hero1.png"
+import hero2 from "../../../assets/hero2.png"
+import hero3 from "../../../assets/hero3.png"
+import hero5 from "../../../assets/hero5.png"
 
 export default function Hero() {
   const slides = [
@@ -699,7 +703,7 @@ export default function Hero() {
         "Through dedicated education initiatives, we're transforming lives—one child, one classroom, one community at a time. Join us in writing futures filled with possibility.",
       primaryCTA: "Support a Child's Dream",
       secondaryCTA: "See Our Impact",
-      image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1920&q=80",
+      image: hero1,
       stat: { value: "10,000+", label: "Young minds empowered" },
       quote: "Education is the most powerful weapon which you can use to change the world.",
       quoteAuthor: "— Nelson Mandela",
@@ -714,7 +718,7 @@ export default function Hero() {
         "Our mobile clinics travel to remote villages, ensuring quality healthcare isn't a privilege—it's a fundamental right that belongs to every human being.",
       primaryCTA: "Fund a Medical Camp",
       secondaryCTA: "Our Healthcare Work",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&q=80",
+      image: hero2,
       stat: { value: "50+", label: "Medical camps conducted" },
       quote: "The greatest wealth is health.",
       quoteAuthor: "— Virgil",
@@ -729,7 +733,7 @@ export default function Hero() {
         "Our elders deserve more than care—they deserve respect, companionship, and the warmth of a community that remembers their sacrifices and celebrates their wisdom.",
       primaryCTA: "Support Our Elders",
       secondaryCTA: "Learn Their Stories",
-      image: "https://images.unsplash.com/photo-1516307365426-bea591f05011?w=1920&q=80",
+      image: hero3,
       stat: { value: "200+", label: "Seniors cared for" },
       quote: "The measure of a society is how it treats its elderly.",
       quoteAuthor: "— Mahatma Gandhi",
@@ -744,7 +748,7 @@ export default function Hero() {
         "Real change happens when communities come together. We facilitate that unity—providing resources, expertise, and unwavering support to build lasting transformation.",
       primaryCTA: "Join the Movement",
       secondaryCTA: "View Communities",
-      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1920&q=80",
+      image: hero5,
       stat: { value: "25+", label: "Villages transformed" },
       quote: "Alone we can do so little; together we can do so much.",
       quoteAuthor: "— Helen Keller",

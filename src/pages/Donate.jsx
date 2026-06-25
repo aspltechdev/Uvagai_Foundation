@@ -116,7 +116,7 @@ export default function Donate() {
   return (
     <div className="donate-page" ref={sectionRef}>
       {/* Hero Section */}
-      <section className="donate-hero">
+      {/* <section className="donate-hero">
         <div className="donate-hero-bg" />
         <div className="donate-hero-glow donate-hero-glow-1" />
         <div className="donate-hero-glow donate-hero-glow-2" />
@@ -146,7 +146,7 @@ export default function Donate() {
             </p>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Donate */}
       <section className="donate-why-section">
@@ -194,7 +194,7 @@ export default function Donate() {
         </div>
       </section>
 
-      {/* Donation Options */}
+    
       <section className="donate-options-section" id="donate-options">
         <div className="donate-options-bg" />
         <div className="donate-container">
@@ -250,7 +250,7 @@ export default function Donate() {
             ))}
           </motion.div>
 
-          {/* Custom Donation */}
+   
           <motion.div 
             className="donate-custom-card"
             initial={{ opacity: 0, y: 30 }}
@@ -264,7 +264,7 @@ export default function Donate() {
                 healthier, and more empowered communities.
               </p>
             </div>
-            <form onSubmit={handleCustomDonate} className="donate-custom-form">
+            {/* <form onSubmit={handleCustomDonate} className="donate-custom-form">
               <div className="donate-custom-input-wrapper">
                 <span className="donate-custom-currency">₹</span>
                 <input
@@ -287,13 +287,13 @@ export default function Donate() {
                   <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </motion.button>
-            </form>
+            </form> */}
           </motion.div>
         </div>
       </section>
 
       {/* Impact Areas */}
-      <section className="donate-impact-section">
+      {/* <section className="donate-impact-section">
         <div className="donate-container">
           <motion.div 
             className="donate-section-header"
@@ -332,10 +332,10 @@ export default function Donate() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Transparency */}
-      <section className="donate-transparency-section">
+      {/* <section className="donate-transparency-section">
         <div className="donate-transparency-bg" />
         <div className="donate-container">
           <motion.div 
@@ -380,7 +380,7 @@ export default function Donate() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="donate-cta-section">
