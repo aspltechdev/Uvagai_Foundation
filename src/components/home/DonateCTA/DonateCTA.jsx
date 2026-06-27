@@ -1,5 +1,5 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import "./Donate.css";
@@ -8,7 +8,10 @@ import chil from "../assets/chil.jpg"
 
 export default function Donate() {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
+ const isInView = useInView(sectionRef, {
+  once: true,
+  margin: "-80px",
+});
   const [selectedAmount, setSelectedAmount] = useState(null);
   const [customAmount, setCustomAmount] = useState("");
   const [donationStep, setDonationStep] = useState(1);
@@ -86,14 +89,44 @@ const prevSlide = () => {
 };
 
 useEffect(() => {
+
+  if (!isInView || statsStarted) return;
+
+  setStatsStarted(true);
+
+  let transparency = 0;
+  let lives = 0;
+  let communities = 0;
+  let years = 0;
+
   const timer = setInterval(() => {
-    nextSlide();
-  }, 5000);
+
+    transparency = Math.min(transparency + 2, 98);
+    lives = Math.min(lives + 1, 50);
+    communities = Math.min(communities + 5, 200);
+    years = Math.min(years + 1, 12);
+
+    setCounts({
+      transparency,
+      lives,
+      communities,
+      years,
+    });
+
+    if (
+      transparency === 98 &&
+      lives === 50 &&
+      communities === 200 &&
+      years === 12
+    ) {
+      clearInterval(timer);
+    }
+
+  }, 35);
 
   return () => clearInterval(timer);
-}, [currentSlide]);
-const activeDonation = donationOptions[currentSlide];
 
+}, [isInView, statsStarted]);
   const impactAreas = [
     {
       title: "Education & Youth Empowerment",
@@ -164,7 +197,7 @@ const activeDonation = donationOptions[currentSlide];
   };
 
   return (
-    <div className="donate-page" ref={sectionRef}>
+    <div className="donate-page">
      {/* ===========================
     Premium Hero Section
 =========================== */}
@@ -406,7 +439,7 @@ const activeDonation = donationOptions[currentSlide];
 
 </section>
       {/* Why Donate */}
-      <section className="donate-why-section">
+      <section className="donate-why-section" ref={sectionRef}>
         <div className="donate-container">
        <motion.div
   className="donate-section-header"
@@ -512,11 +545,18 @@ const activeDonation = donationOptions[currentSlide];
 
       <div className="stat-top-line"></div>
 
-      <h2 className="donate-stat-value">
+     
+<h2 className="donate-stat-value">
 
-        {stat.value}
+  {stat.value === "98%" && `${counts.transparency}%`}
 
-      </h2>
+  {stat.value === "50K+" && `${counts.lives}K+`}
+
+  {stat.value === "200+" && `${counts.communities}+`}
+
+  {stat.value === "12+" && `${counts.years}+`}
+
+</h2>
 
       <h3 className="stat-title">
 
@@ -540,8 +580,109 @@ const activeDonation = donationOptions[currentSlide];
 
     
       <section className="donate-options-section" id="donate-options">
+        {/* Background Decorations */}
+
+<div className="donate-options-pattern"></div>
+
+<div className="donate-options-gradient"></div>
+
+<div className="donate-options-noise"></div>
+
+<motion.div
+    className="floating-circle circle-one"
+    animate={{
+        y:[0,-30,0],
+        x:[0,20,0],
+        scale:[1,1.08,1]
+    }}
+    transition={{
+        duration:10,
+        repeat:Infinity,
+        ease:"easeInOut"
+    }}
+/>
+
+<motion.div
+    className="floating-circle circle-two"
+    animate={{
+        y:[0,25,0],
+        x:[0,-20,0],
+        scale:[1,1.1,1]
+    }}
+    transition={{
+        duration:12,
+        repeat:Infinity,
+        ease:"easeInOut"
+    }}
+/>
+
+<motion.div
+    className="floating-circle circle-three"
+    animate={{
+        y:[0,-18,0],
+        x:[0,15,0]
+    }}
+    transition={{
+        duration:14,
+        repeat:Infinity,
+        ease:"easeInOut"
+    }}
+/>
         <div className="donate-options-bg" />
         <div className="donate-container">
+          <motion.div
+    className="premium-donation-header"
+
+    initial={{
+        opacity:0,
+        y:40
+    }}
+
+    whileInView={{
+        opacity:1,
+        y:0
+    }}
+
+    viewport={{
+        once:true
+    }}
+
+    transition={{
+        duration:.8
+    }}
+>
+
+    <div className="premium-tag">
+
+        <span></span>
+
+        DONATION PROGRAMS
+
+        <span></span>
+
+    </div>
+
+    <h2>
+
+        Every Contribution Creates
+        <span>
+
+            Lasting Impact
+
+        </span>
+
+    </h2>
+
+    <p>
+
+        Choose how you'd like to support
+        education, healthcare, nutrition,
+        and community development.
+        Every donation directly transforms lives.
+
+    </p>
+
+</motion.div>
          
 <motion.div
   className="donation-slider"

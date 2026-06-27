@@ -1,21 +1,36 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useRef, useState, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./Donate.css";
 import bgofslides from "../assets/bgofslides.png";
 import chil from "../assets/chil.jpg"
 
 export default function Donate() {
   const sectionRef = useRef(null);
- const isInView = useInView(sectionRef, {
+const isInView = useInView(sectionRef, {
   once: true,
-  margin: "-80px",
 });
+console.log("Stats visible:", isInView);
+console.log("isInView:", isInView);
+const [headingWords, setHeadingWords] = useState(1);
+const [subtitleWords, setSubtitleWords] = useState(1);
   const [selectedAmount, setSelectedAmount] = useState(null);
   const [customAmount, setCustomAmount] = useState("");
   const [donationStep, setDonationStep] = useState(1);
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const [counts, setCounts] = useState({
+  transparency: 0,
+  lives: 0,
+  communities: 0,
+  years: 0,
+});
+const [heroCounts, setHeroCounts] = useState({
+  lives: 0,
+  communities: 0,
+  funds: 0,
+});
 
     const donationOptions = [
   {
@@ -25,7 +40,6 @@ export default function Donate() {
       "Provides learning materials, school supplies and educational support for one child.",
     accent: "red",
     popular: false,
-    icon: "🎒",
     benefits: [
       "Learning Materials",
       "School Essentials",
@@ -40,7 +54,6 @@ export default function Donate() {
       "Supports medical camps, health awareness programs and medicines.",
     accent: "green",
     popular: true,
-    icon: "❤️",
     benefits: [
       "Medical Support",
       "Community Health",
@@ -55,7 +68,6 @@ export default function Donate() {
       "Provides nutritious meals and welfare assistance for vulnerable families.",
     accent: "blue",
     popular: false,
-    icon: "🍲",
     benefits: [
       "Nutritious Meals",
       "Family Support",
@@ -70,7 +82,7 @@ export default function Donate() {
       "Helps build sustainable community projects and livelihood initiatives.",
     accent: "red",
     popular: false,
-    icon: "🌱",
+
     benefits: [
       "Community Projects",
       "Skill Development",
@@ -87,46 +99,42 @@ const prevSlide = () => {
     prev === 0 ? donationOptions.length - 1 : prev - 1
   );
 };
-
+const activeDonation = donationOptions[currentSlide];
 useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentSlide((prev) => (prev + 1) % donationOptions.length);
+  }, 5000);
 
-  if (!isInView || statsStarted) return;
-
-  setStatsStarted(true);
-
-  let transparency = 0;
+  return () => clearInterval(interval);
+}, []);
+useEffect(() => {
   let lives = 0;
   let communities = 0;
-  let years = 0;
+  let funds = 0;
 
   const timer = setInterval(() => {
-
-    transparency = Math.min(transparency + 2, 98);
     lives = Math.min(lives + 1, 50);
     communities = Math.min(communities + 5, 200);
-    years = Math.min(years + 1, 12);
+    funds = Math.min(funds + 2, 98);
 
-    setCounts({
-      transparency,
+    setHeroCounts({
       lives,
       communities,
-      years,
+      funds,
     });
 
     if (
-      transparency === 98 &&
       lives === 50 &&
       communities === 200 &&
-      years === 12
+      funds === 98
     ) {
       clearInterval(timer);
     }
-
   }, 35);
 
   return () => clearInterval(timer);
+}, []);
 
-}, [isInView, statsStarted]);
   const impactAreas = [
     {
       title: "Education & Youth Empowerment",
@@ -195,7 +203,111 @@ useEffect(() => {
       setDonationStep(2);
     }
   };
+  useEffect(() => {
 
+  const words = [
+    "Together",
+    "We",
+    "Build",
+    "Better",
+    "Futures"
+  ];
+
+  let i = 1;
+
+  const timer = setInterval(() => {
+
+    i++;
+
+    if(i <= words.length){
+      setHeadingWords(i);
+    }else{
+      clearInterval(timer);
+    }
+
+  },150);
+
+  return ()=>clearInterval(timer);
+
+},[]);
+useEffect(() => {
+
+  const words = [
+    "Every",
+    "contribution",
+    "empowers",
+    "children",
+    "through",
+    "education,",
+    "supports",
+    "healthcare",
+    "initiatives,",
+    "strengthens",
+    "communities,",
+    "protects",
+    "the",
+    "environment,",
+    "and",
+    "creates",
+    "sustainable",
+    "social",
+    "impact",
+    "across",
+    "generations."
+  ];
+
+  let i = 1;
+
+  const timer = setInterval(() => {
+
+    i++;
+
+    if(i <= words.length){
+      setSubtitleWords(i);
+    }else{
+      clearInterval(timer);
+    }
+
+  },80);
+
+  return ()=>clearInterval(timer);
+
+},[]);
+useEffect(() => {
+  if (!isInView) return;
+
+  let transparency = 0;
+  let lives = 0;
+  let communities = 0;
+  let years = 0;
+
+  const timer = setInterval(() => {
+    transparency = Math.min(transparency + 2, 98);
+    lives = Math.min(lives + 1, 50);
+    communities = Math.min(communities + 5, 200);
+   if (transparency % 8 === 0) {
+  years = Math.min(years + 1, 12);
+}
+
+    setCounts({
+      transparency,
+      lives,
+      communities,
+      years,
+    });
+
+    if (
+      transparency === 98 &&
+      lives === 50 &&
+      communities === 200 &&
+      years === 12
+    ) {
+      clearInterval(timer);
+    }
+  }, 35);
+
+  return () => clearInterval(timer);
+}, [isInView]);
   return (
     <div className="donate-page">
      {/* ===========================
@@ -250,7 +362,6 @@ useEffect(() => {
   />
 
   <div className="donate-container">
-
     <div className="donate-hero-grid">
 
       {/* LEFT */}
@@ -272,21 +383,13 @@ useEffect(() => {
 
         </div>
 
-        <h1 className="donate-hero-headline">
-
-          Small Acts of
-
-          <span className="donate-hero-headline-accent">
-            {" "}
-            Kindness
-          </span>
-
-          <br />
-
-          Build Strong Communities
-
-        </h1>
-
+<h1 className="donate-hero-headline">
+    Small Acts of
+    <span className="donate-hero-headline-accent">
+        {" "}Kindness
+    </span>
+    Build Strong Communities
+</h1>
         <p className="donate-hero-subtitle">
 
           Every contribution helps Uvagai Foundation provide education,
@@ -321,33 +424,24 @@ useEffect(() => {
 
         </div>
 
-        <div className="donate-hero-mini-stats">
+<div className="donate-hero-mini-stats">
 
-          <div>
+  <div>
+    <h3>{heroCounts.lives}K+</h3>
+    <p>Lives Impacted</p>
+  </div>
 
-            <h3>50K+</h3>
+  <div>
+    <h3>{heroCounts.communities}+</h3>
+    <p>Communities</p>
+  </div>
 
-            <p>Lives Impacted</p>
+  <div>
+    <h3>{heroCounts.funds}%</h3>
+    <p>Funds Utilized</p>
+  </div>
 
-          </div>
-
-          <div>
-
-            <h3>200+</h3>
-
-            <p>Communities</p>
-
-          </div>
-
-          <div>
-
-            <h3>98%</h3>
-
-            <p>Funds Utilized</p>
-
-          </div>
-
-        </div>
+</div>
 
       </motion.div>
 
@@ -459,19 +553,51 @@ useEffect(() => {
   </div>
 
   <h2 className="donate-section-headline">
-    Together We
+
+  {["Together","We"]
+    .slice(0, Math.min(headingWords,2))
+    .join(" ")}
+
+  {headingWords > 2 && (
     <span className="donate-hero-headline-accent">
       {" "}
-      Build Better Futures
+      {["Build","Better","Futures"]
+        .slice(0, headingWords - 2)
+        .join(" ")}
     </span>
-  </h2>
+  )}
 
-  <p className="donate-section-subtitle">
-    Every contribution empowers children through education,
-    supports healthcare initiatives, strengthens communities,
-    protects the environment, and creates sustainable social
-    impact across generations.
-  </p>
+</h2>
+
+ <p className="donate-section-subtitle">
+
+  {[
+    "Every",
+    "contribution",
+    "empowers",
+    "children",
+    "through",
+    "education,",
+    "supports",
+    "healthcare",
+    "initiatives,",
+    "strengthens",
+    "communities,",
+    "protects",
+    "the",
+    "environment,",
+    "and",
+    "creates",
+    "sustainable",
+    "social",
+    "impact",
+    "across",
+    "generations."
+  ]
+  .slice(0, subtitleWords)
+  .join(" ")}
+
+</p>
 </motion.div>
 
          <motion.div
@@ -516,61 +642,50 @@ useEffect(() => {
   ].map((stat, index) => (
 
     <motion.div
+  key={index}
+  className={`donate-stat-card stat-${stat.color}`}
+>
 
-      key={index}
+  <div className="stat-card-inner">
 
-      className={`donate-stat-card stat-${stat.color}`}
-
-      variants={{
-        hidden: {
-          opacity: 0,
-          y: 60,
-        },
-
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: .7,
-          },
-        },
-      }}
-
-      whileHover={{
-        y: -12,
-        scale: 1.03,
-      }}
-
-    >
+    {/* FRONT */}
+    <div className="stat-card-front">
 
       <div className="stat-top-line"></div>
 
-     
-<h2 className="donate-stat-value">
-
-  {stat.value === "98%" && `${counts.transparency}%`}
-
-  {stat.value === "50K+" && `${counts.lives}K+`}
-
-  {stat.value === "200+" && `${counts.communities}+`}
-
-  {stat.value === "12+" && `${counts.years}+`}
-
-</h2>
+      <h2 className="donate-stat-value">
+        {stat.value === "98%" && `${counts.transparency}%`}
+        {stat.value === "50K+" && `${counts.lives}K+`}
+        {stat.value === "200+" && `${counts.communities}+`}
+        {stat.value === "12+" && `${counts.years}+`}
+      </h2>
 
       <h3 className="stat-title">
-
         {stat.title}
-
       </h3>
 
       <p className="stat-description">
-
         {stat.desc}
-
       </p>
 
-    </motion.div>
+    </div>
+
+    {/* BACK */}
+    <div className="stat-card-back">
+
+      <h3>{stat.title}</h3>
+
+      <p>
+        Thank you for supporting Uvagai Foundation.
+        Every donation helps us create meaningful
+        social impact and transform lives.
+      </p>
+
+    </div>
+
+  </div>
+
+</motion.div>
 
   ))}
 
@@ -700,22 +815,29 @@ useEffect(() => {
     ❮
   </button>
 
+  <AnimatePresence mode="wait">
+
   <motion.div
     key={currentSlide}
     className="slider-card"
 
     initial={{
-      opacity: 0,
-      x: 120
+      opacity:0,
+      x:150
     }}
 
     animate={{
-      opacity: 1,
-      x: 0
+      opacity:1,
+      x:0
+    }}
+
+    exit={{
+      opacity:0,
+      x:-150
     }}
 
     transition={{
-      duration: .55
+      duration:0.6
     }}
   >
 
@@ -728,14 +850,7 @@ useEffect(() => {
       </div>
 
     )}
-
-    <div className="slider-icon">
-
-      {activeDonation.icon}
-
-    </div>
-
-    <div className="slider-price">
+<div className="slider-price">
 
       ₹
 
@@ -799,6 +914,7 @@ useEffect(() => {
     </motion.button>
 
   </motion.div>
+  </AnimatePresence>
 
   <button
 
@@ -840,11 +956,94 @@ useEffect(() => {
             transition={{ duration: 0.7, delay: 0.4, ease: [0.33, 0.1, 0.25, 1] }}
           >
             <div className="donate-custom-content">
-              <h3 className="donate-custom-title">Make A Custom Contribution</h3>
-              <p className="donate-custom-text">
-                Every act of generosity contributes to building stronger,
-                healthier, and more empowered communities.
-              </p>
+           <h3 className="donate-custom-title">
+
+  {["Make","A","Custom","Contribution"].map((word,index)=>(
+
+    <motion.span
+
+      key={word}
+
+      initial={{
+        opacity:0,
+        y:10
+      }}
+
+      whileInView={{
+        opacity:1,
+        y:0
+      }}
+
+      viewport={{
+        once:true
+      }}
+
+      transition={{
+        delay:index*0.18,
+        duration:.35
+      }}
+
+      style={{
+        display:"inline-block",
+        marginRight:"8px"
+      }}
+
+    >
+
+      {word}
+
+    </motion.span>
+
+  ))}
+
+</h3>
+      <p className="donate-custom-text">
+
+  {[
+    "Every",
+    "act",
+    "of",
+    "generosity",
+    "contributes",
+    "to",
+    "building",
+    "stronger,",
+    "healthier,",
+    "and",
+    "more",
+    "empowered",
+    "communities."
+  ].map((word, index) => (
+
+    <motion.span
+      key={index}
+      className="word"
+
+      initial={{
+        opacity: 0,
+        y: 8
+      }}
+
+      whileInView={{
+        opacity: 1,
+        y: 0
+      }}
+
+      viewport={{
+        once: true
+      }}
+
+      transition={{
+        duration: 0.25,
+        delay: 0.45 + index * 0.06
+      }}
+    >
+      {word}&nbsp;
+    </motion.span>
+
+  ))}
+
+</p>  
             </div>
         
           </motion.div>
