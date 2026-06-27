@@ -16,6 +16,7 @@ import CSRPartnership from "./pages/CSRPartnership";
 import Donate from "./pages/Donate";
 import AnnualReports from "./pages/AnnualReports";
 import Contact from "./pages/Contact";
+import VolunteerPage from "./pages/VolunteerPage";
 
 
 export default function AppRoutes() {
@@ -32,6 +33,7 @@ export default function AppRoutes() {
       <Route path="/events" element={<Events />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/volunteer" element={<Volunteer />} />
+      <Route path="/volunteers" element={<VolunteerPage />} />
       <Route path="/internship" element={<Internship />} />
       <Route path="/csr-partnership" element={<CSRPartnership />} />
       <Route path="/donate" element={<Donate />} />
