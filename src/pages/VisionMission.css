@@ -1,603 +1,320 @@
-/* VisionMission.css - EMOTIONAL CINEMATIC DESIGN */
-/* ============================================ */
+/* VisionMission.css - ELABORATE HOMEPAGE SECTION */
+/* Rich, cinematic, premium design */
 
 /* ============================================ */
-/* HERO SECTION */
+/* SECTION */
 /* ============================================ */
-.vm-hero {
+.vm-elaborate {
   position: relative;
-  height: 100vh;
-  min-height: 700px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
-
-.vm-hero-bg-image {
-  position: absolute;
-  inset: -20%;
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-}
-
-.vm-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  z-index: 1;
-}
-
-.vm-hero-gradient {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.5) 100%);
-  z-index: 1;
-}
-
-.vm-hero-particles {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.vm-hero-particle {
-  position: absolute;
-  width: 2px; height: 2px;
-  border-radius: 50%;
-  background: white;
-  filter: blur(1px);
-}
-
-.vm-hero-content {
-  position: relative;
-  z-index: 3;
-  max-width: 800px;
-  padding: 0 40px;
-}
-
-.vm-hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  border-radius: 100px;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: rgba(255,255,255,0.9);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 32px;
-}
-
-.vm-hero-badge-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: #DC2626;
-}
-
-.vm-hero-title {
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  font-weight: 800;
-  color: white;
-  line-height: 1.1;
-  letter-spacing: -2px;
-  margin: 0 0 24px;
-}
-
-.vm-hero-title-red { color: #FCA5A5; }
-.vm-hero-title-green { color: #6EE7B7; }
-
-.vm-hero-subtitle {
-  font-size: 1.15rem;
-  color: rgba(255,255,255,0.8);
-  line-height: 1.7;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.vm-hero-scroll {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  z-index: 3;
-  color: rgba(255,255,255,0.6);
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.vm-hero-scroll-line {
-  width: 1px; height: 40px;
-  background: rgba(255,255,255,0.3);
-}
-
-/* ============================================ */
-/* VISION & MISSION SECTIONS */
-/* ============================================ */
-.vm-vision,
-.vm-mission {
-  padding: 140px 0;
+  padding: 120px 0;
   background: #FAFBFC;
   overflow: hidden;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-.vm-vision-container,
-.vm-mission-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+.vm-elaborate-bg {
+  position: absolute; inset: -5%;
+  background: 
+    radial-gradient(ellipse at 25% 30%, rgba(220,38,38,0.012) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(5,150,105,0.012) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(30,58,138,0.012) 0%, transparent 50%);
+  z-index: 0; pointer-events: none;
 }
 
-.vm-vision-image,
-.vm-mission-image {
-  position: relative;
+.vm-elaborate-orb {
+  position: absolute; border-radius: 50%;
+  pointer-events: none; filter: blur(100px); z-index: 0;
 }
 
-.vm-vision-image-wrapper,
-.vm-mission-image-wrapper {
-  border-radius: 20px;
-  overflow: hidden;
-  aspect-ratio: 4/5;
+.vm-elaborate-orb-red {
+  width: 500px; height: 500px; top: -8%; right: -5%;
+  background: radial-gradient(circle, rgba(220,38,38,0.04) 0%, transparent 70%);
 }
 
-.vm-vision-image-wrapper img,
-.vm-mission-image-wrapper img {
-  width: 100%; height: 100%;
-  object-fit: cover;
+.vm-elaborate-orb-green {
+  width: 400px; height: 400px; bottom: 20%; left: -3%;
+  background: radial-gradient(circle, rgba(5,150,105,0.04) 0%, transparent 70%);
 }
 
-.vm-vision-stat,
-.vm-mission-stat {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  background: white;
-  padding: 16px 20px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  text-align: center;
+.vm-elaborate-orb-blue {
+  width: 350px; height: 350px; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(30,58,138,0.03) 0%, transparent 70%);
 }
 
-.vm-mission-stat {
-  right: auto;
-  left: -20px;
+/* ============================================ */
+/* CONTAINER */
+/* ============================================ */
+.vm-elaborate-container {
+  position: relative; z-index: 2;
+  max-width: 1140px; margin: 0 auto; padding: 0 40px;
 }
 
-.vm-vision-stat-number,
-.vm-mission-stat-number {
-  display: block;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #DC2626;
-  letter-spacing: -0.5px;
+/* ============================================ */
+/* HEADER */
+/* ============================================ */
+.vm-elaborate-header { text-align: center; margin-bottom: 60px; }
+
+.vm-elaborate-eyebrow {
+  display: flex; align-items: center; justify-content: center;
+  gap: 14px; margin-bottom: 20px;
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 2.5px; text-transform: uppercase; color: #64748b;
 }
 
-.vm-vision-stat-label,
-.vm-mission-stat-label {
-  font-size: 0.7rem;
-  color: #64748b;
-  font-weight: 500;
+.vm-elaborate-eyebrow-line {
+  width: 24px; height: 2px; border-radius: 1px;
+  background: linear-gradient(90deg, #DC2626, #059669); display: inline-block;
 }
 
-.vm-section-label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #DC2626;
-  margin-bottom: 16px;
-  display: block;
-}
-
-.vm-mission .vm-section-label { color: #059669; }
-
-.vm-section-title {
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  font-weight: 750;
-  color: #0f172a;
-  letter-spacing: -1.5px;
-  margin: 0 0 28px;
-  line-height: 1.2;
+.vm-elaborate-title {
+  font-size: clamp(2.2rem, 3.8vw, 3rem);
+  font-weight: 750; color: #0f172a;
+  line-height: 1.2; letter-spacing: -1.5px; margin: 0 0 16px;
 }
 
 .text-red { color: #DC2626; }
 .text-green { color: #059669; }
 
-.vm-section-text p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #475569;
-  margin: 0 0 16px;
-}
-
-.vm-mission-motto {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 32px;
-  padding: 16px 20px;
-  background: rgba(5,150,105,0.04);
-  border-left: 3px solid #059669;
-  border-radius: 0 8px 8px 0;
-}
-
-.vm-mission-motto-text {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #059669;
-  font-style: italic;
-  margin: 0;
+.vm-elaborate-subtitle {
+  font-size: 1rem; line-height: 1.6;
+  color: #64748b; max-width: 650px; margin: 0 auto;
 }
 
 /* ============================================ */
-/* OBJECTIVES */
+/* VISION & MISSION CARDS */
 /* ============================================ */
-.vm-objectives {
-  padding: 140px 0;
-  background: white;
+.vm-elaborate-cards {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 28px; margin-bottom: 56px;
 }
 
-.vm-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.vm-section-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.vm-section-eyebrow {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: #DC2626;
-  margin-bottom: 12px;
-  display: block;
-}
-
-.vm-section-heading {
-  font-size: clamp(2rem, 3vw, 2.6rem);
-  font-weight: 750;
-  color: #0f172a;
-  letter-spacing: -1.5px;
-  margin: 0 0 12px;
-}
-
-.vm-section-description {
-  font-size: 1rem;
-  color: #64748b;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.vm-objectives-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.vm-objective-card {
-  background: white;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.05);
+.vm-elaborate-card {
+  background: white; border-radius: 20px; overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.04);
   box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-  cursor: pointer;
-  transition: all 0.4s ease;
+  cursor: pointer; transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
 }
 
-.vm-objective-card:hover {
+.vm-elaborate-card:hover {
   box-shadow: 0 20px 50px rgba(0,0,0,0.08);
 }
 
-.vm-objective-image {
-  position: relative;
-  aspect-ratio: 16/10;
-  overflow: hidden;
+.vm-elaborate-card-image { position: relative; overflow: hidden; }
+.vm-elaborate-card-image-wrap { aspect-ratio: 16/9; overflow: hidden; }
+
+.vm-elaborate-card-image-wrap img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-.vm-objective-image img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 0.7s ease;
-}
-
-.vm-objective-card:hover .vm-objective-image img {
-  transform: scale(1.06);
-}
-
-.vm-objective-image-gradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.4) 100%);
-}
-
-.vm-objective-badge {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  padding: 4px 10px;
-  border-radius: 5px;
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: white;
-}
-
-.badge-red { background: #DC2626; }
-.badge-green { background: #059669; }
-.badge-blue { background: #1E3A8A; }
-
-.vm-objective-content {
-  padding: 18px 20px;
-}
-
-.vm-objective-content h3 {
-  font-size: 0.95rem;
-  font-weight: 650;
-  color: #0f172a;
-  margin: 0 0 6px;
-}
-
-.vm-objective-content p {
-  font-size: 0.8rem;
-  color: #64748b;
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* ============================================ */
-/* VALUES */
-/* ============================================ */
-.vm-values {
-  padding: 140px 0;
-  background: #FAFBFC;
-  position: relative;
-}
-
-.vm-values-bg {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 30% 50%, rgba(220,38,38,0.02) 0%, transparent 50%),
-              radial-gradient(ellipse at 70% 50%, rgba(5,150,105,0.02) 0%, transparent 50%);
-}
-
-.vm-values-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.vm-value-card {
-  background: white;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.04);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-  cursor: pointer;
-  transition: all 0.4s ease;
-}
-
-.vm-value-card:hover {
-  box-shadow: 0 20px 45px rgba(0,0,0,0.06);
-}
-
-.vm-value-image {
-  position: relative;
-  aspect-ratio: 16/9;
-  overflow: hidden;
-}
-
-.vm-value-image img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 0.7s ease;
-}
-
-.vm-value-card:hover .vm-value-image img {
+.vm-elaborate-card:hover .vm-elaborate-card-image-wrap img {
   transform: scale(1.05);
 }
 
-.vm-value-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);
+.vm-elaborate-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.3) 100%);
 }
 
-.vm-value-number {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: white;
-  opacity: 0.8;
+.vm-elaborate-card-badge {
+  position: absolute; bottom: 14px; left: 14px;
+  padding: 6px 14px; border-radius: 6px;
+  color: white; font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+  backdrop-filter: blur(8px); z-index: 2;
 }
 
-.vm-value-content {
-  padding: 18px 20px;
+.badge-red { background: rgba(220,38,38,0.9); }
+.badge-green { background: rgba(5,150,105,0.9); }
+
+.vm-elaborate-card-body { padding: 24px 26px 28px; }
+
+.vm-elaborate-card-number {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
+  margin-bottom: 8px; display: block;
 }
 
-.vm-value-content h3 {
-  font-size: 1rem;
-  font-weight: 650;
-  color: #0f172a;
-  margin: 0 0 6px;
+.vm-vision-elaborate .vm-elaborate-card-number { color: #DC2626; }
+.vm-mission-elaborate .vm-elaborate-card-number { color: #059669; }
+
+.vm-elaborate-card-title {
+  font-size: 1.3rem; font-weight: 700; color: #0f172a;
+  letter-spacing: -0.5px; margin: 0 0 14px; line-height: 1.25;
 }
 
-.vm-value-content p {
-  font-size: 0.8rem;
-  color: #64748b;
-  line-height: 1.5;
-  margin: 0;
+.vm-elaborate-card-text {
+  font-size: 0.9rem; line-height: 1.6;
+  color: #475569; margin: 0 0 10px;
+}
+
+.vm-elaborate-motto {
+  display: flex; align-items: flex-start; gap: 8px;
+  margin-top: 18px; padding-top: 16px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.vm-vision-elaborate .vm-elaborate-motto { border-top-color: rgba(220,38,38,0.1); }
+.vm-mission-elaborate .vm-elaborate-motto { border-top-color: rgba(5,150,105,0.1); }
+
+.vm-elaborate-motto-quote {
+  font-size: 2rem; font-weight: 700; line-height: 0.8; opacity: 0.3;
+}
+
+.vm-vision-elaborate .vm-elaborate-motto-quote { color: #DC2626; }
+.vm-mission-elaborate .vm-elaborate-motto-quote { color: #059669; }
+
+.vm-elaborate-motto p {
+  font-size: 0.9rem; font-weight: 600; font-style: italic; margin: 0;
+}
+
+.vm-vision-elaborate .vm-elaborate-motto p { color: #DC2626; }
+.vm-mission-elaborate .vm-elaborate-motto p { color: #059669; }
+
+/* ============================================ */
+/* CORE PRINCIPLES */
+/* ============================================ */
+.vm-elaborate-principles { margin-bottom: 56px; }
+
+.vm-elaborate-principles-title {
+  text-align: center; font-size: 1.5rem; font-weight: 700;
+  color: #0f172a; margin: 0 0 32px; letter-spacing: -0.5px;
+}
+
+.vm-elaborate-principles-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+}
+
+.vm-elaborate-principle {
+  text-align: center; padding: 28px 20px; background: white;
+  border-radius: 14px; border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+  cursor: default; transition: all 0.3s ease;
+}
+
+.vm-elaborate-principle:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.vm-elaborate-principle-number {
+  display: block; font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 1.5px; margin-bottom: 10px;
+}
+
+.principle-red .vm-elaborate-principle-number { color: #DC2626; }
+.principle-green .vm-elaborate-principle-number { color: #059669; }
+.principle-blue .vm-elaborate-principle-number { color: #1E3A8A; }
+
+.vm-elaborate-principle h4 {
+  font-size: 0.95rem; font-weight: 650; color: #0f172a;
+  margin: 0 0 6px; letter-spacing: -0.2px;
+}
+
+.vm-elaborate-principle p {
+  font-size: 0.8rem; color: #64748b;
+  line-height: 1.45; margin: 0;
 }
 
 /* ============================================ */
-/* EMOTIONAL CTA */
+/* IMPACT PILLARS */
 /* ============================================ */
-.vm-emotional-cta {
-  position: relative;
-  padding: 160px 0;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.vm-elaborate-pillars { margin-bottom: 56px; }
+
+.vm-elaborate-pillars-title {
+  text-align: center; font-size: 1.5rem; font-weight: 700;
+  color: #0f172a; margin: 0 0 32px; letter-spacing: -0.5px;
 }
 
-.vm-emotional-bg {
-  position: absolute;
-  inset: -20%;
-  background-size: cover;
-  background-position: center;
+.vm-elaborate-pillars-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
 }
 
-.vm-emotional-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+.vm-elaborate-pillar {
+  background: white; border-radius: 16px; overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+  cursor: pointer; transition: all 0.3s ease;
 }
 
-.vm-emotional-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  max-width: 700px;
-  padding: 0 40px;
+.vm-elaborate-pillar:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
 }
 
-.vm-emotional-title {
-  font-size: clamp(2.4rem, 4vw, 3.5rem);
-  font-weight: 800;
-  color: white;
-  line-height: 1.15;
-  letter-spacing: -1.5px;
-  margin: 0 0 20px;
+.vm-elaborate-pillar-image {
+  position: relative; aspect-ratio: 16/10; overflow: hidden;
 }
 
-.vm-emotional-title-red { color: #FCA5A5; }
-
-.vm-emotional-text {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.8);
-  line-height: 1.7;
-  margin: 0 0 36px;
+.vm-elaborate-pillar-image img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
-.vm-emotional-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+.vm-elaborate-pillar:hover .vm-elaborate-pillar-image img {
+  transform: scale(1.05);
 }
 
-.vm-emotional-btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 15px 30px;
-  border-radius: 10px;
-  background: #DC2626;
-  color: white;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
+.vm-elaborate-pillar-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.35) 100%);
 }
 
-.vm-emotional-btn-primary:hover {
-  background: #B91C1C;
+.vm-elaborate-pillar-badge {
+  position: absolute; bottom: 10px; left: 10px;
+  padding: 4px 10px; border-radius: 5px;
+  color: white; font-size: 0.6rem; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
 }
 
-.vm-emotional-btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 15px 28px;
-  border-radius: 10px;
-  border: 1.5px solid rgba(255,255,255,0.3);
-  color: white;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
+.badge-red { background: rgba(220,38,38,0.9); }
+.badge-green { background: rgba(5,150,105,0.9); }
+.badge-blue { background: rgba(30,58,138,0.9); }
+
+.vm-elaborate-pillar-body { padding: 14px 16px; }
+
+.vm-elaborate-pillar-body p {
+  font-size: 0.78rem; color: #64748b;
+  line-height: 1.5; margin: 0;
 }
 
-.vm-emotional-btn-secondary:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,0.5);
+/* ============================================ */
+/* BOTTOM CTA */
+/* ============================================ */
+.vm-elaborate-bottom { display: flex; justify-content: center; }
+
+.vm-elaborate-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 15px 30px; border-radius: 10px;
+  background: #0f172a; color: white;
+  text-decoration: none; font-size: 0.9rem; font-weight: 600;
+  letter-spacing: -0.2px; transition: all 0.3s ease;
+}
+
+.vm-elaborate-cta:hover {
+  background: #1e293b; box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
 /* ============================================ */
 /* RESPONSIVE */
 /* ============================================ */
-@media (max-width: 1100px) {
-  .vm-vision-container,
-  .vm-mission-container {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-  
-  .vm-mission-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .vm-mission-image {
-    order: -1;
-  }
-  
-  .vm-objectives-grid,
-  .vm-values-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+@media (max-width: 968px) {
+  .vm-elaborate-cards { grid-template-columns: 1fr; }
+  .vm-elaborate-principles-grid { grid-template-columns: repeat(2, 1fr); }
+  .vm-elaborate-pillars-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 768px) {
-  .vm-vision,
-  .vm-mission,
-  .vm-objectives,
-  .vm-values {
-    padding: 80px 0;
-  }
-  
-  .vm-container,
-  .vm-vision-container,
-  .vm-mission-container {
-    padding: 0 24px;
-  }
-  
-  .vm-objectives-grid,
-  .vm-values-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .vm-hero-title {
-    font-size: 2.2rem;
-  }
+@media (max-width: 640px) {
+  .vm-elaborate { padding: 80px 0; }
+  .vm-elaborate-container { padding: 0 24px; }
+  .vm-elaborate-title { font-size: 1.8rem; }
+  .vm-elaborate-principles-grid { grid-template-columns: 1fr; }
+  .vm-elaborate-pillars-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+  .vm-elaborate-card-body { padding: 20px 22px 24px; }
 }
 
 @media (max-width: 480px) {
-  .vm-container {
-    padding: 0 16px;
-  }
+  .vm-elaborate { padding: 60px 0; }
+  .vm-elaborate-container { padding: 0 16px; }
+  .vm-elaborate-title { font-size: 1.5rem; }
+  .vm-elaborate-cta { width: 100%; justify-content: center; }
 }

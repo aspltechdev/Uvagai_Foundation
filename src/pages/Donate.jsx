@@ -264,125 +264,14 @@ export default function Donate() {
                 healthier, and more empowered communities.
               </p>
             </div>
-            {/* <form onSubmit={handleCustomDonate} className="donate-custom-form">
-              <div className="donate-custom-input-wrapper">
-                <span className="donate-custom-currency">₹</span>
-                <input
-                  type="number"
-                  placeholder="Enter amount"
-                  value={customAmount}
-                  onChange={(e) => setCustomAmount(e.target.value)}
-                  className="donate-custom-input"
-                  min="1"
-                />
-              </div>
-              <motion.button 
-                type="submit" 
-                className="donate-custom-btn"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <span>Proceed To Donate</span>
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </motion.button>
-            </form> */}
+        
           </motion.div>
         </div>
       </section>
 
-      {/* Impact Areas */}
-      {/* <section className="donate-impact-section">
-        <div className="donate-container">
-          <motion.div 
-            className="donate-section-header"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
-          >
-            <div className="donate-section-tag">
-              <span className="donate-section-tag-line" />
-              <span className="donate-section-tag-text">Your Donation Supports</span>
-            </div>
-            <h2 className="donate-section-headline">Areas Where Your Contribution Creates Impact</h2>
-            <p className="donate-section-subtitle">
-              Every donation directly contributes to initiatives that
-              improve lives and strengthen communities.
-            </p>
-          </motion.div>
+     
 
-          <motion.div 
-            className="donate-impact-grid"
-            variants={staggerContainer}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          >
-            {impactAreas.map((area, index) => (
-              <motion.div 
-                className={`donate-impact-card impact-${area.accent}`}
-                key={index}
-                variants={cardVariants}
-                whileHover={{ y: -4 }}
-              >
-                <div className="impact-card-stripe" />
-                <h3 className="impact-card-title">{area.title}</h3>
-                <p className="impact-card-description">{area.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section> */}
-
-      {/* Transparency */}
-      {/* <section className="donate-transparency-section">
-        <div className="donate-transparency-bg" />
-        <div className="donate-container">
-          <motion.div 
-            className="donate-transparency-card"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
-          >
-            <div className="transparency-card-content">
-              <h2 className="transparency-card-title">Transparency & Accountability</h2>
-              <p className="transparency-card-text">
-                Uvagai Foundation is committed to ensuring that every
-                contribution is utilized responsibly and effectively to
-                maximize social impact and community benefit.
-              </p>
-              <div className="transparency-card-features">
-                <div className="transparency-feature">
-                  <span className="transparency-feature-check">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </span>
-                  <span>Regular impact reports</span>
-                </div>
-                <div className="transparency-feature">
-                  <span className="transparency-feature-check">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </span>
-                  <span>Audited financial statements</span>
-                </div>
-                <div className="transparency-feature">
-                  <span className="transparency-feature-check">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </span>
-                  <span>98% fund utilization</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section> */}
-
-      {/* CTA Section */}
+   
       <section className="donate-cta-section">
         <div className="donate-cta-bg" />
         <div className="donate-cta-glow" />

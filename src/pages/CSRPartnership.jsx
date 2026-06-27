@@ -1,10 +1,11 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import "./CSRPartners.css";
+import "./CSRPartnership.css";
 
 export default function CSRPartnersHome() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
+  const [hoveredPartner, setHoveredPartner] = useState(null);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -16,23 +17,21 @@ export default function CSRPartnersHome() {
   const headingOpacity = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
   const glowOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 0.4, 0.4, 0]);
 
-  // Placeholder CSR Partners - Replace with actual partners
   const csrPartners = [
-    { name: "TechForGood Inc.", category: "Technology", accent: "red" },
-    { name: "HealthFirst Foundation", category: "Healthcare", accent: "green" },
-    { name: "EduBright Partners", category: "Education", accent: "red" },
-    { name: "GreenEarth Alliance", category: "Environment", accent: "green" },
-    { name: "CommunityFirst Corp", category: "Community", accent: "blue" },
-    { name: "VolunteerConnect", category: "Volunteer", accent: "blue" },
-    { name: "ImpactInvest Group", category: "CSR", accent: "red" },
-    { name: "WellnessWorks", category: "Healthcare", accent: "green" },
+    { name: "TechForGood Inc.", category: "Technology Partner", accent: "red", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=200&fit=crop&q=80" },
+    { name: "HealthFirst Foundation", category: "Healthcare Partner", accent: "green", logo: "https://images.unsplash.com/photo-1550831107-1553da8c8464?w=200&h=200&fit=crop&q=80" },
+    { name: "EduBright Partners", category: "Education Partner", accent: "red", logo: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=200&h=200&fit=crop&q=80" },
+    { name: "GreenEarth Alliance", category: "Environment Partner", accent: "green", logo: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=200&h=200&fit=crop&q=80" },
+    { name: "CommunityFirst Corp", category: "Community Partner", accent: "blue", logo: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=200&h=200&fit=crop&q=80" },
+    { name: "VolunteerConnect", category: "Volunteer Partner", accent: "blue", logo: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=200&h=200&fit=crop&q=80" },
+    { name: "ImpactInvest Group", category: "CSR Partner", accent: "red", logo: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=200&h=200&fit=crop&q=80" },
+    { name: "WellnessWorks", category: "Healthcare Partner", accent: "green", logo: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=200&h=200&fit=crop&q=80" },
   ];
 
-  const partnershipStats = [
-    { number: "CSR", label: "Corporate Partners", accent: "red" },
-    { number: "NGO", label: "Implementation Partners", accent: "green" },
-    { number: "Govt", label: "Community Collaborations", accent: "blue" },
-    { number: "500+", label: "Volunteer Network", accent: "red" },
+  const benefits = [
+    { title: "Transparent Reporting", description: "Regular updates and impact documentation for every initiative.", accent: "red" },
+    { title: "Employee Engagement", description: "Meaningful volunteering opportunities that inspire teams.", accent: "green" },
+    { title: "Customized Solutions", description: "CSR programs aligned with your organizational objectives.", accent: "blue" },
   ];
 
   const containerVariants = {
@@ -52,189 +51,166 @@ export default function CSRPartnersHome() {
     },
   };
 
-  // Duplicate for seamless marquee
-  const marqueePartners = [...csrPartners, ...csrPartners];
+  const imageRevealVariants = {
+    hidden: { opacity: 0, scale: 1.1, clipPath: 'inset(0% 0% 100% 0%)' },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      clipPath: 'inset(0% 0% 0% 0%)',
+      transition: { duration: 0.9, ease: [0.76, 0, 0.24, 1] },
+    },
+  };
 
   return (
-    <section className="csr-partners" ref={sectionRef}>
+    <section className="csr-redesign" ref={sectionRef}>
       
-      {/* Background */}
-      <motion.div className="csr-partners-bg" style={{ y: bgY }} />
-      
-      {/* Ambient Orbs */}
-      <motion.div className="csr-partners-orb csr-partners-orb-red" style={{ opacity: glowOpacity }} />
-      <motion.div className="csr-partners-orb csr-partners-orb-green" style={{ opacity: glowOpacity }} />
+      <motion.div className="csr-redesign-bg" style={{ y: bgY }} />
+      <motion.div className="csr-redesign-orb csr-redesign-orb-1" style={{ opacity: glowOpacity }} />
+      <motion.div className="csr-redesign-orb csr-redesign-orb-2" style={{ opacity: glowOpacity }} />
+      <motion.div className="csr-redesign-orb csr-redesign-orb-3" style={{ opacity: glowOpacity }} />
 
-      <div className="csr-partners-container">
+      <div className="csr-redesign-container">
         
-        {/* Section Header */}
+        {/* Header */}
         <motion.div 
-          className="csr-partners-header"
+          className="csr-redesign-header"
           style={{ y: headingY, opacity: headingOpacity }}
         >
           <motion.div 
-            className="csr-partners-eyebrow"
+            className="csr-redesign-eyebrow"
             initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <motion.span 
-              className="csr-partners-eyebrow-line"
-              animate={{ width: [20, 32, 20] }}
-              transition={{ duration: 3, repeat: Infinity }}
-            />
-            <span>Our Partners</span>
-            <motion.span 
-              className="csr-partners-eyebrow-line"
-              animate={{ width: [20, 32, 20] }}
-              transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-            />
+            <motion.span className="csr-redesign-eyebrow-line" />
+            <span>CSR Partnerships</span>
+            <motion.span className="csr-redesign-eyebrow-line" />
           </motion.div>
 
           <motion.h2 
-            className="csr-partners-title"
+            className="csr-redesign-title"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            Trusted By <span className="text-red">Partners</span> Who Believe In
-            <span className="text-green"> Social Impact</span>
+            Partner With Us For{" "}
+            <span className="text-red">Meaningful</span>{" "}
+            <span className="text-green">Impact</span>
           </motion.h2>
 
           <motion.p 
-            className="csr-partners-subtitle"
+            className="csr-redesign-subtitle"
             initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Uvagai Foundation collaborates with corporates, institutions,
-            volunteers, and community organizations to create sustainable
-            development and meaningful social change.
+            Collaborate with Uvagai Foundation to create sustainable social 
+            impact through education, healthcare, and community development.
           </motion.p>
         </motion.div>
 
-        {/* Stats Row */}
+        {/* Benefits Cards */}
         <motion.div 
-          className="csr-partners-stats"
+          className="csr-redesign-benefits"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          {partnershipStats.map((stat, index) => (
+          {benefits.map((benefit, index) => (
             <motion.div 
-              className={`csr-partners-stat-card stat-${stat.accent}`}
+              className={`csr-redesign-benefit benefit-${benefit.accent}`}
               key={index}
               variants={cardVariants}
-              whileHover={{ y: -4 }}
+              whileHover={{ y: -6, scale: 1.02 }}
             >
-              <span className="csr-partners-stat-number">{stat.number}</span>
-              <span className="csr-partners-stat-label">{stat.label}</span>
-              <div className="csr-partners-stat-line" />
+              <span className="csr-redesign-benefit-number">0{index + 1}</span>
+              <h3>{benefit.title}</h3>
+              <p>{benefit.description}</p>
+              <div className="csr-redesign-benefit-line" />
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Partner Logo Marquee - Row 1 */}
-        <div className="csr-partners-marquee-wrapper">
-          <motion.div 
-            className="csr-partners-marquee"
-            animate={{
-              x: [0, -50 + "%"],
-            }}
-            transition={{
-              x: {
-                duration: 25,
-                repeat: Infinity,
-                ease: "linear",
-              },
-            }}
-          >
-            {marqueePartners.map((partner, index) => (
-              <motion.div 
-                className={`csr-partners-card card-${partner.accent}`}
-                key={`row1-${index}`}
-                whileHover={{ 
-                  y: -6,
-                  scale: 1.04,
-                  transition: { duration: 0.3 }
-                }}
-              >
-                <div className="csr-partners-card-logo">
-                  <div className="csr-partners-card-avatar">
-                    <span>{partner.name.charAt(0)}</span>
-                  </div>
-                </div>
-                <div className="csr-partners-card-info">
-                  <h4>{partner.name}</h4>
-                  <span>{partner.category}</span>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Partner Logo Marquee - Row 2 (Reverse) */}
-        <div className="csr-partners-marquee-wrapper">
-          <motion.div 
-            className="csr-partners-marquee"
-            animate={{
-              x: [-50 + "%", 0],
-            }}
-            transition={{
-              x: {
-                duration: 30,
-                repeat: Infinity,
-                ease: "linear",
-              },
-            }}
-          >
-            {marqueePartners.reverse().map((partner, index) => (
-              <motion.div 
-                className={`csr-partners-card card-${partner.accent}`}
-                key={`row2-${index}`}
-                whileHover={{ 
-                  y: -6,
-                  scale: 1.04,
-                  transition: { duration: 0.3 }
-                }}
-              >
-                <div className="csr-partners-card-logo">
-                  <div className="csr-partners-card-avatar">
-                    <span>{partner.name.charAt(0)}</span>
-                  </div>
-                </div>
-                <div className="csr-partners-card-info">
-                  <h4>{partner.name}</h4>
-                  <span>{partner.category}</span>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* CTA */}
+        {/* Partner Logo Grid */}
         <motion.div 
-          className="csr-partners-cta-wrapper"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          className="csr-redesign-grid"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
         >
-          <motion.a 
-            href="/csr-partnership" 
-            className="csr-partners-cta"
-            whileHover={{ scale: 1.03, y: -2 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            <span>Become a Partner</span>
-            <motion.span
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
+          {csrPartners.map((partner, index) => (
+            <motion.div 
+              className={`csr-redesign-card card-${partner.accent}`}
+              key={index}
+              variants={cardVariants}
+              whileHover={{ y: -6, scale: 1.03 }}
+              onMouseEnter={() => setHoveredPartner(index)}
+              onMouseLeave={() => setHoveredPartner(null)}
             >
+              <motion.div 
+                className="csr-redesign-card-logo"
+                variants={imageRevealVariants}
+              >
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="csr-redesign-card-fallback" style={{ display: 'none' }}>
+                  <span>{partner.name.charAt(0)}</span>
+                </div>
+              </motion.div>
+              <div className="csr-redesign-card-info">
+                <h4>{partner.name}</h4>
+                <span>{partner.category}</span>
+              </div>
+              <motion.div 
+                className="csr-redesign-card-hover"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: hoveredPartner === index ? 1 : 0 }}
+              >
+                <span>View Profile</span>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M1 7H13M13 7L8 2M13 7L8 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* CTA Banner */}
+        <motion.div 
+          className="csr-redesign-banner"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.6 }}
+        >
+          <div className="csr-redesign-banner-content">
+            <div className="csr-redesign-banner-text">
+              <h3>Ready to Create Impact Together?</h3>
+              <p>
+                Join hands with Uvagai Foundation to build sustainable social 
+                impact through education, healthcare, and community development.
+              </p>
+            </div>
+            <motion.a 
+              href="/csr-partnership" 
+              className="csr-redesign-banner-cta"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Become a CSR Partner
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M2 8H14M14 8L9 3M14 8L9 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </motion.span>
-          </motion.a>
+            </motion.a>
+          </div>
+          <div className="csr-redesign-banner-orb banner-orb-red" />
+          <div className="csr-redesign-banner-orb banner-orb-green" />
+          <div className="csr-redesign-banner-orb banner-orb-blue" />
         </motion.div>
 
       </div>
