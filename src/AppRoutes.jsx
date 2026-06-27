@@ -7,7 +7,7 @@ import LeadershipTeam from "./pages/LeadershipTeam";
 import Programs from "./pages/Programs";
 import Impact from "./pages/Impact";
 import ImpactSection from "./pages/ImpactStories";
-import Course from "./pages/Course";
+
 import Gallery from "./pages/Gallery";
 import Events from "./pages/Events";
 import Blog from "./pages/Blog";
@@ -17,6 +17,7 @@ import Donate from "./pages/Donate";
 import AnnualReports from "./pages/AnnualReports";
 import Contact from "./pages/Contact";
 import CSRPartnerDetails from "./pages/CSRPartnerDetails";
+import Course from "./pages/Course";
 
 
 export default function AppRoutes() {
@@ -33,7 +34,8 @@ export default function AppRoutes() {
       <Route path="/events" element={<Events />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/volunteer" element={<Volunteer />} />
-      <Route path="/internship" element={<Internship />} />
+      {/* <Route path="/internship" element={<Internship />} /> */}
+       <Route path="/course" element={<Course/>} />
       <Route path="/csr-partnership" element={<CSRPartnerDetails />} />
       <Route path="/donate" element={<Donate />} />
       <Route path="/annual-reports" element={<AnnualReports />} />
