@@ -1,49 +1,132 @@
-import { useRef, useState } from "react";
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import "./Donate.css";
+import bgofslides from "../assets/bgofslides.png";
+import chil from "../assets/chil.jpg"
 
 export default function Donate() {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
+ const isInView = useInView(sectionRef, {
+  once: true,
+  margin: "-80px",
+});
   const [selectedAmount, setSelectedAmount] = useState(null);
   const [customAmount, setCustomAmount] = useState("");
   const [donationStep, setDonationStep] = useState(1);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const donationOptions = [
-    {
-      amount: "500",
-      title: "Support a Child",
-      impact:
-        "Help provide educational materials, learning resources, and essential support for children from underserved communities.",
-      accent: "red",
-      popular: false,
-    },
-    {
-      amount: "1,000",
-      title: "Healthcare Support",
-      impact:
-        "Contribute towards community healthcare initiatives, awareness programs, and medical outreach activities.",
-      accent: "green",
-      popular: true,
-    },
-    {
-      amount: "2,500",
-      title: "Nutrition & Welfare",
-      impact:
-        "Support nutrition assistance, child welfare programs, and essential care initiatives for vulnerable communities.",
-      accent: "blue",
-      popular: false,
-    },
-    {
-      amount: "5,000",
-      title: "Community Development",
-      impact:
-        "Help implement sustainable community development projects, skill-building programs, and social impact initiatives.",
-      accent: "red",
-      popular: false,
-    },
-  ];
+    const donationOptions = [
+  {
+    amount: "500",
+    title: "Support a Child",
+    impact:
+      "Provides learning materials, school supplies and educational support for one child.",
+    accent: "red",
+    popular: false,
+    icon: "🎒",
+    benefits: [
+      "Learning Materials",
+      "School Essentials",
+      "Tax Benefit"
+    ]
+  },
 
+  {
+    amount: "1000",
+    title: "Healthcare Support",
+    impact:
+      "Supports medical camps, health awareness programs and medicines.",
+    accent: "green",
+    popular: true,
+    icon: "❤️",
+    benefits: [
+      "Medical Support",
+      "Community Health",
+      "Tax Benefit"
+    ]
+  },
+
+  {
+    amount: "2500",
+    title: "Nutrition & Welfare",
+    impact:
+      "Provides nutritious meals and welfare assistance for vulnerable families.",
+    accent: "blue",
+    popular: false,
+    icon: "🍲",
+    benefits: [
+      "Nutritious Meals",
+      "Family Support",
+      "Tax Benefit"
+    ]
+  },
+
+  {
+    amount: "5000",
+    title: "Community Development",
+    impact:
+      "Helps build sustainable community projects and livelihood initiatives.",
+    accent: "red",
+    popular: false,
+    icon: "🌱",
+    benefits: [
+      "Community Projects",
+      "Skill Development",
+      "Tax Benefit"
+    ]
+  }
+];
+const nextSlide = () => {
+  setCurrentSlide((prev) => (prev + 1) % donationOptions.length);
+};
+
+const prevSlide = () => {
+  setCurrentSlide((prev) =>
+    prev === 0 ? donationOptions.length - 1 : prev - 1
+  );
+};
+
+useEffect(() => {
+
+  if (!isInView || statsStarted) return;
+
+  setStatsStarted(true);
+
+  let transparency = 0;
+  let lives = 0;
+  let communities = 0;
+  let years = 0;
+
+  const timer = setInterval(() => {
+
+    transparency = Math.min(transparency + 2, 98);
+    lives = Math.min(lives + 1, 50);
+    communities = Math.min(communities + 5, 200);
+    years = Math.min(years + 1, 12);
+
+    setCounts({
+      transparency,
+      lives,
+      communities,
+      years,
+    });
+
+    if (
+      transparency === 98 &&
+      lives === 50 &&
+      communities === 200 &&
+      years === 12
+    ) {
+      clearInterval(timer);
+    }
+
+  }, 35);
+
+  return () => clearInterval(timer);
+
+}, [isInView, statsStarted]);
   const impactAreas = [
     {
       title: "Education & Youth Empowerment",
@@ -114,143 +197,642 @@ export default function Donate() {
   };
 
   return (
-    <div className="donate-page" ref={sectionRef}>
-      {/* Hero Section */}
-      <section className="donate-hero">
-        <div className="donate-hero-bg" />
-        <div className="donate-hero-glow donate-hero-glow-1" />
-        <div className="donate-hero-glow donate-hero-glow-2" />
-        
-        <div className="donate-container">
-          <motion.div 
-            className="donate-hero-content"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.33, 0.1, 0.25, 1] }}
+    <div className="donate-page">
+     {/* ===========================
+    Premium Hero Section
+=========================== */}
+
+<section className="donate-hero">
+
+  {/* Animated Background */}
+  <div className="donate-hero-bg" />
+
+  <motion.div
+    className="donate-hero-blob donate-hero-blob-red"
+    animate={{
+      y: [0, -25, 0],
+      x: [0, 15, 0],
+      scale: [1, 1.08, 1],
+    }}
+    transition={{
+      duration: 10,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  <motion.div
+    className="donate-hero-blob donate-hero-blob-green"
+    animate={{
+      y: [0, 20, 0],
+      x: [0, -15, 0],
+      scale: [1, 1.1, 1],
+    }}
+    transition={{
+      duration: 12,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  <motion.div
+    className="donate-hero-blob donate-hero-blob-blue"
+    animate={{
+      y: [0, -15, 0],
+      x: [0, 20, 0],
+      scale: [1, 1.05, 1],
+    }}
+    transition={{
+      duration: 14,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  <div className="donate-container">
+
+    <div className="donate-hero-grid">
+
+      {/* LEFT */}
+
+      <motion.div
+        className="donate-hero-left"
+        initial={{ opacity: 0, x: -80 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+
+        <div className="donate-hero-tag">
+
+          <span className="donate-hero-tag-line"></span>
+
+          <span className="donate-hero-tag-text">
+            Together We Can Create Change
+          </span>
+
+        </div>
+
+        <h1 className="donate-hero-headline">
+
+          Small Acts of
+
+          <span className="donate-hero-headline-accent">
+            {" "}
+            Kindness
+          </span>
+
+          <br />
+
+          Build Strong Communities
+
+        </h1>
+
+        <p className="donate-hero-subtitle">
+
+          Every contribution helps Uvagai Foundation provide education,
+          healthcare, nutrition, community welfare and opportunities
+          for people who deserve a better tomorrow.
+
+        </p>
+
+        <div className="donate-hero-buttons">
+
+          <motion.a
+            href="#donate-options"
+            className="donate-hero-primary-btn"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: .97 }}
           >
-            <div className="donate-hero-tag">
-              <span className="donate-hero-tag-line" />
-              <span className="donate-hero-tag-text">Support Our Mission</span>
+
+            Donate Now →
+
+          </motion.a>
+
+          <motion.a
+           href="#donate-options"
+            className="donate-hero-secondary-btn"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: .97 }}
+          >
+
+            Learn More
+
+          </motion.a>
+
+        </div>
+
+        <div className="donate-hero-mini-stats">
+
+          <div>
+
+            <h3>50K+</h3>
+
+            <p>Lives Impacted</p>
+
+          </div>
+
+          <div>
+
+            <h3>200+</h3>
+
+            <p>Communities</p>
+
+          </div>
+
+          <div>
+
+            <h3>98%</h3>
+
+            <p>Funds Utilized</p>
+
+          </div>
+
+        </div>
+
+      </motion.div>
+
+      {/* RIGHT */}
+
+      <motion.div
+        className="donate-hero-right"
+        initial={{ opacity: 0, x: 80 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: .9 }}
+      >
+
+        <motion.div
+          className="donate-hero-image-card"
+          whileHover={{ y: -10 }}
+        >
+<img
+  src={bgofslides}
+  alt="Helping Communities"
+  className="donate-hero-image"
+/>
+
+          <div className="donate-image-overlay">
+
+            <div className="donate-overlay-card">
+
+              <h4>Hope Begins With You</h4>
+
+              <p>
+                Together we empower families,
+                educate children and build
+                stronger communities.
+              </p>
+
             </div>
 
-            <h1 className="donate-hero-headline">
-              Your Contribution Can
-              <span className="donate-hero-headline-accent"> Transform Lives</span>
-            </h1>
+          </div>
 
-            <p className="donate-hero-subtitle">
-              Every donation helps Uvagai Foundation create meaningful
-              impact through education, healthcare, child welfare,
-              elderly care, community development, environmental
-              sustainability, and humanitarian support initiatives.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+        </motion.div>
 
+        <motion.div
+          className="floating-card floating-card-one"
+          animate={{
+            y: [0, -15, 0]
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity
+          }}
+        >
+
+          ❤️ Compassion
+
+        </motion.div>
+
+        <motion.div
+          className="floating-card floating-card-two"
+          animate={{
+            y: [0, 18, 0]
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity
+          }}
+        >
+
+          🌱 Growth
+
+        </motion.div>
+
+      </motion.div>
+
+    </div>
+
+  </div>
+
+  <svg
+    className="hero-wave"
+    viewBox="0 0 1440 140"
+    preserveAspectRatio="none"
+  >
+
+    <path
+      fill="#ffffff"
+      d="M0,64L80,80C160,96,320,128,480,122.7C640,117,800,75,960,64C1120,53,1280,75,1360,85.3L1440,96L1440,160L0,160Z"
+    />
+
+  </svg>
+
+</section>
       {/* Why Donate */}
-      <section className="donate-why-section">
+      <section className="donate-why-section" ref={sectionRef}>
         <div className="donate-container">
-          <motion.div 
-            className="donate-section-header"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
-          >
-            <div className="donate-section-tag">
-              <span className="donate-section-tag-line" />
-              <span className="donate-section-tag-text">Why Donate</span>
-            </div>
-            <h2 className="donate-section-headline">Empower Communities Through Your Generosity</h2>
-            <p className="donate-section-subtitle">
-              Your support enables us to reach more people, strengthen
-              communities, and create opportunities for sustainable
-              social development.
-            </p>
-          </motion.div>
+       <motion.div
+  className="donate-section-header"
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+>
+  <div className="donate-section-tag">
+    <span className="donate-section-tag-line"></span>
 
-          <motion.div 
-            className="donate-stats-row"
-            variants={staggerContainer}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          >
-            {[
-              { value: "98%", label: "Funds Utilized Directly" },
-              { value: "50K+", label: "Lives Impacted" },
-              { value: "200+", label: "Communities Reached" },
-              { value: "12+", label: "Years of Trust" },
-            ].map((stat, index) => (
-              <motion.div 
-                className="donate-stat-card"
-                key={index}
-                variants={cardVariants}
-              >
-                <span className="donate-stat-value">{stat.value}</span>
-                <span className="donate-stat-label">{stat.label}</span>
-              </motion.div>
-            ))}
-          </motion.div>
+    <span className="donate-section-tag-text">
+      WHY DONATE
+    </span>
+
+    <span className="donate-section-tag-line"></span>
+  </div>
+
+  <h2 className="donate-section-headline">
+    Together We
+    <span className="donate-hero-headline-accent">
+      {" "}
+      Build Better Futures
+    </span>
+  </h2>
+
+  <p className="donate-section-subtitle">
+    Every contribution empowers children through education,
+    supports healthcare initiatives, strengthens communities,
+    protects the environment, and creates sustainable social
+    impact across generations.
+  </p>
+</motion.div>
+
+         <motion.div
+  className="donate-stats-row"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={{
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  }}
+>
+
+  {[
+    {
+      value: "98%",
+      title: "Fund Transparency",
+      desc: "Every contribution reaches the people who need it most.",
+      color: "red",
+    },
+    {
+      value: "50K+",
+      title: "Lives Transformed",
+      desc: "Families, children and elders supported through our initiatives.",
+      color: "green",
+    },
+    {
+      value: "200+",
+      title: "Communities",
+      desc: "Villages and neighbourhoods empowered through sustainable programs.",
+      color: "blue",
+    },
+    {
+      value: "12+",
+      title: "Years of Trust",
+      desc: "Dedicated service creating meaningful social impact.",
+      color: "red",
+    },
+  ].map((stat, index) => (
+
+    <motion.div
+
+      key={index}
+
+      className={`donate-stat-card stat-${stat.color}`}
+
+      variants={{
+        hidden: {
+          opacity: 0,
+          y: 60,
+        },
+
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: .7,
+          },
+        },
+      }}
+
+      whileHover={{
+        y: -12,
+        scale: 1.03,
+      }}
+
+    >
+
+      <div className="stat-top-line"></div>
+
+     
+<h2 className="donate-stat-value">
+
+  {stat.value === "98%" && `${counts.transparency}%`}
+
+  {stat.value === "50K+" && `${counts.lives}K+`}
+
+  {stat.value === "200+" && `${counts.communities}+`}
+
+  {stat.value === "12+" && `${counts.years}+`}
+
+</h2>
+
+      <h3 className="stat-title">
+
+        {stat.title}
+
+      </h3>
+
+      <p className="stat-description">
+
+        {stat.desc}
+
+      </p>
+
+    </motion.div>
+
+  ))}
+
+</motion.div>
         </div>
       </section>
 
-      {/* Donation Options */}
+    
       <section className="donate-options-section" id="donate-options">
+        {/* Background Decorations */}
+
+<div className="donate-options-pattern"></div>
+
+<div className="donate-options-gradient"></div>
+
+<div className="donate-options-noise"></div>
+
+<motion.div
+    className="floating-circle circle-one"
+    animate={{
+        y:[0,-30,0],
+        x:[0,20,0],
+        scale:[1,1.08,1]
+    }}
+    transition={{
+        duration:10,
+        repeat:Infinity,
+        ease:"easeInOut"
+    }}
+/>
+
+<motion.div
+    className="floating-circle circle-two"
+    animate={{
+        y:[0,25,0],
+        x:[0,-20,0],
+        scale:[1,1.1,1]
+    }}
+    transition={{
+        duration:12,
+        repeat:Infinity,
+        ease:"easeInOut"
+    }}
+/>
+
+<motion.div
+    className="floating-circle circle-three"
+    animate={{
+        y:[0,-18,0],
+        x:[0,15,0]
+    }}
+    transition={{
+        duration:14,
+        repeat:Infinity,
+        ease:"easeInOut"
+    }}
+/>
         <div className="donate-options-bg" />
         <div className="donate-container">
-          <motion.div 
-            className="donate-section-header"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
-          >
-            <h2 className="donate-section-headline">Choose Your Impact</h2>
-            <p className="donate-section-subtitle">
-              Every contribution, regardless of size, helps create
-              positive change and lasting social impact.
-            </p>
-          </motion.div>
+          <motion.div
+    className="premium-donation-header"
 
-          <motion.div 
-            className="donate-options-grid"
-            variants={staggerContainer}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          >
-            {donationOptions.map((option, index) => (
-              <motion.div 
-                className={`donate-option-card option-${option.accent} ${option.popular ? 'popular' : ''} ${selectedAmount === option.amount ? 'selected' : ''}`}
-                key={index}
-                variants={cardVariants}
-                whileHover={{ y: -6 }}
-                onClick={() => handleDonate(option.amount)}
-              >
-                {option.popular && (
-                  <div className="donate-popular-badge">Most Popular</div>
-                )}
-                
-                <div className="donate-option-amount">
-                  <span className="donate-currency">₹</span>
-                  <span className="donate-amount-value">{option.amount}</span>
-                </div>
-                
-                <h3 className="donate-option-title">{option.title}</h3>
-                <p className="donate-option-impact">{option.impact}</p>
-                
-                <motion.button 
-                  className={`donate-option-btn ${selectedAmount === option.amount ? 'active' : ''}`}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {selectedAmount === option.amount ? 'Selected' : 'Donate Now'}
-                </motion.button>
+    initial={{
+        opacity:0,
+        y:40
+    }}
 
-                <div className="donate-option-accent" />
-              </motion.div>
-            ))}
-          </motion.div>
+    whileInView={{
+        opacity:1,
+        y:0
+    }}
 
-          {/* Custom Donation */}
+    viewport={{
+        once:true
+    }}
+
+    transition={{
+        duration:.8
+    }}
+>
+
+    <div className="premium-tag">
+
+        <span></span>
+
+        DONATION PROGRAMS
+
+        <span></span>
+
+    </div>
+
+    <h2>
+
+        Every Contribution Creates
+        <span>
+
+            Lasting Impact
+
+        </span>
+
+    </h2>
+
+    <p>
+
+        Choose how you'd like to support
+        education, healthcare, nutrition,
+        and community development.
+        Every donation directly transforms lives.
+
+    </p>
+
+</motion.div>
+         
+<motion.div
+  className="donation-slider"
+
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+>
+
+  <button
+    className="slider-btn slider-left"
+    onClick={prevSlide}
+  >
+    ❮
+  </button>
+
+  <motion.div
+    key={currentSlide}
+    className="slider-card"
+
+    initial={{
+      opacity: 0,
+      x: 120
+    }}
+
+    animate={{
+      opacity: 1,
+      x: 0
+    }}
+
+    transition={{
+      duration: .55
+    }}
+  >
+
+    {activeDonation.popular && (
+
+      <div className="slider-badge">
+
+        MOST IMPACTFUL
+
+      </div>
+
+    )}
+
+    <div className="slider-icon">
+
+      {activeDonation.icon}
+
+    </div>
+
+    <div className="slider-price">
+
+      ₹
+
+      <span>
+
+        {activeDonation.amount}
+
+      </span>
+
+    </div>
+
+    <h2>
+
+      {activeDonation.title}
+
+    </h2>
+
+    <p>
+
+      {activeDonation.impact}
+
+    </p>
+
+    <div className="slider-benefits">
+
+      {activeDonation.benefits.map((item, index)=>(
+
+        <div
+          key={index}
+          className="slider-benefit"
+        >
+
+          ✓ {item}
+
+        </div>
+
+      ))}
+
+    </div>
+
+    <motion.button
+
+      className="slider-donate"
+
+      whileHover={{
+        scale:1.05
+      }}
+
+      whileTap={{
+        scale:.95
+      }}
+
+      onClick={() =>
+        handleDonate(activeDonation.amount)
+      }
+
+    >
+
+      Donate Now →
+
+    </motion.button>
+
+  </motion.div>
+
+  <button
+
+    className="slider-btn slider-right"
+
+    onClick={nextSlide}
+
+  >
+
+    ❯
+
+  </button>
+
+</motion.div>
+<div className="slider-dots">
+
+  {donationOptions.map((_, index)=>(
+
+    <button
+
+      key={index}
+
+      className={`slider-dot ${
+        currentSlide===index ? "active" : ""
+      }`}
+
+      onClick={()=>setCurrentSlide(index)}
+
+    />
+
+  ))}
+
+</div>
+   
           <motion.div 
             className="donate-custom-card"
             initial={{ opacity: 0, y: 30 }}
@@ -264,125 +846,14 @@ export default function Donate() {
                 healthier, and more empowered communities.
               </p>
             </div>
-            <form onSubmit={handleCustomDonate} className="donate-custom-form">
-              <div className="donate-custom-input-wrapper">
-                <span className="donate-custom-currency">₹</span>
-                <input
-                  type="number"
-                  placeholder="Enter amount"
-                  value={customAmount}
-                  onChange={(e) => setCustomAmount(e.target.value)}
-                  className="donate-custom-input"
-                  min="1"
-                />
-              </div>
-              <motion.button 
-                type="submit" 
-                className="donate-custom-btn"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <span>Proceed To Donate</span>
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </motion.button>
-            </form>
+        
           </motion.div>
         </div>
       </section>
 
-      {/* Impact Areas */}
-      <section className="donate-impact-section">
-        <div className="donate-container">
-          <motion.div 
-            className="donate-section-header"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
-          >
-            <div className="donate-section-tag">
-              <span className="donate-section-tag-line" />
-              <span className="donate-section-tag-text">Your Donation Supports</span>
-            </div>
-            <h2 className="donate-section-headline">Areas Where Your Contribution Creates Impact</h2>
-            <p className="donate-section-subtitle">
-              Every donation directly contributes to initiatives that
-              improve lives and strengthen communities.
-            </p>
-          </motion.div>
+     
 
-          <motion.div 
-            className="donate-impact-grid"
-            variants={staggerContainer}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          >
-            {impactAreas.map((area, index) => (
-              <motion.div 
-                className={`donate-impact-card impact-${area.accent}`}
-                key={index}
-                variants={cardVariants}
-                whileHover={{ y: -4 }}
-              >
-                <div className="impact-card-stripe" />
-                <h3 className="impact-card-title">{area.title}</h3>
-                <p className="impact-card-description">{area.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Transparency */}
-      <section className="donate-transparency-section">
-        <div className="donate-transparency-bg" />
-        <div className="donate-container">
-          <motion.div 
-            className="donate-transparency-card"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
-          >
-            <div className="transparency-card-content">
-              <h2 className="transparency-card-title">Transparency & Accountability</h2>
-              <p className="transparency-card-text">
-                Uvagai Foundation is committed to ensuring that every
-                contribution is utilized responsibly and effectively to
-                maximize social impact and community benefit.
-              </p>
-              <div className="transparency-card-features">
-                <div className="transparency-feature">
-                  <span className="transparency-feature-check">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </span>
-                  <span>Regular impact reports</span>
-                </div>
-                <div className="transparency-feature">
-                  <span className="transparency-feature-check">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </span>
-                  <span>Audited financial statements</span>
-                </div>
-                <div className="transparency-feature">
-                  <span className="transparency-feature-check">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </span>
-                  <span>98% fund utilization</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
+   
       <section className="donate-cta-section">
         <div className="donate-cta-bg" />
         <div className="donate-cta-glow" />
@@ -408,7 +879,7 @@ export default function Donate() {
                   <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-              <a href="/volunteer" className="donate-cta-secondary">
+              <a href="#" className="donate-cta-secondary">
                 Become A Volunteer
                 <span className="donate-cta-secondary-arrow">→</span>
               </a>

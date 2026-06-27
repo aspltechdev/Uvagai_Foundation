@@ -31,6 +31,7 @@ export default function Navbar() {
     { to: "/programs", label: "Programs", accent: "green" },
     { to: "/events", label: "Events", accent: "red" },
     { to: "/gallery", label: "Gallery", accent: "green" },
+    { to: "/Donate", label: "Donate", accent: "red"},
     { to: "/csr-partnership", label: "CSR", accent: "blue" },
     { to: "/contact", label: "Contact", accent: "red" },
   ];
