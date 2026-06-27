@@ -245,6 +245,7 @@ export default function Navbar() {
     { to: "/vision-mission", label: "Vision & Mission", accent: "blue" },
     { to: "/programs", label: "Programs", accent: "green" },
     { to: "/events", label: "Events", accent: "red" },
+    { to: "/Course", label: "Course", accent: "blue" },
     { to: "/gallery", label: "Gallery", accent: "green" },
     { to: "/csr-partnership", label: "CSR", accent: "blue" },
     { to: "/contact", label: "Contact", accent: "red" },
