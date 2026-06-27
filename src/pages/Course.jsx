@@ -1,4 +1,3 @@
-
 // import "./Course.css";
 // import english from "../assets/english.png";
 // import computer from "../assets/computer.png";
