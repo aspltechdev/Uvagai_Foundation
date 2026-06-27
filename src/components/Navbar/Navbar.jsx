@@ -245,7 +245,11 @@ export default function Navbar() {
     { to: "/vision-mission", label: "Vision & Mission", accent: "blue" },
     { to: "/programs", label: "Programs", accent: "green" },
     { to: "/events", label: "Events", accent: "red" },
+<<<<<<< HEAD
     { to: "/Course", label: "Course", accent: "blue" },
+=======
+    { to: "/volunteers", label: "Volunteer", accent: "red" },
+>>>>>>> fa629abd1eb101941a99e99d1388e329abbe40ac
     { to: "/gallery", label: "Gallery", accent: "green" },
     { to: "/csr-partnership", label: "CSR", accent: "blue" },
     { to: "/contact", label: "Contact", accent: "red" },
