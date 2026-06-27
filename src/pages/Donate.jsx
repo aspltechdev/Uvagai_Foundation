@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./Donate.css";
 import bgofslides from "../assets/bgofslides.png";
-import chil from "../assets/chil.jpg"
+import ndimageee from "../assets/ndimageee.png"
 
 export default function Donate() {
   const sectionRef = useRef(null);
@@ -13,6 +13,7 @@ const isInView = useInView(sectionRef, {
 });
 console.log("Stats visible:", isInView);
 console.log("isInView:", isInView);
+const [activeWord, setActiveWord] = useState(0);
 const [headingWords, setHeadingWords] = useState(1);
 const [subtitleWords, setSubtitleWords] = useState(1);
   const [selectedAmount, setSelectedAmount] = useState(null);
@@ -232,6 +233,15 @@ useEffect(() => {
 },[]);
 useEffect(() => {
 
+  const timer = setInterval(() => {
+    setActiveWord(prev => (prev + 1) % 3);
+  }, 2000);
+
+  return () => clearInterval(timer);
+
+}, []);
+useEffect(() => {
+
   const words = [
     "Every",
     "contribution",
@@ -383,13 +393,21 @@ useEffect(() => {
 
         </div>
 
-<h1 className="donate-hero-headline">
-    Small Acts of
-    <span className="donate-hero-headline-accent">
-        {" "}Kindness
-    </span>
-    Build Strong Communities
-</h1>
+        <h1 className="donate-hero-headline">
+
+          Small Acts of
+
+          <span className="donate-hero-headline-accent">
+            {" "}
+            Kindness
+          </span>
+
+          <br />
+
+          Build Strong Communities
+
+        </h1>
+
         <p className="donate-hero-subtitle">
 
           Every contribution helps Uvagai Foundation provide education,
@@ -1064,9 +1082,21 @@ useEffect(() => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.33, 0.1, 0.25, 1] }}
           >
-            <h2 className="donate-cta-headline">
-              Together, We Can Build A Better Tomorrow
-            </h2>
+           <h2 className="donate-cta-headline">
+
+  Together, We Can
+
+  <span className={`word build ${activeWord === 1 ? "active" : ""}`}>
+    Build
+  </span>
+
+  A
+
+  <span className={`word better ${activeWord === 2 ? "active" : ""}`}>
+    Better Tomorrow
+  </span>
+
+</h2>
             <p className="donate-cta-description">
               Join us in empowering lives, supporting communities, and
               creating sustainable social change through your generosity.
