@@ -246,9 +246,6 @@ export default function Navbar() {
     { to: "/programs", label: "Programs", accent: "green" },
     { to: "/events", label: "Events", accent: "red" },
     { to: "/gallerypage", label: "Gallery", accent: "green" },
-    { to: "/Course", label: "Course", accent: "blue" },
-    { to: "/volunteers", label: "Volunteer", accent: "red" },
-    { to: "/gallery", label: "Gallery", accent: "green" },
     { to: "/csr-partnership", label: "CSR", accent: "blue" },
     { to: "/contact", label: "Contact", accent: "red" },
   ];

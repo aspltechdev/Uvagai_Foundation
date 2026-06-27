@@ -7,8 +7,13 @@ import LeadershipTeam from "./pages/LeadershipTeam";
 import Programs from "./pages/Programs";
 import Impact from "./pages/Impact";
 import ImpactSection from "./pages/ImpactStories";
+<<<<<<< HEAD
 
 import Gallery from "./pages/Gallery";
+=======
+import Gallery from "./pages/gallerypage";
+import CategoryGallery from "./pages/CategoryGallery";
+>>>>>>> 132577d05326ddfac4fb5a80d18971af858e08b0
 import Events from "./pages/Events";
 import Blog from "./pages/Blog";
 import Volunteer from "./pages/Volunteer";
@@ -20,7 +25,6 @@ import VolunteerPage from "./pages/VolunteerPage";
 import CSRPartnerDetails from "./pages/CSRPartnerDetails";
 import Course from "./pages/Course";
 
-
 export default function AppRoutes() {
   return (
     <Routes>
@@ -31,7 +35,11 @@ export default function AppRoutes() {
       <Route path="/programs" element={<Programs />} />
       <Route path="/impact" element={<Impact />} />
       <Route path="/impact-stories" element={<ImpactSection />} />
+
+      <Route path="/gallery/:category" element={<CategoryGallery />} />
       <Route path="/gallery" element={<Gallery />} />
+      <Route path="/gallerypage" element={<Gallery />} />
+
       <Route path="/events" element={<Events />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/volunteer" element={<Volunteer />} />
