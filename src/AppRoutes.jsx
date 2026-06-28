@@ -19,6 +19,7 @@ import Contact from "./pages/Contact";
 import VolunteerPage from "./pages/VolunteerPage";
 import CSRPartnerDetails from "./pages/CSRPartnerDetails";
 import Course from "./pages/Course";
+import ProgramsPage from "./pages/ProgramsPage";
 
 export default function AppRoutes() {
   return (
@@ -27,7 +28,7 @@ export default function AppRoutes() {
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/vision-mission" element={<VisionMission />} />
       <Route path="/leadership-team" element={<LeadershipTeam />} />
-      <Route path="/programs" element={<Programs />} />
+      <Route path="/programs" element={<ProgramsPage />} />
       <Route path="/impact" element={<Impact />} />
       <Route path="/impact-stories" element={<ImpactSection />} />
 
@@ -40,10 +41,10 @@ export default function AppRoutes() {
       <Route path="/volunteer" element={<Volunteer />} />
       <Route path="/volunteers" element={<VolunteerPage />} />
       {/* <Route path="/internship" element={<Internship />} /> */}
-      <Route path="/csr-partnership" element={<CSRPartnership />} />
+      <Route path="/csr-partnership" element={<CSRPartnerDetails />} />
       {/* <Route path="/internship" element={<Internship />} /> */}
        <Route path="/course" element={<Course/>} />
-      <Route path="/csr-partnership" element={<CSRPartnerDetails />} />
+      {/* <Route path="/csr-partnership" element={<CSRPartnerDetails />} /> */}
       <Route path="/donate" element={<Donate />} />
       <Route path="/annual-reports" element={<AnnualReports />} />
       <Route path="/contact" element={<Contact />} />

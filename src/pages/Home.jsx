@@ -20,6 +20,7 @@ import EventsHome from "../components/home/Events/Events";
 import CSRPartnersHome from "./CSRPartners";
 import VolunteerHome from "./Volunteer";
 import TestimonialsHome from "./Testimonials";
+import HomeCourse from "./HomeCourse";
 
 
 export default function Home() {
@@ -35,7 +36,9 @@ export default function Home() {
       {/* Programs */}
       <Programs />
 
+
       <VisionMissionHome/>
+      <HomeCourse/>
       {/* <VisionMission/> */}
 
       {/* Success Stories */}
