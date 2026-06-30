@@ -1,6 +1,13 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./ImpactStats.css";
+import imp1 from "../../../assets/im1.png";
+import imp2 from "../../../assets/im2.png";
+import imp3 from "../../../assets/im3.png";
+import imp4 from "../../../assets/im4.png";
+import imp5 from "../../../assets/im5.png";
+import imp6 from "../../../assets/im6.png";
+
 
 export default function ImpactStats() {
   const sectionRef = useRef(null);
@@ -18,55 +25,11 @@ export default function ImpactStats() {
   const headingOpacity = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
   const glowOpacity = useTransform(scrollYProgress, [0, 0.4, 0.8, 1], [0, 0.5, 0.5, 0]);
 
-  // const stats = [
-  //   {
-  //     image: "/images/impact-education.jpg",
-  //     number: "5,284+",
-  //     label: "Scholarships Awarded",
-  //     description: "Empowering children through quality education and learning resources across communities",
-  //     accent: "red",
-  //   },
-  //   {
-  //     image: "/images/impact-healthcare.jpg",
-  //     number: "50,000+",
-  //     label: "Patients Treated",
-  //     description: "Bringing accessible healthcare and medical support to underserved communities",
-  //     accent: "green",
-  //   },
-  //   {
-  //     image: "/images/impact-nutrition.jpg",
-  //     number: "10,000+",
-  //     label: "Meals Served Daily",
-  //     description: "Fighting hunger and malnutrition with nutritious meals for children and families",
-  //     accent: "blue",
-  //   },
-  //   {
-  //     image: "/images/impact-women.jpg",
-  //     number: "25,000+",
-  //     label: "Women Empowered",
-  //     description: "Building financial independence through skill development and entrepreneurship",
-  //     accent: "red",
-  //   },
-  //   {
-  //     image: "/images/impact-environment.jpg",
-  //     number: "1 Million+",
-  //     label: "Trees Planted",
-  //     description: "Creating sustainable environments and combating climate change for future generations",
-  //     accent: "green",
-  //   },
-  //   {
-  //     image: "/images/impact-volunteers.jpg",
-  //     number: "500+",
-  //     label: "Active Volunteers",
-  //     description: "Passionate individuals driving meaningful change across communities nationwide",
-  //     accent: "blue",
-  //   },
-  // ];
-
+ 
 
 const stats = [
   {
-    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1200&q=80",
+    image: imp1,
     number: "2019",
     label: "Founded",
     description:
@@ -74,7 +37,7 @@ const stats = [
     accent: "red",
   },
   {
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80",
+    image:imp2,
     number: "08+",
     label: "Focus Areas",
     description:
@@ -82,7 +45,7 @@ const stats = [
     accent: "green",
   },
   {
-    image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1200&q=80",
+    image: imp3,
     number: "100+",
     label: "Community Initiatives",
     description:
@@ -90,7 +53,7 @@ const stats = [
     accent: "blue",
   },
   {
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80",
+    image: imp4,
     number: "500+",
     label: "Volunteers & Supporters",
     description:
@@ -98,7 +61,7 @@ const stats = [
     accent: "red",
   },
   {
-    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&q=80",
+    image: imp5,
     number: "1000+",
     label: "Lives Impacted",
     description:
@@ -106,7 +69,7 @@ const stats = [
     accent: "green",
   },
   {
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
+    image: imp6,
     number: "01",
     label: "Shared Mission",
     description:

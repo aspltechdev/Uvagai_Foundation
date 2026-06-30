@@ -1,7 +1,3 @@
-
-
-
-
 import "./Home.css";
 import AboutUs from "./AboutUs";
 import Hero from "../components/home/Hero/Hero";
@@ -20,6 +16,8 @@ import EventsHome from "../components/home/Events/Events";
 import CSRPartnersHome from "./CSRPartners";
 import VolunteerHome from "./Volunteer";
 import TestimonialsHome from "./Testimonials";
+import HomeCourse from "./HomeCourse";
+import Socialwall from "../components/Home/socialwall";
 
 
 export default function Home() {
@@ -35,7 +33,9 @@ export default function Home() {
       {/* Programs */}
       <Programs />
 
+
       <VisionMissionHome/>
+      <HomeCourse/>
       {/* <VisionMission/> */}
 
       {/* Success Stories */}
@@ -54,9 +54,10 @@ export default function Home() {
 
       {/* Gallery */}
       <Gallery />
-    
 
-  
+      {/* Social Wall */}
+      <Socialwall />
+
       <TestimonialsHome />
 
   
@@ -66,5 +67,3 @@ export default function Home() {
     </main>
   );
 }
-
-

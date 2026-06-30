@@ -1,0 +1,360 @@
+/* SocialWall.css — Marquee + Instagram/LinkedIn embed card style */
+
+.igw-section {
+  position: relative;
+  background: #F7F5F1;
+  padding: 96px 0 120px;
+  overflow: hidden;
+}
+
+.igw-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 5;
+}
+
+/* ── Header ── */
+.igw-header {
+  text-align: center;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.igw-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: #E63946;
+  margin-bottom: 16px;
+}
+
+.igw-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #E63946;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.igw-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid #E63946;
+  animation: igw-pulse 2.2s ease-out infinite;
+}
+
+@keyframes igw-pulse {
+  0%   { transform: scale(0.8); opacity: 0.9; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .igw-dot::after { animation: none; }
+  .igw-track { animation: none; }
+}
+
+.igw-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 500;
+  color: #1A1F2B;
+  line-height: 1.15;
+  margin: 0 0 16px;
+  letter-spacing: -0.5px;
+  text-align: center;
+}
+
+.igw-title em {
+  font-style: normal;
+  background: linear-gradient(135deg, #E63946, #FF8FA3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.igw-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  color: #5B6270;
+  max-width: 560px;
+  margin: 0 auto 28px;
+  line-height: 1.65;
+  text-align: center;
+}
+
+.igw-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 9px 20px 9px 14px;
+  background: #fff;
+  border: 1px solid rgba(26,31,43,0.12);
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1A1F2B;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.igw-handle:hover {
+  border-color: #E63946;
+  color: #E63946;
+  transform: translateY(-1px);
+}
+
+/* ── Platform Tabs (Instagram / LinkedIn) ── */
+.igw-tabs {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(26,31,43,0.12);
+  backdrop-filter: blur(10px);
+  padding: 6px;
+  border-radius: 999px;
+  gap: 6px;
+  box-shadow: 0 10px 26px rgba(26,31,43,0.06);
+  margin: 0 auto;
+}
+
+.igw-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #5B6270;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.igw-tab-btn svg {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.igw-tab-btn:hover {
+  color: #1A1F2B;
+  background: rgba(26,31,43,0.05);
+}
+
+.igw-tab-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.igw-tab-btn-active {
+  background: linear-gradient(135deg, #E63946, #d12c38);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(230,57,70,0.28);
+}
+
+.igw-tab-btn-active:hover {
+  color: #fff;
+  background: linear-gradient(135deg, #E63946, #d12c38);
+}
+
+/* ── Marquee ── */
+.igw-marquee-outer {
+  position: relative;
+  margin-top: 40px;
+  overflow: hidden;
+  height: 600px;
+  z-index: 5;
+}
+
+.igw-marquee-outer::before,
+.igw-marquee-outer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.igw-marquee-outer::before {
+  left: 0;
+  background: linear-gradient(to right, #F7F5F1, transparent);
+}
+
+.igw-marquee-outer::after {
+  right: 0;
+  background: linear-gradient(to left, #F7F5F1, transparent);
+}
+
+.igw-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: max-content;
+  height: 100%;
+  padding: 0 24px;
+  box-sizing: border-box;
+  animation: igw-scroll 40s linear infinite;
+}
+
+.igw-marquee-outer:hover .igw-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes igw-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Fixed card size — every item identical regardless of embed's own content height */
+.igw-marquee-item {
+  width: 340px;
+  height: 560px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* ── Instagram embed: force every card to identical size ── */
+.igw-embed-wrap {
+  width: 340px;
+  height: 560px;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(26,31,43,0.1);
+  background: #fff;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(13,20,41,0.07);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.igw-embed-wrap:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(13,20,41,0.14);
+}
+
+.igw-embed-wrap iframe.instagram-media,
+.igw-embed-wrap .instagram-media {
+  width: 340px !important;
+  min-width: 340px !important;
+  max-width: 340px !important;
+  height: 560px !important;
+  min-height: 560px !important;
+  max-height: 560px !important;
+  border: none !important;
+  border-radius: 16px !important;
+}
+
+/* ── LinkedIn embed: match Instagram card sizing ── */
+.igw-li-embed-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.igw-li-iframe {
+  width: 340px;
+  height: 504px;
+  border: none;
+  border-radius: 16px 16px 0 0;
+  background: #fff;
+}
+
+.igw-li-fallback-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  background: #fff;
+  border-top: 1px solid #dbdbdb;
+  border-radius: 0 0 16px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1A1F2B;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.igw-li-fallback-link:hover {
+  color: #E63946;
+}
+
+/* ── Footer ── */
+.igw-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 52px;
+  position: relative;
+  z-index: 5;
+}
+
+.igw-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 34px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #E63946, #d12c38);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 10px 26px rgba(230,57,70,0.28);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.igw-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(230,57,70,0.36);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .igw-section { padding: 64px 0 80px; }
+  .igw-inner { padding: 0 20px; }
+  .igw-header { margin-bottom: 28px; }
+
+  .igw-marquee-outer { height: 480px; }
+  .igw-marquee-outer::before,
+  .igw-marquee-outer::after { width: 50px; }
+  .igw-marquee-track { gap: 16px; }
+
+  .igw-marquee-item { width: 280px; height: 480px; }
+  .igw-embed-wrap { width: 280px; height: 480px; }
+  .igw-embed-wrap iframe.instagram-media,
+  .igw-embed-wrap .instagram-media {
+    width: 280px !important;
+    min-width: 280px !important;
+    max-width: 280px !important;
+    height: 480px !important;
+    min-height: 480px !important;
+    max-height: 480px !important;
+  }
+
+  .igw-li-iframe { width: 280px; height: 424px; }
+  .igw-li-fallback-link { height: 48px; }
+
+  .igw-tabs { padding: 6px; gap: 6px; }
+  .igw-tab-btn { padding: 9px 16px; font-size: 0.85rem; }
+}
+
+@media (max-width: 480px) {
+  .igw-title { font-size: 2rem; }
+}
