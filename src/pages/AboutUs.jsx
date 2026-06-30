@@ -1,266 +1,216 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./AboutUs.css";
 
-export default function AboutUs() {
+const heroSlides = [
+  {
+    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
+    title: "Creating Hope, Empowering Lives & Building Stronger Communities",
+    subtitle: "Founded in 2019, Uvagai Foundation is a non-profit organization dedicated to creating meaningful social impact through education, healthcare, child welfare, and community development.",
+    tag: "About Uvagai Foundation",
+    accent: "red"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1200&q=80",
+    title: "A Foundation Built On Compassion & Purpose",
+    subtitle: "We work closely with communities, volunteers, institutions, and corporate partners to implement programs that address real societal challenges and promote sustainable development.",
+    tag: "Who We Are",
+    accent: "green"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1200&q=80",
+    title: "Driving Sustainable Social Impact Across India",
+    subtitle: "Through compassion-driven action and collaborative partnerships, we strive to create lasting positive change and contribute to a better future for all.",
+    tag: "Our Mission",
+    accent: "blue"
+  }
+];
+
+export default function AboutUsPage() {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
+  const storyRef = useRef(null);
+  const impactRef = useRef(null);
+  const highlightsRef = useRef(null);
+  const valuesRef = useRef(null);
+  
+  const [current, setCurrent] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const isInView = useInView(sectionRef, { once: true, margin: "-50px" });
+  const storyInView = useInView(storyRef, { once: true, margin: "-80px" });
+  const impactInView = useInView(impactRef, { once: true, margin: "-80px" });
+  const highlightsInView = useInView(highlightsRef, { once: true, margin: "-80px" });
+  const valuesInView = useInView(valuesRef, { once: true, margin: "-80px" });
+
+  useEffect(() => {
+    if (!isHovered) {
+      const timer = setInterval(() => {
+        setCurrent((prev) => (prev + 1) % heroSlides.length);
+      }, 5000);
+      return () => clearInterval(timer);
+    }
+  }, [isHovered]);
+
+  const currentSlide = heroSlides[current];
+
+  const impactAreas = [
+    { title: "Education & Youth Empowerment", description: "Supporting learning opportunities, mentorship, skill development, and youth empowerment.", accent: "red" },
+    { title: "Healthcare & Wellness", description: "Promoting community wellness through healthcare initiatives and awareness programs.", accent: "green" },
+    { title: "Child Welfare", description: "Creating opportunities for children through education, nutrition, and development programs.", accent: "blue" },
+    { title: "Elderly Care", description: "Enhancing the dignity, well-being, and quality of life of senior citizens.", accent: "red" },
+    { title: "Environmental Sustainability", description: "Encouraging environmental responsibility through awareness and action.", accent: "green" },
+    { title: "Community Development", description: "Building stronger and more resilient communities through collaborative initiatives.", accent: "blue" },
+  ];
 
   const values = [
-    {
-      title: "Compassion",
-      description:
-        "Serving communities with empathy, care, and a genuine commitment to improving lives.",
-      accent: "red",
-    },
-    {
-      title: "Integrity",
-      description:
-        "Maintaining transparency, accountability, and ethical practices in everything we do.",
-      accent: "green",
-    },
-    {
-      title: "Inclusivity",
-      description:
-        "Creating equal opportunities and embracing diversity across all communities.",
-      accent: "blue",
-    },
-    {
-      title: "Impact",
-      description:
-        "Delivering sustainable and meaningful change through purpose-driven initiatives.",
-      accent: "red",
-    },
+    { title: "Compassion", description: "Serving communities with empathy, care, and a genuine commitment to improving lives." },
+    { title: "Integrity", description: "Maintaining transparency, accountability, and ethical practices in everything we do." },
+    { title: "Inclusivity", description: "Creating equal opportunities and embracing diversity across all communities." },
+    { title: "Impact", description: "Delivering sustainable and meaningful change through purpose-driven initiatives." },
   ];
-
-  const focusAreas = [
-    {
-      title: "Education",
-      description:
-        "Supporting learning opportunities, mentorship, skill development, and youth empowerment.",
-      accent: "red",
-    },
-    {
-      title: "Healthcare",
-      description:
-        "Promoting community wellness through healthcare initiatives and awareness programs.",
-      accent: "green",
-    },
-    {
-      title: "Child Welfare",
-      description:
-        "Creating opportunities for children through education, nutrition, and development programs.",
-      accent: "blue",
-    },
-    {
-      title: "Elderly Care",
-      description:
-        "Enhancing the dignity, well-being, and quality of life of senior citizens.",
-      accent: "red",
-    },
-    {
-      title: "Sustainability",
-      description:
-        "Encouraging environmental responsibility through awareness and action.",
-      accent: "green",
-    },
-    {
-      title: "Community Development",
-      description:
-        "Building stronger and more resilient communities through collaborative initiatives.",
-      accent: "blue",
-    },
-  ];
-
-  const stats = [
-    { number: "2019", label: "Foundation Established", accent: "red" },
-    { number: "06+", label: "Core Impact Areas", accent: "green" },
-    { number: "CSR", label: "Partnership Opportunities", accent: "blue" },
-    { number: "100%", label: "Community Focused", accent: "red" },
-  ];
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.08, delayChildren: 0.15 },
-    },
-  };
-
-  const fadeUpVariants = {
-    hidden: { opacity: 0, y: 35 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.65, ease: [0.33, 0.1, 0.25, 1] },
-    },
-  };
 
   return (
     <div className="about-page" ref={sectionRef}>
-      {/* Hero Section */}
-      <section className="about-hero">
-        <div className="about-hero-bg" />
-        <div className="about-hero-glow about-hero-glow-1" />
-        <div className="about-hero-glow about-hero-glow-2" />
-        
-        <div className="about-container">
-          <motion.div 
-            className="about-hero-content"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.33, 0.1, 0.25, 1] }}
-          >
-            <div className="about-hero-tag">
-              <span className="about-hero-tag-line" />
-              <span className="about-hero-tag-text">About Uvagai Foundation</span>
-            </div>
+      
+      {/* Hero Section with Background Slideshow */}
+      <section 
+        className="about-hero"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div className="about-slides-container">
+          {heroSlides.map((slide, index) => (
+            <motion.div
+              key={index}
+              className={`about-slide-bg ${index === current ? 'active' : ''}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: index === current ? 1 : 0, scale: index === current ? 1 : 1.08 }}
+              transition={{ duration: 1.2, ease: [0.33, 0.1, 0.25, 1] }}
+            >
+              <img src={slide.image} alt={slide.title} />
+            </motion.div>
+          ))}
+        </div>
 
-            <h1 className="about-hero-headline">
-              Creating Hope, Empowering Lives &
-              <span className="about-hero-headline-accent"> Building Stronger Communities</span>
-            </h1>
+        <div className="about-overlay-dark" />
+        <div className="about-overlay-gradient" />
+        <div className="about-overlay-vignette" />
 
-            <p className="about-hero-subtitle">
-              Founded in 2019, Uvagai Foundation is a non-profit
-              organization dedicated to creating meaningful social impact
-              through education, healthcare, child welfare, elderly care,
-              environmental sustainability, humanitarian assistance, and
-              community development initiatives.
-            </p>
-          </motion.div>
+        <div className="about-hero-container">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current}
+              className="about-hero-content"
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -25 }}
+              transition={{ duration: 0.5, ease: [0.33, 0.1, 0.25, 1] }}
+            >
+              <div className="about-hero-tag">
+                <span className="about-hero-tag-line" />
+                <span className="about-hero-tag-text">{currentSlide.tag}</span>
+              </div>
+
+              <h1 className="about-hero-headline">{currentSlide.title}</h1>
+              <p className="about-hero-subtitle">{currentSlide.subtitle}</p>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        <div className="about-slide-nav">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              className={`about-slide-dot ${index === current ? 'active' : ''}`}
+              onClick={() => setCurrent(index)}
+            >
+              <motion.span
+                className="about-slide-dot-fill"
+                initial={{ width: '0%' }}
+                animate={{ width: index === current && !isHovered ? '100%' : '0%' }}
+                transition={{ duration: index === current ? 5 : 0.3, ease: "linear" }}
+              />
+            </button>
+          ))}
+        </div>
+
+        <div className="about-slide-counter">
+          <span className="about-counter-current">{(current + 1).toString().padStart(2, '0')}</span>
+          <span className="about-counter-sep">/</span>
+          <span className="about-counter-total">{heroSlides.length.toString().padStart(2, '0')}</span>
         </div>
       </section>
 
-      {/* Who We Are Section */}
-      <section className="about-who-section">
+      {/* Our Story - Image + Text */}
+      <section className="about-story" ref={storyRef}>
         <div className="about-container">
-          <motion.div 
-            className="about-who-grid"
-            variants={staggerContainer}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          >
-            {/* Image */}
+          <div className="about-story-grid">
+            
             <motion.div 
-              className="about-who-image"
-              variants={fadeUpVariants}
+              className="about-story-image"
+              initial={{ opacity: 0, x: -30 }}
+              animate={storyInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
             >
-              <div className="about-who-image-wrapper">
-                <div className="about-who-image-glow" />
-                <div className="about-who-image-frame">
-                  <img
-                    src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80"
-                    alt="Uvagai Foundation Community Impact"
-                  />
-                </div>
-                <div className="about-who-image-border" />
+              <div className="about-story-image-frame">
+                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80" alt="Uvagai Foundation" />
+                <div className="about-story-image-border" />
               </div>
+              <div className="about-story-image-glow" />
             </motion.div>
 
-            {/* Content */}
             <motion.div 
-              className="about-who-content"
-              variants={fadeUpVariants}
+              className="about-story-content"
+              initial={{ opacity: 0, x: 30 }}
+              animate={storyInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
             >
-              <div className="about-section-tag">
-                <span className="about-section-tag-line" />
-                <span className="about-section-tag-text">Who We Are</span>
+              <div className="about-story-tag">
+                <span className="about-story-tag-line" />
+                <span>Who We Are</span>
               </div>
-
-              <h2 className="about-section-headline">
-                A Foundation Built On
-                <span className="about-section-headline-accent"> Compassion & Purpose</span>
+              
+              <h2 className="about-story-headline">
+                A Foundation Built On <span className="text-red">Compassion</span> & <span className="text-green">Purpose</span>
               </h2>
+              
+              <p className="about-story-text">
+                Uvagai Foundation was established with a vision to create an inclusive 
+                society where every individual has access to opportunities, dignity, 
+                education, healthcare, and the support needed to thrive.
+              </p>
+              
+              <p className="about-story-text">
+                We work closely with communities, volunteers, institutions, corporate 
+                partners, and social leaders to implement programs that address real 
+                societal challenges and promote sustainable development.
+              </p>
 
-              <div className="about-who-text">
-                <p>
-                  Uvagai Foundation was established with a vision to create
-                  an inclusive society where every individual has access to
-                  opportunities, dignity, education, healthcare, and the
-                  support needed to thrive.
-                </p>
+              <p className="about-story-text">
+                Through compassion-driven action and collaborative partnerships, we 
+                strive to create lasting positive change and contribute to a better 
+                future for all.
+              </p>
 
-                <p>
-                  We work closely with communities, volunteers,
-                  institutions, corporate partners, and social leaders to
-                  implement programs that address real societal challenges
-                  and promote sustainable development.
-                </p>
-
-                <p>
-                  Our initiatives focus on empowering children, supporting
-                  senior citizens, improving community health, encouraging
-                  volunteerism, promoting environmental responsibility, and
-                  strengthening underserved communities.
-                </p>
-
-                <p>
-                  Through compassion-driven action and collaborative
-                  partnerships, we strive to create lasting positive change
-                  and contribute to a better future for all.
-                </p>
+              <div className="about-story-quote">
+                <span className="about-story-quote-mark">"</span>
+                <p>Empowering Communities. Transforming Lives.</p>
               </div>
             </motion.div>
-          </motion.div>
+
+          </div>
         </div>
       </section>
 
-      {/* Vision & Mission */}
-      <section className="about-vm-section">
-        <div className="about-vm-bg" />
-        <div className="about-container">
-          <motion.div 
-            className="about-vm-grid"
-            variants={staggerContainer}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          >
-            {/* Vision Card */}
-            <motion.div 
-              className="about-vm-card about-vision-card"
-              variants={fadeUpVariants}
-              whileHover={{ y: -4 }}
-            >
-              <div className="about-vm-card-accent" />
-              <div className="about-vm-card-label">01</div>
-              <h3 className="about-vm-card-title">Our Vision</h3>
-              <p className="about-vm-card-text">
-                To create an inclusive, empowered, and sustainable society
-                where every individual has equal access to education,
-                healthcare, opportunities, dignity, and a better quality
-                of life.
-              </p>
-            </motion.div>
-
-            {/* Mission Card */}
-            <motion.div 
-              className="about-vm-card about-mission-card"
-              variants={fadeUpVariants}
-              whileHover={{ y: -4 }}
-            >
-              <div className="about-vm-card-accent" />
-              <div className="about-vm-card-label">02</div>
-              <h3 className="about-vm-card-title">Our Mission</h3>
-              <p className="about-vm-card-text">
-                To uplift underserved communities through impactful
-                programs focused on education, healthcare, child welfare,
-                elderly care, environmental sustainability, and community
-                development.
-              </p>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Focus Areas */}
-      <section className="about-focus-section">
+      {/* Impact Areas */}
+      <section className="about-impact" ref={impactRef}>
+        <div className="about-impact-bg" />
         <div className="about-container">
           <motion.div 
             className="about-section-header"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={impactInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
           >
             <div className="about-section-tag">
               <span className="about-section-tag-line" />
@@ -270,145 +220,137 @@ export default function AboutUs() {
           </motion.div>
 
           <motion.div 
-            className="about-focus-grid"
-            variants={staggerContainer}
+            className="about-impact-grid"
             initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+            animate={impactInView ? "visible" : "hidden"}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+            }}
           >
-            {focusAreas.map((area, index) => (
+            {impactAreas.map((area, index) => (
               <motion.div 
-                className={`about-focus-card focus-${area.accent}`}
+                className={`about-impact-card impact-${area.accent}`}
                 key={index}
-                variants={fadeUpVariants}
+                variants={{ hidden: { opacity: 0, y: 25 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
                 whileHover={{ y: -4 }}
               >
-                <div className="focus-card-number">
-                  {(index + 1).toString().padStart(2, '0')}
+                <div className="about-impact-card-number">0{index + 1}</div>
+                <h3 className="about-impact-card-title">{area.title}</h3>
+                <p className="about-impact-card-text">{area.description}</p>
+                <div className="about-impact-card-line" />
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Foundation Highlights + Values */}
+      <section className="about-highlights-values">
+        <div className="about-container">
+          <div className="about-hv-grid">
+            
+            {/* Highlights */}
+            <motion.div 
+              className="about-hv-column"
+              ref={highlightsRef}
+              initial={{ opacity: 0, y: 30 }}
+              animate={highlightsInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7 }}
+            >
+              <div className="about-hv-header">
+                <div className="about-section-tag">
+                  <span className="about-section-tag-line" />
+                  <span className="about-section-tag-text">Foundation Highlights</span>
                 </div>
-                <h3 className="focus-card-title">{area.title}</h3>
-                <p className="focus-card-description">{area.description}</p>
-                <div className="focus-card-line" />
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+                <h2 className="about-hv-headline">Building Impact Through Action</h2>
+              </div>
 
-      {/* Core Values */}
-      <section className="about-values-section">
-        <div className="about-values-bg" />
-        <div className="about-container">
-          <motion.div 
-            className="about-section-header"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
-          >
-            <div className="about-section-tag">
-              <span className="about-section-tag-line" />
-              <span className="about-section-tag-text">Our Values</span>
-            </div>
-            <h2 className="about-section-headline">Principles That Guide Our Work</h2>
-          </motion.div>
+              <div className="about-highlights-list">
+                {[
+                  { title: "2019", desc: "Founded with a vision to create meaningful social impact across communities.", accent: "red" },
+                  { title: "06+", desc: "Core focus areas serving communities through education, healthcare, and welfare.", accent: "green" },
+                  { title: "Community First", desc: "Driven by compassion, inclusion, and sustainable development principles.", accent: "blue" },
+                ].map((item, index) => (
+                  <motion.div 
+                    className={`about-highlight-item highlight-${item.accent}`}
+                    key={index}
+                    whileHover={{ x: 4 }}
+                  >
+                    <span className="about-highlight-number">{item.title}</span>
+                    <p className="about-highlight-text">{item.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
 
-          <motion.div 
-            className="about-values-grid"
-            variants={staggerContainer}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          >
-            {values.map((value, index) => (
-              <motion.div 
-                className={`about-value-card value-${value.accent}`}
-                key={index}
-                variants={fadeUpVariants}
-                whileHover={{ y: -4 }}
-              >
-                <div className="value-card-stripe" />
-                <div className="value-card-number">
-                  {(index + 1).toString().padStart(2, '0')}
+            {/* Values */}
+            <motion.div 
+              className="about-hv-column"
+              ref={valuesRef}
+              initial={{ opacity: 0, y: 30 }}
+              animate={valuesInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              <div className="about-hv-header">
+                <div className="about-section-tag">
+                  <span className="about-section-tag-line" />
+                  <span className="about-section-tag-text">Our Values</span>
                 </div>
-                <h4 className="value-card-title">{value.title}</h4>
-                <p className="value-card-description">{value.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+                <h2 className="about-hv-headline">Principles That Guide Us</h2>
+              </div>
+
+              <div className="about-values-grid">
+                {values.map((value, index) => (
+                  <motion.div 
+                    className="about-value-card"
+                    key={index}
+                    whileHover={{ y: -3 }}
+                  >
+                    <span className="about-value-number">0{index + 1}</span>
+                    <h4 className="about-value-title">{value.title}</h4>
+                    <p className="about-value-text">{value.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="about-stats-section">
+      {/* Closing CTA */}
+      <section className="about-closing">
+        <div className="about-closing-bg" />
+        <div className="about-closing-glow" />
         <div className="about-container">
           <motion.div 
-            className="about-section-header"
+            className="about-closing-content"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.8 }}
           >
-            <div className="about-section-tag">
-              <span className="about-section-tag-line" />
-              <span className="about-section-tag-text">Foundation Highlights</span>
-            </div>
-            <h2 className="about-section-headline">Building Impact Through Action</h2>
-          </motion.div>
-
-          <motion.div 
-            className="about-stats-grid"
-            variants={staggerContainer}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          >
-            {stats.map((stat, index) => (
-              <motion.div 
-                className={`about-stat-card stat-${stat.accent}`}
-                key={index}
-                variants={fadeUpVariants}
-                whileHover={{ y: -4 }}
-              >
-                <span className="about-stat-number">{stat.number}</span>
-                <span className="about-stat-label">{stat.label}</span>
-                <div className="about-stat-accent" />
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="about-cta-section">
-        <div className="about-cta-bg" />
-        <div className="about-cta-glow" />
-        
-        <div className="about-container">
-          <motion.div 
-            className="about-cta-content"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: [0.33, 0.1, 0.25, 1] }}
-          >
-            <h2 className="about-cta-headline">
-              Join Us In Creating Positive Change
-            </h2>
-            <p className="about-cta-description">
-              Together, we can empower lives, strengthen communities,
-              and build a brighter future through compassion, action,
-              and collaboration.
+            <h2 className="about-closing-headline">Join Us In Creating Positive Change</h2>
+            <p className="about-closing-text">
+              Together, we can empower lives, strengthen communities, and build a 
+              brighter future through compassion, action, and collaboration.
             </p>
-            <div className="about-cta-buttons">
-              <a href="/volunteer" className="about-cta-primary">
+            <div className="about-closing-buttons">
+              <a href="/volunteer" className="about-closing-primary">
                 <span>Become a Volunteer</span>
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-              <a href="/donate" className="about-cta-secondary">
+              <a href="/donate" className="about-closing-secondary">
                 Support Our Mission
-                <span className="about-cta-secondary-arrow">→</span>
+                <span className="about-closing-arrow">→</span>
               </a>
             </div>
           </motion.div>
         </div>
       </section>
+
     </div>
   );
 }

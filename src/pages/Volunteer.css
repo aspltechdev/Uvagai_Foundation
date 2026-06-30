@@ -1,682 +1,321 @@
-/* ============================================
-   Uvagai Foundation - Volunteer Page
-   Professional Design - No Emoji Icons
-   Colors: Red, Leaf Green, Water Dark Blue, Black
-   ============================================ */
-
-:root {
-  --vol-red: #DC2626;
-  --vol-red-light: #FEE2E2;
-  --vol-red-pale: #FFF5F5;
-  --vol-red-dark: #B91C1C;
-  
-  --vol-green: #16A34A;
-  --vol-green-light: #DCFCE7;
-  --vol-green-pale: #F0FDF4;
-  --vol-green-dark: #15803D;
-  
-  --vol-blue: #1E3A5F;
-  --vol-blue-light: #E8F0FE;
-  --vol-blue-pale: #F5F8FC;
-  --vol-blue-dark: #152E4A;
-  
-  --vol-black: #171717;
-  
-  --vol-white: #FFFFFF;
-  --vol-cream: #FEFCFB;
-  --vol-soft-bg: #F9F8F6;
-  --vol-warm-bg: #FFFBF9;
-  
-  --vol-text-primary: #171717;
-  --vol-text-secondary: #525252;
-  --vol-text-tertiary: #737373;
-  --vol-text-muted: #A3A3A3;
-  
-  --vol-border: #E8E4DE;
-  --vol-border-light: #F0EDE8;
-  
-  --vol-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
-  --vol-shadow-md: 0 8px 30px rgba(0, 0, 0, 0.05);
-  --vol-shadow-lg: 0 15px 50px rgba(0, 0, 0, 0.07);
-  --vol-shadow-xl: 0 25px 70px rgba(0, 0, 0, 0.09);
-  
-  --vol-font-display: 'Georgia', 'Times New Roman', 'Playfair Display', serif;
-  --vol-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-  
-  --vol-ease-out: cubic-bezier(0.33, 0.1, 0.25, 1);
+/* VolunteerHome.css - UNIVERSAL VOLUNTEER SECTION */
+/* ============================================ */
+.volunteer-section {
+  position: relative; padding: 120px 0;
+  background: #FAFBFC; overflow: hidden;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* ============================================
-   Global
-   ============================================ */
-
-.volunteer-page {
-  font-family: var(--vol-font-body);
-  -webkit-font-smoothing: antialiased;
+.volunteer-section-bg {
+  position: absolute; inset: -5%;
+  background: radial-gradient(ellipse at 25% 30%, rgba(220,38,38,0.012) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 60%, rgba(5,150,105,0.012) 0%, transparent 50%);
+  z-index: 0; pointer-events: none;
 }
 
-.volunteer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2.5rem;
-  position: relative;
-  z-index: 2;
+.volunteer-section-orb {
+  position: absolute; border-radius: 50%;
+  pointer-events: none; filter: blur(100px); z-index: 0;
 }
 
-/* Section Header */
+.volunteer-section-orb-1 {
+  width: 450px; height: 450px; top: -5%; right: -5%;
+  background: radial-gradient(circle, rgba(220,38,38,0.04) 0%, transparent 70%);
+}
+
+.volunteer-section-orb-2 {
+  width: 400px; height: 400px; bottom: -5%; left: -3%;
+  background: radial-gradient(circle, rgba(5,150,105,0.04) 0%, transparent 70%);
+}
+
+.volunteer-section-container {
+  position: relative; z-index: 2;
+  max-width: 1200px; margin: 0 auto; padding: 0 40px;
+}
+
+/* Header */
 .volunteer-section-header {
-  text-align: center;
-  margin-bottom: 3.5rem;
+  text-align: center; margin-bottom: 56px;
 }
 
-.volunteer-section-tag {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+.volunteer-section-eyebrow {
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; margin-bottom: 16px;
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 2.5px; text-transform: uppercase; color: #64748b;
 }
 
-.volunteer-section-tag-line {
-  width: 28px;
-  height: 2px;
-  background: var(--vol-red);
-  border-radius: 1px;
+.volunteer-section-eyebrow-line {
+  width: 20px; height: 2px; border-radius: 1px;
+  background: linear-gradient(90deg, #DC2626, #059669); display: inline-block;
 }
 
-.volunteer-section-tag-text {
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--vol-red);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+.volunteer-section-title {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 750; color: #0f172a;
+  line-height: 1.2; letter-spacing: -1.5px; margin: 0 0 16px;
 }
 
-.volunteer-section-headline {
-  font-family: var(--vol-font-display);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 400;
-  color: var(--vol-text-primary);
-  margin-bottom: 1rem;
-  letter-spacing: -0.02em;
-}
+.text-red { color: #DC2626; }
+.text-green { color: #059669; }
 
 .volunteer-section-subtitle {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--vol-text-tertiary);
-  max-width: 600px;
-  margin: 0 auto;
+  font-size: 1rem; line-height: 1.6;
+  color: #64748b; max-width: 550px; margin: 0 auto;
 }
 
-/* ============================================
-   Hero Section
-   ============================================ */
-
-.volunteer-hero {
-  position: relative;
-  padding: 8rem 0 5rem;
-  background: var(--vol-cream);
-  overflow: hidden;
+/* Benefits */
+.volunteer-section-benefits {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 22px; margin-bottom: 60px;
 }
 
-.volunteer-hero-bg {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    var(--vol-white) 0%,
-    var(--vol-cream) 50%,
-    var(--vol-soft-bg) 100%
-  );
+.volunteer-section-benefit-card {
+  background: white; border-radius: 18px; overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  cursor: pointer; transition: all 0.4s ease;
 }
 
-.volunteer-hero-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
+.volunteer-section-benefit-card:hover {
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
 }
 
-.volunteer-hero-glow-1 {
-  width: 450px;
-  height: 450px;
-  background: var(--vol-red);
-  top: -15%;
-  right: -8%;
-  opacity: 0.05;
+.volunteer-section-benefit-image {
+  position: relative; aspect-ratio: 16/10; overflow: hidden;
 }
 
-.volunteer-hero-glow-2 {
-  width: 380px;
-  height: 380px;
-  background: var(--vol-green);
-  bottom: -18%;
-  left: -6%;
-  opacity: 0.05;
+.volunteer-section-benefit-image img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.7s ease;
 }
 
-.volunteer-hero-content {
-  text-align: center;
-  max-width: 750px;
-  margin: 0 auto;
+.volunteer-section-benefit-card:hover .volunteer-section-benefit-image img {
+  transform: scale(1.06);
 }
 
-.volunteer-hero-tag {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+.volunteer-section-benefit-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.2) 100%);
 }
 
-.volunteer-hero-tag-line {
-  width: 32px;
-  height: 2px;
-  background: var(--vol-red);
-  border-radius: 1px;
+.volunteer-section-benefit-body {
+  padding: 18px 20px 20px;
 }
 
-.volunteer-hero-tag-text {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--vol-red);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+.volunteer-section-benefit-body h3 {
+  font-size: 1rem; font-weight: 650; color: #0f172a;
+  margin: 0 0 8px; letter-spacing: -0.3px;
 }
 
-.volunteer-hero-headline {
-  font-family: var(--vol-font-display);
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--vol-text-primary);
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.02em;
+.volunteer-section-benefit-body p {
+  font-size: 0.82rem; color: #64748b;
+  line-height: 1.55; margin: 0;
 }
 
-.volunteer-hero-headline-accent {
-  color: var(--vol-red);
+/* Quote Slider */
+.volunteer-section-slider {
+  position: relative; margin-bottom: 60px;
+  border-radius: 24px; overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.06);
 }
 
-.volunteer-hero-subtitle {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--vol-text-tertiary);
+.volunteer-section-slider-stage {
+  position: relative; overflow: hidden;
 }
 
-/* ============================================
-   Opportunities Section
-   ============================================ */
-
-.volunteer-opportunities-section {
-  padding: 6rem 0;
-  background: var(--vol-white);
+.volunteer-section-slide {
+  position: relative; min-height: 360px; display: flex; align-items: center;
 }
 
-.volunteer-opportunities-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+.volunteer-section-slide-image {
+  position: absolute; inset: 0;
 }
 
-.volunteer-opportunity-card {
-  background: var(--vol-white);
-  border: 1px solid var(--vol-border-light);
-  border-radius: 12px;
-  padding: 2rem 1.75rem;
-  box-shadow: var(--vol-shadow-sm);
-  transition: all 0.4s var(--vol-ease-out);
-  cursor: default;
-  position: relative;
-  overflow: hidden;
+.volunteer-section-slide-image img {
+  width: 100%; height: 100%; object-fit: cover;
 }
 
-.volunteer-opportunity-card:hover {
-  box-shadow: var(--vol-shadow-lg);
-  border-color: transparent;
+.volunteer-section-slide-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
 }
 
-.opportunity-card-number {
-  font-family: var(--vol-font-display);
-  font-size: 2.2rem;
-  font-weight: 700;
-  opacity: 0.06;
-  position: absolute;
-  top: 0.75rem;
-  right: 1.25rem;
-  transition: all 0.4s var(--vol-ease-out);
+.volunteer-section-slide-content {
+  position: relative; z-index: 2;
+  max-width: 700px; margin: 0 auto; text-align: center;
+  padding: 60px 40px;
 }
 
-.opportunity-red .opportunity-card-number { color: var(--vol-red); }
-.opportunity-green .opportunity-card-number { color: var(--vol-green); }
-.opportunity-blue .opportunity-card-number { color: var(--vol-blue); }
-
-.volunteer-opportunity-card:hover .opportunity-card-number {
-  opacity: 0.12;
-  transform: scale(1.15);
+.volunteer-section-slide-content blockquote {
+  font-size: 1.4rem; font-weight: 500; color: white;
+  line-height: 1.5; margin: 0 0 16px; font-style: italic;
 }
 
-.opportunity-card-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--vol-text-primary);
-  margin-bottom: 0.65rem;
-  line-height: 1.3;
-  position: relative;
-  z-index: 1;
+.volunteer-section-slide-author {
+  font-size: 0.9rem; color: rgba(255,255,255,0.8); font-weight: 500;
 }
 
-.opportunity-card-description {
-  font-size: 0.85rem;
-  line-height: 1.65;
-  color: var(--vol-text-tertiary);
-  position: relative;
-  z-index: 1;
+/* Arrows */
+.volunteer-section-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,0.9); border: none;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 5; transition: all 0.3s ease;
 }
 
-.opportunity-card-line {
-  width: 24px;
-  height: 2.5px;
-  border-radius: 2px;
-  margin-top: 1.25rem;
-  transition: all 0.4s var(--vol-ease-out);
-  position: relative;
-  z-index: 1;
+.volunteer-section-arrow:hover { background: white; }
+.volunteer-section-prev { left: 20px; }
+.volunteer-section-next { right: 20px; }
+
+/* Dots */
+.volunteer-section-dots {
+  position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 8px; z-index: 5;
 }
 
-.opportunity-red .opportunity-card-line { background: var(--vol-red); }
-.opportunity-green .opportunity-card-line { background: var(--vol-green); }
-.opportunity-blue .opportunity-card-line { background: var(--vol-blue); }
-
-.volunteer-opportunity-card:hover .opportunity-card-line {
-  width: 40px;
+.volunteer-section-dot {
+  height: 8px; border-radius: 4px; border: none;
+  cursor: pointer; padding: 0; transition: all 0.3s ease;
 }
 
-/* ============================================
-   Registration Form
-   ============================================ */
+/* Ways to Volunteer */
+.volunteer-section-ways { margin-bottom: 60px; }
 
-.volunteer-form-section {
-  position: relative;
-  padding: 6rem 0;
-  overflow: hidden;
+.volunteer-section-ways-title {
+  text-align: center; font-size: 1.6rem; font-weight: 700;
+  color: #0f172a; margin: 0 0 36px; letter-spacing: -0.5px;
 }
 
-.volunteer-form-bg {
-  position: absolute;
-  inset: 0;
-  background: var(--vol-soft-bg);
+.volunteer-section-ways-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
 }
 
-.volunteer-form-card {
-  max-width: 750px;
-  margin: 0 auto;
-  background: var(--vol-white);
-  border: 1px solid var(--vol-border-light);
-  border-radius: 16px;
-  padding: 3rem;
-  box-shadow: var(--vol-shadow-xl);
+.volunteer-section-way-card {
+  background: white; border-radius: 14px; padding: 22px 20px;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 3px 14px rgba(0,0,0,0.02);
+  cursor: pointer; transition: all 0.3s ease;
 }
 
-.form-card-header {
-  text-align: center;
-  margin-bottom: 2.5rem;
+.volunteer-section-way-card:hover {
+  box-shadow: 0 8px 28px rgba(0,0,0,0.05);
 }
 
-.form-card-title {
-  font-family: var(--vol-font-display);
-  font-size: 2rem;
-  font-weight: 400;
-  color: var(--vol-text-primary);
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.02em;
+.volunteer-section-way-card h4 {
+  font-size: 0.95rem; font-weight: 650; color: #0f172a;
+  margin: 0 0 6px; letter-spacing: -0.2px;
 }
 
-.form-card-subtitle {
-  font-size: 0.92rem;
-  line-height: 1.6;
-  color: var(--vol-text-tertiary);
+.volunteer-section-way-card p {
+  font-size: 0.8rem; color: #64748b;
+  line-height: 1.5; margin: 0 0 12px;
 }
 
-/* Form */
-.volunteer-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+.volunteer-section-way-line {
+  width: 24px; height: 2px; border-radius: 1px;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
+.way-red .volunteer-section-way-line { background: #DC2626; }
+.way-green .volunteer-section-way-line { background: #059669; }
+.way-blue .volunteer-section-way-line { background: #1E3A8A; }
+
+/* CTA Banner */
+.volunteer-section-banner {
+  position: relative; border-radius: 20px; overflow: hidden;
+  padding: 44px 48px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+.volunteer-section-banner-content {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: space-between; gap: 40px;
 }
 
-.form-group-full {
-  grid-column: 1 / -1;
+.volunteer-section-banner-text h3 {
+  font-size: 1.5rem; font-weight: 700; color: white;
+  margin: 0 0 8px; letter-spacing: -0.5px;
 }
 
-.form-label {
-  font-size: 0.8rem;
-  font-weight: 550;
-  color: var(--vol-text-secondary);
-  letter-spacing: 0.02em;
+.volunteer-section-banner-text p {
+  font-size: 0.9rem; color: rgba(255,255,255,0.7);
+  line-height: 1.5; margin: 0; max-width: 450px;
 }
 
-.form-input,
-.form-select,
-.form-textarea {
-  width: 100%;
-  padding: 0.85rem 1rem;
-  font-family: var(--vol-font-body);
-  font-size: 0.9rem;
-  color: var(--vol-text-primary);
-  background: var(--vol-white);
-  border: 1.5px solid var(--vol-border);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  outline: none;
+.volunteer-section-banner-actions {
+  display: flex; align-items: center; gap: 16px; flex-shrink: 0;
 }
 
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus {
-  border-color: var(--vol-red);
-  box-shadow: 0 0 0 3px var(--vol-red-pale);
-}
-
-.form-input::placeholder,
-.form-textarea::placeholder {
-  color: var(--vol-text-muted);
-}
-
-.form-select {
-  cursor: pointer;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23737373' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
-  padding-right: 2.5rem;
-}
-
-.form-textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.form-submit-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  padding: 1rem 2.5rem;
-  background: var(--vol-red);
-  color: var(--vol-white);
-  font-size: 0.95rem;
-  font-weight: 500;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.4s var(--vol-ease-out);
-  letter-spacing: 0.02em;
-  box-shadow: 0 10px 30px -10px rgba(220, 38, 38, 0.35);
-  margin-top: 0.5rem;
-}
-
-.form-submit-btn:hover {
-  background: var(--vol-red-dark);
-  box-shadow: 0 15px 40px -12px rgba(220, 38, 38, 0.45);
-}
-
-.form-submit-btn svg {
-  transition: transform 0.3s ease;
-}
-
-.form-submit-btn:hover svg {
-  transform: translateX(3px);
-}
-
-/* ============================================
-   Benefits Section
-   ============================================ */
-
-.volunteer-benefits-section {
-  padding: 6rem 0;
-  background: var(--vol-white);
-}
-
-.volunteer-benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.volunteer-benefit-card {
-  background: var(--vol-white);
-  border: 1px solid var(--vol-border-light);
-  border-radius: 12px;
-  padding: 2rem 1.75rem;
-  box-shadow: var(--vol-shadow-sm);
-  transition: all 0.4s var(--vol-ease-out);
-  cursor: default;
-  position: relative;
-}
-
-.volunteer-benefit-card:hover {
-  box-shadow: var(--vol-shadow-lg);
-  border-color: transparent;
-}
-
-.benefit-card-number {
-  font-family: var(--vol-font-display);
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--vol-text-muted);
-  opacity: 0.2;
-  margin-bottom: 0.75rem;
+.volunteer-section-banner-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px; border-radius: 10px;
+  background: linear-gradient(135deg, #DC2626, #059669);
+  color: white; text-decoration: none;
+  font-size: 0.88rem; font-weight: 600; letter-spacing: -0.2px;
   transition: all 0.3s ease;
 }
 
-.volunteer-benefit-card:hover .benefit-card-number {
-  color: var(--vol-red);
-  opacity: 0.5;
+.volunteer-section-banner-secondary {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 14px 24px; border-radius: 10px;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  color: white; text-decoration: none;
+  font-size: 0.88rem; font-weight: 500; transition: all 0.3s ease;
 }
 
-.benefit-card-title {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--vol-text-primary);
-  margin-bottom: 0.6rem;
+.volunteer-section-banner-secondary:hover {
+  background: rgba(255,255,255,0.1);
 }
 
-.benefit-card-description {
-  font-size: 0.88rem;
-  line-height: 1.6;
-  color: var(--vol-text-tertiary);
+.volunteer-section-banner-orb {
+  position: absolute; border-radius: 50%; pointer-events: none; opacity: 0.12;
 }
 
-/* ============================================
-   CTA Section
-   ============================================ */
-
-.volunteer-cta-section {
-  position: relative;
-  padding: 6rem 0;
-  overflow: hidden;
+.banner-orb-red {
+  width: 220px; height: 220px; top: -40px; right: -20px;
+  background: radial-gradient(circle, #DC2626, transparent 70%);
 }
 
-.volunteer-cta-bg {
-  position: absolute;
-  inset: 0;
-  background: var(--vol-red-pale);
+.banner-orb-green {
+  width: 180px; height: 180px; bottom: -30px; left: 25%;
+  background: radial-gradient(circle, #059669, transparent 70%);
 }
 
-.volunteer-cta-glow {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: var(--vol-red);
-  border-radius: 50%;
-  filter: blur(150px);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.08;
-  pointer-events: none;
-}
-
-.volunteer-cta-content {
-  text-align: center;
-  max-width: 650px;
-  margin: 0 auto;
-}
-
-.volunteer-cta-headline {
-  font-family: var(--vol-font-display);
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  font-weight: 400;
-  color: var(--vol-text-primary);
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.02em;
-}
-
-.volunteer-cta-description {
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: var(--vol-text-secondary);
-  margin-bottom: 2.5rem;
-}
-
-.volunteer-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
-  background: var(--vol-red);
-  color: var(--vol-white);
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-decoration: none;
-  border-radius: 10px;
-  transition: all 0.4s var(--vol-ease-out);
-  letter-spacing: 0.02em;
-  box-shadow: 0 10px 30px -10px rgba(220, 38, 38, 0.35);
-}
-
-.volunteer-cta-btn:hover {
-  background: var(--vol-red-dark);
-  box-shadow: 0 15px 40px -12px rgba(220, 38, 38, 0.45);
-}
-
-.volunteer-cta-btn svg {
-  transition: transform 0.3s ease;
-}
-
-.volunteer-cta-btn:hover svg {
-  transform: translateX(3px);
-}
-
-/* ============================================
-   Responsive
-   ============================================ */
-
-@media (max-width: 1100px) {
-  .volunteer-opportunities-grid {
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+@media (max-width: 968px) {
+  .volunteer-section-benefits {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  .volunteer-benefits-grid {
+  .volunteer-section-ways-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-
-@media (max-width: 768px) {
-  .volunteer-hero {
-    padding: 6rem 0 4rem;
-  }
-  
-  .volunteer-container {
-    padding: 0 1.5rem;
-  }
-  
-  .volunteer-opportunities-section,
-  .volunteer-form-section,
-  .volunteer-benefits-section {
-    padding: 4rem 0;
-  }
-  
-  .volunteer-section-header {
-    margin-bottom: 2.5rem;
-  }
-  
-  .volunteer-form-card {
-    padding: 2rem;
-  }
-  
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-  
-  .volunteer-hero-headline {
-    font-size: 1.8rem;
-  }
-  
-  .volunteer-section-headline {
-    font-size: 1.7rem;
-  }
-  
-  .volunteer-cta-headline {
-    font-size: 1.8rem;
-  }
-  
-  .form-card-title {
-    font-size: 1.6rem;
+  .volunteer-section-slide-content blockquote {
+    font-size: 1.15rem;
   }
 }
 
-@media (max-width: 540px) {
-  .volunteer-container {
-    padding: 0 1.25rem;
-  }
+@media (max-width: 640px) {
+  .volunteer-section { padding: 80px 0; }
+  .volunteer-section-container { padding: 0 20px; }
   
-  .volunteer-hero {
-    padding: 5rem 0 3rem;
-  }
+  .volunteer-section-benefits { grid-template-columns: 1fr; }
+  .volunteer-section-ways-grid { grid-template-columns: 1fr; }
   
-  .volunteer-opportunities-grid {
-    grid-template-columns: 1fr;
+  .volunteer-section-banner-content {
+    flex-direction: column; text-align: center;
   }
+  .volunteer-section-banner { padding: 32px 24px; }
+  .volunteer-section-banner-actions { flex-direction: column; width: 100%; }
+  .volunteer-section-banner-cta,
+  .volunteer-section-banner-secondary { width: 100%; justify-content: center; }
   
-  .volunteer-benefits-grid {
-    grid-template-columns: 1fr;
-  }
+  .volunteer-section-slide-content { padding: 40px 24px; }
+  .volunteer-section-slide-content blockquote { font-size: 1rem; }
+  .volunteer-section-arrow { width: 36px; height: 36px; }
   
-  .volunteer-form-card {
-    padding: 1.5rem;
-  }
-  
-  .volunteer-hero-headline {
-    font-size: 1.6rem;
-  }
+  .volunteer-section-title { font-size: 1.6rem; }
 }
 
-/* ============================================
-   Reduced Motion
-   ============================================ */
-
-@media (prefers-reduced-motion: reduce) {
-  .volunteer-opportunity-card,
-  .volunteer-benefit-card {
-    transition: none;
-  }
-  
-  .opportunity-card-line {
-    transition: none;
-  }
-}
