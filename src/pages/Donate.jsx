@@ -9,6 +9,7 @@ import community from "../assets/community.png";
 import childedu from "../assets/childedu.png";
 import seniorciti from "../assets/senior.png"
 import communityy from "../assets/communityy.png";
+import environment from "../assets/environment.png";
 
 
 export default function Donate() {
@@ -822,7 +823,7 @@ export default function Donate() {
           tag: "Environment",
           title: "Environmental Sustainability",
           desc: "Tree plantation drives, environmental awareness and green community initiatives.",
-          img: bgofslides,
+          img: environment,
         },
 
         {
