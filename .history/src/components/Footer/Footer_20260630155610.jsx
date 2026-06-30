@@ -20,18 +20,12 @@ export default function Footer() {
   // (the page needs a matching element, e.g. id="cta", around its
   // main call-to-action button — adjust the ids below if yours differ).
   const getInvolved = [
-    { to: "/volunteerPage", label: "Volunteer" },
+    { to: "/volunteer", label: "Volunteer" },
     { to: "/csr-partnership", label: "CSR Partnership" },
     { to: "/donate", label: "Donate" },
     { to: "/internship", label: "Internship" },
     { to: "/annual-reports", label: "Annual Reports" },
     { to: "/contact", label: "Partner With Us" },
-    { to: "/volunteer", hash: "cta", label: "Volunteer" },
-    { to: "/csr-partnership", hash: "cta", label: "CSR Partnership" },
-    { to: "/donate", hash: "cta", label: "Donate" },
-    // { to: "/internship", hash: "cta", label: "Internship" },
-    // { to: "/annual-reports", hash: "cta", label: "Annual Reports" },
-    { to: "/contact", hash: "cta", label: "Partner With Us" },
   ];
 
   const focusAreas = [

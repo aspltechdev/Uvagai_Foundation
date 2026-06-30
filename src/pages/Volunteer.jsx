@@ -358,17 +358,7 @@ export default function VolunteerHome() {
               </p>
             </div>
             <div className="volunteer-section-banner-actions">
-              <motion.a 
-                href="/volunteer" 
-                className="volunteer-section-banner-cta"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Become a Volunteer
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M2 8H14M14 8L9 3M14 8L9 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </motion.a>
+              
               <motion.a 
                 href="/contact" 
                 className="volunteer-section-banner-secondary"
