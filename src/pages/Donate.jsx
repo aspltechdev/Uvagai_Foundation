@@ -8,6 +8,7 @@ import childincards from "../assets/childincards.png";
 import community from "../assets/community.png";
 import childedu from "../assets/childedu.png";
 import seniorciti from "../assets/senior.png"
+import communityy from "../assets/communityy.png";
 
 
 export default function Donate() {
@@ -828,7 +829,7 @@ export default function Donate() {
           tag:"Community",
           title: "Community Development",
           desc: "Creating sustainable livelihood opportunities and empowering rural communities.",
-          img: bgofslides,
+          img: communityy,
         },
 
       ].map((item,index)=>(
