@@ -16,7 +16,7 @@ export default function Footer() {
   ];
 
   const getInvolved = [
-    { to: "/volunteer", label: "Volunteer" },
+    { to: "/volunteerPage", label: "Volunteer" },
     { to: "/csr-partnership", label: "CSR Partnership" },
     { to: "/donate", label: "Donate" },
     { to: "/internship", label: "Internship" },
