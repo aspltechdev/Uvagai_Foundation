@@ -17,7 +17,7 @@ import CSRPartnersHome from "./CSRPartners";
 import VolunteerHome from "./Volunteer";
 import TestimonialsHome from "./Testimonials";
 import HomeCourse from "./HomeCourse";
-import Socialwall from "../components/Home/socialwall";
+import SocialWall from "./SocialWall"; // 👈 adjust this path to wherever you saved it
 
 
 export default function Home() {
@@ -56,7 +56,7 @@ export default function Home() {
       <Gallery />
 
       {/* Social Wall */}
-      <Socialwall />
+      <SocialWall />
 
       <TestimonialsHome />
 
