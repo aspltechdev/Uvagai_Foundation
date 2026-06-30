@@ -462,7 +462,20 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
+import { Link } from "react-router-dom";
 import "./CSRPartnerDetails.css";
+import {
+  FiBookOpen,
+  FiHeart,
+  FiUsers,
+  FiShield,
+} from "react-icons/fi";
+
+
+import whyEducationImg from "../assets/images/education.png";
+import whyHealthcareImg from "../assets/images/healthcare.png";
+import whySustainabilityImg from "../assets/images/sustainability.png";
+import whyVolunteerImg from "../assets/images/volunteer.png";
 
 import educationImg from "../assets/education.jpg";
 import healthcareImg from "../assets/healthcare.jpg";
@@ -492,11 +505,68 @@ const heroSlides = [
   }
 ];
 
+const whyChooseCards = [
+  {
+    title: "Measurable Impact",
+    description:
+      "Delivering transparent CSR initiatives with structured planning, measurable outcomes, and long-term social impact that creates meaningful change in communities.",
+    image: whyEducationImg,
+  },
+  {
+    title: "Trusted Collaboration",
+    description:
+      "Building reliable partnerships through open communication, accountability, and a shared commitment to creating sustainable social development.",
+    image: whyHealthcareImg,
+  },
+  {
+    title: "Sustainable Development",
+    description:
+      "Our initiatives focus on strengthening communities by improving access to education, healthcare services, skill development, and essential welfare programs that create meaningful, long-lasting change.",
+    image: whySustainabilityImg,
+  },
+  {
+    title: "Employee Volunteering",
+    description:
+      "Empowering employees to actively participate in impactful volunteering programs that strengthen communities and foster a culture of social responsibility.",
+    image: whyVolunteerImg,
+  },
+];
+
+const sliderImages = [
+  {
+    image: whyEducationImg,
+    title: "Education",
+    subtitle: "Creating brighter futures through quality education."
+  },
+  {
+    image: whyHealthcareImg,
+    title: "Healthcare",
+    subtitle: "Accessible healthcare for healthier communities."
+  },
+  {
+    image: whySustainabilityImg,
+    title: "Sustainability",
+    subtitle: "Building greener and more sustainable communities."
+  },
+  {
+    image: whyVolunteerImg,
+    title: "Volunteering",
+    subtitle: "Employees making a real social impact."
+  }
+];
+
+
 export default function CSRPartnerDetails() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
+
   const [current, setCurrent] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+
+  // Why Choose Us Image Slider
+  
+
+  
 
   const benefitsRef = useRef(null);
   const partnersRef = useRef(null);
@@ -552,6 +622,31 @@ export default function CSRPartnerDetails() {
     { title: "Sustainability Projects", description: "Environmental awareness, tree plantation and green initiatives.", accent: "blue" },
     { title: "Employee Engagement", description: "Volunteer programs that strengthen community participation.", accent: "red" },
   ];
+  const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.18,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 70,
+    scale: 0.96,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
 
   return (
     <div className="csr-page" ref={sectionRef}>
@@ -638,51 +733,68 @@ export default function CSRPartnerDetails() {
         </div>
       </section>
 
-      {/* Why Partner Section */}
-      <section className="csr-why-section" ref={benefitsRef}>
-        <div className="csr-container">
-          <motion.div
-            className="csr-section-header"
-            initial={{ opacity: 0, y: 30 }}
-            animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
-          >
-            <div className="csr-section-tag">
-              <span className="csr-section-tag-line" />
-              <span className="csr-section-tag-text">Why Choose Uvagai Foundation</span>
-            </div>
-            <h2 className="csr-section-headline">Building Purpose-Driven Partnerships</h2>
-            <p className="csr-section-subtitle">
-              We help organizations achieve their CSR goals through transparent implementation, 
-              community engagement, measurable outcomes, and sustainable impact.
-            </p>
-          </motion.div>
+    <section className="why-choose">
+  <div className="container">
 
-          <motion.div
-            className="csr-benefits-grid"
-            initial="hidden"
-            animate={benefitsInView ? "visible" : "hidden"}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.15 } },
-            }}
-          >
-            {benefits.map((benefit, index) => (
-              <motion.div
-                className={`csr-benefit-card benefit-${benefit.accent}`}
-                key={index}
-                variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.33, 0.1, 0.25, 1] } } }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="benefit-card-stripe" />
-                <div className="benefit-card-number">{(index + 1).toString().padStart(2, '0')}</div>
-                <h3 className="benefit-card-title">{benefit.title}</h3>
-                <p className="benefit-card-description">{benefit.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+    <span className="section-tag">WHY PARTNER WITH US</span>
+
+    <h2>Why Choose Us</h2>
+
+    <p className="section-description">
+      Together we create meaningful impact through education,
+      healthcare, volunteering, and CSR sponsorships.
+    </p>
+
+    <div className="why-grid">
+
+      <div className="why-card">
+        <div className="why-icon">
+          <FiBookOpen />
         </div>
-      </section>
+        <h3>Education</h3>
+        <p>
+          Supporting quality education through scholarships,
+          learning initiatives, and skill development.
+        </p>
+      </div>
+
+      <div className="why-card">
+        <div className="why-icon">
+          <FiHeart />
+        </div>
+        <h3>Healthcare</h3>
+        <p>
+          Promoting healthier communities through medical camps,
+          awareness programs, and healthcare support.
+        </p>
+      </div>
+
+      <div className="why-card">
+        <div className="why-icon">
+          <FiUsers />
+        </div>
+        <h3>Volunteering</h3>
+        <p>
+          Bringing together passionate volunteers and corporate
+          teams to create positive social impact.
+        </p>
+      </div>
+
+      <div className="why-card">
+        <div className="why-icon">
+          <FiShield />
+        </div>
+        <h3>CSR Sponsorship</h3>
+        <p>
+          Building strong CSR partnerships that fund sustainable
+          projects and empower communities.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
       {/* Partners Section */}
       <section className="csr-partners-section" ref={partnersRef}>
