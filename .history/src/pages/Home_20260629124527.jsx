@@ -17,7 +17,7 @@ import CSRPartnersHome from "./CSRPartners";
 import VolunteerHome from "./Volunteer";
 import TestimonialsHome from "./Testimonials";
 import HomeCourse from "./HomeCourse";
-import Socialwall from "../components/Home/socialwall";
+// import Socialwall from "../components/Home/socialwall";
 
 
 export default function Home() {
