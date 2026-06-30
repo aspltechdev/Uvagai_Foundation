@@ -7,6 +7,7 @@ import bgofslides from "../assets/bgofslides.png";
 import childincards from "../assets/childincards.png";
 import community from "../assets/community.png";
 import childedu from "../assets/childedu.png";
+import seniorciti from "../assets/senior.png"
 
 
 export default function Donate() {
@@ -813,7 +814,7 @@ export default function Donate() {
           tag:"elderly care",
           title: "Elderly Care",
           desc: "Improving the quality of life of senior citizens through care, support and wellness.",
-          img: bgofslides,
+          img: seniorciti,
         },
 
         {
