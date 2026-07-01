@@ -1,31 +1,44 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./ProgramsPage.css";
+import purpose from "../assets/purpose.png";
+import empower from "../assets/empowering.png";
+import volunteer from "../assets/volunteer.png";
+import education from "../assets/education.png";
+import healthcare from "../assets/health.png";
+import child from "../assets/childwelfareprogram.png";
+import elderly from "../assets/elder.png";
+import environment from "../assets/environment.png";
+import community from "../assets/community.png";
+import humanitarian from "../assets/humanitarian.png";
+import women from "../assets/womenempowerment.png";
 
 const heroSlides = [
   {
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80",
+    image: purpose,
     title: "Creating Sustainable Impact Through Purpose-Driven Programs",
-    subtitle: "Uvagai Foundation works across education, healthcare, child welfare, elderly care, environmental sustainability, and community development to create meaningful social impact.",
+    subtitle:
+      "Uvagai Foundation works across education, healthcare, child welfare, elderly care, environmental sustainability, and community development to create meaningful social impact.",
     tag: "Programs & Initiatives",
-    accent: "red"
+    accent: "red",
   },
   {
-    image: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=1200&q=80",
+    image: empower,
     title: "Empowering Communities Through Action",
-    subtitle: "Every initiative is designed to improve lives, create opportunities, strengthen communities, and foster sustainable development for future generations.",
+    subtitle:
+      "Every initiative is designed to improve lives, create opportunities, strengthen communities, and foster sustainable development for future generations.",
     tag: "What We Do",
-    accent: "green"
+    accent: "green",
   },
   {
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
+    image: volunteer,
     title: "Together We Create Positive Change",
-    subtitle: "Through volunteers, community leaders, CSR partners, and supporters, we continue to create meaningful opportunities for those who need it most.",
+    subtitle:
+      "Through volunteers, community leaders, CSR partners, and supporters, we continue to create meaningful opportunities for those who need it most.",
     tag: "Our Mission",
-    accent: "blue"
-  }
+    accent: "blue",
+  },
 ];
-
 export default function ProgramsPage() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
@@ -36,7 +49,7 @@ export default function ProgramsPage() {
     if (!isHovered) {
       const timer = setInterval(() => {
         setCurrent((prev) => (prev + 1) % heroSlides.length);
-      }, 5000);
+      }, 3000);
       return () => clearInterval(timer);
     }
   }, [isHovered]);
@@ -44,63 +57,71 @@ export default function ProgramsPage() {
   const currentSlide = heroSlides[current];
 
   const programs = [
-    {
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80",
-      title: "Education & Youth Empowerment",
-      description: "Providing educational support, learning resources, digital literacy, mentorship, scholarships, and skill development opportunities that help students achieve their full potential.",
-      accent: "red",
-      impact: "5,284+ Students",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80",
-      title: "Healthcare & Wellness",
-      description: "Conducting health awareness campaigns, medical camps, preventive healthcare programs, wellness initiatives, and community health outreach activities.",
-      accent: "green",
-      impact: "50,000+ Patients",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80",
-      title: "Child Welfare & Development",
-      description: "Supporting children's education, nutrition, protection, healthcare, and overall development through child-focused welfare initiatives.",
-      accent: "blue",
-      impact: "10,000+ Children",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1516307365426-bea591f05011?w=800&q=80",
-      title: "Elderly Care & Support",
-      description: "Enhancing the well-being of senior citizens through healthcare assistance, social support programs, community engagement, and care initiatives.",
-      accent: "red",
-      impact: "2,500+ Seniors",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-      title: "Environmental Sustainability",
-      description: "Promoting environmental responsibility through tree plantation drives, awareness campaigns, sustainability programs, and eco-friendly initiatives.",
-      accent: "green",
-      impact: "1M+ Trees",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80",
-      title: "Community Development",
-      description: "Empowering communities through livelihood support, awareness programs, social welfare initiatives, and sustainable development projects.",
-      accent: "blue",
-      impact: "200+ Initiatives",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&q=80",
-      title: "Humanitarian Assistance",
-      description: "Providing relief support, emergency response assistance, disaster recovery efforts, and aid for vulnerable communities in crisis.",
-      accent: "red",
-      impact: "500+ Families",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=800&q=80",
-      title: "Women Empowerment",
-      description: "Supporting women through skill development, leadership training, entrepreneurship opportunities, and empowerment programs.",
-      accent: "green",
-      impact: "25,000+ Women",
-    },
-  ];
+  {
+    image: education,
+    title: "Education & Youth Empowerment",
+    description:
+      "Providing educational support, learning resources, digital literacy, mentorship, scholarships, and skill development opportunities that help students achieve their full potential.",
+    accent: "red",
+    impact: "5,284+ Students",
+  },
+  {
+    image: healthcare,
+    title: "Healthcare & Wellness",
+    description:
+      "Conducting health awareness campaigns, medical camps, preventive healthcare programs, wellness initiatives, and community health outreach activities.",
+    accent: "green",
+    impact: "50,000+ Patients",
+  },
+  {
+    image: child,
+    title: "Child Welfare & Development",
+    description:
+      "Supporting children's education, nutrition, protection, healthcare, and overall development through child-focused welfare initiatives.",
+    accent: "blue",
+    impact: "10,000+ Children",
+  },
+  {
+    image: elderly,
+    title: "Elderly Care & Support",
+    description:
+      "Enhancing the well-being of senior citizens through healthcare assistance, social support programs, community engagement, and care initiatives.",
+    accent: "red",
+    impact: "2,500+ Seniors",
+  },
+  {
+    image: environment,
+    title: "Environmental Sustainability",
+    description:
+      "Promoting environmental responsibility through tree plantation drives, awareness campaigns, sustainability programs, and eco-friendly initiatives.",
+    accent: "green",
+    impact: "1M+ Trees",
+  },
+  {
+    image: community,
+    title: "Community Development",
+    description:
+      "Empowering communities through livelihood support, awareness programs, social welfare initiatives, and sustainable development projects.",
+    accent: "blue",
+    impact: "200+ Initiatives",
+  },
+  {
+    image: humanitarian,
+    title: "Humanitarian Assistance",
+    description:
+      "Providing relief support, emergency response assistance, disaster recovery efforts, and aid for vulnerable communities in crisis.",
+    accent: "red",
+    impact: "500+ Families",
+  },
+  {
+    image: women,
+    title: "Women Empowerment",
+    description:
+      "Supporting women through skill development, leadership training, entrepreneurship opportunities, and empowerment programs.",
+    accent: "green",
+    impact: "25,000+ Women",
+  },
+];
 
   return (
     <div className="programs-page" ref={sectionRef}>

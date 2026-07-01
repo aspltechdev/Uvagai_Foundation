@@ -1,278 +1,33 @@
-// import { useRef } from "react";
-// import { motion, useInView } from "framer-motion";
-// import "./Events.css";
-
-// export default function Events() {
-//   const sectionRef = useRef(null);
-//   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
-
-//   const events = [
-//     {
-//       image:
-//         "https://images.unsplash.com/photo-1584515933487-779824d29309?w=1200&q=80",
-//       title: "Community Healthcare Camp",
-//       category: "Healthcare Initiative",
-//       location: "Community Outreach Program",
-//       description:
-//         "Providing free health screenings, medical consultations, awareness sessions, and preventive healthcare support for underserved communities.",
-//       accent: "green",
-//     },
-//     {
-//       image:
-//         "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80",
-//       title: "Education & Student Support Program",
-//       category: "Education Initiative",
-//       location: "Youth Empowerment",
-//       description:
-//         "Supporting students through educational resources, mentorship, learning opportunities, and programs that encourage academic growth.",
-//       accent: "red",
-//     },
-//     {
-//       image:
-//         "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
-//       title: "Volunteer Engagement Drive",
-//       category: "Volunteer Program",
-//       location: "Community Service",
-//       description:
-//         "Bringing together passionate volunteers to participate in meaningful social initiatives and community development activities.",
-//       accent: "blue",
-//     },
-//     {
-//       image:
-//         "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1200&q=80",
-//       title: "Child Welfare & Development Activities",
-//       category: "Child Welfare Program",
-//       location: "Community Impact",
-//       description:
-//         "Creating safe and supportive environments for children through educational, nutritional, and developmental initiatives.",
-//       accent: "red",
-//     },
-//     {
-//       image:
-//         "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=1200&q=80",
-//       title: "Elderly Care & Support Program",
-//       category: "Senior Citizen Welfare",
-//       location: "Care & Compassion",
-//       description:
-//         "Supporting senior citizens through healthcare assistance, wellness activities, and programs that promote dignity and inclusion.",
-//       accent: "blue",
-//     },
-//     {
-//       image:
-//         "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
-//       title: "Environmental Awareness Campaign",
-//       category: "Sustainability Initiative",
-//       location: "Green Community Program",
-//       description:
-//         "Promoting environmental responsibility through tree plantation drives, awareness campaigns, and sustainable community initiatives.",
-//       accent: "green",
-//     },
-//   ];
-
-//   const staggerContainer = {
-//     hidden: { opacity: 0 },
-//     visible: {
-//       opacity: 1,
-//       transition: { staggerChildren: 0.1, delayChildren: 0.15 },
-//     },
-//   };
-
-//   const cardVariants = {
-//     hidden: { opacity: 0, y: 40 },
-//     visible: {
-//       opacity: 1,
-//       y: 0,
-//       transition: { duration: 0.7, ease: [0.33, 0.1, 0.25, 1] },
-//     },
-//   };
-
-//   return (
-//     <div className="events-page" ref={sectionRef}>
-//       {/* Hero Section */}
-//       <section className="events-hero">
-//         <div className="events-hero-bg" />
-//         <div className="events-hero-glow events-hero-glow-1" />
-//         <div className="events-hero-glow events-hero-glow-2" />
-        
-//         <div className="events-container">
-//           <motion.div 
-//             className="events-hero-content"
-//             initial={{ opacity: 0, y: 40 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.9, ease: [0.33, 0.1, 0.25, 1] }}
-//           >
-//             <div className="events-hero-tag">
-//               <span className="events-hero-tag-line" />
-//               <span className="events-hero-tag-text">Events & Community Initiatives</span>
-//             </div>
-
-//             <h1 className="events-hero-headline">
-//               Creating Impact Through
-//               <span className="events-hero-headline-accent"> Action & Engagement</span>
-//             </h1>
-
-//             <p className="events-hero-subtitle">
-//               Discover the programs, awareness campaigns, healthcare
-//               initiatives, volunteer activities, and community development
-//               efforts that help us create meaningful social impact.
-//             </p>
-//           </motion.div>
-//         </div>
-//       </section>
-
-//       {/* Intro Section */}
-//       <section className="events-intro-section">
-//         <div className="events-container">
-//           <motion.div 
-//             className="events-intro"
-//             initial={{ opacity: 0, y: 30 }}
-//             animate={isInView ? { opacity: 1, y: 0 } : {}}
-//             transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
-//           >
-//             <div className="events-intro-tag">
-//               <span className="events-intro-tag-line" />
-//               <span className="events-intro-tag-text">Our Commitment</span>
-//             </div>
-//             <h2 className="events-intro-headline">Making A Difference Together</h2>
-//             <p className="events-intro-description">
-//               Every initiative organized by Uvagai Foundation is designed
-//               to empower communities, improve well-being, encourage
-//               volunteerism, and create sustainable social change for a
-//               better tomorrow.
-//             </p>
-//           </motion.div>
-//         </div>
-//       </section>
-
-//       {/* Events Grid */}
-//       <section className="events-grid-section">
-//         <div className="events-container">
-//           <motion.div 
-//             className="events-grid"
-//             variants={staggerContainer}
-//             initial="hidden"
-//             animate={isInView ? "visible" : "hidden"}
-//           >
-//             {events.map((event, index) => (
-//               <motion.div 
-//                 className={`event-card event-${event.accent}`}
-//                 key={index}
-//                 variants={cardVariants}
-//                 whileHover={{ y: -6 }}
-//               >
-//                 {/* Image */}
-//                 <div className="event-card-image">
-//                   <img
-//                     src={event.image}
-//                     alt={event.title}
-//                   />
-//                   <div className="event-card-image-overlay" />
-                  
-//                   {/* Category badge */}
-//                   <div className="event-card-badge">
-//                     <span className="event-card-badge-dot" />
-//                     <span className="event-card-badge-text">{event.category}</span>
-//                   </div>
-//                 </div>
-
-//                 {/* Content */}
-//                 <div className="event-card-content">
-//                   {/* Location */}
-//                   <div className="event-card-location">
-//                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-//                       <path d="M7 1C4.79 1 3 2.79 3 5C3 8 7 13 7 13C7 13 11 8 11 5C11 2.79 9.21 1 7 1Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-//                       <circle cx="7" cy="5" r="1.5" stroke="currentColor" strokeWidth="1.5"/>
-//                     </svg>
-//                     <span>{event.location}</span>
-//                   </div>
-
-//                   {/* Title */}
-//                   <h3 className="event-card-title">{event.title}</h3>
-
-//                   {/* Description */}
-//                   <p className="event-card-description">{event.description}</p>
-
-//                   {/* Footer */}
-//                   <div className="event-card-footer">
-//                     <span className="event-card-link">
-//                       Explore Initiative
-//                     </span>
-//                     <span className="event-card-link-arrow">
-//                       <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-//                         <path d="M2 7.5H13M13 7.5L8.5 3M13 7.5L8.5 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-//                       </svg>
-//                     </span>
-//                   </div>
-
-//                   {/* Accent line */}
-//                   <div className="event-card-accent" />
-//                 </div>
-//               </motion.div>
-//             ))}
-//           </motion.div>
-//         </div>
-//       </section>
-
-//       {/* CTA Section */}
-//       <section className="events-cta-section">
-//         <div className="events-cta-bg" />
-//         <div className="events-cta-glow" />
-        
-//         <div className="events-container">
-//           <motion.div 
-//             className="events-cta-content"
-//             initial={{ opacity: 0, y: 30 }}
-//             animate={isInView ? { opacity: 1, y: 0 } : {}}
-//             transition={{ duration: 0.8, ease: [0.33, 0.1, 0.25, 1] }}
-//           >
-//             <h2 className="events-cta-headline">
-//               Join Us In Creating Positive Change
-//             </h2>
-//             <p className="events-cta-description">
-//               Whether through volunteering, partnerships, donations, or
-//               participation, every contribution helps us build stronger
-//               and more empowered communities.
-//             </p>
-//             <div className="events-cta-buttons">
-//               <a href="/volunteer" className="events-cta-primary">
-//                 <span>Become a Volunteer</span>
-//                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-//                   <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-//                 </svg>
-//               </a>
-//               <a href="/contact" className="events-cta-secondary">
-//                 Partner With Us
-//                 <span className="events-cta-secondary-arrow">→</span>
-//               </a>
-//             </div>
-//           </motion.div>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// }
-
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./Events.css";
+import engage from "../assets/engagement.png";
+import community from "../assets/empowercommunity.png";
+import together from "../assets/together.png";
+import camp from "../assets/healthcarecamp.png";
+import educ from "../assets/educationinitiative.png";
+import volunteer from "../assets/volunteerprogram.png";
+import child from "../assets/childwelfareprogram.png";
+import senior from "../assets/seniorcitizenwelfare.png";
+import sustain from "../assets/sustainability.png";
 
 const heroSlides = [
   {
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
+    image: engage,
     title: "Creating Impact Through Action & Engagement",
     subtitle: "Discover the programs, awareness campaigns, healthcare initiatives, volunteer activities, and community development efforts that help us create meaningful social impact.",
     tag: "Events & Community Initiatives",
     accent: "red"
   },
   {
-    image: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=1200&q=80",
+    image: community,
     title: "Empowering Communities One Initiative at a Time",
     subtitle: "From healthcare camps to educational programs, every event brings us closer to building stronger, healthier, and more resilient communities.",
     tag: "Our Programs",
     accent: "green"
   },
   {
-    image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1200&q=80",
+    image: together,
     title: "Together We Make A Difference",
     subtitle: "Join hands with passionate volunteers, partners, and community leaders to create sustainable social change through meaningful action.",
     tag: "Get Involved",
@@ -290,7 +45,7 @@ export default function Events() {
     if (!isHovered) {
       const timer = setInterval(() => {
         setCurrent((prev) => (prev + 1) % heroSlides.length);
-      }, 5000);
+      }, 3000);
       return () => clearInterval(timer);
     }
   }, [isHovered]);
@@ -299,7 +54,7 @@ export default function Events() {
 
   const events = [
     {
-      image: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=1200&q=80",
+      image: camp,
       title: "Community Healthcare Camp",
       category: "Healthcare Initiative",
       location: "Community Outreach Program",
@@ -307,7 +62,7 @@ export default function Events() {
       accent: "green",
     },
     {
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80",
+      image: educ,
       title: "Education & Student Support Program",
       category: "Education Initiative",
       location: "Youth Empowerment",
@@ -315,7 +70,7 @@ export default function Events() {
       accent: "red",
     },
     {
-      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
+      image: volunteer,
       title: "Volunteer Engagement Drive",
       category: "Volunteer Program",
       location: "Community Service",
@@ -323,7 +78,7 @@ export default function Events() {
       accent: "blue",
     },
     {
-      image: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1200&q=80",
+      image: child,
       title: "Child Welfare & Development Activities",
       category: "Child Welfare Program",
       location: "Community Impact",
@@ -331,7 +86,7 @@ export default function Events() {
       accent: "red",
     },
     {
-      image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=1200&q=80",
+      image: senior,
       title: "Elderly Care & Support Program",
       category: "Senior Citizen Welfare",
       location: "Care & Compassion",
@@ -339,7 +94,7 @@ export default function Events() {
       accent: "blue",
     },
     {
-      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
+      image: sustain,
       title: "Environmental Awareness Campaign",
       category: "Sustainability Initiative",
       location: "Green Community Program",
