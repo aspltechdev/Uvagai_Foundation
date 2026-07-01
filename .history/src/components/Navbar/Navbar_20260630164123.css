@@ -528,3 +528,6 @@
     transition-duration: 0.01ms !important;
   }
 }
+.navbar-mobile-menu {
+  z-index: 99999;   /* was 999 */
+}
