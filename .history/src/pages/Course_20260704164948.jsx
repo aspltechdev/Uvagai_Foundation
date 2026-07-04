@@ -910,7 +910,7 @@ import web from "../assets/web.png";
 import leadership from "../assets/leadership.png";
 import entrepreneurship from "../assets/entrepreneurship.jpeg";
 import Career from "../assets/career.jpeg";
-import Artificial from "../assets/artificial.jpeg";
+import Artificial from "../assets/Artificial.jpeg";
 
 export default function Course() {
   const navigate = useNavigate();
