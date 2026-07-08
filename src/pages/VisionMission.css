@@ -154,10 +154,27 @@
 /* ============================================
    Values
    ============================================ */
-.vm-values-section { position: relative; padding: 6rem 0; overflow: hidden; }
-.vm-values-bg { position: absolute; inset: 0; background: var(--vm-soft-bg); }
+.vm-values-section{
+    position:relative;
+    padding:6rem 0;
+    overflow:hidden;
+}
+.vm-values-bg{position:absolute;inset:0;background-image:url("../assets/transparentblack.png");background-size:cover;background-position:center;background-repeat:no-repeat;z-index:0;}
 .vm-values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.vm-value-card { background: var(--vm-white); border: 1px solid var(--vm-border-light); border-radius: 12px; padding: 2rem 1.75rem; box-shadow: var(--vm-shadow-sm); transition: all 0.4s var(--vm-ease-out); cursor: default; }
+.vm-value-card{
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:12px;
+    padding:2rem 1.75rem;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.18);
+
+    transition:.4s;
+}
 .vm-value-card:hover { box-shadow: var(--vm-shadow-lg); border-color: transparent; }
 .vm-value-number { font-family: var(--vm-font-display); font-size: 1.8rem; font-weight: 700; color: var(--vm-text-muted); opacity: 0.2; margin-bottom: 0.75rem; transition: all 0.3s ease; }
 .vm-value-card:hover .vm-value-number { color: var(--vm-red); opacity: 0.5; }
@@ -213,4 +230,17 @@
 @media (prefers-reduced-motion: reduce) {
   .vm-slide-bg { transition: none !important; }
   .vm-core-card, .vm-pillar-card, .vm-principle-card, .vm-value-card { transition: none; }
+}
+/* ===== Core Values Section ===== */
+
+.vm-values-section .vm-section-headline{
+    color:#ffffff !important;
+}
+
+.vm-values-section .vm-section-tag-text{
+    color:#ffffff !important;
+}
+
+.vm-values-section .vm-section-tag-line{
+    background:#ffffff !important;
 }

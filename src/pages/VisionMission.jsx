@@ -328,24 +328,35 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./VisionMission.css";
+import transparentBlack from "../assets/transparentblack.png";
+import educationnew from "../assets/educationnew.JPG";
+import healthcarenew from "../assets/healthcarenew.png";
+import childwelfare1 from "../assets/childwelfare1.png";
+import elderlycarenew from "../assets/elderlycarenew.png";
+import enviroinment from "../assets/enviroinment.png";
+import communitynew from "../assets/communitynew.JPG";
+import large1 from "../assets/large1.png";
+import image2 from "../assets/image2.png";
+import image5 from "../assets/image5.png";
+
 
 const heroSlides = [
   {
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
+    image: large1,
     title: "Inspiring Hope, Empowering Lives & Creating Sustainable Social Impact",
     subtitle: "Our vision and mission guide every initiative we undertake to empower communities, improve lives, and create lasting positive change.",
     tag: "Vision • Mission • Values",
     accent: "red"
   },
   {
-    image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1200&q=80",
+    image: image2,
     title: "Guided by Vision, Driven by Mission",
     subtitle: "Since 2019, Uvagai Foundation has been dedicated to empowering children, families, and communities through education, healthcare, and sustainable development.",
     tag: "Our Purpose & Promise",
     accent: "green"
   },
   {
-    image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1200&q=80",
+    image: image5,
     title: "Turning Compassion Into Action",
     subtitle: "Through education support, healthcare initiatives, child welfare, elderly care, and community development, we create meaningful opportunities for all.",
     tag: "Our Commitment",
@@ -378,12 +389,12 @@ export default function VisionMissionPage() {
   ];
 
   const impactPillars = [
-    { image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80", title: "Education", description: "Scholarships, digital classrooms, mentorship, and skill development programs.", accent: "red" },
-    { image: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&q=80", title: "Healthcare", description: "Medical camps, preventive care, health awareness, and wellness initiatives.", accent: "green" },
-    { image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80", title: "Child Welfare", description: "Nutrition support, education access, and holistic development for children.", accent: "blue" },
-    { image: "https://images.unsplash.com/photo-1516307365426-bea591f05011?w=600&q=80", title: "Elderly Care", description: "Healthcare assistance, companionship, and dignity programs for senior citizens.", accent: "red" },
-    { image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80", title: "Environment", description: "Tree plantation, sustainability campaigns, and green community projects.", accent: "green" },
-    { image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80", title: "Community", description: "Livelihood programs, awareness campaigns, and social development initiatives.", accent: "blue" },
+    { image: educationnew, title: "Education", description: "Scholarships, digital classrooms, mentorship, and skill development programs.", accent: "red" },
+    { image: healthcarenew, title: "Healthcare", description: "Medical camps, preventive care, health awareness, and wellness initiatives.", accent: "green" },
+    { image: childwelfare1, title: "Child Welfare", description: "Nutrition support, education access, and holistic development for children.", accent: "blue" },
+    { image: elderlycarenew, title: "Elderly Care", description: "Healthcare assistance, companionship, and dignity programs for senior citizens.", accent: "red" },
+    { image: enviroinment, title: "Environment", description: "Tree plantation, sustainability campaigns, and green community projects.", accent: "green" },
+    { image: communitynew, title: "Community", description: "Livelihood programs, awareness campaigns, and social development initiatives.", accent: "blue" },
   ];
 
   const values = [
@@ -491,14 +502,15 @@ export default function VisionMissionPage() {
               </div>
               <div className="vm-core-card-body">
                 <p>
-                  To create a society where every individual, regardless of their background, 
-                  has access to quality education, healthcare, opportunities, and the support 
-                  needed to lead a dignified and fulfilling life.
+                  At Uvagai Foundation, we empower underserved communities through education,
+                  healthcare, child welfare, elderly care, environmental conservation, and sustainable
+                  development, fostering compassion, inclusivity, hope, and lasting change.
                 </p>
                 <p>
-                  We envision empowered communities that thrive through compassion, equality, 
-                  sustainability, and collective responsibility, fostering positive change for 
-                  present and future generations.
+                  We believe lasting change happens through shared purpose. Partnering with
+                  volunteers, educational institutions, corporate organizations, and local communities,
+                  we create sustainable initiatives that empower individuals, strengthen communities,
+                  and build a brighter future.
                 </p>
                 <div className="vm-core-motto">
                   <span className="vm-core-motto-quote">"</span>
@@ -520,14 +532,15 @@ export default function VisionMissionPage() {
               </div>
               <div className="vm-core-card-body">
                 <p>
-                  Uvagai Foundation is committed to empowering underserved communities through 
-                  impactful initiatives in education, healthcare, child welfare, elderly care, 
-                  environmental sustainability, and community development.
+                  At Uvagai Foundation, we uplift underserved communities through education,
+                  healthcare, child welfare, elderly care, environmental conservation, and sustainable
+                  development, creating opportunities that inspire lasting change for everyone always.
                 </p>
                 <p>
-                  We collaborate with volunteers, institutions, corporate partners, and local 
-                  communities to design and implement programs that create meaningful and 
-                  measurable social impact.
+                  We believe meaningful change happens when people unite. Partnering with
+                  volunteers, educational institutions, corporate organizations, and local communities,
+                  we create impactful initiatives addressing real needs, empowering lives, and building
+                  lasting positive change.
                 </p>
                 <div className="vm-core-motto vm-motto-green">
                   <span className="vm-core-motto-quote">"</span>
@@ -539,10 +552,10 @@ export default function VisionMissionPage() {
         </div>
       </section>
 
-      {/* Impact Pillars */}
-      <section className="vm-pillars-section">
-        <div className="vm-pillars-bg" />
-        <div className="vm-container">
+<section className="vm-pillars-section">
+  <div className="vm-pillars-bg" />
+  <div className="vm-container">
+  
           <motion.div 
             className="vm-section-header"
             initial={{ opacity: 0, y: 30 }}
@@ -552,6 +565,7 @@ export default function VisionMissionPage() {
             <div className="vm-section-tag">
               <span className="vm-section-tag-line" />
               <span className="vm-section-tag-text">Strategic Framework</span>
+              <span className="vm-section-tag-line" />
             </div>
             <h2 className="vm-section-headline">Our Impact Pillars</h2>
           </motion.div>
@@ -598,6 +612,8 @@ export default function VisionMissionPage() {
             <div className="vm-section-tag">
               <span className="vm-section-tag-line" />
               <span className="vm-section-tag-text">Guiding Principles</span>
+              <span className="vm-section-tag-line" />
+
             </div>
             <h2 className="vm-section-headline">Our Core Principles</h2>
           </motion.div>
@@ -641,6 +657,7 @@ export default function VisionMissionPage() {
             <div className="vm-section-tag">
               <span className="vm-section-tag-line" />
               <span className="vm-section-tag-text">What We Stand For</span>
+              <span className="vm-section-tag-line" />
             </div>
             <h2 className="vm-section-headline">Our Core Values</h2>
           </motion.div>
