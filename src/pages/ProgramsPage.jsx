@@ -239,10 +239,10 @@ export default function ProgramsPage() {
                   <img src={program.image} alt={program.title} />
                   <div className="programs-card-overlay" />
                   
-                  <div className="programs-card-badge">
+                  {/* <div className="programs-card-badge">
                     <span className={`programs-card-badge-dot dot-${program.accent}`} />
                     <span className="programs-card-badge-text">Program</span>
-                  </div>
+                  </div> */}
 
                   <div className="programs-card-impact">
                     {program.impact}
