@@ -1,0 +1,335 @@
+/* ==========================================================
+   SocialWall.css
+   Palette pulled from Uvagai Foundation site:
+   #FFFFFF bg, #F7F5F1 section bg, #1A1F2B ink,
+   #E63946 red, #FF8FA3 coral, #2D9D78 green (sparing accent)
+   ========================================================== */
+
+.social-wall {
+  background: #F7F5F1;
+  padding: 96px 0 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-wall-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ---------- Header ---------- */
+.social-wall-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.social-wall-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: #E63946;
+  margin-bottom: 20px;
+}
+
+.social-wall-eyebrow .live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #E63946;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.social-wall-eyebrow .live-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid #E63946;
+  animation: pulse-ring 2.2s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-wall-eyebrow .live-dot::after {
+    animation: none;
+  }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.9; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+.social-wall-title {
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  color: #1A1F2B;
+  line-height: 1.15;
+  margin: 0 0 18px;
+  letter-spacing: -0.5px;
+}
+
+.social-wall-title em {
+  font-style: normal;
+  color: #E63946;
+  background: linear-gradient(135deg, #E63946, #FF8FA3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.social-wall-subtitle {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.05rem;
+  color: #5B6270;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+.social-wall-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 9px 20px 9px 14px;
+  background: #ffffff;
+  border: 1px solid rgba(26, 31, 43, 0.1);
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1A1F2B;
+  transition: all 0.25s ease;
+}
+
+.social-wall-handle:hover {
+  border-color: #E63946;
+  color: #E63946;
+  transform: translateY(-1px);
+}
+
+.social-wall-handle svg {
+  flex-shrink: 0;
+}
+
+/* ---------- Masonry Wall ---------- */
+.social-wall-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 10px;
+  gap: 22px;
+}
+
+.social-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #1A1F2B;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(26, 31, 43, 0.06);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(26, 31, 43, 0.16);
+}
+
+.social-card:hover .social-card-img {
+  transform: scale(1.06);
+}
+
+.social-card:focus-visible {
+  outline: 3px solid #E63946;
+  outline-offset: 3px;
+}
+
+/* Span sizes for masonry rhythm */
+.social-card.size-lg { grid-column: span 2; grid-row: span 34; }
+.social-card.size-md { grid-column: span 2; grid-row: span 26; }
+.social-card.size-sm { grid-column: span 1; grid-row: span 22; }
+.social-card.size-tall { grid-column: span 1; grid-row: span 30; }
+
+.social-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.social-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(20, 16, 14, 0.86) 0%,
+    rgba(20, 16, 14, 0.35) 45%,
+    rgba(20, 16, 14, 0) 70%
+  );
+}
+
+.social-card-ig-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.social-card-ig-badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+.social-card-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  color: #fff;
+}
+
+.social-card-caption {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.social-card.size-lg .social-card-caption {
+  font-size: 1.3rem;
+  -webkit-line-clamp: 3;
+}
+
+.social-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.social-card-meta .stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.social-card-meta svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* ---------- Footer CTA row ---------- */
+.social-wall-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 56px;
+}
+
+.social-wall-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 34px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #E63946, #d12c38);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 10px 26px rgba(230, 57, 70, 0.28);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.social-wall-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(230, 57, 70, 0.36);
+}
+
+.social-wall-cta svg {
+  transition: transform 0.3s ease;
+}
+
+.social-wall-cta:hover svg {
+  transform: translateX(3px);
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+@media (max-width: 1024px) {
+  .social-wall-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .social-card.size-lg,
+  .social-card.size-md {
+    grid-column: span 2;
+  }
+
+  .social-card.size-sm,
+  .social-card.size-tall {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .social-wall {
+    padding: 64px 0 80px;
+  }
+
+  .social-wall-inner {
+    padding: 0 20px;
+  }
+
+  .social-wall-header {
+    margin-bottom: 40px;
+  }
+
+  .social-wall-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .social-card.size-lg,
+  .social-card.size-md,
+  .social-card.size-sm,
+  .social-card.size-tall {
+    grid-column: span 1;
+    grid-row: span 24;
+  }
+
+  .social-card.size-lg {
+    grid-row: span 30;
+  }
+}
