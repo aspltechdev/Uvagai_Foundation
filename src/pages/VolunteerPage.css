@@ -362,6 +362,8 @@
   box-shadow: var(--vol-shadow-sm);
   transition: all 0.4s var(--vol-ease-out);
   cursor: default;
+  display: flex;
+  flex-direction: column;
 }
 
 .volunteer-card:hover {
@@ -369,17 +371,22 @@
   border-color: transparent;
 }
 
+/* ── Card image: fixed height so every card is uniform ── */
 .volunteer-card-image {
   position: relative;
-  aspect-ratio: 4/3;
+  width: 100%;
+  height: 200px;          /* fixed px height — works for both portrait & landscape */
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .volunteer-card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;  /* centres the subject in the frame */
   transition: transform 0.7s var(--vol-ease-out);
+  display: block;
 }
 
 .volunteer-card:hover .volunteer-card-image img {
@@ -400,6 +407,7 @@
 
 .volunteer-card-content {
   padding: 1.25rem 1.5rem;
+  flex: 1;
 }
 
 .volunteer-card-title {
@@ -427,6 +435,7 @@
   border-radius: 2px;
   margin: 0 1.5rem 1.25rem;
   transition: all 0.4s var(--vol-ease-out);
+  flex-shrink: 0;
 }
 
 .accent-red { background: var(--vol-red); }
@@ -634,6 +643,10 @@
   .volunteer-section-header {
     margin-bottom: 2.5rem;
   }
+
+  .volunteer-card-image {
+    height: 180px;
+  }
   
   .volunteer-slide-counter {
     right: 1.5rem;
@@ -664,6 +677,10 @@
   
   .volunteer-cards-grid {
     grid-template-columns: 1fr;
+  }
+
+  .volunteer-card-image {
+    height: 220px;
   }
   
   .volunteer-steps-grid {
