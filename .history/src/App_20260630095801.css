@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: #ffffff;
+  color: #111827;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: min(1300px, 90%);
+  margin: 0 auto;
+}
+
+section {
+  position: relative;
+}
+
+
+/* =========================
+   WHATSAPP FLOAT BUTTON
+========================= */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+
+  width: 68px;
+  height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #25d366,
+    #1ebe5d
+  );
+
+  color: #ffffff;
+  font-size: 2rem;
+
+  z-index: 9999;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 0 10px rgba(37, 211, 102, 0.6),
+    0 0 25px rgba(37, 211, 102, 0.5),
+    0 0 50px rgba(37, 211, 102, 0.35),
+    0 10px 25px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  animation: whatsappPulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px) scale(1.08);
+
+  box-shadow:
+    0 0 20px rgba(37, 211, 102, 0.9),
+    0 0 45px rgba(37, 211, 102, 0.8),
+    0 0 80px rgba(37, 211, 102, 0.6),
+    0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.whatsapp-float svg {
+  font-size: 2rem;
+}
+
+/* Pulse Animation */
+
+@keyframes whatsappPulse {
+
+  0% {
+    box-shadow:
+      0 0 10px rgba(37, 211, 102, 0.5),
+      0 0 20px rgba(37, 211, 102, 0.35),
+      0 0 35px rgba(37, 211, 102, 0.25);
+  }
+
+  50% {
+    box-shadow:
+      0 0 25px rgba(37, 211, 102, 0.8),
+      0 0 50px rgba(37, 211, 102, 0.6),
+      0 0 80px rgba(37, 211, 102, 0.4);
+  }
+
+  100% {
+    box-shadow:
+      0 0 10px rgba(37, 211, 102, 0.5),
+      0 0 20px rgba(37, 211, 102, 0.35),
+      0 0 35px rgba(37, 211, 102, 0.25);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 58px;
+    height: 58px;
+
+    bottom: 20px;
+    right: 20px;
+
+    font-size: 1.7rem;
+  }
+}

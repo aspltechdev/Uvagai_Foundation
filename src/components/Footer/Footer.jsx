@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Footer.css";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
 
   const quickLinks = [
     { to: "/", label: "Home" },
@@ -15,13 +16,22 @@ export default function Footer() {
     { to: "/contact", label: "Contact" },
   ];
 
+  // Each of these points at the CTA section on its target page
+  // (the page needs a matching element, e.g. id="cta", around its
+  // main call-to-action button — adjust the ids below if yours differ).
   const getInvolved = [
-    { to: "/volunteer", label: "Volunteer" },
+    { to: "/volunteerPage", label: "Volunteer" },
     { to: "/csr-partnership", label: "CSR Partnership" },
     { to: "/donate", label: "Donate" },
     { to: "/internship", label: "Internship" },
     { to: "/annual-reports", label: "Annual Reports" },
     { to: "/contact", label: "Partner With Us" },
+    { to: "/volunteer", hash: "cta", label: "Volunteer" },
+    { to: "/csr-partnership", hash: "cta", label: "CSR Partnership" },
+    { to: "/donate", hash: "cta", label: "Donate" },
+    // { to: "/internship", hash: "cta", label: "Internship" },
+    // { to: "/annual-reports", hash: "cta", label: "Annual Reports" },
+    { to: "/contact", hash: "cta", label: "Partner With Us" },
   ];
 
   const focusAreas = [
@@ -35,10 +45,37 @@ export default function Footer() {
 
   const socialLinks = [
     { href: "#", label: "Facebook", icon: "FB" },
-    { href: "#", label: "Instagram", icon: "IG" },
-    { href: "#", label: "LinkedIn", icon: "LN" },
-    { href: "#", label: "YouTube", icon: "YT" },
+    { href: "https://www.instagram.com/uvagaifoundation", label: "Instagram", icon: "IG" },
+    { href: "https://www.linkedin.com/company/uvagai-foundation/", label: "LinkedIn", icon: "LN" },
+    { href: "https://www.youtube.com/@UvagaiFoundation", label: "YouTube", icon: "YT" },
   ];
+
+  // Plain nav links (Quick Links): always land at the top of the
+  // destination page, since SPA route changes don't reset scroll
+  // position on their own.
+  const goToTop = (to) => (e) => {
+    e.preventDefault();
+    navigate(to);
+    // Wait a tick for the new route to mount, then jump to top.
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    });
+  };
+
+  // "Get Involved" links: navigate to the page, then scroll the
+  // specific CTA section into view once it's rendered.
+  const goToSection = (to, hash) => (e) => {
+    e.preventDefault();
+    navigate(`${to}#${hash}`);
+    setTimeout(() => {
+      const el = document.getElementById(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      }
+    }, 80);
+  };
 
   return (
     <footer className="footer">
@@ -95,7 +132,11 @@ export default function Footer() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                 >
-                  <Link to={link.to} className="footer-link">
+                  <Link
+                    to={link.to}
+                    className="footer-link"
+                    onClick={goToTop(link.to)}
+                  >
                     <span className="footer-link-arrow" />
                     {link.label}
                   </Link>
@@ -116,7 +157,11 @@ export default function Footer() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                 >
-                  <Link to={link.to} className="footer-link">
+                  <Link
+                    to={`${link.to}#${link.hash}`}
+                    className="footer-link"
+                    onClick={goToSection(link.to, link.hash)}
+                  >
                     <span className="footer-link-arrow" />
                     {link.label}
                   </Link>
@@ -250,15 +295,15 @@ export default function Footer() {
             </p>
             
             <div className="footer-bottom-links">
-              <Link to="/privacy-policy" className="footer-bottom-link">
+              <Link to="/privacy-policy" className="footer-bottom-link" onClick={goToTop("/privacy-policy")}>
                 Privacy Policy
               </Link>
               <span className="footer-bottom-sep">|</span>
-              <Link to="/terms-and-conditions" className="footer-bottom-link">
+              <Link to="/terms-and-conditions" className="footer-bottom-link" onClick={goToTop("/terms-and-conditions")}>
                 Terms & Conditions
               </Link>
               <span className="footer-bottom-sep">|</span>
-              <Link to="/donate" className="footer-bottom-link footer-bottom-link-donate">
+              <Link to="/donate" className="footer-bottom-link footer-bottom-link-donate" onClick={goToTop("/donate")}>
                 Donate
               </Link>
             </div>
