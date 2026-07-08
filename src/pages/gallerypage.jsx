@@ -45,7 +45,7 @@ import food2 from "../assets/food2.jpg";
 import food3 from "../assets/food3.jpg";
 import food4 from "../assets/food4.jpg";
 
-/* CSR */
+
 import csr1 from "../assets/csr1.jpg";
 import csr2 from "../assets/csr2.jpg";
 import csr3 from "../assets/csr3.jpg";
