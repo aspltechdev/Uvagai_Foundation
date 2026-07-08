@@ -507,6 +507,131 @@
 .card-green:hover .course-card-title { color: var(--cr-green); }
 .card-blue:hover .course-card-title { color: var(--cr-blue); }
 
+/* ============================================
+   Card CTA Button - Simple text style like image
+   ============================================ */
+
+.course-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.3rem 0;
+  background: transparent;
+  color: var(--cr-text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s var(--cr-ease-out);
+  font-family: var(--cr-font-body);
+  letter-spacing: 0.02em;
+  width: auto;
+}
+
+/* Hover effect - just underline and color change */
+.course-card-cta:hover {
+  color: var(--cr-red);
+  border-bottom-color: var(--cr-red);
+  transform: translateX(4px);
+}
+
+/* CTA Button Colors */
+.cta-red {
+  color: var(--cr-red);
+}
+
+.cta-red:hover {
+  color: var(--cr-red-dark);
+  border-bottom-color: var(--cr-red-dark);
+}
+
+.cta-green {
+  color: var(--cr-green);
+}
+
+.cta-green:hover {
+  color: #15803D;
+  border-bottom-color: #15803D;
+}
+
+.cta-blue {
+  color: var(--cr-blue);
+}
+
+.cta-blue:hover {
+  color: #152C4A;
+  border-bottom-color: #152C4A;
+}
+
+/* Click effect */
+.course-card-cta:active {
+  transform: scale(0.97);
+}
+.course-card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding: 0.7rem 1.5rem;
+  background: transparent;
+  color: var(--cr-text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 2px solid var(--cr-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s var(--cr-ease-out);
+  font-family: var(--cr-font-body);
+  letter-spacing: 0.02em;
+  width: auto;
+  min-width: 160px;
+  max-width: 100%;
+}
+
+.course-card-cta:hover {
+  transform: translateY(-2px);
+}
+
+/* CTA Button Colors - Matching accent colors */
+.cta-red {
+  border-color: var(--cr-red);
+  color: var(--cr-red);
+  background: transparent;
+}
+
+.cta-red:hover {
+  background: var(--cr-red);
+  color: var(--cr-white);
+  box-shadow: 0 4px 15px var(--cr-red-glow);
+}
+
+.cta-green {
+  border-color: var(--cr-green);
+  color: var(--cr-green);
+  background: transparent;
+}
+
+.cta-green:hover {
+  background: var(--cr-green);
+  color: var(--cr-white);
+  box-shadow: 0 4px 15px var(--cr-green-glow);
+}
+
+.cta-blue {
+  border-color: var(--cr-blue);
+  color: var(--cr-blue);
+  background: transparent;
+}
+
+.cta-blue:hover {
+  background: var(--cr-blue);
+  color: var(--cr-white);
+  box-shadow: 0 4px 15px var(--cr-blue-glow);
+}
+
 /* Card Accent Line */
 .course-card-accent {
   width: 24px;
@@ -730,6 +855,11 @@
   .course-counter-current {
     font-size: 1rem;
   }
+
+  .course-card-cta {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
 }
 
 /* ============================================
@@ -756,4 +886,41 @@
   .course-card-accent {
     transition: none;
   }
+}
+
+/* solid color */
+.cta-red {
+  border-color: var(--cr-red);
+  color: var(--cr-white);
+  background: var(--cr-red);
+  box-shadow: 0 4px 15px var(--cr-red-glow);
+}
+
+.cta-red:hover {
+  background: var(--cr-red-dark);
+  border-color: var(--cr-red-dark);
+}
+
+.cta-green {
+  border-color: var(--cr-green);
+  color: var(--cr-white);
+  background: var(--cr-green);
+  box-shadow: 0 4px 15px var(--cr-green-glow);
+}
+
+.cta-green:hover {
+  background: #15803D;
+  border-color: #15803D;
+}
+
+.cta-blue {
+  border-color: var(--cr-blue);
+  color: var(--cr-white);
+  background: var(--cr-blue);
+  box-shadow: 0 4px 15px var(--cr-blue-glow);
+}
+
+.cta-blue:hover {
+  background: #152C4A;
+  border-color: #152C4A;
 }

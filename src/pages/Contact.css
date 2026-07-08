@@ -233,3 +233,55 @@
   .contact-connect-card, .contact-info-card { transition: none; }
   .connect-card-accent, .connect-card-arrow { transition: none; }
 }
+
+.contact-status {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 14px;
+  animation: fadeIn .35s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.contact-success {
+  background: #ecfdf5;
+  border: 1px solid #22c55e;
+}
+
+.contact-error {
+  background: #fef2f2;
+  border: 1px solid #ef4444;
+}
+
+.contact-status-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.contact-success .contact-status-title {
+  color: #15803d;
+}
+
+.contact-error .contact-status-title {
+  color: #dc2626;
+}
+
+.contact-status-message {
+  color: #555;
+  font-size: 15px;
+}
+
+.form-submit-btn:disabled {
+  opacity: .7;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

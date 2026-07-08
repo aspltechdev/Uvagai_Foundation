@@ -224,9 +224,10 @@ export default function Navbar() {
   const location = useLocation();
 
   // Close mobile menu on route change
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location]);
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+useEffect(() => {
+  setMenuOpen((prev) => (prev ? false : prev));
+}, [location]);
 
   // Scroll effect
   useEffect(() => {
@@ -245,10 +246,14 @@ export default function Navbar() {
     { to: "/vision-mission", label: "Vision & Mission", accent: "blue" },
     { to: "/programs", label: "Programs", accent: "green" },
     { to: "/events", label: "Events", accent: "red" },
+    { to: "/Donate", label: "Donate", accent: "red"},
+    
+
     { to: "/gallerypage", label: "Gallery", accent: "green" },
     { to: "/Course", label: "Course", accent: "blue" },
     { to: "/volunteers", label: "Volunteer", accent: "red" },
     // { to: "/gallery", label: "Gallery", accent: "green" },
+
     { to: "/csr-partnership", label: "CSR", accent: "blue" },
     
     { to: "/contact", label: "Contact", accent: "red" },
@@ -361,7 +366,7 @@ export default function Navbar() {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
         >
-          <Link to="/donate" className="navbar-cta">
+          <Link to="/Donate" className="navbar-cta">
             <span className="navbar-cta-text">Donate</span>
             <span className="navbar-cta-icon">
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none">

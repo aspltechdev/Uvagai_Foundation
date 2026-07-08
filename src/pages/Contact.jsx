@@ -39,6 +39,14 @@ export default function Contact() {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
+  const [status, setStatus] = useState({
+    show: false,
+    type: "",
+    message: "",
+  });
+
   useEffect(() => {
     if (!isHovered) {
       const timer = setInterval(() => {
@@ -52,7 +60,7 @@ export default function Contact() {
 
   const contactInfo = [
     { label: "Office Address", value: "Chennai, Tamil Nadu, India", detail: "Uvagai Foundation" },
-    { label: "Phone", value: "+91 XXXXX XXXXX" },
+    { label: "Phone", value: "+91 99440 02040" },
     { label: "Email", value: "info@uvagai.org" },
     { label: "Website", value: "www.uvagai.org" },
     { label: "Working Hours", value: "Monday - Saturday", detail: "9:00 AM – 6:00 PM" },
@@ -66,57 +74,148 @@ export default function Contact() {
   ];
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    if (name === "name") {
+      const filteredValue = value.replace(/[^A-Za-z\s]/g, "");
+
+      setFormData((prev) => ({
+        ...prev,
+        name: filteredValue,
+      }));
+      return;
+    }
+
+    if (name === "phone") {
+      const filteredValue = value.replace(/\D/g, "").slice(0, 10);
+
+      setFormData((prev) => ({
+        ...prev,
+        phone: filteredValue,
+      }));
+      return;
+    }
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const data = {
-    access_key: "d2e618b7-c616-458f-8837-ca64bb0cd1d3",
-    subject: "New Contact Form Submission - Uvagai Foundation",
-    name: formData.name,
-    email: formData.email,
-    phone: formData.phone,
-    inquiryType: formData.inquiryType,
-    message: formData.message,
-  };
-
-  try {
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-
-    const result = await response.json();
-
-    if (result.success) {
-      alert("Message sent successfully!");
-
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        inquiryType: "",
-        message: "",
+    if (formData.name.trim().length < 3) {
+      setStatus({
+        show: true,
+        type: "error",
+        message: "Please enter a valid full name.",
       });
-    } else {
-      alert("Failed to send message.");
+      return;
     }
-  } catch (error) {
-    console.error(error);
-    alert("Something went wrong.");
-  }
-};
+
+    const emailRegex =
+      /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+    if (!emailRegex.test(formData.email.trim())) {
+      setStatus({
+        show: true,
+        type: "error",
+        message: "Please enter a valid email address.",
+      });
+      return;
+    }
+
+    if (!/^[0-9]{10}$/.test(formData.phone)) {
+      setStatus({
+        show: true,
+        type: "error",
+        message: "Please enter a valid 10-digit phone number.",
+      });
+      return;
+    }
+
+    if (formData.message.trim().length < 10) {
+      setStatus({
+        show: true,
+        type: "error",
+        message: "Please enter a meaningful message.",
+      });
+      return;
+    }
+
+    setLoading(true);
+
+    const data = {
+      access_key: "d2e618b7-c616-458f-8837-ca64bb0cd1d3",
+      subject: "New Contact Form Submission - Uvagai Foundation",
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      inquiryType: formData.inquiryType,
+      message: formData.message,
+    };
+
+    try {
+      const response = await fetch(
+        "https://api.web3forms.com/submit",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus({
+          show: true,
+          type: "success",
+          message:
+            "Thank you! Your message has been sent successfully. Our team will contact you soon.",
+        });
+
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          inquiryType: "",
+          message: "",
+        });
+      } else {
+        setStatus({
+          show: true,
+          type: "error",
+          message: result.message || "Failed to send your message.",
+        });
+      }
+    } catch (error) {
+      setStatus({
+        show: true,
+        type: "error",
+        message: "Something went wrong. Please try again.",
+      });
+    } finally {
+      setLoading(false);
+
+      setTimeout(() => {
+        setStatus({
+          show: false,
+          type: "",
+          message: "",
+        });
+      }, 3000);
+    }
+  };
 
   return (
     <div className="contact-page" ref={sectionRef}>
       {/* Hero Section with Background Slideshow */}
-      <section 
+      <section
         className="contact-hero"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -157,7 +256,7 @@ export default function Contact() {
               <h1 className="contact-hero-headline">{currentSlide.title}</h1>
               <p className="contact-hero-subtitle">{currentSlide.subtitle}</p>
 
-              <motion.div 
+              <motion.div
                 className="contact-hero-cta-wrapper"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -166,7 +265,7 @@ export default function Contact() {
                 <a href="#contact-form" className="contact-hero-cta">
                   <span>Send Us A Message</span>
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </a>
               </motion.div>
@@ -201,7 +300,7 @@ export default function Contact() {
       {/* Contact Section */}
       <section className="contact-main-section" id="contact-form">
         <div className="contact-container">
-          <motion.div 
+          <motion.div
             className="contact-grid"
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
@@ -210,7 +309,7 @@ export default function Contact() {
               visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.15 } },
             }}
           >
-            <motion.div 
+            <motion.div
               className="contact-info"
               variants={{ hidden: { opacity: 0, y: 35 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65 } } }}
             >
@@ -225,7 +324,7 @@ export default function Contact() {
 
               <div className="contact-info-cards">
                 {contactInfo.map((info, index) => (
-                  <motion.div 
+                  <motion.div
                     className="contact-info-card"
                     key={index}
                     whileHover={{ x: 4 }}
@@ -241,7 +340,7 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="contact-form-wrapper"
               variants={{ hidden: { opacity: 0, y: 35 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65 } } }}
             >
@@ -257,18 +356,51 @@ export default function Contact() {
                   <div className="form-row">
                     <div className="form-group">
                       <label className="form-label">Full Name</label>
-                      <input type="text" name="name" placeholder="Enter your full name" value={formData.name} onChange={handleChange} required className="form-input" />
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your full name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        minLength={3}
+                        maxLength={50}
+                        pattern="[A-Za-z ]+"
+                        title="Name should contain only letters"
+                        className="form-input"
+                      />
                     </div>
                     <div className="form-group">
                       <label className="form-label">Email Address</label>
-                      <input type="email" name="email" placeholder="Enter your email address" value={formData.email} onChange={handleChange} required className="form-input" />
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$"
+                        title="Please enter a valid email address"
+                        className="form-input"
+                      />
                     </div>
                   </div>
 
                   <div className="form-row">
                     <div className="form-group">
                       <label className="form-label">Phone Number</label>
-                      <input type="tel" name="phone" placeholder="Enter your phone number" value={formData.phone} onChange={handleChange} className="form-input" />
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        maxLength={10}
+                        pattern="[0-9]{10}"
+                        title="Please enter a valid 10-digit phone number"
+                        className="form-input"
+                      />
                     </div>
                     <div className="form-group">
                       <label className="form-label">Inquiry Type</label>
@@ -286,20 +418,49 @@ export default function Contact() {
 
                   <div className="form-group form-group-full">
                     <label className="form-label">Your Message</label>
-                    <textarea name="message" rows="5" placeholder="Tell us how we can help you..." value={formData.message} onChange={handleChange} className="form-textarea"></textarea>
+                    <textarea name="message" rows="5" placeholder="Tell us how we can help you..." value={formData.message} onChange={handleChange} required className="form-textarea"></textarea>
                   </div>
 
-                  <motion.button 
-                    type="submit" 
+                  <motion.button
+                    type="submit"
                     className="form-submit-btn"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    disabled={loading}
+                    whileHover={!loading ? { scale: 1.02 } : {}}
+                    whileTap={!loading ? { scale: 0.98 } : {}}
                   >
-                    <span>Send Message</span>
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
+                    <span>{loading ? "Sending..." : "Send Message"}</span>
+
+                    {!loading && (
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path
+                          d="M3 9H15M15 9L10 4M15 9L10 14"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    )}
                   </motion.button>
+
+                  {status.show && (
+                    <div
+                      className={`contact-status ${status.type === "success"
+                          ? "contact-success"
+                          : "contact-error"
+                        }`}
+                    >
+                      <div className="contact-status-title">
+                        {status.type === "success"
+                          ? "✓ Success"
+                          : "⚠ Error"}
+                      </div>
+
+                      <div className="contact-status-message">
+                        {status.message}
+                      </div>
+                    </div>
+                  )}
                 </form>
               </div>
             </motion.div>
@@ -311,7 +472,7 @@ export default function Contact() {
       <section className="contact-connect-section">
         <div className="contact-connect-bg" />
         <div className="contact-container">
-          <motion.div 
+          <motion.div
             className="contact-section-header"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -324,7 +485,7 @@ export default function Contact() {
             <h2 className="contact-section-headline">Ways You Can Get Involved</h2>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="contact-connect-grid"
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
@@ -343,7 +504,7 @@ export default function Contact() {
                 <p className="connect-card-description">{option.description}</p>
                 <div className="connect-card-arrow">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
               </motion.a>
@@ -355,7 +516,7 @@ export default function Contact() {
       {/* Map Section */}
       <section className="contact-map-section">
         <div className="contact-container">
-          <motion.div 
+          <motion.div
             className="contact-section-header"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -367,7 +528,7 @@ export default function Contact() {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="contact-map-placeholder"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -375,8 +536,8 @@ export default function Contact() {
           >
             <div className="map-placeholder-content">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <path d="M24 4C16.28 4 10 10.28 10 18C10 28 24 44 24 44C24 44 38 28 38 18C38 10.28 31.72 4 24 4Z" stroke="#DC2626" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="24" cy="18" r="6" stroke="#DC2626" strokeWidth="2.5"/>
+                <path d="M24 4C16.28 4 10 10.28 10 18C10 28 24 44 24 44C24 44 38 28 38 18C38 10.28 31.72 4 24 4Z" stroke="#DC2626" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                <circle cx="24" cy="18" r="6" stroke="#DC2626" strokeWidth="2.5" />
               </svg>
               <span className="map-placeholder-text">Chennai, Tamil Nadu, India</span>
               <span className="map-placeholder-subtext">Google Map Integration</span>
@@ -390,7 +551,7 @@ export default function Contact() {
         <div className="contact-cta-bg" />
         <div className="contact-cta-glow" />
         <div className="contact-container">
-          <motion.div 
+          <motion.div
             className="contact-cta-content"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -404,7 +565,7 @@ export default function Contact() {
               <a href="/volunteer" className="contact-cta-primary">
                 <span>Become A Volunteer</span>
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
               <a href="/donate" className="contact-cta-secondary">
