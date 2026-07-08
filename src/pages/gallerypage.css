@@ -565,12 +565,14 @@
   position: relative;
   padding: 5rem 0;
   overflow: hidden;
+  background: var(--gal-red-light);
 }
 
 .gallery-cta-bg {
   position: absolute;
   inset: 0;
   background: var(--gal-red-light);
+  z-index: 0;
 }
 
 .gallery-cta-glow {
@@ -585,9 +587,17 @@
   transform: translate(-50%, -50%);
   opacity: 0.07;
   pointer-events: none;
+  z-index: 0;
+}
+
+.gallery-cta-section .gallery-grid-container {
+  position: relative;
+  z-index: 2;
 }
 
 .gallery-cta-content {
+  position: relative;
+  z-index: 3;
   text-align: center;
   max-width: 600px;
   margin: 0 auto;

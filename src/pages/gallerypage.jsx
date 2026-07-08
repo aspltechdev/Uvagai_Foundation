@@ -3,60 +3,104 @@ import { useNavigate, useParams } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./gallerypage.css";
 
-import educationImg from "../assets/education.jpg";
-import healthcareImg from "../assets/healthcare.jpg";
-import volunteerImg from "../assets/volunteer.jpg";
-import childImg from "../assets/child.jpg";
-import elderlyImg from "../assets/elderly.jpg";
-import environmentImg from "../assets/environment.jpg";
-import foodImg from "../assets/food.jpg";
-import csrImg from "../assets/csr.jpg";
-import skillImg from "../assets/skill.jpg";
+/* EDUCATION */
+import education1 from "../assets/education1.jpg";
+import education2 from "../assets/education2.jpg";
+import education3 from "../assets/education3.jpg";
+import education4 from "../assets/education4.jpg";
+
+/* HEALTHCARE */
+import healthcare1 from "../assets/healthcare1.jpg";
+import healthcare2 from "../assets/healthcare2.jpg";
+import healthcare3 from "../assets/healthcare3.jpg";
+import healthcare4 from "../assets/healthcare4.jpg";
+
+/* VOLUNTEER */
+import volunteer1 from "../assets/volunteer1.jpg";
+import volunteer2 from "../assets/volunteer2.jpg";
+import volunteer3 from "../assets/volunteer3.jpg";
+import volunteer4 from "../assets/volunteer4.jpg";
+
+/* CHILD WELFARE */
+import child1 from "../assets/child1.jpg";
+import child2 from "../assets/child2.jpg";
+import child3 from "../assets/child3.jpg";
+import child4 from "../assets/child4.jpg";
+
+/* ELDERLY CARE */
+import elderly1 from "../assets/elderly1.jpg";
+import elderly2 from "../assets/elderly2.jpg";
+import elderly3 from "../assets/elderly3.jpg";
+import elderly4 from "../assets/elderly4.jpg";
+
+/* ENVIRONMENT */
+import environment1 from "../assets/environment1.jpg";
+import environment2 from "../assets/environment2.jpg";
+import environment3 from "../assets/environment3.jpg";
+import environment4 from "../assets/environment4.jpg";
+
+/* FOOD */
+import food1 from "../assets/food1.jpg";
+import food2 from "../assets/food2.jpg";
+import food3 from "../assets/food3.jpg";
+import food4 from "../assets/food4.jpg";
+
+/* CSR */
+import csr1 from "../assets/csr1.jpg";
+import csr2 from "../assets/csr2.jpg";
+import csr3 from "../assets/csr3.jpg";
+import csr4 from "../assets/csr4.jpg";
+
+/* SKILL */
+import skill1 from "../assets/skill1.jpg";
+import skill2 from "../assets/skill2.jpg";
+import skill3 from "../assets/skill3.jpg";
+import skill4 from "../assets/skill4.jpg";
 
 const galleryData = {
   education: {
     title: "Education Support Program",
-    images: [educationImg, educationImg, educationImg, educationImg],
+    images: [education1, education2, education3, education4],
     accent: "red",
   },
   healthcare: {
     title: "Community Healthcare Camp",
-    images: [healthcareImg, healthcareImg, healthcareImg, healthcareImg],
+    images: [healthcare1, healthcare2, healthcare3, healthcare4],
     accent: "green",
   },
   volunteer: {
     title: "Volunteer Engagement Drive",
-    images: [volunteerImg, volunteerImg, volunteerImg, volunteerImg],
+    images: [volunteer1, volunteer2, volunteer3, volunteer4],
     accent: "blue",
   },
   "child-welfare": {
     title: "Child Welfare Activities",
-    images: [childImg, childImg, childImg, childImg],
+    images: [child1, child2, child3, child4],
     accent: "red",
   },
   "elderly-care": {
     title: "Elderly Care Initiative",
-    images: [elderlyImg, elderlyImg, elderlyImg, elderlyImg],
+    images: [elderly1, elderly2, elderly3, elderly4],
     accent: "blue",
   },
   environment: {
     title: "Environmental Awareness Campaign",
-    images: [environmentImg, environmentImg, environmentImg, environmentImg],
+    images: [environment1, environment2, environment3, environment4],
     accent: "green",
   },
   "food-distribution": {
     title: "Community Food Distribution",
-    images: [foodImg, foodImg, foodImg, foodImg],
+    images: [food1, food2, food3, food4],
     accent: "red",
   },
   csr: {
     title: "CSR Partnership Activities",
-    images: [csrImg, csrImg, csrImg, csrImg],
+    images: [csr1, csr2, csr3, csr4],
     accent: "blue",
   },
   "skill-development": {
     title: "Youth Skill Development Workshop",
-    images: [skillImg, skillImg, skillImg, skillImg],
+    images: [skill1, skill2, skill3, skill4],
     accent: "green",
   },
 };
@@ -64,17 +108,19 @@ const galleryData = {
 export default function Gallery() {
   const navigate = useNavigate();
   const { category } = useParams();
-  const galleryRef = useRef(null);
-  const isInView = useInView(galleryRef, { once: true, margin: "-80px" });
 
-  // If category exists, show category gallery
-  if (category) {
-    return <CategoryGalleryView category={category} navigate={navigate} />;
-  }
+  const galleryRef = useRef(null);
+  const ctaRef = useRef(null);
+
+  const isInView = useInView(galleryRef, { once: true, margin: "-80px" });
+  const isCtaInView = useInView(ctaRef, { once: true, margin: "-80px" });
+
+  const [current, setCurrent] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   const slides = [
     {
-      image: educationImg,
+      image: education1,
       title: "Education Support Program",
       slug: "education",
       subtitle: "Supporting students through learning resources and mentorship.",
@@ -84,7 +130,7 @@ export default function Gallery() {
       accent: "red",
     },
     {
-      image: healthcareImg,
+      image: healthcare1,
       title: "Community Healthcare Camp",
       slug: "healthcare",
       subtitle: "Bringing medical support and wellness awareness to communities.",
@@ -94,7 +140,7 @@ export default function Gallery() {
       accent: "green",
     },
     {
-      image: volunteerImg,
+      image: volunteer1,
       title: "Volunteer Engagement Drive",
       slug: "volunteer",
       subtitle: "Volunteers coming together for meaningful social change.",
@@ -104,7 +150,7 @@ export default function Gallery() {
       accent: "blue",
     },
     {
-      image: childImg,
+      image: child1,
       title: "Child Welfare Activities",
       slug: "child-welfare",
       subtitle: "Supporting children through care, education, and development.",
@@ -114,7 +160,7 @@ export default function Gallery() {
       accent: "red",
     },
     {
-      image: elderlyImg,
+      image: elderly1,
       title: "Elderly Care Initiative",
       slug: "elderly-care",
       subtitle: "Offering care, support, and dignity to senior citizens.",
@@ -124,7 +170,7 @@ export default function Gallery() {
       accent: "blue",
     },
     {
-      image: environmentImg,
+      image: environment1,
       title: "Environmental Awareness Campaign",
       slug: "environment",
       subtitle: "Promoting sustainability through green community initiatives.",
@@ -134,7 +180,7 @@ export default function Gallery() {
       accent: "green",
     },
     {
-      image: foodImg,
+      image: food1,
       title: "Community Food Distribution",
       slug: "food-distribution",
       subtitle: "Providing essential food support to families in need.",
@@ -144,7 +190,7 @@ export default function Gallery() {
       accent: "red",
     },
     {
-      image: csrImg,
+      image: csr1,
       title: "CSR Partnership Activities",
       slug: "csr",
       subtitle: "Collaborating with organizations to create social impact.",
@@ -154,7 +200,7 @@ export default function Gallery() {
       accent: "blue",
     },
     {
-      image: skillImg,
+      image: skill1,
       title: "Youth Skill Development Workshop",
       slug: "skill-development",
       subtitle: "Empowering youth with career guidance and employability skills.",
@@ -165,24 +211,27 @@ export default function Gallery() {
     },
   ];
 
-  const [current, setCurrent] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-
   useEffect(() => {
+    if (category) return;
+
     if (!isHovered) {
       const timer = setInterval(() => {
         setCurrent((prev) => (prev + 1) % slides.length);
       }, 4000);
+
       return () => clearInterval(timer);
     }
-  }, [isHovered, slides.length]);
+  }, [isHovered, slides.length, category]);
+
+  if (category) {
+    return <CategoryGalleryView category={category} navigate={navigate} />;
+  }
 
   const currentSlide = slides[current];
 
   return (
     <div className="gallery-showcase">
-      {/* Hero Slideshow Section */}
-      <section 
+      <section
         className="gallery-hero-slideshow"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -191,9 +240,9 @@ export default function Gallery() {
           {slides.map((slide, index) => (
             <motion.div
               key={index}
-              className={`gallery-slide-bg ${index === current ? 'active' : ''}`}
+              className={`gallery-slide-bg ${index === current ? "active" : ""}`}
               initial={{ opacity: 0 }}
-              animate={{ 
+              animate={{
                 opacity: index === current ? 1 : 0,
                 scale: index === current ? 1 : 1.08,
               }}
@@ -208,7 +257,6 @@ export default function Gallery() {
         <div className="gallery-overlay-gradient" />
         <div className="gallery-overlay-vignette" />
 
-        {/* Centered Content */}
         <div className="gallery-hero-container">
           <AnimatePresence mode="wait">
             <motion.div
@@ -221,42 +269,55 @@ export default function Gallery() {
             >
               <div className="gallery-hero-tag">
                 <span className="gallery-hero-tag-line" />
-                <span className="gallery-hero-tag-text">Uvagai Foundation Gallery</span>
+                <span className="gallery-hero-tag-text">
+                  Uvagai Foundation Gallery
+                </span>
               </div>
 
               <h1 className="gallery-hero-title">{currentSlide.title}</h1>
               <p className="gallery-hero-subtitle">{currentSlide.subtitle}</p>
 
-              <motion.div 
+              <motion.div
                 className={`gallery-hero-stat stat-${currentSlide.accent}`}
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.25, duration: 0.4 }}
               >
-                <span className="gallery-hero-stat-value">{currentSlide.stat}</span>
-                <p className="gallery-hero-description">{currentSlide.description}</p>
+                <span className="gallery-hero-stat-value">
+                  {currentSlide.stat}
+                </span>
+                <p className="gallery-hero-description">
+                  {currentSlide.description}
+                </p>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="gallery-hero-cta"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.4 }}
               >
-                <button 
+                <button
                   className={`gallery-hero-cta-primary cta-${currentSlide.accent}`}
                   onClick={() => navigate(`/gallery/${currentSlide.slug}`)}
                 >
                   <span>View Details</span>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path
+                      d="M3 8H13M13 8L9 4M13 8L9 12"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </button>
-                <button 
+
+                <button
                   className="gallery-hero-cta-secondary"
-                  onClick={() => {
-                    galleryRef.current?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                  onClick={() =>
+                    galleryRef.current?.scrollIntoView({ behavior: "smooth" })
+                  }
                 >
                   <span>View All Photos</span>
                   <span className="cta-secondary-arrow">↓</span>
@@ -270,17 +331,17 @@ export default function Gallery() {
           {slides.map((_, index) => (
             <button
               key={index}
-              className={`gallery-slide-dot ${index === current ? 'active' : ''}`}
+              className={`gallery-slide-dot ${index === current ? "active" : ""}`}
               onClick={() => setCurrent(index)}
               aria-label={`Go to slide ${index + 1}`}
             >
               <motion.span
                 className="gallery-slide-dot-fill"
-                initial={{ width: '0%' }}
-                animate={{ 
-                  width: index === current && !isHovered ? '100%' : '0%',
+                initial={{ width: "0%" }}
+                animate={{
+                  width: index === current && !isHovered ? "100%" : "0%",
                 }}
-                transition={{ 
+                transition={{
                   duration: index === current ? 4 : 0.3,
                   ease: "linear",
                 }}
@@ -291,19 +352,18 @@ export default function Gallery() {
 
         <div className="gallery-slide-counter">
           <span className="gallery-counter-current">
-            {(current + 1).toString().padStart(2, '0')}
+            {(current + 1).toString().padStart(2, "0")}
           </span>
           <span className="gallery-counter-sep">/</span>
           <span className="gallery-counter-total">
-            {slides.length.toString().padStart(2, '0')}
+            {slides.length.toString().padStart(2, "0")}
           </span>
         </div>
       </section>
 
-      {/* Photo Gallery Grid */}
       <section className="gallery-grid-section" ref={galleryRef}>
         <div className="gallery-grid-container">
-          <motion.div 
+          <motion.div
             className="gallery-grid-header"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -316,7 +376,7 @@ export default function Gallery() {
             <h2 className="gallery-grid-headline">Moments of Impact</h2>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="gallery-photo-grid"
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
@@ -337,7 +397,10 @@ export default function Gallery() {
                   visible: {
                     opacity: 1,
                     y: 0,
-                    transition: { duration: 0.6, ease: [0.33, 0.1, 0.25, 1] },
+                    transition: {
+                      duration: 0.6,
+                      ease: [0.33, 0.1, 0.25, 1],
+                    },
                   },
                 }}
                 whileHover={{ y: -6 }}
@@ -351,9 +414,11 @@ export default function Gallery() {
                     <span className="gallery-photo-badge-text">{slide.stat}</span>
                   </div>
                 </div>
+
                 <div className="gallery-photo-content">
                   <h3 className="gallery-photo-title">{slide.title}</h3>
                 </div>
+
                 <div className={`gallery-photo-accent accent-${slide.accent}`} />
               </motion.div>
             ))}
@@ -361,29 +426,38 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="gallery-cta-section">
+      <section className="gallery-cta-section" ref={ctaRef}>
         <div className="gallery-cta-bg" />
         <div className="gallery-cta-glow" />
+
         <div className="gallery-grid-container">
-          <motion.div 
+          <motion.div
             className="gallery-cta-content"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            initial={{ opacity: 1, y: 0 }}
+            animate={isCtaInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.33, 0.1, 0.25, 1] }}
           >
             <h2 className="gallery-cta-headline">Be Part of Our Journey</h2>
+
             <p className="gallery-cta-description">
-              Your support helps us continue creating meaningful impact 
-              through education, healthcare, and community development initiatives.
+              Your support helps us continue creating meaningful impact through
+              education, healthcare, and community development initiatives.
             </p>
+
             <div className="gallery-cta-buttons">
               <a href="/volunteer" className="gallery-cta-primary">
                 <span>Become a Volunteer</span>
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path
+                    d="M3 9H15M15 9L10 4M15 9L10 14"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </a>
+
               <a href="/donate" className="gallery-cta-secondary">
                 Support Our Mission
                 <span className="gallery-cta-secondary-arrow">→</span>
@@ -396,7 +470,6 @@ export default function Gallery() {
   );
 }
 
-// Category Gallery View Component
 function CategoryGalleryView({ category, navigate }) {
   const currentGallery = galleryData[category];
 
@@ -409,7 +482,10 @@ function CategoryGalleryView({ category, navigate }) {
       <section className="category-gallery-page">
         <div className="category-not-found">
           <h1>Gallery Not Found</h1>
-          <button className="back-gallery-btn" onClick={() => navigate("/gallery")}>
+          <button
+            className="back-gallery-btn"
+            onClick={() => navigate("/gallery")}
+          >
             ← Back to Gallery
           </button>
         </div>
@@ -419,33 +495,45 @@ function CategoryGalleryView({ category, navigate }) {
 
   return (
     <section className="category-gallery-page">
-      {/* Back Button */}
       <div className="category-back-wrapper">
-        <button className="back-gallery-btn" onClick={() => navigate("/gallery")}>
+        <button
+          className="back-gallery-btn"
+          onClick={() => navigate("/gallery")}
+        >
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M15 9H3M3 9L7 5M3 9L7 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path
+              d="M15 9H3M3 9L7 5M3 9L7 13"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
           <span>Back to Gallery</span>
         </button>
       </div>
 
-      {/* Category Header */}
       <div className="category-gallery-header">
         <div className="category-header-tag">
           <span className="category-header-tag-line" />
-          <span className="category-header-tag-text">Uvagai Foundation Gallery</span>
+          <span className="category-header-tag-text">
+            Uvagai Foundation Gallery
+          </span>
         </div>
+
         <h1 className="category-header-title">{currentGallery.title}</h1>
-        <p className="category-header-subtitle">Moments captured from this initiative.</p>
+        <p className="category-header-subtitle">
+          Moments captured from this initiative.
+        </p>
+
         <div className={`category-header-accent accent-${currentGallery.accent}`} />
       </div>
 
-      {/* Category Image Grid */}
       <div className="category-gallery-grid">
         {currentGallery.images.map((image, index) => (
-          <motion.div 
+          <motion.div
             className={`category-image-card card-${currentGallery.accent}`}
-            key={index}
+            key={`${category}-${index}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
