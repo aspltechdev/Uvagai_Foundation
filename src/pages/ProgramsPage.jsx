@@ -5,13 +5,13 @@ import purpose from "../assets/purpose.png";
 import empower from "../assets/empowering.png";
 import volunteer from "../assets/volunteer.png";
 import education from "../assets/education.png";
-import healthcare from "../assets/health.png";
+import healthcare from "../assets/healthfinal.png";
 import child from "../assets/childwelfareprogram.png";
 import elderly from "../assets/elder.png";
 import environment from "../assets/environment.png";
 import community from "../assets/community.png";
 import humanitarian from "../assets/humanitarian.png";
-import women from "../assets/womenempowerment.png";
+import women from "../assets/womenempfinal.png";
 
 const heroSlides = [
   {
