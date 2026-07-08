@@ -69,9 +69,49 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const data = {
+    access_key: "d2e618b7-c616-458f-8837-ca64bb0cd1d3",
+    subject: "New Contact Form Submission - Uvagai Foundation",
+    name: formData.name,
+    email: formData.email,
+    phone: formData.phone,
+    inquiryType: formData.inquiryType,
+    message: formData.message,
   };
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      alert("Message sent successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        inquiryType: "",
+        message: "",
+      });
+    } else {
+      alert("Failed to send message.");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong.");
+  }
+};
 
   return (
     <div className="contact-page" ref={sectionRef}>

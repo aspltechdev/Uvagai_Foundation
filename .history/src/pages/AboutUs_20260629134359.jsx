@@ -5,11 +5,12 @@ import aboutImage from "../assets/about.png";
 
 const heroSlides = [
   {
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
-    title: "Creating Hope, Empowering Lives & Building Stronger Communities",
-    subtitle: "Founded in 2019, Uvagai Foundation is a non-profit organization dedicated to creating meaningful social impact through education, healthcare, child welfare, and community development.",
-    tag: "About Uvagai Foundation",
-    accent: "red"
+   image: aboutImage,
+title: "Creating Hope, Empowering Lives & Building Stronger Communities",
+subtitle:
+  "Founded in 2019, Uvagai Foundation is a non-profit organization dedicated to creating meaningful social impact through education, healthcare, child welfare, and community development.",
+tag: "About Uvagai Foundation",
+accent: "red",
   },
   {
     image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1200&q=80",
@@ -154,10 +155,7 @@ export default function AboutUsPage() {
               transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
             >
               <div className="about-story-image-frame">
-              <img
-  src={aboutImage}
-  alt="Uvagai Foundation"
-/>
+                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80" alt="Uvagai Foundation" />
                 <div className="about-story-image-border" />
               </div>
               <div className="about-story-image-glow" />

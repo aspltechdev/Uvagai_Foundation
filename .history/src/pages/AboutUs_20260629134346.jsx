@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./AboutUs.css";
-import aboutImage from "../assets/about.png";
+import aboutImage from "../assets/abou";
 
 const heroSlides = [
   {
@@ -154,10 +154,7 @@ export default function AboutUsPage() {
               transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
             >
               <div className="about-story-image-frame">
-              <img
-  src={aboutImage}
-  alt="Uvagai Foundation"
-/>
+                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80" alt="Uvagai Foundation" />
                 <div className="about-story-image-border" />
               </div>
               <div className="about-story-image-glow" />
