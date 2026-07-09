@@ -1675,7 +1675,7 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./Course.css";
 
 import english from "../assets/english.png";
-import computer from "../assets/computer.jpeg";
+import computer from "../assets/community.jpg";
 import graphic from "../assets/graphic.jpeg";
 import marketing from "../assets/marketing.jpeg";
 import web from "../assets/web.png";

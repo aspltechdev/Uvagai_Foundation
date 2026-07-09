@@ -328,16 +328,17 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./VisionMission.css";
-import transparentBlack from "../assets/transparentblack.png";
-import educationnew from "../assets/educationnew.JPG";
-import healthcarenew from "../assets/healthcarenew.png";
-import childwelfare1 from "../assets/childwelfare1.png";
-import elderlycarenew from "../assets/elderlycarenew.png";
-import enviroinment from "../assets/enviroinment.png";
-import communitynew from "../assets/communitynew.JPG";
+//import transparentBlack from "../assets/transparentblack.png";//
+import educationnew12 from "../assets/educationnew12.jpg";
+import healthcarenew1 from "../assets/healthcarenew1.png";
+import childwelfarenew1 from "../assets/childwelfareprogram.png";
+import elderlycarenew1 from "../assets/elderlycarenew1.png";
+import enviroinmentnew1 from "../assets/enviroinmentnew1.jpg";
+import communitynew1 from "../assets/communitynew1.jpg";
 import large1 from "../assets/large1.png";
-import image2 from "../assets/image2.png";
+import image2 from "../assets/image2.jpeg";
 import image5 from "../assets/image5.png";
+import vmBg from "../assets/communitynew1.jpg";
 
 
 const heroSlides = [
@@ -389,12 +390,12 @@ export default function VisionMissionPage() {
   ];
 
   const impactPillars = [
-    { image: educationnew, title: "Education", description: "Scholarships, digital classrooms, mentorship, and skill development programs.", accent: "red" },
-    { image: healthcarenew, title: "Healthcare", description: "Medical camps, preventive care, health awareness, and wellness initiatives.", accent: "green" },
-    { image: childwelfare1, title: "Child Welfare", description: "Nutrition support, education access, and holistic development for children.", accent: "blue" },
-    { image: elderlycarenew, title: "Elderly Care", description: "Healthcare assistance, companionship, and dignity programs for senior citizens.", accent: "red" },
-    { image: enviroinment, title: "Environment", description: "Tree plantation, sustainability campaigns, and green community projects.", accent: "green" },
-    { image: communitynew, title: "Community", description: "Livelihood programs, awareness campaigns, and social development initiatives.", accent: "blue" },
+    { image: educationnew12, title: "Education", description: "Scholarships, digital classrooms, mentorship, and skill development programs.", accent: "red" },
+    { image: healthcarenew1, title: "Healthcare", description: "Medical camps, preventive care, health awareness, and wellness initiatives.", accent: "green" },
+    { image: childwelfarenew1, title: "Child Welfare", description: "Nutrition support, education access, and holistic development for children.", accent: "blue" },
+    { image: elderlycarenew1, title: "Elderly Care", description: "Healthcare assistance, companionship, and dignity programs for senior citizens.", accent: "red" },
+    { image: enviroinmentnew1, title: "Environment", description: "Tree plantation, sustainability campaigns, and green community projects.", accent: "green" },
+    { image: communitynew1, title: "Community", description: "Livelihood programs, awareness campaigns, and social development initiatives.", accent: "blue" },
   ];
 
   const values = [
