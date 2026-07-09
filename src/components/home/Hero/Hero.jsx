@@ -684,6 +684,9 @@
 
 
 
+
+
+
 import { useEffect, useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform, useScroll, useInView } from "framer-motion";
 import "./Hero.css";
@@ -1079,56 +1082,7 @@ export default function Hero() {
         transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
       />
 
-      {/* Navigation */}
-      <motion.nav 
-        className="uvagai-cinematic-nav"
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, ease: [0.33, 0.1, 0.25, 1], delay: 0.3 }}
-      >
-        <div className="uvagai-cinematic-nav-inner">
-          <motion.div 
-            className="uvagai-cinematic-logo"
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className="uvagai-cinematic-logo-mark">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <rect width="40" height="40" rx="10" className="uvagai-cinematic-logo-bg" />
-                <path d="M11 20L17 26L27 12" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <div className="uvagai-cinematic-logo-text">
-              <span className="uvagai-cinematic-logo-name">Uvagai</span>
-              <span className="uvagai-cinematic-logo-subtitle">Foundation</span>
-            </div>
-          </motion.div>
-          
-          <div className="uvagai-cinematic-nav-links">
-            {["Our Work", "Stories", "About", "Contact"].map((link) => (
-              <motion.a 
-                key={link} 
-                href="#" 
-                className="uvagai-cinematic-nav-link"
-                whileHover={{ y: -1 }}
-              >
-                {link}
-                <span className="uvagai-cinematic-nav-underline" />
-              </motion.a>
-            ))}
-            <span className="uvagai-cinematic-nav-divider" />
-            <motion.button 
-              className="uvagai-cinematic-nav-cta"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Donate
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M5 11L9 7L5 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </motion.button>
-          </div>
-        </div>
-      </motion.nav>
+
 
       {/* Main Content */}
       <div className="uvagai-cinematic-content">
