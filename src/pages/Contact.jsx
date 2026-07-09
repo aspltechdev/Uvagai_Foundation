@@ -1,24 +1,27 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./Contact.css";
+import img1 from  "../assets/communityy.png";
+import img2 from  "../assets/humanitarian.png";
+import img3 from  "../assets/ndimagee.png";
 
 const heroSlides = [
   {
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
+    image: img1,
     title: "Let's Create Impact Together",
     subtitle: "Whether you would like to volunteer, donate, partner with us, support our initiatives, or learn more about our work, we'd love to hear from you.",
     tag: "Contact Uvagai Foundation",
     accent: "red"
   },
   {
-    image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1200&q=80",
+    image: img2,
     title: "Your Support Transforms Lives",
     subtitle: "Every partnership, contribution, and act of support helps us build stronger communities and create lasting impact for those who need it most.",
     tag: "Get In Touch",
     accent: "green"
   },
   {
-    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1200&q=80",
+    image: img3,
     title: "Together We Can Build Tomorrow",
     subtitle: "Join hands with us to create sustainable social impact through education, healthcare, and community development initiatives across communities.",
     tag: "Reach Out To Us",
