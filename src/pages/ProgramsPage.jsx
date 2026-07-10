@@ -1,19 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./ProgramsPage.css";
-<<<<<<< HEAD
-import purpose from "../assets/purpose.png";
-import empower from "../assets/empowering.png";
-import volunteer from "../assets/volunteer.png";
-import education from "../assets/education.png";
-import healthcare from "../assets/health.png";
-import child from "../assets/childwelfareprogram.png";
-import elderly from "../assets/elder.png";
-import environment from "../assets/environment.png";
-import community from "../assets/community.png";
-import humanitarian from "../assets/humanitarian.png";
-import women from "../assets/womenempowerment.png";
-=======
 import purpose from "../assets/ndimagee.png";
 import empower from "../assets/voli.jpeg";
 import volunteer from "../assets/volent.jpeg";
@@ -25,7 +12,6 @@ import environment from "../assets/env.jpeg";
 import community from "../assets/community.png";
 import humanitarian from "../assets/humani.jpeg";
 import women from "../assets/womenempfinal.png";
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
 
 const heroSlides = [
   {
