@@ -1,15 +1,15 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./Events.css";
-import engage from "../assets/engagement.png";
-import community from "../assets/empowercommunity.png";
-import together from "../assets/together.png";
+import engage from "../assets/voli.jpeg";
+import community from "../assets/eventherof.jpeg";
+import together from "../assets/humani.jpeg";
 import camp from "../assets/camp.jpeg";
 import educ from "../assets/edu.jpg";
 import volunteer from "../assets/voli.jpeg";
 import child from "../assets/childwell.jpg";
 import senior from "../assets/eldi.jpeg";
-import sustain from "../assets/sustainability.png";
+import sustain from "../assets/finalenvironment.jpeg";
 
 const heroSlides = [
   {

@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./ProgramsPage.css";
 import purpose from "../assets/ndimagee.png";
-import empower from "../assets/three.jpeg";
+import empower from "../assets/voli.jpeg";
 import volunteer from "../assets/volent.jpeg";
 import education from "../assets/educ.jpeg";
 import healthcare from "../assets/healthfinal.png";

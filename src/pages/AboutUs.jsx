@@ -1,31 +1,37 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./AboutUs.css";
-import aboutImage from "../assets/about.png";
+import aboutImage from "../assets/aboutpage.png";
 import educationImg from "../assets/childedu.png";
 import healthcareImg from "../assets/community.png";
 import childWelfareImg from "../assets/childincards.png";
 import elderlyImg from "../assets/senior.png";
 import environmentImg from "../assets/environment.png";
 import communityDevImg from "../assets/communityy.png";
+import abouthero1 from "../assets/abouthero1.png";
+import abouthero2 from "../assets/abouthero2.jpeg";
+import abouthero3 from "../assets/abouthero3.jpeg";
+import highlight1 from "../assets/highlight1.png";
+import highlight2 from "../assets/highlight2.png";
+import highlight3 from "../assets/highlight3.png";
 
 const heroSlides = [
   {
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
+    image: abouthero1,
     title: "Creating Hope, Empowering Lives & Building Stronger Communities",
     subtitle: "Founded in 2019, Uvagai Foundation is a non-profit organization dedicated to creating meaningful social impact through education, healthcare, child welfare, and community development.",
     tag: "About Uvagai Foundation",
     accent: "red"
   },
   {
-    image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1200&q=80",
+    image: abouthero2,
     title: "A Foundation Built On Compassion & Purpose",
     subtitle: "We work closely with communities, volunteers, institutions, and corporate partners to implement programs that address real societal challenges and promote sustainable development.",
     tag: "Who We Are",
     accent: "green"
   },
   {
-    image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1200&q=80",
+    image: abouthero3,
     title: "Driving Sustainable Social Impact Across India",
     subtitle: "Through compassion-driven action and collaborative partnerships, we strive to create lasting positive change and contribute to a better future for all.",
     tag: "Our Mission",
@@ -333,7 +339,7 @@ export default function AboutUsPage() {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="abt-highlight-img-bg">
-                    <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80" alt="Foundation" />
+                    <img src={highlight1} alt="Foundation" />
                     <div className="abt-highlight-img-overlay" />
                   </div>
                   <div className="abt-highlight-img-content">
@@ -348,7 +354,7 @@ export default function AboutUsPage() {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="abt-highlight-img-bg">
-                    <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80" alt="Focus Areas" />
+                    <img src={highlight2} alt="Focus Areas" />
                     <div className="abt-highlight-img-overlay" />
                   </div>
                   <div className="abt-highlight-img-content">
@@ -363,7 +369,7 @@ export default function AboutUsPage() {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="abt-highlight-img-bg">
-                    <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&q=80" alt="Community" />
+                    <img src={highlight3} alt="Community" />
                     <div className="abt-highlight-img-overlay" />
                   </div>
                   <div className="abt-highlight-img-content">
