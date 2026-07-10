@@ -18,7 +18,6 @@ export default function Footer() {
   ];
 
   const getInvolved = [
-<<<<<<< HEAD
     { to: "/volunteerPage", label: "Volunteer" },
     { to: "/csr-partnership", label: "CSR Partnership" },
     { to: "/donate", label: "Donate" },
@@ -31,13 +30,11 @@ export default function Footer() {
     // { to: "/internship", hash: "cta", label: "Internship" },
     // { to: "/annual-reports", hash: "cta", label: "Annual Reports" },
     { to: "/contact", hash: "cta", label: "Partner With Us" },
-=======
     { to: "/volunteers", label: "Volunteer" },
     { to: "/csr-partnership", label: "CSR Partnership" },
     { to: "/Donate", label: "Donate" },
     { to: "/Course", label: "Courses" },
     { to: "/contact", label: "Partner With Us" },
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
   ];
 
   const focusAreas = [
