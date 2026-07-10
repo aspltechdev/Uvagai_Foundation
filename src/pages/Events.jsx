@@ -4,11 +4,11 @@ import "./Events.css";
 import engage from "../assets/engagement.png";
 import community from "../assets/empowercommunity.png";
 import together from "../assets/together.png";
-import camp from "../assets/healthcarecamp.png";
-import educ from "../assets/educationinitiative.png";
-import volunteer from "../assets/volunteerprogram.png";
-import child from "../assets/childwelfareprogram.png";
-import senior from "../assets/seniorcitizenwelfare.png";
+import camp from "../assets/camp.jpeg";
+import educ from "../assets/edu.jpg";
+import volunteer from "../assets/voli.jpeg";
+import child from "../assets/childwell.jpg";
+import senior from "../assets/eldi.jpeg";
 import sustain from "../assets/sustainability.png";
 
 const heroSlides = [
