@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./ProgramsPage.css";
+<<<<<<< HEAD
 import purpose from "../assets/purpose.png";
 import empower from "../assets/empowering.png";
 import volunteer from "../assets/volunteer.png";
@@ -12,6 +13,19 @@ import environment from "../assets/environment.png";
 import community from "../assets/community.png";
 import humanitarian from "../assets/humanitarian.png";
 import women from "../assets/womenempowerment.png";
+=======
+import purpose from "../assets/ndimagee.png";
+import empower from "../assets/voli.jpeg";
+import volunteer from "../assets/volent.jpeg";
+import education from "../assets/educ.jpeg";
+import healthcare from "../assets/healthfinal.png";
+import child from "../assets/childwelf.jpeg";
+import elderly from "../assets/oldage.jpeg";
+import environment from "../assets/env.jpeg";
+import community from "../assets/community.png";
+import humanitarian from "../assets/humani.jpeg";
+import women from "../assets/womenempfinal.png";
+>>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
 
 const heroSlides = [
   {
@@ -239,10 +253,10 @@ export default function ProgramsPage() {
                   <img src={program.image} alt={program.title} />
                   <div className="programs-card-overlay" />
                   
-                  <div className="programs-card-badge">
+                  {/* <div className="programs-card-badge">
                     <span className={`programs-card-badge-dot dot-${program.accent}`} />
                     <span className="programs-card-badge-text">Program</span>
-                  </div>
+                  </div> */}
 
                   <div className="programs-card-impact">
                     {program.impact}

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./VolunteerPage.css";
 
+<<<<<<< HEAD
 import childwelfareImg from "../assets/chatchild.png";
 import communityImg from "../assets/chatcomm.png";
 import digitalImg from "../assets/chatdigi.png";
@@ -11,62 +12,64 @@ import eldeImg from "../assets/chatelder.png";
 import environmentImg from "../assets/chatenv.png";
 import eventImg from "../assets/chateve.png";
 import healthcareImg from "../assets/chathealth.png";
+=======
+import childwelfareImg from "../assets/Capturechild.PNG";
+import communityImg from "../assets/chatcomm.png";
+import digitalImg from "../assets/creativecapture.PNG";
+import educationImg from "../assets/educationCapture.PNG";
+import eldeImg from "../assets/elderlycapture.png";
+import environmentImg from "../assets/chatenv.png";
+import eventImg from "../assets/chateve.png";
+import healthcareImg from "../assets/healthCapture.PNG";
+>>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
 
 const opportunities = [
   {
     accent: "red",
     title: "Education & Mentorship Volunteer",
-    description:
-      "Support students through mentoring, tutoring, career guidance, digital literacy programs, and educational workshops that help shape brighter futures.",
+    description: "Support students through mentoring, tutoring, career guidance, digital literacy programs, and educational workshops that help shape brighter futures.",
     image: educationImg,
   },
   {
     accent: "green",
     title: "Healthcare Volunteer",
-    description:
-      "Assist during medical camps, health awareness drives, blood donation initiatives, wellness programs, and community healthcare outreach activities.",
+    description: "Assist during medical camps, health awareness drives, blood donation initiatives, wellness programs, and community healthcare outreach activities.",
     image: healthcareImg,
   },
   {
     accent: "blue",
     title: "Child Welfare Volunteer",
-    description:
-      "Participate in programs focused on child education, nutrition, personal development, creative learning activities, and well-being support.",
+    description: "Participate in programs focused on child education, nutrition, personal development, creative learning activities, and well-being support.",
     image: childwelfareImg,
   },
   {
     accent: "red",
     title: "Elderly Care Volunteer",
-    description:
-      "Spend time with senior citizens, support welfare programs, assist during events, and contribute to initiatives that promote dignity and care.",
+    description: "Spend time with senior citizens, support welfare programs, assist during events, and contribute to initiatives that promote dignity and care.",
     image: eldeImg,
   },
   {
     accent: "green",
     title: "Environmental Volunteer",
-    description:
-      "Join tree plantation drives, sustainability campaigns, clean-up activities, and environmental awareness initiatives.",
+    description: "Join tree plantation drives, sustainability campaigns, clean-up activities, and environmental awareness initiatives.",
     image: environmentImg,
   },
   {
     accent: "blue",
     title: "Community Outreach Volunteer",
-    description:
-      "Work directly with communities, support awareness programs, social campaigns, and community development projects.",
+    description: "Work directly with communities, support awareness programs, social campaigns, and community development projects.",
     image: communityImg,
   },
   {
     accent: "red",
     title: "Event & Campaign Volunteer",
-    description:
-      "Help organize social events, fundraising campaigns, workshops, awareness drives, and foundation activities.",
+    description: "Help organize social events, fundraising campaigns, workshops, awareness drives, and foundation activities.",
     image: eventImg,
   },
   {
     accent: "green",
     title: "Digital & Creative Volunteer",
-    description:
-      "Contribute your skills in graphic design, content creation, photography, videography, social media, and digital marketing.",
+    description: "Contribute your skills in graphic design, content creation, photography, videography, social media, and digital marketing.",
     image: digitalImg,
   },
 ];
@@ -110,7 +113,18 @@ export default function VolunteerPage() {
     { number: "04", title: "Start Volunteering", description: "Begin contributing to real projects alongside our team and fellow volunteers." },
   ];
 
+  const handleVolunteerClick = (role) => {
+    navigate("/contact", {
+      state: {
+        volunteerRole: role?.title || "",
+        source: "volunteer-page",
+      },
+    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
+<<<<<<< HEAD
     <div className="volunteer-page">
       {/* Hero Section — compact, continuously rotating background slideshow */}
       <section
@@ -124,6 +138,20 @@ export default function VolunteerPage() {
             <motion.div
               key={index}
               className="volunteer-hero-slide"
+=======
+    <div className="vl-page">
+      {/* Hero Section */}
+      <section
+        className="vl-hero"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div className="vl-hero-slides-wrap">
+          {heroSlides.map((slide, index) => (
+            <motion.div
+              key={index}
+              className="vl-hero-slide-item"
+>>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
               initial={false}
               animate={{ opacity: index === current ? 1 : 0 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -133,6 +161,7 @@ export default function VolunteerPage() {
           ))}
         </div>
 
+<<<<<<< HEAD
         {/* Overlay System */}
         <div className="volunteer-overlay-dark" />
         <div className="volunteer-overlay-gradient" />
@@ -160,11 +189,38 @@ export default function VolunteerPage() {
             <motion.div
               key={current}
               className={`volunteer-hero-focus focus-${currentSlide.accent}`}
+=======
+        <div className="vl-hero-darken" />
+        <div className="vl-hero-gradient" />
+
+        <div className="vl-hero-inner">
+          <div className="vl-hero-eyebrow">
+            <span className="vl-hero-eyebrow-line" />
+            <span className="vl-hero-eyebrow-label">Volunteer With Uvagai Foundation</span>
+          </div>
+
+          <h1 className="vl-hero-title">
+            Together We Can Create
+            <span className="vl-hero-title-highlight"> Positive Change</span>
+          </h1>
+
+          <p className="vl-hero-desc">
+            Become part of a passionate community of changemakers dedicated to
+            empowering lives, strengthening communities, and creating
+            sustainable social impact through meaningful action.
+          </p>
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current}
+              className={`vl-hero-badge vl-hero-badge-${currentSlide.accent}`}
+>>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.4 }}
             >
+<<<<<<< HEAD
               <span className="volunteer-hero-focus-text">{currentSlide.title}</span>
             </motion.div>
           </AnimatePresence>
@@ -173,6 +229,16 @@ export default function VolunteerPage() {
             <button
               className="volunteer-hero-cta"
               onClick={() => navigate("/contact")}
+=======
+              <span className="vl-hero-badge-text">{currentSlide.title}</span>
+            </motion.div>
+          </AnimatePresence>
+
+          <div className="vl-hero-action">
+            <button
+              className="vl-hero-action-btn"
+              onClick={() => handleVolunteerClick()}
+>>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             >
               <span>Become A Volunteer</span>
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -182,87 +248,93 @@ export default function VolunteerPage() {
           </div>
         </div>
 
+<<<<<<< HEAD
         {/* Slide Navigation Dots — Events-style thin dashes */}
         <div className="volunteer-slide-nav">
+=======
+        <div className="vl-hero-dots">
+>>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
           {heroSlides.map((_, index) => (
             <button
               key={index}
-              className={`volunteer-slide-dot ${index === current ? 'active' : ''}`}
+              className={`vl-hero-dot ${index === current ? 'vl-hero-dot-on' : ''}`}
               onClick={() => setCurrent(index)}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
 
-        {/* Slide Counter */}
-        <div className="volunteer-slide-counter">
-          <span className="volunteer-counter-current">
+        <div className="vl-hero-count">
+          <span className="vl-hero-count-now">
             {(current + 1).toString().padStart(2, '0')}
           </span>
-          <span className="volunteer-counter-sep">/</span>
-          <span className="volunteer-counter-total">
+          <span className="vl-hero-count-div">/</span>
+          <span className="vl-hero-count-all">
             {heroSlides.length.toString().padStart(2, '0')}
           </span>
         </div>
       </section>
 
       {/* Opportunities Section */}
+<<<<<<< HEAD
       <section className="volunteer-opp-section" ref={oppRef}>
         <div className="volunteer-container">
           <motion.div
             className="volunteer-section-header"
+=======
+      <section className="vl-opps" ref={oppRef}>
+        <div className="vl-wrap">
+          <motion.div
+            className="vl-head"
+>>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             initial={{ opacity: 0, y: 30 }}
             animate={isOppInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
           >
-            <div className="volunteer-section-tag">
-              <span className="volunteer-section-tag-line" />
-              <span className="volunteer-section-tag-text">Volunteer Opportunities</span>
+            <div className="vl-head-tag">
+              <span className="vl-head-tag-line" />
+              <span className="vl-head-tag-text">Volunteer Opportunities</span>
             </div>
-            <h2 className="volunteer-section-headline">Find A Meaningful Way To Contribute</h2>
-            <p className="volunteer-section-subtitle">
+            <h2 className="vl-head-title">Find A Meaningful Way To Contribute</h2>
+            <p className="vl-head-sub">
               Whether you're a student, professional, retiree, or passionate
               individual, there's a place for you in our mission.
             </p>
           </motion.div>
 
           <motion.div
+<<<<<<< HEAD
             className="volunteer-cards-grid"
+=======
+            className="vl-opps-grid"
+>>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             initial="hidden"
             animate={isOppInView ? "visible" : "hidden"}
             variants={{
               hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: { staggerChildren: 0.08, delayChildren: 0.15 },
-              },
+              visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.15 } },
             }}
           >
             {opportunities.map((item, index) => (
               <motion.div
-                className={`volunteer-card card-${item.accent}`}
+                className={`vl-opps-card vl-opps-card-${item.accent}`}
                 key={index}
+                onClick={() => handleVolunteerClick(item)}
                 variants={{
                   hidden: { opacity: 0, y: 30 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: { duration: 0.6, ease: [0.33, 0.1, 0.25, 1] },
-                  },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.33, 0.1, 0.25, 1] } },
                 }}
                 whileHover={{ y: -5 }}
               >
-                <div className="volunteer-card-image">
+                <div className="vl-opps-card-img">
                   <img src={item.image} alt={item.title} />
-                  <div className="volunteer-card-overlay" />
+                  <div className="vl-opps-card-img-shade" />
                 </div>
-
-                <div className="volunteer-card-content">
-                  <h3 className="volunteer-card-title">{item.title}</h3>
-                  <p className="volunteer-card-description">{item.description}</p>
+                <div className="vl-opps-card-body">
+                  <h3 className="vl-opps-card-title">{item.title}</h3>
+                  <p className="vl-opps-card-text">{item.description}</p>
                 </div>
-
-                <div className={`volunteer-card-accent accent-${item.accent}`} />
+                <div className={`vl-opps-card-bar vl-opps-card-bar-${item.accent}`} />
               </motion.div>
             ))}
           </motion.div>
@@ -270,58 +342,56 @@ export default function VolunteerPage() {
       </section>
 
       {/* How It Works */}
+<<<<<<< HEAD
       <section className="volunteer-steps-section">
         <div className="volunteer-steps-bg" />
         <div className="volunteer-container">
           <motion.div
             className="volunteer-section-header"
+=======
+      <section className="vl-how">
+        <div className="vl-how-bg" />
+        <div className="vl-wrap">
+          <motion.div
+            className="vl-head"
+>>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             initial={{ opacity: 0, y: 30 }}
             animate={isOppInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
           >
-            <div className="volunteer-section-tag">
-              <span className="volunteer-section-tag-line" />
-              <span className="volunteer-section-tag-text">How It Works</span>
+            <div className="vl-head-tag">
+              <span className="vl-head-tag-line" />
+              <span className="vl-head-tag-text">How It Works</span>
             </div>
-            <h2 className="volunteer-section-headline">Getting Started Is Simple</h2>
+            <h2 className="vl-head-title">Getting Started Is Simple</h2>
           </motion.div>
 
           <motion.div
+<<<<<<< HEAD
             className="volunteer-steps-grid"
+=======
+            className="vl-how-grid"
+>>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             initial="hidden"
             animate={isOppInView ? "visible" : "hidden"}
             variants={{
               hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: { staggerChildren: 0.1, delayChildren: 0.2 },
-              },
+              visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
             }}
           >
             {steps.map((step, index) => (
               <motion.div
-                className="volunteer-step-card"
+                className="vl-how-card"
                 key={index}
                 variants={{
                   hidden: { opacity: 0, y: 30 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: { duration: 0.6, ease: [0.33, 0.1, 0.25, 1] },
-                  },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.33, 0.1, 0.25, 1] } },
                 }}
                 whileHover={{ y: -4 }}
               >
-                <div className="volunteer-step-number">{step.number}</div>
-                <h3 className="volunteer-step-title">{step.title}</h3>
-                <p className="volunteer-step-description">{step.description}</p>
-                {index < steps.length - 1 && (
-                  <div className="volunteer-step-connector">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M4 10H16M16 10L12 6M16 10L12 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                )}
+                <div className="vl-how-card-num">{step.number}</div>
+                <h3 className="vl-how-card-title">{step.title}</h3>
+                <p className="vl-how-card-text">{step.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -329,6 +399,7 @@ export default function VolunteerPage() {
       </section>
 
       {/* CTA Section */}
+<<<<<<< HEAD
       <section className="volunteer-cta-section">
         <div className="volunteer-cta-bg" />
         <div className="volunteer-cta-glow" />
@@ -336,18 +407,31 @@ export default function VolunteerPage() {
         <div className="volunteer-container">
           <motion.div
             className="volunteer-cta-content"
+=======
+      <section className="vl-final">
+        <div className="vl-final-bg" />
+        <div className="vl-final-glow" />
+        <div className="vl-wrap">
+          <motion.div
+            className="vl-final-inner"
+>>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             initial={{ opacity: 0, y: 30 }}
             animate={isOppInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, ease: [0.33, 0.1, 0.25, 1] }}
           >
-            <h2 className="volunteer-cta-headline">Ready To Make A Difference?</h2>
-            <p className="volunteer-cta-description">
+            <h2 className="vl-final-title">Ready To Make A Difference?</h2>
+            <p className="vl-final-text">
               Join hundreds of volunteers already working with us to build
               stronger, healthier communities.
             </p>
             <button
+<<<<<<< HEAD
               className="volunteer-cta-btn"
               onClick={() => navigate("/contact")}
+=======
+              className="vl-final-btn"
+              onClick={() => handleVolunteerClick()}
+>>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             >
               <span>Apply To Volunteer</span>
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
