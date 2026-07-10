@@ -8,10 +8,6 @@ import whyCardHealth from "../assets/healthcamp.png";
 import whyCardVolunteers from "../assets/volunteers.png";
 import whyCardSupport from "../assets/support.png";
 
-import whyEducationImg from "../assets/images/education.png";
-import whyHealthcareImg from "../assets/images/healthcare.png";
-import whySustainabilityImg from "../assets/images/sustainability.png";
-import whyVolunteerImg from "../assets/images/volunteer.png";
 
 import educationImg from "../assets/education.jpg";
 import healthcareImg from "../assets/healthcare.jpg";
@@ -22,6 +18,9 @@ import logo2 from "../assets/logo2.png";
 import logo3 from "../assets/logo3.png";
 import logo4 from "../assets/logo4.png";
 import logo6 from "../assets/logo6.png";
+
+// Motion-enabled Link so the whole card can animate AND navigate
+const MotionLink = motion(Link);
 
 const heroSlides = [
   {
@@ -47,56 +46,6 @@ const heroSlides = [
   }
 ];
 
-const whyChooseCards = [
-  {
-    title: "Measurable Impact",
-    description:
-      "Delivering transparent CSR initiatives with structured planning, measurable outcomes, and long-term social impact that creates meaningful change in communities.",
-    image: whyEducationImg,
-  },
-  {
-    title: "Trusted Collaboration",
-    description:
-      "Building reliable partnerships through open communication, accountability, and a shared commitment to creating sustainable social development.",
-    image: whyHealthcareImg,
-  },
-  {
-    title: "Sustainable Development",
-    description:
-      "Our initiatives focus on strengthening communities by improving access to education, healthcare services, skill development, and essential welfare programs that create meaningful, long-lasting change.",
-    image: whySustainabilityImg,
-  },
-  {
-    title: "Employee Volunteering",
-    description:
-      "Empowering employees to actively participate in impactful volunteering programs that strengthen communities and foster a culture of social responsibility.",
-    image: whyVolunteerImg,
-  },
-];
-
-const sliderImages = [
-  {
-    image: whyEducationImg,
-    title: "Education",
-    subtitle: "Creating brighter futures through quality education."
-  },
-  {
-    image: whyHealthcareImg,
-    title: "Healthcare",
-    subtitle: "Accessible healthcare for healthier communities."
-  },
-  {
-    image: whySustainabilityImg,
-    title: "Sustainability",
-    subtitle: "Building greener and more sustainable communities."
-  },
-  {
-    image: whyVolunteerImg,
-    title: "Volunteering",
-    subtitle: "Employees making a real social impact."
-  }
-];
-
 // Partner logos used in the "Our Partners" marquee
 const partnerLogos = [logo1, logo2, logo3, logo4, logo6];
 
@@ -107,11 +56,6 @@ export default function CSRPartnerDetails() {
 
   const [current, setCurrent] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-
-  // Why Choose Us Image Slider
-  
-
-  
 
   const benefitsRef = useRef(null);
   const partnersRef = useRef(null);
@@ -158,31 +102,32 @@ export default function CSRPartnerDetails() {
     { title: "Sustainability Projects", description: "Environmental awareness, tree plantation and green initiatives.", accent: "blue" },
     { title: "Employee Engagement", description: "Volunteer programs that strengthen community participation.", accent: "red" },
   ];
-  const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.18,
-    },
-  },
-};
 
-const cardVariants = {
-  hidden: {
-    opacity: 0,
-    y: 70,
-    scale: 0.96,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.18,
+      },
     },
-  },
-};
+  };
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 70,
+      scale: 0.96,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
 
   return (
     <div className="csr-page" ref={sectionRef}>
@@ -453,7 +398,8 @@ const cardVariants = {
             }}
           >
             {partnershipOpportunities.map((opportunity, index) => (
-              <motion.div
+              <MotionLink
+                to="/contact"
                 className={`csr-opportunity-card opp-${opportunity.accent}`}
                 key={index}
                 variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.33, 0.1, 0.25, 1] } } }}
@@ -467,7 +413,7 @@ const cardVariants = {
                     <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-              </motion.div>
+              </MotionLink>
             ))}
           </motion.div>
         </div>

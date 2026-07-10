@@ -602,6 +602,9 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .csr-opportunity-card:hover {

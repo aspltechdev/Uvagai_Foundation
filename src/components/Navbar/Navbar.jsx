@@ -137,24 +137,25 @@ useEffect(() => {
 
         {/* DONATE CTA - Uvagai Theme Gradient */}
         <motion.div
-          className="nv-cta-wrap"
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.97 }}
-        >
-          <Link to="/Donate" className="nv-cta-btn">
-            <span className="nv-cta-text">Donate Now</span>
-            <span className="nv-cta-arrow">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <Link to="/Donate" className="navbar-cta">
-            <span className="navbar-cta-text">Donate</span>
-            <span className="navbar-cta-icon">
-              <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-                <path d="M2 7.5H13M13 7.5L8.5 3M13 7.5L8.5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </span>
-          </Link>
-        </motion.div>
+  className="nv-cta-wrap"
+  whileHover={{ scale: 1.04 }}
+  whileTap={{ scale: 0.97 }}
+>
+  <Link to="/Donate" className="nv-cta-btn">
+    <span className="nv-cta-text">Donate Now</span>
+    <span className="nv-cta-arrow">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path
+          d="M3 8H13M13 8L9 4M13 8L9 12"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </span>
+  </Link>
+</motion.div>
 
         {/* MOBILE TOGGLE */}
         <motion.button

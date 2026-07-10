@@ -3,16 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./VolunteerPage.css";
 
-<<<<<<< HEAD
-import childwelfareImg from "../assets/chatchild.png";
-import communityImg from "../assets/chatcomm.png";
-import digitalImg from "../assets/chatdigi.png";
-import educationImg from "../assets/education.jpg";
-import eldeImg from "../assets/chatelder.png";
-import environmentImg from "../assets/chatenv.png";
-import eventImg from "../assets/chateve.png";
-import healthcareImg from "../assets/chathealth.png";
-=======
 import childwelfareImg from "../assets/Capturechild.PNG";
 import communityImg from "../assets/chatcomm.png";
 import digitalImg from "../assets/creativecapture.PNG";
@@ -21,7 +11,6 @@ import eldeImg from "../assets/elderlycapture.png";
 import environmentImg from "../assets/chatenv.png";
 import eventImg from "../assets/chateve.png";
 import healthcareImg from "../assets/healthCapture.PNG";
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
 
 const opportunities = [
   {
@@ -124,21 +113,6 @@ export default function VolunteerPage() {
   };
 
   return (
-<<<<<<< HEAD
-    <div className="volunteer-page">
-      {/* Hero Section — compact, continuously rotating background slideshow */}
-      <section
-        className="volunteer-hero"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {/* Rotating Background Slides */}
-        <div className="volunteer-hero-bg">
-          {heroSlides.map((slide, index) => (
-            <motion.div
-              key={index}
-              className="volunteer-hero-slide"
-=======
     <div className="vl-page">
       {/* Hero Section */}
       <section
@@ -151,7 +125,6 @@ export default function VolunteerPage() {
             <motion.div
               key={index}
               className="vl-hero-slide-item"
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
               initial={false}
               animate={{ opacity: index === current ? 1 : 0 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -161,35 +134,6 @@ export default function VolunteerPage() {
           ))}
         </div>
 
-<<<<<<< HEAD
-        {/* Overlay System */}
-        <div className="volunteer-overlay-dark" />
-        <div className="volunteer-overlay-gradient" />
-
-        {/* Centered Content */}
-        <div className="volunteer-hero-container">
-          <div className="volunteer-hero-tag">
-            <span className="volunteer-hero-tag-line" />
-            <span className="volunteer-hero-tag-text">Volunteer With Uvagai Foundation</span>
-          </div>
-
-          <h1 className="volunteer-hero-headline">
-            Together We Can Create
-            <span className="volunteer-hero-headline-accent"> Positive Change</span>
-          </h1>
-
-          <p className="volunteer-hero-subtitle">
-            Become part of a passionate community of changemakers dedicated to
-            empowering lives, strengthening communities, and creating
-            sustainable social impact through meaningful action.
-          </p>
-
-          {/* Current Focus */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              className={`volunteer-hero-focus focus-${currentSlide.accent}`}
-=======
         <div className="vl-hero-darken" />
         <div className="vl-hero-gradient" />
 
@@ -214,22 +158,11 @@ export default function VolunteerPage() {
             <motion.div
               key={current}
               className={`vl-hero-badge vl-hero-badge-${currentSlide.accent}`}
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.4 }}
             >
-<<<<<<< HEAD
-              <span className="volunteer-hero-focus-text">{currentSlide.title}</span>
-            </motion.div>
-          </AnimatePresence>
-
-          <div className="volunteer-hero-cta-wrapper">
-            <button
-              className="volunteer-hero-cta"
-              onClick={() => navigate("/contact")}
-=======
               <span className="vl-hero-badge-text">{currentSlide.title}</span>
             </motion.div>
           </AnimatePresence>
@@ -238,7 +171,6 @@ export default function VolunteerPage() {
             <button
               className="vl-hero-action-btn"
               onClick={() => handleVolunteerClick()}
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             >
               <span>Become A Volunteer</span>
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -248,12 +180,7 @@ export default function VolunteerPage() {
           </div>
         </div>
 
-<<<<<<< HEAD
-        {/* Slide Navigation Dots — Events-style thin dashes */}
-        <div className="volunteer-slide-nav">
-=======
         <div className="vl-hero-dots">
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
           {heroSlides.map((_, index) => (
             <button
               key={index}
@@ -276,17 +203,10 @@ export default function VolunteerPage() {
       </section>
 
       {/* Opportunities Section */}
-<<<<<<< HEAD
-      <section className="volunteer-opp-section" ref={oppRef}>
-        <div className="volunteer-container">
-          <motion.div
-            className="volunteer-section-header"
-=======
       <section className="vl-opps" ref={oppRef}>
         <div className="vl-wrap">
           <motion.div
             className="vl-head"
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             initial={{ opacity: 0, y: 30 }}
             animate={isOppInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
@@ -303,11 +223,7 @@ export default function VolunteerPage() {
           </motion.div>
 
           <motion.div
-<<<<<<< HEAD
-            className="volunteer-cards-grid"
-=======
             className="vl-opps-grid"
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             initial="hidden"
             animate={isOppInView ? "visible" : "hidden"}
             variants={{
@@ -342,19 +258,11 @@ export default function VolunteerPage() {
       </section>
 
       {/* How It Works */}
-<<<<<<< HEAD
-      <section className="volunteer-steps-section">
-        <div className="volunteer-steps-bg" />
-        <div className="volunteer-container">
-          <motion.div
-            className="volunteer-section-header"
-=======
       <section className="vl-how">
         <div className="vl-how-bg" />
         <div className="vl-wrap">
           <motion.div
             className="vl-head"
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             initial={{ opacity: 0, y: 30 }}
             animate={isOppInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
@@ -367,11 +275,7 @@ export default function VolunteerPage() {
           </motion.div>
 
           <motion.div
-<<<<<<< HEAD
-            className="volunteer-steps-grid"
-=======
             className="vl-how-grid"
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             initial="hidden"
             animate={isOppInView ? "visible" : "hidden"}
             variants={{
@@ -399,22 +303,12 @@ export default function VolunteerPage() {
       </section>
 
       {/* CTA Section */}
-<<<<<<< HEAD
-      <section className="volunteer-cta-section">
-        <div className="volunteer-cta-bg" />
-        <div className="volunteer-cta-glow" />
-
-        <div className="volunteer-container">
-          <motion.div
-            className="volunteer-cta-content"
-=======
       <section className="vl-final">
         <div className="vl-final-bg" />
         <div className="vl-final-glow" />
         <div className="vl-wrap">
           <motion.div
             className="vl-final-inner"
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             initial={{ opacity: 0, y: 30 }}
             animate={isOppInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, ease: [0.33, 0.1, 0.25, 1] }}
@@ -425,13 +319,8 @@ export default function VolunteerPage() {
               stronger, healthier communities.
             </p>
             <button
-<<<<<<< HEAD
-              className="volunteer-cta-btn"
-              onClick={() => navigate("/contact")}
-=======
               className="vl-final-btn"
               onClick={() => handleVolunteerClick()}
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             >
               <span>Apply To Volunteer</span>
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">

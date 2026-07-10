@@ -520,7 +520,6 @@
 // //         </div>
 // //       </section>
 
-<<<<<<< HEAD
 // //       {/* CTA SECTION */}
 // //       <section className="cta-section"> 
 // //         <div className="container">
@@ -531,7 +530,6 @@
 // //               Apply Now →
 // //             </button>
 // //           </div>
-=======
 // //       {/* CTA Section */}
 // //       <section className="course-cta-section">
 // //         <div className="course-cta-bg" />
@@ -562,7 +560,6 @@
 // //               </svg>
 // //             </motion.button>
 // //           </motion.div>
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
 // //         </div>
 // //       </section>
 // //     </div>
@@ -1423,40 +1420,6 @@
 //   return (
 //     <div className="crs-page">
 //       {/* Hero Section */}
-<<<<<<< HEAD
-//       <section className="course-hero">
-//         <div className="course-hero-bg" />
-//         <div className="course-hero-glow course-hero-glow-1" />
-//         <div className="course-hero-glow course-hero-glow-2" />
-
-//         <div className="course-container">
-//           <motion.div 
-//             className="course-hero-content"
-//             initial={{ opacity: 0, y: 40 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.9, ease: [0.33, 0.1, 0.25, 1] }}
-//           >
-//             <div className="course-hero-tag">
-//               <span className="course-hero-tag-line" />
-//               <span className="course-hero-tag-text">Skill Development Programs</span>
-//             </div>
-
-//             <h1 className="course-hero-headline">
-//               Build Your Future With
-//               <span className="course-hero-headline-accent"> Our Courses</span>
-//             </h1>
-
-//             <p className="course-hero-subtitle">
-//               Gain practical skills, earn certifications, and launch your career 
-//               with industry-recognized programs designed for your success.
-//             </p>
-
-//             <motion.button 
-//               className="course-hero-cta"
-//               onClick={handleApplyClick}
-//               whileHover={{ scale: 1.03 }}
-//               whileTap={{ scale: 0.97 }}
-=======
 //       <section
 //         className="crs-hero"
 //         onMouseEnter={() => setIsHovered(true)}
@@ -1470,7 +1433,6 @@
 //               initial={{ opacity: 0 }}
 //               animate={{ opacity: index === current ? 1 : 0, scale: index === current ? 1 : 1.1 }}
 //               transition={{ duration: 1.3, ease: [0.33, 0.1, 0.25, 1] }}
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
 //             >
 //               <img src={slide.image} alt={slide.title} />
 //             </motion.div>
@@ -1561,16 +1523,6 @@
 //                 whileHover={{ y: -6 }}
 //                 onClick={() => handleExploreClick(course)}
 //               >
-<<<<<<< HEAD
-//                 <div className="course-card-image">
-//                   <img src={internship.image} alt={internship.title} />
-//                   <div className="course-card-overlay" />
-
-//                   <div className="course-card-duration">
-//                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-//                       <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.5"/>
-//                       <path d="M7 4V7L9 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-=======
 //                 <div className="crs-card-image">
 //                   <img src={course.image} alt={course.title} />
 //                   <div className="crs-card-image-overlay" />
@@ -1578,7 +1530,6 @@
 //                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
 //                       <circle cx="6" cy="6" r="5" stroke="currentColor" strokeWidth="1.5"/>
 //                       <path d="M6 3.5V6L7.5 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
 //                     </svg>
 //                     <span>{course.duration}</span>
 //                   </div>
@@ -1605,18 +1556,9 @@
 //         </div>
 //       </section>
 
-<<<<<<< HEAD
-//       {/* CTA Section */}
-//       <section className="course-cta-section">
-//         <div className="course-cta-bg" />
-//         <div className="course-cta-glow" />
-
-//         <div className="course-container">
-=======
 //       {/* Course Detail Modal */}
 //       <AnimatePresence>
 //         {selectedCourse && (
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
 //           <motion.div 
 //             className="crs-modal-overlay"
 //             initial={{ opacity: 0 }}
@@ -1737,350 +1679,6 @@
 //   );
 // }
 
-<<<<<<< HEAD
-
-// import { useRef, useState, useEffect } from "react";
-// import { useNavigate } from "react-router-dom";
-// import { motion, AnimatePresence, useInView } from "framer-motion";
-// import "./Course.css";
-
-// import english from "../assets/english.png";
-// import computer from "../assets/computer.jpeg";
-// import graphic from "../assets/graphic.jpeg";
-// import marketing from "../assets/marketing.jpeg";
-// import web from "../assets/web.png";
-// import leadership from "../assets/leadership.png";
-// import entrepreneurship from "../assets/entrepreneurship.jpeg";
-// import Career from "../assets/Career.jpeg";
-// import Artificial from "../assets/Artificial.jpeg";
-
-// export default function Course() {
-//   const navigate = useNavigate();
-//   const coursesRef = useRef(null);
-//   const isInView = useInView(coursesRef, { once: true, margin: "-80px" });
-
-//   const internships = [
-//     {
-//       title: "Spoken English & Communication Skills",
-//       duration: "3 Months",
-//       image: english,
-//       accent: "red",
-//     },
-//     {
-//       title: "Digital Literacy & Computer Basics",
-//       duration: "3 Months",
-//       image: computer,
-//       accent: "green",
-//     },
-//     {
-//       title: "Graphic Design",
-//       duration: "3 Months",
-//       image: graphic,
-//       accent: "blue",
-//     },
-//     {
-//       title: "Digital Marketing Fundamentals",
-//       duration: "3 Months",
-//       image: marketing,
-//       accent: "red",
-//     },
-//     {
-//       title: "Web Development Basics",
-//       duration: "4 Months",
-//       image: web,
-//       accent: "green",
-//     },
-//     {
-//       title: "Leadership & Community Engagement",
-//       duration: "2 Months",
-//       image: leadership,
-//       accent: "blue",
-//     },
-//     {
-//       title: "Entrepreneurship & Business Skills",
-//       duration: "2 Months",
-//       image: entrepreneurship,
-//       accent: "red",
-//     },
-//     {
-//       title: "Career Readiness & Employability Skills",
-//       duration: "2 Months",
-//       image: Career,
-//       accent: "green",
-//     },
-//     {
-//       title: "Artificial Intelligence & Emerging Technologies",
-//       duration: "2 Months",
-//       image: Artificial,
-//       accent: "blue",
-//     },
-//   ];
-
-//   // Hero slideshow
-//   const [current, setCurrent] = useState(0);
-//   const [isHovered, setIsHovered] = useState(false);
-
-//   useEffect(() => {
-//     if (!isHovered) {
-//       const timer = setInterval(() => {
-//         setCurrent((prev) => (prev + 1) % internships.length);
-//       }, 4000);
-//       return () => clearInterval(timer);
-//     }
-//   }, [isHovered, internships.length]);
-
-//   const currentSlide = internships[current];
-
-//   const handleApplyClick = () => {
-//     navigate("/contact");
-//     window.scrollTo({ top: 0, behavior: "smooth" });
-//   };
-
-//   return (
-//     <div className="course-page">
-//       {/* Hero Section with Background Slideshow */}
-//       <section
-//         className="course-hero"
-//         onMouseEnter={() => setIsHovered(true)}
-//         onMouseLeave={() => setIsHovered(false)}
-//       >
-//         {/* Background Slides */}
-//         <div className="course-slides-container">
-//           {internships.map((internship, index) => (
-//             <motion.div
-//               key={index}
-//               className={`course-slide-bg ${index === current ? 'active' : ''}`}
-//               initial={{ opacity: 0 }}
-//               animate={{
-//                 opacity: index === current ? 1 : 0,
-//                 scale: index === current ? 1 : 1.08,
-//               }}
-//               transition={{ duration: 1.2, ease: [0.33, 0.1, 0.25, 1] }}
-//             >
-//               <img src={internship.image} alt={internship.title} />
-//             </motion.div>
-//           ))}
-//         </div>
-
-//         {/* Overlay System */}
-//         <div className="course-overlay-dark" />
-//         <div className="course-overlay-gradient" />
-//         <div className="course-overlay-vignette" />
-
-//         {/* Centered Content */}
-//         <div className="course-hero-container">
-//           <AnimatePresence mode="wait">
-//             <motion.div
-//               key={current}
-//               className="course-hero-content"
-//               initial={{ opacity: 0, y: 25 }}
-//               animate={{ opacity: 1, y: 0 }}
-//               exit={{ opacity: 0, y: -25 }}
-//               transition={{ duration: 0.5, ease: [0.33, 0.1, 0.25, 1] }}
-//             >
-//               <div className="course-hero-tag">
-//                 <span className="course-hero-tag-line" />
-//                 <span className="course-hero-tag-text">Skill Development Programs</span>
-//               </div>
-
-//               <h1 className="course-hero-headline">
-//                 Build Your Future With
-//                 <span className="course-hero-headline-accent"> Our Courses</span>
-//               </h1>
-
-//               <p className="course-hero-subtitle">
-//                 Gain practical skills, earn certifications, and launch your career
-//                 with industry-recognized programs designed for your success.
-//               </p>
-
-//               {/* Current Course Info */}
-//               <motion.div
-//                 className={`course-hero-info info-${currentSlide.accent}`}
-//                 initial={{ opacity: 0, y: 15 }}
-//                 animate={{ opacity: 1, y: 0 }}
-//                 transition={{ delay: 0.25, duration: 0.4 }}
-//               >
-//                 <span className="course-hero-info-duration">
-//                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-//                     <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.5" />
-//                     <path d="M7 4V7L9 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-//                   </svg>
-//                   {currentSlide.duration}
-//                 </span>
-//                 <span className="course-hero-info-title">{currentSlide.title}</span>
-//               </motion.div>
-
-//               <motion.div
-//                 className="course-hero-cta-wrapper"
-//                 initial={{ opacity: 0, y: 15 }}
-//                 animate={{ opacity: 1, y: 0 }}
-//                 transition={{ delay: 0.4, duration: 0.4 }}
-//               >
-//                 <motion.button
-//                   className="course-hero-cta"
-//                   onClick={handleApplyClick}
-//                   whileHover={{ scale: 1.03 }}
-//                   whileTap={{ scale: 0.97 }}
-//                 >
-//                   <span>Apply Now</span>
-//                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-//                     <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-//                   </svg>
-//                 </motion.button>
-//               </motion.div>
-//             </motion.div>
-//           </AnimatePresence>
-//         </div>
-
-//         {/* Slide Navigation Dots */}
-//         <div className="course-slide-nav">
-//           {internships.map((_, index) => (
-//             <button
-//               key={index}
-//               className={`course-slide-dot ${index === current ? 'active' : ''}`}
-//               onClick={() => setCurrent(index)}
-//               aria-label={`Go to slide ${index + 1}`}
-//             >
-//               <motion.span
-//                 className="course-slide-dot-fill"
-//                 initial={{ width: '0%' }}
-//                 animate={{
-//                   width: index === current && !isHovered ? '100%' : '0%',
-//                 }}
-//                 transition={{
-//                   duration: index === current ? 4 : 0.3,
-//                   ease: "linear",
-//                 }}
-//               />
-//             </button>
-//           ))}
-//         </div>
-
-//         {/* Slide Counter */}
-//         <div className="course-slide-counter">
-//           <span className="course-counter-current">
-//             {(current + 1).toString().padStart(2, '0')}
-//           </span>
-//           <span className="course-counter-sep">/</span>
-//           <span className="course-counter-total">
-//             {internships.length.toString().padStart(2, '0')}
-//           </span>
-//         </div>
-//       </section>
-
-//       {/* Courses Section */}
-//       <section className="course-grid-section" ref={coursesRef}>
-//         <div className="course-container">
-//           <motion.div
-//             className="course-section-header"
-//             initial={{ opacity: 0, y: 30 }}
-//             animate={isInView ? { opacity: 1, y: 0 } : {}}
-//             transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
-//           >
-//             <div className="course-section-tag">
-//               <span className="course-section-tag-line" />
-//               <span className="course-section-tag-text">Our Programs</span>
-//             </div>
-//             <h2 className="course-section-headline">Browse Our Courses</h2>
-//             <p className="course-section-subtitle">
-//               Explore expert-led courses and learn at your own pace with practical, hands-on training.
-//             </p>
-//           </motion.div>
-
-//           <motion.div
-//             className="course-grid"
-//             initial="hidden"
-//             animate={isInView ? "visible" : "hidden"}
-//             variants={{
-//               hidden: { opacity: 0 },
-//               visible: {
-//                 opacity: 1,
-//                 transition: { staggerChildren: 0.08, delayChildren: 0.15 },
-//               },
-//             }}
-//           >
-//             {internships.map((internship, index) => (
-//               <motion.div
-//                 className={`course-card card-${internship.accent}`}
-//                 // key={index}
-//                 // onClick={() => handleApplyClick(internship)}
-//                 variants={{
-//                   hidden: { opacity: 0, y: 30 },
-//                   visible: {
-//                     opacity: 1,
-//                     y: 0,
-//                     transition: {
-//                       duration: 0.6,
-//                       ease: [0.33, 0.1, 0.25, 1],
-//                     },
-//                   },
-//                 }}
-//                 whileHover={{ y: -8, scale: 1.02 }}
-//                 whileTap={{ scale: 0.98 }}
-//               >
-//                 <div className="course-card-image">
-//                   <img src={internship.image} alt={internship.title} />
-//                   <div className="course-card-overlay" />
-
-//                   <div className="course-card-duration">
-//                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-//                       <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.5" />
-//                       <path d="M7 4V7L9 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-//                     </svg>
-//                     <span>{internship.duration}</span>
-//                   </div>
-//                 </div>
-
-//                 <div className="course-card-content">
-//                   <h3 className="course-card-title">{internship.title}</h3>
-//                 </div>
-
-//                 <div className={`course-card-accent accent-${internship.accent}`} />
-//               </motion.div>
-//             ))}
-//           </motion.div>
-//         </div>
-//       </section>
-
-//       {/* CTA Section */}
-//       <section className="course-cta-section">
-//         <div className="course-cta-bg" />
-//         <div className="course-cta-glow" />
-
-//         <div className="course-container">
-//           <motion.div
-//             className="course-cta-content"
-//             initial={{ opacity: 0, y: 30 }}
-//             animate={isInView ? { opacity: 1, y: 0 } : {}}
-//             transition={{ duration: 0.8, ease: [0.33, 0.1, 0.25, 1] }}
-//           >
-//             <h2 className="course-cta-headline">
-//               Ready to Start Your Learning Journey?
-//             </h2>
-//             <p className="course-cta-description">
-//               Join our programs and gain the skills you need to build a brighter future.
-//             </p>
-//             <motion.button
-//               className="course-cta-btn"
-//               onClick={handleApplyClick}
-//               whileHover={{ scale: 1.03 }}
-//               whileTap={{ scale: 0.97 }}
-//             >
-//               <span>Apply Now</span>
-//               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-//                 <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-//               </svg>
-//             </motion.button>
-//           </motion.div>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// }
-
-
-=======
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
 import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "framer-motion";
@@ -2339,38 +1937,22 @@ export default function Course() {
     setSelectedCourse(null);
   };
 
-<<<<<<< HEAD
-  const currentSlide = internships[current];
-
-  const handleApplyClick = (course) => {
-=======
   const handleApplyNow = (course) => {
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
     navigate("/contact", {
       state: {
         course: course.title,
         duration: course.duration,
-<<<<<<< HEAD
-=======
         source: "course-page",
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
       },
     });
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-<<<<<<< HEAD
-    <div className="course-page">
-      {/* Hero Section with Background Slideshow */}
-      <section
-        className="course-hero"
-=======
     <div className="crs-page">
       {/* Hero Section */}
       <section
         className="crs-hero"
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -2380,16 +1962,8 @@ export default function Course() {
               key={index}
               className={`crs-hero-slide ${index === current ? 'crs-hero-slide-active' : ''}`}
               initial={{ opacity: 0 }}
-<<<<<<< HEAD
-              animate={{
-                opacity: index === current ? 1 : 0,
-                scale: index === current ? 1 : 1.08,
-              }}
-              transition={{ duration: 1.2, ease: [0.33, 0.1, 0.25, 1] }}
-=======
               animate={{ opacity: index === current ? 1 : 0, scale: index === current ? 1 : 1.1 }}
               transition={{ duration: 1.3, ease: [0.33, 0.1, 0.25, 1] }}
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             >
               <img src={slide.image} alt={slide.title} />
             </motion.div>
@@ -2414,57 +1988,8 @@ export default function Course() {
                 <span className="crs-hero-tag-line" />
                 <span className="crs-hero-tag-text">{currentSlide.tag}</span>
               </div>
-<<<<<<< HEAD
-
-              <h1 className="course-hero-headline">
-                Build Your Future With
-                <span className="course-hero-headline-accent"> Our Courses</span>
-              </h1>
-
-              <p className="course-hero-subtitle">
-                Gain practical skills, earn certifications, and launch your career
-                with industry-recognized programs designed for your success.
-              </p>
-
-              {/* Current Course Info */}
-              <motion.div
-                className={`course-hero-info info-${currentSlide.accent}`}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.25, duration: 0.4 }}
-              >
-                <span className="course-hero-info-duration">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.5" />
-                    <path d="M7 4V7L9 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  </svg>
-                  {currentSlide.duration}
-                </span>
-                <span className="course-hero-info-title">{currentSlide.title}</span>
-              </motion.div>
-
-              <motion.div
-                className="course-hero-cta-wrapper"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.4 }}
-              >
-                <motion.button
-                  className="course-hero-cta"
-                  onClick={() => handleApplyClick(currentSlide)}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  <span>Apply Now</span>
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </motion.button>
-              </motion.div>
-=======
               <h1 className="crs-hero-headline">{currentSlide.title}</h1>
               <p className="crs-hero-subtitle">{currentSlide.subtitle}</p>
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             </motion.div>
           </AnimatePresence>
         </div>
@@ -2479,18 +2004,8 @@ export default function Course() {
               <motion.span
                 className="crs-hero-dot-fill"
                 initial={{ width: '0%' }}
-<<<<<<< HEAD
-                animate={{
-                  width: index === current && !isHovered ? '100%' : '0%',
-                }}
-                transition={{
-                  duration: index === current ? 4 : 0.3,
-                  ease: "linear",
-                }}
-=======
                 animate={{ width: index === current && !isHovered ? '100%' : '0%' }}
                 transition={{ duration: index === current ? 4 : 0.3, ease: "linear" }}
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
               />
             </button>
           ))}
@@ -2503,19 +2018,11 @@ export default function Course() {
         </div>
       </section>
 
-<<<<<<< HEAD
-      {/* Courses Section */}
-      <section className="course-grid-section" ref={coursesRef}>
-        <div className="course-container">
-          <motion.div
-            className="course-section-header"
-=======
       {/* Courses Grid Section */}
       <section className="crs-grid-section" ref={coursesRef}>
         <div className="crs-container">
           <motion.div
             className="crs-section-header"
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
@@ -2531,11 +2038,7 @@ export default function Course() {
           </motion.div>
 
           <motion.div
-<<<<<<< HEAD
-            className="course-grid"
-=======
             className="crs-grid"
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             variants={{
@@ -2547,31 +2050,6 @@ export default function Course() {
               <motion.div
                 className={`crs-card crs-card-${course.accent}`}
                 key={index}
-<<<<<<< HEAD
-                onClick={() => handleApplyClick(internship)}
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      duration: 0.6,
-                      ease: [0.33, 0.1, 0.25, 1],
-                    },
-                  },
-                }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div className="course-card-image">
-                  <img src={internship.image} alt={internship.title} />
-                  <div className="course-card-overlay" />
-
-                  <div className="course-card-duration">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.5" />
-                      <path d="M7 4V7L9 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-=======
                 variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.33, 0.1, 0.25, 1] } } }}
                 whileHover={{ y: -6 }}
                 onClick={() => handleExploreClick(course)}
@@ -2583,27 +2061,11 @@ export default function Course() {
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                       <circle cx="6" cy="6" r="5" stroke="currentColor" strokeWidth="1.5"/>
                       <path d="M6 3.5V6L7.5 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
                     </svg>
                     <span>{course.duration}</span>
                   </div>
                 </div>
 
-<<<<<<< HEAD
-                <div className="course-card-content">
-                  <h3 className="course-card-title">{internship.title}</h3>
-                  
-                  {/* CTA Button on Card - Changed to "Explore Program" */}
-                  <button
-                    className={`course-card-cta cta-${internship.accent}`}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleApplyClick(internship);
-                    }}
-                  >
-                    Explore Program →
-                  </button>
-=======
                 <div className="crs-card-body">
                   <h3 className="crs-card-title">{course.title}</h3>
                   <p className="crs-card-text">{course.overview}</p>
@@ -2616,7 +2078,6 @@ export default function Course() {
                       </svg>
                     </span>
                   </div>
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
                 </div>
 
                 <div className={`crs-card-accent crs-accent-${course.accent}`} />
@@ -2626,16 +2087,6 @@ export default function Course() {
         </div>
       </section>
 
-<<<<<<< HEAD
-      {/* CTA Section */}
-      <section className="course-cta-section">
-        <div className="course-cta-bg" />
-        <div className="course-cta-glow" />
-
-        <div className="course-container">
-          <motion.div
-            className="course-cta-content"
-=======
       {/* Course Detail Modal */}
       <AnimatePresence>
         {selectedCourse && (
@@ -2724,7 +2175,6 @@ export default function Course() {
         <div className="crs-container">
           <motion.div
             className="crs-cta-content"
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.33, 0.1, 0.25, 1] }}
@@ -2733,16 +2183,7 @@ export default function Course() {
             <p className="crs-cta-description">
               Join our programs and gain the skills you need to build a brighter future.
             </p>
-<<<<<<< HEAD
-            <motion.button
-              className="course-cta-btn"
-              onClick={() => handleApplyClick(internships[0])}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-=======
             <button className="crs-cta-btn-primary" onClick={() => handleApplyNow(courses[0])}>
->>>>>>> ac74e1e14f340b72de8004a442b001f5d34427c5
               <span>Apply Now</span>
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
