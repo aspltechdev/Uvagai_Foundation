@@ -7,6 +7,7 @@ import newone from "../assets/newfrstimage.png";
 import newsecimage from "../assets/newsecimage.png";
 import treeimage from "../assets/threeimage.png";
 import childcard from "../assets/childincards.png";
+
 export default function VolunteerHome() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });

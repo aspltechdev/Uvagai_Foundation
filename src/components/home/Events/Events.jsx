@@ -6,6 +6,7 @@ import educationhome from "../../../assets/educationhome.png";
 import newbg from "../../../assets/newbg.png";
 import elders from "../../../assets/elders.png";
 import child from "../../../assets/childhome.png";
+import environment from "../../../assets/envii.png";
 // ← FIXED: Changed to correct path
 
 export default function EventsHome() {
@@ -65,7 +66,7 @@ export default function EventsHome() {
       stat: "2,500+",
     },
     {
-      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      image: environment,
       title: "Environmental Campaign",
       category: "Sustainability",
       location: "Green Initiative",
