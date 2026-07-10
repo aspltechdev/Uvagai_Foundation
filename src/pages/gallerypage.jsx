@@ -10,10 +10,10 @@ import education3 from "../assets/education3.jpg";
 import education4 from "../assets/education4.jpg";
 
 /* HEALTHCARE */
-import healthcare1 from "../assets/healthcare1.jpg";
+import healthcare1 from "../assets/healthcare4.jpg";
 import healthcare2 from "../assets/healthcare2.jpg";
 import healthcare3 from "../assets/healthcare3.jpg";
-import healthcare4 from "../assets/healthcare4.jpg";
+import healthcare4 from "../assets/healthcare1.jpg";
 
 /* VOLUNTEER */
 import volunteer1 from "../assets/volunteer1.jpg";
@@ -22,7 +22,7 @@ import volunteer3 from "../assets/volunteer3.jpg";
 import volunteer4 from "../assets/volunteer4.jpg";
 
 /* CHILD WELFARE */
-import child1 from "../assets/child1.jpg";
+import child1 from "../assets/childincards.png";
 import child2 from "../assets/child2.jpg";
 import child3 from "../assets/child3.jpg";
 import child4 from "../assets/child4.jpg";
@@ -34,7 +34,7 @@ import elderly3 from "../assets/elderly3.jpg";
 import elderly4 from "../assets/elderly4.jpg";
 
 /* ENVIRONMENT */
-import environment1 from "../assets/environment1.jpg";
+import environment1 from "../assets/environment.png";
 import environment2 from "../assets/environment2.jpg";
 import environment3 from "../assets/environment3.jpg";
 import environment4 from "../assets/environment4.jpg";

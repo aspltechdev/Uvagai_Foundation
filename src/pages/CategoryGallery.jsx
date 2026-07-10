@@ -14,24 +14,24 @@ import education4 from "../assets/education4.jpg";
 // =======================
 // Healthcare Images
 // =======================
-import healthcare1 from "../assets/healthcare1.jpg";
+import healthcare1 from "../assets/healthcare4.jpg";
 import healthcare2 from "../assets/healthcare2.jpg";
-import healthcare3 from "../assets/healthcare3.jpg";
-import healthcare4 from "../assets/healthcare4.jpg";
+import healthcare3 from "../assets/healthcare1.jpg";
+import healthcare4 from "../assets/healthcare3.jpg";
 
 // =======================
 // Volunteer Images
 // =======================
 import volunteer1 from "../assets/volunteer1.jpg";
-import volunteer2 from "../assets/volunteer2.jpg";
-import volunteer3 from "../assets/volunteer3.jpg";
-import volunteer4 from "../assets/volunteer4.jpg";
+import volunteer2 from "../assets/childincards.png";
+import volunteer3 from "../assets/communityy.png";
+import volunteer4 from "../assets/ndimageee.png";
 
 // =======================
 // Child Welfare Images
 // =======================
-import child1 from "../assets/child1.jpg";
-import child2 from "../assets/child2.jpg";
+import child1 from "../assets/childincards.png";
+import child2 from "../assets/childedu.png";
 import child3 from "../assets/child3.jpg";
 import child4 from "../assets/child4.jpg";
 
@@ -39,7 +39,7 @@ import child4 from "../assets/child4.jpg";
 // Elderly Care Images
 // =======================
 import elderly1 from "../assets/elderly1.jpg";
-import elderly2 from "../assets/elderly2.jpg";
+import elderly2 from "../assets/chennaielderlycare.jpg";
 import elderly3 from "../assets/elderly3.jpg";
 import elderly4 from "../assets/elderly4.jpg";
 
