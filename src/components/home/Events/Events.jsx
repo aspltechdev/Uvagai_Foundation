@@ -1,6 +1,12 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./Events.css";
+import healthcarehome from "../../../assets/healthcarehome.png"; 
+import educationhome from "../../../assets/educationhome.png";
+import newbg from "../../../assets/newbg.png";
+import elders from "../../../assets/elders.png";
+import child from "../../../assets/childhome.png";
+// ← FIXED: Changed to correct path
 
 export default function EventsHome() {
   const sectionRef = useRef(null);
@@ -19,7 +25,7 @@ export default function EventsHome() {
 
   const events = [
     {
-      image: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80",
+      image: healthcarehome,
       title: "Community Healthcare Camp",
       category: "Healthcare",
       location: "Rural Outreach",
@@ -27,7 +33,7 @@ export default function EventsHome() {
       stat: "50K+",
     },
     {
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80",
+      image: educationhome,
       title: "Education Support Program",
       category: "Education",
       location: "Youth Empowerment",
@@ -35,7 +41,7 @@ export default function EventsHome() {
       stat: "5,284+",
     },
     {
-      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80",
+      image: newbg,
       title: "Volunteer Engagement Drive",
       category: "Volunteer",
       location: "Community Service",
@@ -43,7 +49,7 @@ export default function EventsHome() {
       stat: "500+",
     },
     {
-      image: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=800&q=80",
+      image: child,
       title: "Child Welfare Activities",
       category: "Child Welfare",
       location: "Community Impact",
@@ -51,7 +57,7 @@ export default function EventsHome() {
       stat: "10K+",
     },
     {
-      image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=80",
+      image: elders,
       title: "Elderly Care Program",
       category: "Senior Care",
       location: "Care & Compassion",

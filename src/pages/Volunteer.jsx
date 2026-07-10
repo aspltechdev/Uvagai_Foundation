@@ -1,7 +1,12 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from "framer-motion";
 import "./Volunteer.css";
-
+import nextimage from "../assets/secondimage.png";
+import support from "../assets/anotherimage.png";
+import newone from "../assets/newfrstimage.png";
+import newsecimage from "../assets/newsecimage.png";
+import treeimage from "../assets/threeimage.png";
+import childcard from "../assets/childincards.png";
 export default function VolunteerHome() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
@@ -21,19 +26,19 @@ export default function VolunteerHome() {
   // Volunteer stories/moments for slider
   const volunteerMoments = [
     {
-      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
+      image: nextimage,
       quote: "The best way to find yourself is to lose yourself in the service of others.",
       author: "Our Volunteer Community",
       accent: "red",
     },
     {
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80",
+      image: support,
       quote: "Volunteering is the ultimate exercise in democracy. You vote in elections once a year, but when you volunteer, you vote every day about the kind of community you want.",
       author: "Uvagai Foundation",
       accent: "green",
     },
     {
-      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
+      image: childcard,
       quote: "Small acts, when multiplied by millions of people, can transform the world.",
       author: "Community Changemakers",
       accent: "blue",
@@ -43,19 +48,19 @@ export default function VolunteerHome() {
   // Why volunteer benefits
   const benefits = [
     {
-      image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&q=80",
+      image: newone,
       title: "Make a Difference",
       description: "Your time and skills can directly impact lives and create lasting positive change in communities.",
       accent: "red",
     },
     {
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80",
+      image: newsecimage,
       title: "Grow Personally",
       description: "Develop new skills, gain valuable experience, and discover your true potential through service.",
       accent: "green",
     },
     {
-      image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80",
+      image: treeimage,
       title: "Build Community",
       description: "Connect with like-minded individuals who share your passion for creating positive change.",
       accent: "blue",
