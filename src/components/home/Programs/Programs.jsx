@@ -1,6 +1,12 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./Programs.css";
+import educationImg from "../../../assets/educationuvg.jpg";
+import healthImg from "../../../assets/healthuvg.jpg";
+import childImg from "../../../assets/childuvg.jpeg";
+import elderImg from "../../../assets/elderlyCapture_enhanced_v2.png";
+import volImg from "../../../assets/Capturecomm.PNG";
+import envImg from "../../../assets/environment.png";
 
 export default function Programs() {
   const sectionRef = useRef(null);
@@ -18,75 +24,74 @@ export default function Programs() {
 
   const categories = ["All Programs", "Education", "Healthcare", "Community", "Environment"];
 
-const programs = [
-  {
-    id: 1,
-    category: "Education",
-    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1200&q=80",
-    title: "Education & Youth Empowerment",
-    description:
-      "Supporting students through educational assistance, learning resources, mentorship programs, and opportunities that help build brighter futures.",
-    accent: "red",
-    stat: "Core Initiative",
-    statLabel: "Education",
-  },
-  {
-    id: 2,
-    category: "Healthcare",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80",
-    title: "Healthcare & Wellness",
-    description:
-      "Organizing medical camps, health awareness drives, preventive healthcare initiatives, and community wellness programs for underserved communities.",
-    accent: "green",
-    stat: "Community Care",
-    statLabel: "Healthcare",
-  },
-  {
-    id: 3,
-    category: "Child Welfare",
-    image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=1200&q=80",
-    title: "Child Welfare & Development",
-    description:
-      "Promoting child welfare through nutrition support, educational programs, health initiatives, and activities that encourage holistic development.",
-    accent: "blue",
-    stat: "Future Focus",
-    statLabel: "Child Welfare",
-  },
-  {
-    id: 4,
-    category: "Elderly Care",
-    image: "https://images.unsplash.com/photo-1516307365426-bea591f05011?w=1200&q=80",
-    title: "Elderly Care & Support",
-    description:
-      "Enhancing the quality of life for senior citizens through healthcare support, community engagement, welfare programs, and compassionate care initiatives.",
-    accent: "red",
-    stat: "Dignity & Care",
-    statLabel: "Senior Support",
-  },
-  {
-    id: 5,
-    category: "Environment",
-    image: "https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?w=1200&q=80",
-    title: "Environmental Sustainability",
-    description:
-      "Creating awareness about environmental responsibility through tree plantation drives, sustainability campaigns, clean-up initiatives, and green community projects.",
-    accent: "green",
-    stat: "Green Future",
-    statLabel: "Environment",
-  },
-  {
-    id: 6,
-    category: "CSR & Partnerships",
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
-    title: "CSR & Volunteer Partnerships",
-    description:
-      "Collaborating with corporates, institutions, volunteers, and social organizations to create meaningful and long-lasting community impact.",
-    accent: "blue",
-    stat: "Collaborative Impact",
-    statLabel: "Partnerships",
-  },
-];
-
+  const programs = [
+    {
+      id: 1,
+      category: "Education",
+      image: educationImg,
+      title: "Education & Youth Empowerment",
+      description:
+        "Supporting students through educational assistance, learning resources, mentorship programs, and opportunities that help build brighter futures.",
+      accent: "red",
+      stat: "Core Initiative",
+      statLabel: "Education",
+    },
+    {
+      id: 2,
+      category: "Healthcare",
+      image:healthImg,
+      title: "Healthcare & Wellness",
+      description:
+        "Organizing medical camps, health awareness drives, preventive healthcare initiatives, and community wellness programs for underserved communities.",
+      accent: "green",
+      stat: "Community Care",
+      statLabel: "Healthcare",
+    },
+    {
+      id: 3,
+      category: "Child Welfare",
+      image: childImg,
+      title: "Child Welfare & Development",
+      description:
+        "Promoting child welfare through nutrition support, educational programs, health initiatives, and activities that encourage holistic development.",
+      accent: "blue",
+      stat: "Future Focus",
+      statLabel: "Child Welfare",
+    },
+    {
+      id: 4,
+      category: "Elderly Care",
+      image: elderImg,
+      title: "Elderly Care & Support",
+      description:
+        "Enhancing the quality of life for senior citizens through healthcare support, community engagement, welfare programs, and compassionate care initiatives.",
+      accent: "red",
+      stat: "Dignity & Care",
+      statLabel: "Senior Support",
+    },
+    {
+      id: 5,
+      category: "Environment",
+      image: envImg,
+      title: "Environmental Sustainability",
+      description:
+        "Creating awareness about environmental responsibility through tree plantation drives, sustainability campaigns, clean-up initiatives, and green community projects.",
+      accent: "green",
+      stat: "Green Future",
+      statLabel: "Environment",
+    },
+    {
+      id: 6,
+      category: "CSR & Partnerships",
+      image: volImg,
+      title: "CSR & Volunteer Partnerships",
+      description:
+        "Collaborating with corporates, institutions, volunteers, and social organizations to create meaningful and long-lasting community impact.",
+      accent: "blue",
+      stat: "Collaborative Impact",
+      statLabel: "Partnerships",
+    },
+  ];
 
   const filteredPrograms = activeTab === 0 
     ? programs 

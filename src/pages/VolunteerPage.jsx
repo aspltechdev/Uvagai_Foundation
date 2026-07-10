@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./VolunteerPage.css";
 
-import childwelfareImg from "../assets/Capturechild.PNG";
-import communityImg from "../assets/chatcomm.png";
+import childwelfareImg from "../assets/childuvg.jpeg";
+import communityImg from "../assets/communitycap.PNG";
 import digitalImg from "../assets/creativecapture.PNG";
-import educationImg from "../assets/educationCapture.PNG";
+import educationImg from "../assets/educationuvg.jpg";
 import eldeImg from "../assets/elderlycapture.PNG";
 import environmentImg from "../assets/chatenv.png";
 import eventImg from "../assets/chateve.png";
-import healthcareImg from "../assets/healthCapture.PNG";
+import healthcareImg from "../assets/healthuvg.jpg";
 
 const opportunities = [
   {
