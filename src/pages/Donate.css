@@ -715,7 +715,7 @@
 
 /* ============================================
    DONATION OPTIONS SECTION
-   Only Slider area has students.png backdrop - DIMMER
+   Only Slider area has students.png backdrop - LESS DIMMER
    ============================================ */
 
 .donate-options-section {
@@ -734,7 +734,7 @@
   overflow: hidden;
 }
 
-/* students.png Background - ONLY for the slider area - DIMMER */
+/* students.png Background - ONLY for the slider area - LESS DIMMER */
 .donate-options-slider-wrapper::before {
   content: '';
   position: absolute;
@@ -742,13 +742,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../assets/studentss.png");
+  background-image: url("../assets/childd.png");
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
-  opacity: 0.70;
+  opacity: 0.85;
   z-index: 0;
-  filter: saturate(0.9) contrast(1.0) brightness(0.80);
+  filter: saturate(0.9) contrast(1.0) brightness(0.95);
   pointer-events: none;
   transition: transform 8s ease, opacity 1s ease;
 }
@@ -756,10 +756,10 @@
 /* Hover animation - subtle zoom effect */
 .donate-options-slider-wrapper:hover::before {
   transform: scale(1.03);
-  opacity: 0.85;
+  opacity: 0.92;
 }
 
-/* Dark overlay for the slider backdrop - MORE DIM */
+/* Dark overlay for the slider backdrop - LESS DIM */
 .donate-options-slider-wrapper::after {
   content: '';
   position: absolute;
@@ -768,30 +768,27 @@
   right: 0;
   bottom: 0;
   background: 
-    /* Overall dark overlay - dims the whole image more */
     linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.70) 0%,
-      rgba(0, 0, 0, 0.60) 20%,
-      rgba(0, 0, 0, 0.55) 50%,
-      rgba(0, 0, 0, 0.60) 80%,
-      rgba(0, 0, 0, 0.70) 100%
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.35) 20%,
+      rgba(0, 0, 0, 0.30) 50%,
+      rgba(0, 0, 0, 0.35) 80%,
+      rgba(0, 0, 0, 0.45) 100%
     ),
-    /* Left side extra dimming for text readability - MORE DIM */
     linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.85) 0%,
-      rgba(0, 0, 0, 0.70) 20%,
-      rgba(0, 0, 0, 0.50) 40%,
-      rgba(0, 0, 0, 0.30) 60%,
-      rgba(0, 0, 0, 0.15) 75%,
+      rgba(0, 0, 0, 0.60) 0%,
+      rgba(0, 0, 0, 0.45) 20%,
+      rgba(0, 0, 0, 0.25) 40%,
+      rgba(0, 0, 0, 0.15) 60%,
+      rgba(0, 0, 0, 0.08) 75%,
       transparent 100%
     ),
-    /* Additional dark vignette for edge dimming */
     radial-gradient(
       ellipse at center,
       transparent 35%,
-      rgba(0, 0, 0, 0.35) 100%
+      rgba(0, 0, 0, 0.15) 100%
     );
   z-index: 0;
   pointer-events: none;
@@ -800,7 +797,7 @@
 
 /* Hover effect - overlay becomes slightly less dark on hover */
 .donate-options-slider-wrapper:hover::after {
-  opacity: 0.88;
+  opacity: 0.92;
 }
 
 /* Make sure content appears above backdrop */
@@ -1170,7 +1167,7 @@
 
 /* ============================================
    CUSTOM DONATION CARD - NO BACKDROP
-   Clean white background
+   Clean white background - WIDER & TALLER
    ============================================ */
 
 .donate-custom-card-wrapper {
@@ -1183,13 +1180,13 @@
 .donate-custom-card {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   background: var(--dn-white);
   border: 1px solid var(--dn-border-light);
   border-radius: 16px;
-  padding: 2rem;
+  padding: 3rem 2.5rem;  /* Increased height - was 2rem */
   box-shadow: var(--dn-shadow-sm);
-  max-width: 650px;
+  max-width: 850px;  /* Wider - was 650px */
   margin: 0 auto;
   transition: all 0.4s var(--dn-ease-out);
 }
@@ -1205,14 +1202,14 @@
 }
 
 .donate-custom-title {
-  font-size: 1.05rem;
+  font-size: 1.1rem;  /* Slightly larger */
   font-weight: 600;
   color: var(--dn-text-primary);
   margin-bottom: 0.5rem;
 }
 
 .donate-custom-text {
-  font-size: 0.82rem;
+  font-size: 0.9rem;  /* Slightly larger */
   line-height: 1.7;
   color: var(--dn-text-tertiary);
 }
@@ -1220,7 +1217,7 @@
 .custom-donate-form {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
   flex-shrink: 0;
 }
 
@@ -1248,9 +1245,9 @@
 .custom-amount-input {
   border: none;
   outline: none;
-  padding: 0.75rem 0.5rem;
+  padding: 0.9rem 0.5rem;  /* Taller input - was 0.75rem */
   font-size: 0.95rem;
-  width: 130px;
+  width: 160px;  /* Wider - was 130px */
   font-family: var(--dn-font-body);
   color: var(--dn-text-primary);
   background: transparent;
@@ -1266,12 +1263,12 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.9rem 1.75rem;  /* Taller button - was 0.75rem 1.5rem */
   background: var(--dn-red);
   color: var(--dn-white);
   border: none;
   border-radius: 10px;
-  font-size: 0.88rem;
+  font-size: 0.9rem;  /* Slightly larger */
   font-weight: 500;
   cursor: pointer;
   box-shadow: 0 8px 25px -8px rgba(220, 38, 38, 0.35);
@@ -1675,7 +1672,7 @@
   }
   
   .donate-options-slider-wrapper::before {
-    opacity: 0.65;
+    opacity: 0.75;
     background-position: center 35%;
   }
   
@@ -1683,18 +1680,18 @@
     background: 
       linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.70) 0%,
-        rgba(0, 0, 0, 0.60) 20%,
-        rgba(0, 0, 0, 0.55) 50%,
-        rgba(0, 0, 0, 0.60) 80%,
-        rgba(0, 0, 0, 0.70) 100%
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0.35) 20%,
+        rgba(0, 0, 0, 0.30) 50%,
+        rgba(0, 0, 0, 0.35) 80%,
+        rgba(0, 0, 0, 0.45) 100%
       ),
       linear-gradient(
         to right,
-        rgba(0, 0, 0, 0.85) 0%,
-        rgba(0, 0, 0, 0.70) 30%,
-        rgba(0, 0, 0, 0.50) 55%,
-        rgba(0, 0, 0, 0.30) 75%,
+        rgba(0, 0, 0, 0.60) 0%,
+        rgba(0, 0, 0, 0.45) 30%,
+        rgba(0, 0, 0, 0.25) 55%,
+        rgba(0, 0, 0, 0.15) 75%,
         transparent 95%
       );
   }
@@ -1711,7 +1708,9 @@
   .donate-custom-card {
     flex-direction: column;
     text-align: center;
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;  /* Adjusted for mobile */
+    max-width: 100%;
+    margin: 0 1rem;
   }
   
   .custom-donate-form {
@@ -1829,7 +1828,7 @@
   }
   
   .donate-options-slider-wrapper::before {
-    opacity: 0.60;
+    opacity: 0.70;
     background-position: center 40%;
   }
   
@@ -1849,6 +1848,10 @@
   .donate-options-slider-wrapper .slider-card:hover {
     transform: translateY(-6px) scale(1.005);
     background: rgba(242, 242, 242, 0.92);
+  }
+  
+  .donate-custom-card {
+    padding: 1.5rem 1rem;
   }
 }
 

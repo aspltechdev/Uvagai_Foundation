@@ -1,16 +1,19 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./Donate.css";
-import bgofslides from "../assets/bgofslides.png";
-import childincards from "../assets/childincards.png";
-import community from "../assets/community.png";
-import childedu from "../assets/childedu.png";
-import seniorciti from "../assets/senior.png";
-import communityy from "../assets/communityy.png";
-import environment from "../assets/environment.png";
-import students from "../assets/studentss.png";
+import nextimage from "../assets/secondimage.png";
+import child from "../assets/childd.png";
+import childincards from "../assets/childwelfaree.png";
+import community from "../assets/healthcaree.png";
+import childedu from "../assets/educationn.png";
+import seniorciti from "../assets/elders.png";
+import communityy from "../assets/communityyy.png";
+import environment from "../assets/envii.png";
+import donatebg from "../assets/donatebg.png";
+import newbg from "../assets/newbg.png"; // ← FIXED: changed "assests" to "assets"
 
 // Counter Animation Component
 const CountUp = ({ target, suffix = "", prefix = "", duration = 2000, start = 0 }) => {
@@ -52,21 +55,21 @@ const CountUp = ({ target, suffix = "", prefix = "", duration = 2000, start = 0 
 
 const heroSlides = [
   {
-    image: bgofslides,
+    image: newbg,
     title: "Small Acts of Kindness Build Strong Communities",
     subtitle: "Every contribution helps Uvagai Foundation provide education, healthcare, nutrition, community welfare and opportunities for people who deserve a better tomorrow.",
     tag: "Together We Can Create Change",
     accent: "red"
   },
   {
-    image: community,
+    image: nextimage,
     title: "Your Support Transforms Lives & Communities",
     subtitle: "From education to healthcare, your donation creates lasting impact and empowers those who need it most.",
     tag: "Make A Difference Today",
     accent: "green"
   },
   {
-    image: childincards,
+    image: donatebg,
     title: "Empowering Children, Strengthening Futures",
     subtitle: "Support child welfare programs that provide education, nutrition, and protection for vulnerable children.",
     tag: "Invest In Tomorrow",
@@ -352,7 +355,7 @@ export default function Donate() {
                 <div className="donate-stat-value">
                   {stat.value === 50000 ? (
                     <>
-                      <CountUp target={50} duration={2000} suffix="K+" />
+                      <CountUp target={50} durluration={2000} suffix="K+" />
                     </>
                   ) : (
                     <CountUp target={stat.value} duration={stat.duration} suffix={stat.suffix} />
@@ -367,7 +370,7 @@ export default function Donate() {
         </div>
       </section>
 
-      {/* ========== DONATION OPTIONS WITH students.png BACKDROP ========== */}
+      {/* ========== DONATION OPTIONS WITH childd.png BACKDROP ========== */}
       <section className="donate-options-section" id="donate-options">
         <div className="donate-options-slider-wrapper">
           <div className="donate-container">
@@ -607,7 +610,7 @@ export default function Donate() {
         </div>
       </section>
 
-      {/* ========== CTA SECTION ========== */}
+      {/* ========== CTA SECTION - UPDATED ========== */}
       <section className="donate-cta-section">
         <div className="donate-cta-bg" />
         <div className="donate-cta-glow" />
@@ -631,10 +634,10 @@ export default function Donate() {
                   <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-              <a href="#" className="donate-cta-secondary">
+              <Link to="/volunteers" className="donate-cta-secondary">
                 Become A Volunteer
                 <span className="donate-cta-secondary-arrow">→</span>
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
