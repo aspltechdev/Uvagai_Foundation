@@ -4,7 +4,7 @@ import "./AboutSection.css";
 import about1 from "../../../assets/about11.png";
 import about2 from "../../../assets/about22.png";
 import about3 from "../../../assets/about33.png";
-import about4 from "../../../assets/about44.png";
+import about4 from "../../../assets/about4.png";
 
 export default function AboutSection() {
   const sectionRef = useRef(null);
@@ -77,19 +77,19 @@ export default function AboutSection() {
       src: about2,
       alt: "Healthcare Program",
       accent: "#059669",
-      label: "Community Welfare",
+      label: "Healthcare",
     },
     {
       src: about3,
-      alt: "Community Development",
+      alt: "pandemic service",
       accent: "#1E3A8A",
-      label: "Public Health",
+      label: "Community",
     },
     {
       src: about4,
       alt: "Volunteer Engagement",
       accent: "#DC2626",
-      label: "Healthcare",
+      label: "Volunteers",
     },
   ];
 

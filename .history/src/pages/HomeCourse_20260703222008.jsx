@@ -2,19 +2,6 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import "./HomeCourse.css";
 
-// 👇 Update these filenames to match your actual images inside src/assets
-// Adjust the "../" depth if this file's folder is different from src/components/...
-import course1 from "../assets/english.png";
-import course2 from "../assets/computer.jpeg";
-import course3 from "../assets/graphic.jpeg";
-import course4 from "../assets/marketing.jpeg";
-import course5 from "../assets/web.png";
-import course6 from "../assets/leadership.png";
-// Extra images available if you add more courses later:
-// import entrepreneurship from "../assets/entrepreneurship.jpeg";
-// import Career from "../assets/career.jpeg";
-// import Artificial from "../assets/artificial.jpeg";
-
 export default function HomeCourse() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
@@ -26,7 +13,7 @@ export default function HomeCourse() {
     {
       id: 1,
       category: "Communication",
-      image: course1,
+      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80",
       title: "Spoken English & Communication Skills",
       description: "Master English speaking, presentation skills, and professional communication for career growth and workplace confidence.",
       accent: "red",
@@ -37,7 +24,7 @@ export default function HomeCourse() {
     {
       id: 2,
       category: "Technology",
-      image: course2,
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80",
       title: "Digital Literacy & Computer Basics",
       description: "Learn essential computer skills, MS Office suite, internet usage, and digital tools for everyday professional tasks.",
       accent: "green",
@@ -48,7 +35,7 @@ export default function HomeCourse() {
     {
       id: 3,
       category: "Creative",
-      image: course3,
+      image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&q=80",
       title: "Graphic Design & Visual Creativity",
       description: "Explore design principles, color theory, typography, and create stunning visual content using industry-standard tools.",
       accent: "blue",
@@ -59,7 +46,7 @@ export default function HomeCourse() {
     {
       id: 4,
       category: "Business",
-      image: course4,
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
       title: "Digital Marketing Fundamentals",
       description: "Understand SEO, social media marketing, content strategy, and online brand building for business growth.",
       accent: "red",
@@ -70,7 +57,7 @@ export default function HomeCourse() {
     {
       id: 5,
       category: "Technology",
-      image: course5,
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80",
       title: "Web Development Basics",
       description: "Build responsive websites using HTML, CSS, JavaScript, and modern frameworks with hands-on projects.",
       accent: "green",
@@ -81,7 +68,7 @@ export default function HomeCourse() {
     {
       id: 6,
       category: "Communication",
-      image: course6,
+      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80",
       title: "Leadership & Community Engagement",
       description: "Develop leadership skills, team management, public speaking, and community outreach capabilities.",
       accent: "blue",

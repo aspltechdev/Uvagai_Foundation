@@ -5,8 +5,8 @@ import "./MissionVision.css";
 // 👇 Update these two paths to match your actual images inside src/assets
 // Adjust the number of "../" depending on where this file sits relative to src/assets
 // (this file is at: src/components/home/Vision/MissionVision.jsx -> assets is 3 levels up)
-import visionImg from "../../../assets/m.png";
-import missionImg from "../../../assets/program44.png"; // <-- change to your real mission image filename
+import visionImg from "../../../assets/program44.png";
+import missionImg from "../../../assets/mission1.png"; // <-- change to your real mission image filename
 
 export default function VisionMissionHome() {
   const sectionRef = useRef(null);

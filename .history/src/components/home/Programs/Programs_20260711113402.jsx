@@ -1,12 +1,11 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./Programs.css";
-import program1 from "../../../assets/program1.png";
-import program2 from "../../../assets/program2.png";
-import program3 from "../../../assets/program44.png";
-import program4 from "../../../assets/program3.png";
-import program5 from "../../../assets/program5.png";
-import program6 from "../../../assets/program5.png";
+import program1 from "../../../assets/about11.png";
+import program2 from "../../../assets/about22.png";
+import program3 from "../../../assets/about33.png";
+import program4 from "../../../assets/about44.png";
+import program4 from "../../../assets/about44.png";
 export default function Programs() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
@@ -49,7 +48,7 @@ const programs = [
   {
     id: 3,
     category: "Child Welfare",
-   image: program3,
+   image: program2,
     title: "Child Welfare & Development",
     description:
       "Promoting child welfare through nutrition support, educational programs, health initiatives, and activities that encourage holistic development.",
@@ -60,7 +59,7 @@ const programs = [
   {
     id: 4,
     category: "Elderly Care",
-    image: program4,
+    image: program3,
     title: "Elderly Care & Support",
     description:
       "Enhancing the quality of life for senior citizens through healthcare support, community engagement, welfare programs, and compassionate care initiatives.",
@@ -71,7 +70,7 @@ const programs = [
   {
     id: 5,
     category: "Environment",
-    image: program5,
+    image: program4,
     title: "Environmental Sustainability",
     description:
       "Creating awareness about environmental responsibility through tree plantation drives, sustainability campaigns, clean-up initiatives, and green community projects.",
@@ -82,7 +81,7 @@ const programs = [
   {
     id: 6,
     category: "CSR & Partnerships",
-    image: program6,
+    image: program5,
     title: "CSR & Volunteer Partnerships",
     description:
       "Collaborating with corporates, institutions, volunteers, and social organizations to create meaningful and long-lasting community impact.",

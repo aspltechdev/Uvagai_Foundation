@@ -1,10 +1,10 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./AboutSection.css";
-import about1 from "../../../assets/about11.png";
-import about2 from "../../../assets/about22.png";
-import about3 from "../../../assets/about33.png";
-import about4 from "../../../assets/about44.png";
+import program1 from "../../../assets/about11.png";
+import program2 from "../../../assets/about22.png";
+import program3 from "../../../assets/about33.png";
+import program4 from "../../../assets/about44.png";
 
 export default function AboutSection() {
   const sectionRef = useRef(null);

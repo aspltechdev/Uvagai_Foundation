@@ -71,7 +71,7 @@ const programs = [
   {
     id: 5,
     category: "Environment",
-    image: program5,
+    image: program4,
     title: "Environmental Sustainability",
     description:
       "Creating awareness about environmental responsibility through tree plantation drives, sustainability campaigns, clean-up initiatives, and green community projects.",
@@ -82,7 +82,7 @@ const programs = [
   {
     id: 6,
     category: "CSR & Partnerships",
-    image: program6,
+    image: program5,
     title: "CSR & Volunteer Partnerships",
     description:
       "Collaborating with corporates, institutions, volunteers, and social organizations to create meaningful and long-lasting community impact.",

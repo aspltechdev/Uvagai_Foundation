@@ -14,7 +14,7 @@ export default function VisionMissionHome() {
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"],
+    offset: ["start end", "end start"],><
   });
 
   const bgY = useTransform(scrollYProgress, [0, 1], [0, -30]);

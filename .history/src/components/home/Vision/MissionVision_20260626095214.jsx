@@ -2,12 +2,6 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./MissionVision.css";
 
-// 👇 Update these two paths to match your actual images inside src/assets
-// Adjust the number of "../" depending on where this file sits relative to src/assets
-// (this file is at: src/components/home/Vision/MissionVision.jsx -> assets is 3 levels up)
-import visionImg from "../../../assets/m.png";
-import missionImg from "../../../assets/program44.png"; // <-- change to your real mission image filename
-
 export default function VisionMissionHome() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
@@ -137,7 +131,7 @@ export default function VisionMissionHome() {
                 variants={imageRevealVariants}
               >
                 <img
-                  src={visionImg}
+                  src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80"
                   alt="Uvagai Foundation Vision"
                 />
                 <div className="vm-home-card-image-overlay" />
@@ -194,7 +188,7 @@ export default function VisionMissionHome() {
                 variants={imageRevealVariants}
               >
                 <img
-                  src={missionImg}
+                  src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1200&q=80"
                   alt="Uvagai Foundation Mission"
                 />
                 <div className="vm-home-card-image-overlay" />

@@ -2,12 +2,12 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./Events.css";
 
-import camp from "../../../assets/healthcarecamp.png";
-import educ from "../../../assets/educationinitiative.png";
-import volunteer from "../../../assets/volunteerprogram.png";
-import child from "../../../assets/childwelfareprogram.png";
-import senior from "../../../assets/seniorcitizenwelfare.png";
-import sustain from "../../../assets/sustainability.png";
+import camp from "../assets/healthcarecamp.png";
+import educ from "../assets/educationinitiative.png";
+import volunteer from "../assets/volunteerprogram.png";
+import child from "../assets/childwelfareprogram.png";
+import senior from "../assets/seniorcitizenwelfare.png";
+import sustain from "../assets/sustainability.png";
 
 export default function EventsHome() {
   const sectionRef = useRef(null);

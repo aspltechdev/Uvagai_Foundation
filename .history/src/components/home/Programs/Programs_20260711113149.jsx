@@ -1,12 +1,10 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./Programs.css";
-import program1 from "../../../assets/program1.png";
-import program2 from "../../../assets/program2.png";
-import program3 from "../../../assets/program44.png";
-import program4 from "../../../assets/program3.png";
-import program5 from "../../../assets/program5.png";
-import program6 from "../../../assets/program5.png";
+import program1 from "../../../assets/about11.png";
+import program2 from "../../../assets/about22.png";
+import program3 from "../../../assets/about33.png";
+import program4 from "../../../assets/about44.png";
 export default function Programs() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
@@ -27,7 +25,7 @@ const programs = [
   {
     id: 1,
     category: "Education",
-   image: program1,
+    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1200&q=80",
     title: "Education & Youth Empowerment",
     description:
       "Supporting students through educational assistance, learning resources, mentorship programs, and opportunities that help build brighter futures.",
@@ -38,7 +36,7 @@ const programs = [
   {
     id: 2,
     category: "Healthcare",
-   image: program2,
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80",
     title: "Healthcare & Wellness",
     description:
       "Organizing medical camps, health awareness drives, preventive healthcare initiatives, and community wellness programs for underserved communities.",
@@ -49,7 +47,7 @@ const programs = [
   {
     id: 3,
     category: "Child Welfare",
-   image: program3,
+    image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=1200&q=80",
     title: "Child Welfare & Development",
     description:
       "Promoting child welfare through nutrition support, educational programs, health initiatives, and activities that encourage holistic development.",
@@ -60,7 +58,7 @@ const programs = [
   {
     id: 4,
     category: "Elderly Care",
-    image: program4,
+    image: "https://images.unsplash.com/photo-1516307365426-bea591f05011?w=1200&q=80",
     title: "Elderly Care & Support",
     description:
       "Enhancing the quality of life for senior citizens through healthcare support, community engagement, welfare programs, and compassionate care initiatives.",
@@ -71,7 +69,7 @@ const programs = [
   {
     id: 5,
     category: "Environment",
-    image: program5,
+    image: "https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?w=1200&q=80",
     title: "Environmental Sustainability",
     description:
       "Creating awareness about environmental responsibility through tree plantation drives, sustainability campaigns, clean-up initiatives, and green community projects.",
@@ -82,7 +80,7 @@ const programs = [
   {
     id: 6,
     category: "CSR & Partnerships",
-    image: program6,
+    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
     title: "CSR & Volunteer Partnerships",
     description:
       "Collaborating with corporates, institutions, volunteers, and social organizations to create meaningful and long-lasting community impact.",

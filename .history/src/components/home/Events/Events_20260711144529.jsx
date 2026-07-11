@@ -2,13 +2,6 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./Events.css";
 
-import camp from "../../../assets/healthcarecamp.png";
-import educ from "../../../assets/educationinitiative.png";
-import volunteer from "../../../assets/volunteerprogram.png";
-import child from "../../../assets/childwelfareprogram.png";
-import senior from "../../../assets/seniorcitizenwelfare.png";
-import sustain from "../../../assets/sustainability.png";
-
 export default function EventsHome() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
@@ -26,7 +19,7 @@ export default function EventsHome() {
 
   const events = [
     {
-      image: camp,
+      image: "https://images.unsplash.com/photo-1584515933487-779824d
       title: "Community Healthcare Camp",
       category: "Healthcare",
       location: "Rural Outreach",
@@ -34,7 +27,7 @@ export default function EventsHome() {
       stat: "50K+",
     },
     {
-      image: educ,
+      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80",
       title: "Education Support Program",
       category: "Education",
       location: "Youth Empowerment",
@@ -42,7 +35,7 @@ export default function EventsHome() {
       stat: "5,284+",
     },
     {
-      image: volunteer,
+      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80",
       title: "Volunteer Engagement Drive",
       category: "Volunteer",
       location: "Community Service",
@@ -50,7 +43,7 @@ export default function EventsHome() {
       stat: "500+",
     },
     {
-      image: child,
+      image: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=800&q=80",
       title: "Child Welfare Activities",
       category: "Child Welfare",
       location: "Community Impact",
@@ -58,7 +51,7 @@ export default function EventsHome() {
       stat: "10K+",
     },
     {
-      image: senior,
+      image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=80",
       title: "Elderly Care Program",
       category: "Senior Care",
       location: "Care & Compassion",
@@ -66,7 +59,7 @@ export default function EventsHome() {
       stat: "2,500+",
     },
     {
-      image: sustain,
+      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
       title: "Environmental Campaign",
       category: "Sustainability",
       location: "Green Initiative",
@@ -77,7 +70,6 @@ export default function EventsHome() {
 
   // Duplicate events for seamless infinite marquee
   const marqueeEvents = [...events, ...events, ...events];
-  const marqueeEventsReversed = [...marqueeEvents].reverse();
 
   return (
     <section className="events-marquee" ref={sectionRef}>
@@ -205,7 +197,7 @@ export default function EventsHome() {
             },
           }}
         >
-          {marqueeEventsReversed.map((event, index) => (
+          {marqueeEvents.reverse().map((event, index) => (
             <motion.div 
               className={`events-marquee-card card-${event.accent}`}
               key={`row2-${index}`}

@@ -71,7 +71,7 @@ const programs = [
   {
     id: 5,
     category: "Environment",
-    image: program5,
+    image: program4,
     title: "Environmental Sustainability",
     description:
       "Creating awareness about environmental responsibility through tree plantation drives, sustainability campaigns, clean-up initiatives, and green community projects.",

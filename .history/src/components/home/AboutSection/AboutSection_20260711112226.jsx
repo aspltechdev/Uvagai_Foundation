@@ -89,7 +89,7 @@ export default function AboutSection() {
       src: about4,
       alt: "Volunteer Engagement",
       accent: "#DC2626",
-      label: "Healthcare",
+      label: "Volunteers",
     },
   ];
 

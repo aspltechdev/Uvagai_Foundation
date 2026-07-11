@@ -5,15 +5,11 @@ import "./HomeCourse.css";
 // 👇 Update these filenames to match your actual images inside src/assets
 // Adjust the "../" depth if this file's folder is different from src/components/...
 import course1 from "../assets/english.png";
-import course2 from "../assets/computer.jpeg";
-import course3 from "../assets/graphic.jpeg";
-import course4 from "../assets/marketing.jpeg";
-import course5 from "../assets/web.png";
-import course6 from "../assets/leadership.png";
-// Extra images available if you add more courses later:
-// import entrepreneurship from "../assets/entrepreneurship.jpeg";
-// import Career from "../assets/career.jpeg";
-// import Artificial from "../assets/artificial.jpeg";
+import course2 from "../assets/course-digital-literacy.png";
+import course3 from "../assets/course-graphic-design.png";
+import course4 from "../assets/course-digital-marketing.png";
+import course5 from "../assets/course-web-dev.png";
+import course6 from "../assets/course-leadership.png";
 
 export default function HomeCourse() {
   const sectionRef = useRef(null);
