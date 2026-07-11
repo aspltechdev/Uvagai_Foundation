@@ -345,26 +345,28 @@ const heroSlides = [
   {
     image: large1,
     title: "Inspiring Hope, Empowering Lives & Creating Sustainable Social Impact",
-    subtitle: "Our vision and mission guide every initiative we undertake to empower communities, improve lives, and create lasting positive change.",
+    subtitle:
+      "Our vision and mission guide every initiative we undertake to empower communities, improve lives, and create lasting positive change.",
     tag: "Vision • Mission • Values",
-    accent: "red"
+    accent: "red",
   },
   {
     image: image2,
     title: "Guided by Vision, Driven by Mission",
-    subtitle: "Since 2019, Uvagai Foundation has been dedicated to empowering children, families, and communities through education, healthcare, and sustainable development.",
+    subtitle:
+      "Since 2019, Uvagai Foundation has been dedicated to empowering children, families, and communities through education, healthcare, and sustainable development.",
     tag: "Our Purpose & Promise",
-    accent: "green"
+    accent: "green",
   },
   {
     image: image5,
     title: "Turning Compassion Into Action",
-    subtitle: "Through education support, healthcare initiatives, child welfare, elderly care, and community development, we create meaningful opportunities for all.",
+    subtitle:
+      "Through education support, healthcare initiatives, child welfare, elderly care, and community development, we create meaningful opportunities for all.",
     tag: "Our Commitment",
-    accent: "blue"
-  }
+    accent: "blue",
+  },
 ];
-
 export default function VisionMissionPage() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
