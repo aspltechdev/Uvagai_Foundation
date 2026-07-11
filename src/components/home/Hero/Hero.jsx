@@ -1080,6 +1080,7 @@ export default function Hero() {
           rotate: [0, -35, 0],
         }}
         transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
+        
       />
 
 
