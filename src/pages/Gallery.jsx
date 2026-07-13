@@ -4,8 +4,8 @@ import "./Gallery.css";
 
 import educationImg from "../assets/education.jpg";
 import healthcareImg from "../assets/healthcare.jpg";
-import volunteerImg from "../assets/volunteer.jpg";
-import childImg from "../assets/child.jpg";
+import volunteerImg from "../assets/volunteer.png";
+import childImg from "../assets/childd.png";
 import elderlyImg from "../assets/elderly.jpg";
 import environmentImg from "../assets/environment.jpg";
 import foodImg from "../assets/food.jpg";
