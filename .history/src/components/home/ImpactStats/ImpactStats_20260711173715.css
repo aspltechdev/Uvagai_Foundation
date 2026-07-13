@@ -1,0 +1,434 @@
+/* ImpactStats.css - PROFESSIONAL IMPACT STATS WITH IMAGES */
+/* Scroll-triggered animations, clean premium design */
+
+/* ============================================ */
+/* SECTION */
+/* ============================================ */
+.impact-section {
+  position: relative;
+  padding: 140px 0;
+  background: #FAFBFC;
+  overflow: hidden;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ============================================ */
+/* BACKGROUND */
+/* ============================================ */
+.impact-bg-layer {
+  position: absolute;
+  inset: -8%;
+  background: 
+    radial-gradient(ellipse at 25% 25%, rgba(220, 38, 38, 0.02) 0%, transparent 50%),
+    radial-gradient(ellipse at 75% 50%, rgba(5, 150, 105, 0.02) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 75%, rgba(30, 58, 138, 0.02) 0%, transparent 50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ============================================ */
+/* FLOATING ORBS */
+/* ============================================ */
+.impact-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.impact-orb-red {
+  width: 550px;
+  height: 550px;
+  top: -12%;
+  right: -8%;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.06) 0%, transparent 70%);
+}
+
+.impact-orb-green {
+  width: 450px;
+  height: 450px;
+  bottom: -10%;
+  left: -5%;
+  background: radial-gradient(circle, rgba(5, 150, 105, 0.06) 0%, transparent 70%);
+}
+
+.impact-orb-blue {
+  width: 400px;
+  height: 400px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(30, 58, 138, 0.05) 0%, transparent 70%);
+}
+
+/* ============================================ */
+/* PARTICLES */
+/* ============================================ */
+.impact-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.impact-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #DC2626, #059669, #1E3A8A);
+  filter: blur(1px);
+}
+
+/* ============================================ */
+/* CONTAINER */
+/* ============================================ */
+.impact-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ============================================ */
+/* HEADING */
+/* ============================================ */
+.impact-heading {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.impact-tag {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.impact-tag-line {
+  width: 24px;
+  height: 2px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, #DC2626, #059669);
+}
+
+.impact-tag-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #DC2626, #059669);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.impact-headline {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 750;
+  color: #0f172a;
+  line-height: 1.25;
+  letter-spacing: -1.5px;
+  margin: 0 0 16px;
+}
+
+.impact-headline-red { color: #DC2626; }
+.impact-headline-green { color: #059669; }
+.impact-headline-blue { color: #1E3A8A; }
+
+.impact-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  letter-spacing: -0.15px;
+}
+
+/* ============================================ */
+/* GRID */
+/* ============================================ */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* ============================================ */
+/* CARDS */
+/* ============================================ */
+.impact-card {
+  position: relative;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
+}
+
+.impact-card:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Image */
+.impact-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+
+.impact-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.impact-card:hover .impact-card-image {
+  transform: scale(1.06);
+}
+
+.impact-card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 40%,
+    rgba(0, 0, 0, 0.05) 70%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+}
+
+/* Category Badge */
+.impact-card-category {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Card Content */
+.impact-card-content {
+  padding: 22px 24px 24px;
+  position: relative;
+}
+
+.impact-card-number-wrapper {
+  margin-bottom: 6px;
+}
+
+.impact-card-number {
+  font-size: 2.2rem;
+  font-weight: 750;
+  letter-spacing: -1.5px;
+  line-height: 1;
+}
+
+.impact-card-red .impact-card-number { color: #DC2626; }
+.impact-card-green .impact-card-number { color: #059669; }
+.impact-card-blue .impact-card-number { color: #1E3A8A; }
+
+.impact-card-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+  letter-spacing: -0.3px;
+  margin-bottom: 8px;
+}
+
+.impact-card-description {
+  display: block;
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.6;
+  letter-spacing: -0.1px;
+}
+
+/* Card Glow Border */
+.impact-card-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ============================================ */
+/* CTA */
+/* ============================================ */
+.impact-cta-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.impact-cta {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: max-content !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  flex: 0 0 auto !important;
+  box-sizing: content-box !important;
+  padding: 9px 20px !important;
+  border-radius: 999px !important;
+  text-decoration: none;
+  background: linear-gradient(135deg, #DC2626 0%, #059669 100%);
+  color: white;
+  font-size: 0.8rem;
+  line-height: 1.3 !important;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.18), 0 2px 6px rgba(5, 150, 105, 0.12);
+  transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.impact-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.6s;
+}
+
+.impact-cta:hover::before {
+  left: 100%;
+}
+
+.impact-cta:hover {
+  box-shadow: 0 10px 36px rgba(220, 38, 38, 0.3), 0 5px 16px rgba(5, 150, 105, 0.22);
+}
+
+.impact-cta-arrow {
+  display: flex;
+  align-items: center;
+}
+
+.impact-cta-arrow svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+@media (max-width: 1100px) {
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .impact-section {
+    padding: 100px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .impact-section {
+    padding: 80px 0;
+  }
+
+  .impact-container {
+    padding: 0 24px;
+  }
+
+  .impact-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .impact-headline {
+    font-size: 1.8rem;
+    letter-spacing: -1px;
+  }
+
+  .impact-subtitle {
+    font-size: 0.92rem;
+  }
+
+  .impact-card-number {
+    font-size: 1.9rem;
+  }
+
+  .impact-card-content {
+    padding: 18px 20px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .impact-section {
+    padding: 60px 0;
+  }
+
+  .impact-container {
+    padding: 0 16px;
+  }
+
+  .impact-heading {
+    margin-bottom: 48px;
+  }
+
+  .impact-headline {
+    font-size: 1.5rem;
+  }
+
+  .impact-card-image-wrapper {
+    aspect-ratio: 16/9;
+  }
+
+  .impact-card-number {
+    font-size: 1.7rem;
+  }
+
+  .impact-cta {
+    padding: 9px 20px;
+    font-size: 0.78rem;
+    width: auto;
+    justify-content: center;
+  }
+}
+
+/* ============================================ */
+/* ACCESSIBILITY */
+/* ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .impact-section *,
+  .impact-section *::before,
+  .impact-section *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+.nav-cta {
+  border-radius: 999px;
+}

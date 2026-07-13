@@ -26,19 +26,19 @@ export default function VolunteerHome() {
   // Volunteer stories/moments for slider
   const volunteerMoments = [
     {
-      image: nextimage,
+      image: "https://images.unsplash.com/photo-1652971876875-05db98fab376?w=1200&q=80",
       quote: "The best way to find yourself is to lose yourself in the service of others.",
       author: "Our Volunteer Community",
       accent: "red",
     },
     {
-      image: support,
+      image: "https://images.unsplash.com/photo-1616680214084-22670de1bc82?w=1200&q=80",
       quote: "Volunteering is the ultimate exercise in democracy. You vote in elections once a year, but when you volunteer, you vote every day about the kind of community you want.",
       author: "Uvagai Foundation",
       accent: "green",
     },
     {
-      image: childcard,
+      image: "https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?w=1200&q=80",
       quote: "Small acts, when multiplied by millions of people, can transform the world.",
       author: "Community Changemakers",
       accent: "blue",
@@ -48,19 +48,19 @@ export default function VolunteerHome() {
   // Why volunteer benefits
   const benefits = [
     {
-      image: newone,
+      image: "https://images.pexels.com/photos/36713463/pexels-photo-36713463.jpeg",
       title: "Make a Difference",
       description: "Your time and skills can directly impact lives and create lasting positive change in communities.",
       accent: "red",
     },
     {
-      image: newsecimage,
+      image: "https://images.unsplash.com/photo-1560220604-1985ebfe28b1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "Grow Personally",
       description: "Develop new skills, gain valuable experience, and discover your true potential through service.",
       accent: "green",
     },
     {
-      image: treeimage,
+      image: "https://images.unsplash.com/photo-1656311879551-562fe942a8ff?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "Build Community",
       description: "Connect with like-minded individuals who share your passion for creating positive change.",
       accent: "blue",

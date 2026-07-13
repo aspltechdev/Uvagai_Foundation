@@ -25,7 +25,8 @@ export default function EventsHome() {
 
   const events = [
     {
-      image: healthcarehome,
+      // Compassionate care for an elderly man - Pexels (India-based photographer)
+      image: "https://images.pexels.com/photos/28141441/pexels-photo-28141441.jpeg",
       title: "Community Healthcare Camp",
       category: "Healthcare",
       location: "Rural Outreach",
@@ -33,7 +34,8 @@ export default function EventsHome() {
       stat: "50K+",
     },
     {
-      image: educationhome,
+      // Children with notebooks/books at a desk - Swastik Arora on Unsplash
+      image: "https://images.unsplash.com/photo-1692269725827-699e04a11cdf?w=800&q=80&auto=format&fit=crop",
       title: "Education Support Program",
       category: "Education",
       location: "Youth Empowerment",
@@ -41,7 +43,8 @@ export default function EventsHome() {
       stat: "5,284+",
     },
     {
-      image: newbg,
+      // Volunteers sorting canned food donations - real volunteer activity - Joel Muniz on Unsplash
+      image: "https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?w=800&q=80&auto=format&fit=crop",
       title: "Volunteer Engagement Drive",
       category: "Volunteer",
       location: "Community Service",
@@ -49,7 +52,8 @@ export default function EventsHome() {
       stat: "500+",
     },
     {
-      image: child,
+      // Volunteers giving food to children in India - Plato Terentev on Pexels
+      image: "https://images.pexels.com/photos/5909876/pexels-photo-5909876.jpeg?auto=compress&cs=tinysrgb&w=800",
       title: "Child Welfare Activities",
       category: "Child Welfare",
       location: "Community Impact",
@@ -57,7 +61,8 @@ export default function EventsHome() {
       stat: "10K+",
     },
     {
-      image: elders,
+      // Volunteer delivering food to a senior at home - Kampus Production on Pexels
+      image: "https://images.pexels.com/photos/16364307/pexels-photo-16364307.jpeg",
       title: "Elderly Care Program",
       category: "Senior Care",
       location: "Care & Compassion",
@@ -65,7 +70,8 @@ export default function EventsHome() {
       stat: "2,500+",
     },
     {
-      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      // Green grass and trees, India forest cover - Ankit Choudhary on Unsplash
+      image: "https://images.unsplash.com/photo-1603612692333-7bac35e43500?w=800&q=80&auto=format&fit=crop",
       title: "Environmental Campaign",
       category: "Sustainability",
       location: "Green Initiative",
@@ -76,6 +82,7 @@ export default function EventsHome() {
 
   // Duplicate events for seamless infinite marquee
   const marqueeEvents = [...events, ...events, ...events];
+  const marqueeEventsReversed = [...marqueeEvents].reverse();
 
   return (
     <section className="events-marquee" ref={sectionRef}>
@@ -159,7 +166,7 @@ export default function EventsHome() {
               }}
             >
               <div className="events-marquee-card-image">
-                <img src={event.image} alt={event.title} />
+                <img src={event.image} alt={event.title} loading="lazy" />
                 <div className="events-marquee-card-overlay" />
                 
                 {/* Category Badge */}
@@ -203,7 +210,7 @@ export default function EventsHome() {
             },
           }}
         >
-          {marqueeEvents.reverse().map((event, index) => (
+          {marqueeEventsReversed.map((event, index) => (
             <motion.div 
               className={`events-marquee-card card-${event.accent}`}
               key={`row2-${index}`}
@@ -214,7 +221,7 @@ export default function EventsHome() {
               }}
             >
               <div className="events-marquee-card-image">
-                <img src={event.image} alt={event.title} />
+                <img src={event.image} alt={event.title} loading="lazy" />
                 <div className="events-marquee-card-overlay" />
                 
                 <span className={`events-marquee-card-badge badge-${event.accent}`}>

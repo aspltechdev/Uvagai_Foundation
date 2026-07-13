@@ -7,7 +7,7 @@ import img3 from  "../assets/ndimagee.png";
 
 const heroSlides = [
   {
-    image: img1,
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80",
     title: "Let's Create Impact Together",
     subtitle: "Whether you would like to volunteer, donate, partner with us, support our initiatives, or learn more about our work, we'd love to hear from you.",
     tag: "Contact Uvagai Foundation",
@@ -107,118 +107,13 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (formData.name.trim().length < 3) {
-      setStatus({
-        show: true,
-        type: "error",
-        message: "Please enter a valid full name.",
-      });
-      return;
-    }
-
-    const emailRegex =
-      /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-
-    if (!emailRegex.test(formData.email.trim())) {
-      setStatus({
-        show: true,
-        type: "error",
-        message: "Please enter a valid email address.",
-      });
-      return;
-    }
-
-    if (!/^[0-9]{10}$/.test(formData.phone)) {
-      setStatus({
-        show: true,
-        type: "error",
-        message: "Please enter a valid 10-digit phone number.",
-      });
-      return;
-    }
-
-    if (formData.message.trim().length < 10) {
-      setStatus({
-        show: true,
-        type: "error",
-        message: "Please enter a meaningful message.",
-      });
-      return;
-    }
-
-    setLoading(true);
-
-    const data = {
-      access_key: "d2e618b7-c616-458f-8837-ca64bb0cd1d3",
-      subject: "New Contact Form Submission - Uvagai Foundation",
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      inquiryType: formData.inquiryType,
-      message: formData.message,
-    };
-
-    try {
-      const response = await fetch(
-        "https://api.web3forms.com/submit",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
-
-      const result = await response.json();
-
-      if (result.success) {
-        setStatus({
-          show: true,
-          type: "success",
-          message:
-            "Thank you! Your message has been sent successfully. Our team will contact you soon.",
-        });
-
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          inquiryType: "",
-          message: "",
-        });
-      } else {
-        setStatus({
-          show: true,
-          type: "error",
-          message: result.message || "Failed to send your message.",
-        });
-      }
-    } catch (error) {
-      setStatus({
-        show: true,
-        type: "error",
-        message: "Something went wrong. Please try again.",
-      });
-    } finally {
-      setLoading(false);
-
-      setTimeout(() => {
-        setStatus({
-          show: false,
-          type: "",
-          message: "",
-        });
-      }, 3000);
-    }
+    // Form submission logic
   };
 
   return (
     <div className="contact-page" ref={sectionRef}>
-      {/* Hero Section with Background Slideshow */}
-      <section
+      {/* Hero Section */}
+      <section 
         className="contact-hero"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -300,7 +195,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Form Section */}
       <section className="contact-main-section" id="contact-form">
         <div className="contact-container">
           <motion.div
@@ -516,7 +411,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Map Section - NOW EMBEDDED */}
       <section className="contact-map-section">
         <div className="contact-container">
           <motion.div
@@ -531,19 +426,32 @@ export default function Contact() {
             </p>
           </motion.div>
 
-          <motion.div
-            className="contact-map-placeholder"
+          <motion.div 
+            className="contact-map-wrapper"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="map-placeholder-content">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <path d="M24 4C16.28 4 10 10.28 10 18C10 28 24 44 24 44C24 44 38 28 38 18C38 10.28 31.72 4 24 4Z" stroke="#DC2626" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                <circle cx="24" cy="18" r="6" stroke="#DC2626" strokeWidth="2.5" />
-              </svg>
-              <span className="map-placeholder-text">Chennai, Tamil Nadu, India</span>
-              <span className="map-placeholder-subtext">Google Map Integration</span>
+            <iframe
+              src="https://www.google.com/maps?q=Chennai+Tamil+Nadu+India&output=embed"
+              width="100%"
+              height="400"
+              style={{ border: 0, borderRadius: '12px' }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Uvagai Foundation Office Location"
+              className="contact-map-iframe"
+            ></iframe>
+            <div className="contact-map-credit">
+              <a 
+                href="https://maps.app.goo.gl/mnN2vrukf6pYCWkU8" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="contact-map-exact-link"
+              >
+                Open exact location in Google Maps →
+              </a>
             </div>
           </motion.div>
         </div>

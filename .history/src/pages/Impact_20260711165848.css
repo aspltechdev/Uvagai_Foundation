@@ -1,0 +1,374 @@
+/* ============================================
+   Uvagai Foundation - Impact Page
+   Uses Gallery Theme Variables
+   ============================================ */
+
+.impact-page{
+    font-family: var(--gal-font-body);
+    background: var(--gal-cream);
+    color: var(--gal-text-primary);
+    overflow-x: hidden;
+}
+
+/* Container */
+
+.container{
+    width: min(1180px,92%);
+    margin:auto;
+}
+
+/* ============================================
+   Hero
+============================================ */
+
+.impact-hero{
+    padding:120px 0 90px;
+    background: linear-gradient(
+        135deg,
+        var(--gal-blue) 0%,
+        var(--gal-blue-dark) 100%
+    );
+    color: white;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.impact-hero::before{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    background:var(--gal-red-glow);
+    top:-150px;
+    right:-120px;
+    filter:blur(40px);
+}
+
+.impact-hero::after{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:var(--gal-green-glow);
+    bottom:-140px;
+    left:-120px;
+    filter:blur(40px);
+}
+
+.section-tag{
+    display:inline-block;
+    padding:10px 22px;
+    border-radius:30px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.2);
+    color:white;
+    font-weight:600;
+    margin-bottom:24px;
+    backdrop-filter:blur(12px);
+}
+
+.impact-hero h1{
+    font-size:clamp(2.6rem,5vw,4.3rem);
+    font-family:var(--gal-font-display);
+    line-height:1.15;
+    margin-bottom:25px;
+}
+
+.impact-hero p{
+    max-width:720px;
+    margin:auto;
+    font-size:1.15rem;
+    color:var(--gal-white-80);
+    line-height:1.8;
+}
+
+/* ============================================
+   Stats
+============================================ */
+
+.impact-stats-section{
+    padding:90px 0;
+    background:var(--gal-soft-bg);
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.stat-card{
+    background:white;
+    padding:40px 25px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:var(--gal-shadow-md);
+    transition:.35s ease;
+    border:1px solid var(--gal-border-light);
+}
+
+.stat-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--gal-shadow-xl);
+    border-color:var(--gal-red-light);
+}
+
+.stat-card h2{
+    font-size:2.7rem;
+    color:var(--gal-red);
+    margin-bottom:10px;
+}
+
+.stat-card p{
+    color:var(--gal-text-secondary);
+    font-size:1rem;
+    font-weight:600;
+}
+
+/* ============================================
+   Story
+============================================ */
+
+.impact-story{
+    padding:110px 0;
+    background:white;
+}
+
+.story-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.story-image img{
+    width:100%;
+    display:block;
+    border-radius:25px;
+    box-shadow:var(--gal-shadow-lg);
+}
+
+.story-content .section-tag{
+    background:var(--gal-red-light);
+    color:var(--gal-red);
+    border:none;
+}
+
+.story-content h2{
+    font-family:var(--gal-font-display);
+    font-size:2.7rem;
+    color:var(--gal-blue);
+    margin:20px 0;
+}
+
+.story-content p{
+    color:var(--gal-text-secondary);
+    line-height:1.9;
+    margin-bottom:18px;
+}
+
+/* ============================================
+   Focus Areas
+============================================ */
+
+.focus-section{
+    padding:110px 0;
+    background:var(--gal-warm-bg);
+}
+
+.section-header{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-header h2{
+    font-size:2.8rem;
+    font-family:var(--gal-font-display);
+    color:var(--gal-blue);
+}
+
+.focus-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:28px;
+}
+
+.focus-card{
+    background:white;
+    border-radius:22px;
+    padding:45px 20px;
+    text-align:center;
+    box-shadow:var(--gal-shadow-sm);
+    transition:.35s ease;
+    border:1px solid var(--gal-border-light);
+    font-size:3rem;
+}
+
+.focus-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--gal-shadow-lg);
+    border-color:var(--gal-green-light);
+}
+
+.focus-card h3{
+    margin-top:18px;
+    font-size:1.2rem;
+    color:var(--gal-text-primary);
+}
+
+/* Different top border colors */
+
+.focus-card:nth-child(1){
+    border-top:5px solid var(--gal-red);
+}
+
+.focus-card:nth-child(2){
+    border-top:5px solid var(--gal-blue);
+}
+
+.focus-card:nth-child(3){
+    border-top:5px solid var(--gal-green);
+}
+
+.focus-card:nth-child(4){
+    border-top:5px solid var(--gal-red);
+}
+
+.focus-card:nth-child(5){
+    border-top:5px solid var(--gal-blue);
+}
+
+.focus-card:nth-child(6){
+    border-top:5px solid var(--gal-green);
+}
+
+/* ============================================
+   CTA
+============================================ */
+
+.impact-cta{
+    padding:110px 0;
+    text-align:center;
+    background:linear-gradient(
+        135deg,
+        var(--gal-red),
+        var(--gal-blue)
+    );
+    color:white;
+}
+
+.impact-cta h2{
+    font-family:var(--gal-font-display);
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.impact-cta p{
+    max-width:700px;
+    margin:auto auto 40px;
+    color:var(--gal-white-80);
+    line-height:1.8;
+}
+
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.primary-btn,
+.secondary-btn{
+    text-decoration:none;
+    padding:15px 36px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.primary-btn{
+    background:white;
+    color:var(--gal-red);
+}
+
+.primary-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 25px rgba(0,0,0,.18);
+}
+
+.secondary-btn{
+    border:2px solid white;
+    color:white;
+}
+
+.secondary-btn:hover{
+    background:white;
+    color:var(--gal-blue);
+    transform:translateY(-4px);
+}
+
+/* ============================================
+   Responsive
+============================================ */
+
+@media(max-width:900px){
+
+.story-grid{
+    grid-template-columns:1fr;
+    gap:45px;
+}
+
+.story-content{
+    text-align:center;
+}
+
+.impact-hero{
+    padding:90px 0 70px;
+}
+
+.impact-hero h1{
+    font-size:2.5rem;
+}
+
+.story-content h2,
+.section-header h2,
+.impact-cta h2{
+    font-size:2.2rem;
+}
+
+}
+
+@media(max-width:600px){
+
+.stats-grid,
+.focus-grid{
+    grid-template-columns:1fr;
+}
+
+.impact-hero{
+    padding:80px 0 60px;
+}
+
+.stat-card{
+    padding:30px;
+}
+
+.focus-card{
+    padding:35px 20px;
+}
+
+.cta-buttons{
+    flex-direction:column;
+    align-items:center;
+}
+
+.primary-btn,
+.secondary-btn{
+    width:220px;
+    text-align:center;
+}
+
+}

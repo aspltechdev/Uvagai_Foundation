@@ -32,6 +32,7 @@ export default function Navbar() {
     { to: "/", label: "Home", accent: "red" },
     { to: "/about-us", label: "About Us", accent: "red" },
     { to: "/vision-mission", label: "Vision & Mission", accent: "blue" },
+    { to: "/impact", label: "Impact", accent: "green" },
     { to: "/programs", label: "Programs", accent: "green" },
     { to: "/events", label: "Events", accent: "red" },
     { to: "/gallerypage", label: "Gallery", accent: "green" },
