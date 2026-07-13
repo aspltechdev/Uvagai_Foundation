@@ -6,11 +6,11 @@ import educationImg from "../assets/education.jpg";
 import healthcareImg from "../assets/healthcare.jpg";
 import volunteerImg from "../assets/volunteer.png";
 import childImg from "../assets/childd.png";
-import elderlyImg from "../assets/elderly.jpg";
+import elderlyImg from "../assets/elder.png";
 import environmentImg from "../assets/environment.jpg";
-import foodImg from "../assets/food.jpg";
+import foodImg from "../assets/food1.jpg";
 import csrImg from "../assets/csr.jpg";
-import skillImg from "../assets/skill.jpg";
+import skillImg from "../assets/skill1.jpg";
 
 export default function Gallery() {
   const sectionRef = useRef(null);
