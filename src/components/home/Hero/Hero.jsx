@@ -417,7 +417,7 @@ export default function Hero() {
       />
 
       {/* Navigation */}
-      <motion.nav
+      {/* <motion.nav
         className="uvagai-cinematic-nav"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -468,7 +468,7 @@ export default function Hero() {
             </motion.button>
           </div>
         </div>
-      </motion.nav>
+      </motion.nav> */}
 
       {/* Main Content */}
       <div className="uvagai-cinematic-content">

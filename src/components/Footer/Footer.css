@@ -1,6 +1,6 @@
 /* ============================================
    UVAGAI FOUNDATION - PROFESSIONAL FOOTER
-   Logo • Social Media Icons • Credit Line
+   Unique ftr- Prefix • Clean Design
    ============================================ */
 
 :root {
@@ -12,7 +12,6 @@
   --ftr-bg: #141414;
   
   --ftr-white: #FFFFFF;
-  --ftr-white-90: rgba(255, 255, 255, 0.9);
   --ftr-white-80: rgba(255, 255, 255, 0.8);
   --ftr-white-65: rgba(255, 255, 255, 0.65);
   --ftr-white-50: rgba(255, 255, 255, 0.5);
@@ -23,43 +22,34 @@
   
   --ftr-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --ftr-font-display: 'Georgia', 'Times New Roman', serif;
-  
-  --ftr-transition: 0.2s ease;
 }
 
-/* ============================================
-   FOOTER BASE
-   ============================================ */
-.ftr-footer {
+/* ============================================ */
+/* FOOTER BASE */
+/* ============================================ */
+.ftr-root {
   background: var(--ftr-bg);
   color: var(--ftr-white);
   font-family: var(--ftr-font);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   font-size: 14px;
   line-height: 1.5;
-  position: relative;
 }
 
-.ftr-top-accent {
+.ftr-accent-line {
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    var(--ftr-red) 0%,
-    var(--ftr-green) 50%,
-    var(--ftr-blue) 100%
-  );
+  background: linear-gradient(90deg, var(--ftr-red) 0%, var(--ftr-green) 50%, var(--ftr-blue) 100%);
 }
 
-.ftr-container {
+.ftr-wrap {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 28px;
 }
 
-/* ============================================
-   MAIN GRID
-   ============================================ */
+/* ============================================ */
+/* GRID */
+/* ============================================ */
 .ftr-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr;
@@ -67,9 +57,9 @@
   padding: 56px 0 40px;
 }
 
-/* ============================================
-   BRAND COLUMN
-   ============================================ */
+/* ============================================ */
+/* BRAND COLUMN */
+/* ============================================ */
 .ftr-col-brand {
   display: flex;
   flex-direction: column;
@@ -82,7 +72,7 @@
   gap: 12px;
 }
 
-.ftr-brand-logo-wrap {
+.ftr-logo-wrap {
   width: 42px;
   height: 42px;
   border-radius: 10px;
@@ -91,11 +81,10 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.ftr-brand-logo-img {
+.ftr-logo-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  display: block;
 }
 
 .ftr-brand-name {
@@ -104,7 +93,6 @@
   font-weight: 400;
   color: var(--ftr-white);
   line-height: 1.1;
-  letter-spacing: 0.5px;
 }
 
 .ftr-brand-tag {
@@ -129,12 +117,11 @@
   font-style: italic;
   color: var(--ftr-white-65);
   margin: 0;
-  padding-top: 4px;
 }
 
-/* ============================================
-   COLUMNS
-   ============================================ */
+/* ============================================ */
+/* COLUMNS */
+/* ============================================ */
 .ftr-col {
   display: flex;
   flex-direction: column;
@@ -165,25 +152,20 @@
   color: var(--ftr-white-50);
   text-decoration: none;
   font-size: 13px;
-  font-weight: 400;
-  transition: color var(--ftr-transition);
-  display: inline-block;
+  transition: color 0.2s ease;
 }
 
 .ftr-link:hover {
   color: var(--ftr-white);
 }
 
-/* ============================================
-   FOCUS AREAS
-   ============================================ */
+/* Focus Areas */
 .ftr-area-item {
   display: flex;
   align-items: center;
   gap: 8px;
   color: var(--ftr-white-50);
   font-size: 13px;
-  font-weight: 400;
 }
 
 .ftr-area-dot {
@@ -197,9 +179,9 @@
 .ftr-area-dot-1 { background: var(--ftr-green); }
 .ftr-area-dot-2 { background: var(--ftr-blue); }
 
-/* ============================================
-   CONTACT INFORMATION
-   ============================================ */
+/* ============================================ */
+/* CONTACT */
+/* ============================================ */
 .ftr-contact-list {
   display: flex;
   flex-direction: column;
@@ -207,16 +189,15 @@
   margin-bottom: 20px;
 }
 
-.ftr-contact-row {
+.ftr-contact-item {
   display: flex;
   align-items: flex-start;
   gap: 8px;
   font-size: 13px;
   color: var(--ftr-white-50);
-  line-height: 1.5;
 }
 
-.ftr-contact-row svg {
+.ftr-contact-item svg {
   color: var(--ftr-white-25);
   flex-shrink: 0;
   margin-top: 2px;
@@ -225,16 +206,16 @@
 .ftr-contact-link {
   color: var(--ftr-white-50);
   text-decoration: none;
-  transition: color var(--ftr-transition);
+  transition: color 0.2s ease;
 }
 
 .ftr-contact-link:hover {
   color: var(--ftr-white);
 }
 
-/* ============================================
-   SOCIAL MEDIA - ICONS ONLY
-   ============================================ */
+/* ============================================ */
+/* SOCIAL MEDIA ICONS */
+/* ============================================ */
 .ftr-social {
   display: flex;
   flex-direction: column;
@@ -282,39 +263,35 @@
 .ftr-social-icon:nth-child(1):hover {
   background: #1877F2;
   border-color: #1877F2;
-  color: #FFFFFF;
 }
 
 /* Instagram */
 .ftr-social-icon:nth-child(2):hover {
   background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
   border-color: #DD2A7B;
-  color: #FFFFFF;
 }
 
 /* LinkedIn */
 .ftr-social-icon:nth-child(3):hover {
   background: #0A66C2;
   border-color: #0A66C2;
-  color: #FFFFFF;
 }
 
 /* YouTube */
 .ftr-social-icon:nth-child(4):hover {
   background: #FF0000;
   border-color: #FF0000;
-  color: #FFFFFF;
 }
 
-/* ============================================
-   BOTTOM BAR
-   ============================================ */
+/* ============================================ */
+/* BOTTOM BAR */
+/* ============================================ */
 .ftr-bottom {
   border-top: 1px solid var(--ftr-white-12);
   padding: 18px 0;
 }
 
-.ftr-bottom-inner {
+.ftr-bottom-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -345,7 +322,7 @@
   font-weight: 500;
 }
 
-.ftr-bottom-links {
+.ftr-bottom-right {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -355,7 +332,7 @@
   font-size: 12px;
   color: var(--ftr-white-35);
   text-decoration: none;
-  transition: color var(--ftr-transition);
+  transition: color 0.2s ease;
 }
 
 .ftr-bottom-link:hover {
@@ -377,121 +354,52 @@
   user-select: none;
 }
 
-/* ============================================
-   RESPONSIVE - TABLET
-   ============================================ */
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
 @media (max-width: 1024px) {
   .ftr-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
   }
-  
   .ftr-col-brand {
     grid-column: 1 / -1;
-  }
-  
-  .ftr-desc {
-    max-width: 100%;
   }
 }
 
 @media (max-width: 768px) {
-  .ftr-container {
+  .ftr-wrap {
     padding: 0 20px;
   }
-  
   .ftr-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
     padding: 40px 0 28px;
   }
-  
-  .ftr-col-brand {
-    grid-column: 1 / -1;
-  }
-  
-  .ftr-bottom-inner {
+  .ftr-bottom-row {
     flex-direction: column;
     text-align: center;
-    gap: 12px;
   }
-  
   .ftr-bottom-left {
     align-items: center;
-  }
-  
-  .ftr-bottom-links {
-    justify-content: center;
-  }
-  
-  .ftr-social-icons {
-    justify-content: flex-start;
   }
 }
 
 @media (max-width: 480px) {
-  .ftr-container {
+  .ftr-wrap {
     padding: 0 16px;
   }
-  
   .ftr-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
     padding: 32px 0 24px;
   }
-  
-  .ftr-heading {
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-  }
-  
-  .ftr-brand-logo-wrap {
+  .ftr-logo-wrap {
     width: 36px;
     height: 36px;
-    border-radius: 8px;
   }
-  
   .ftr-brand-name {
     font-size: 20px;
   }
-  
-  .ftr-brand-tag {
-    font-size: 8px;
-    letter-spacing: 2.5px;
-  }
-  
-  .ftr-desc {
-    font-size: 12px;
-  }
-  
-  .ftr-motto {
-    font-size: 14px;
-  }
-  
-  .ftr-bottom-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-  
-  .ftr-social-icons {
-    justify-content: flex-start;
-  }
-  
-  .ftr-social-icon {
-    width: 36px;
-    height: 36px;
-  }
-  
-  .ftr-social-icon svg {
-    width: 15px;
-    height: 15px;
-  }
 }
 
-/* ============================================
-   REDUCED MOTION
-   ============================================ */
 @media (prefers-reduced-motion: reduce) {
   .ftr-link,
   .ftr-social-icon,
@@ -499,7 +407,6 @@
   .ftr-bottom-link {
     transition: none;
   }
-  
   .ftr-social-icon:hover {
     transform: none;
   }
