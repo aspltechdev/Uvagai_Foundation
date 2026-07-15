@@ -18,6 +18,7 @@ import benefitImg3 from "../assets/educatio.png";
 import educationnew12 from "../assets/e.png";
 import healthcarenew1 from "../assets/healthcarenew1.png";
 import childwelfarenew1 from "../assets/child.png";
+import childwelfarenew3 from "../assets/h.png";
 import chil1 from "../assets/chil.png";
 import elderlycarenew1 from "../assets/elderlycarenew1.jpeg";
 import enviroinmentnew1 from "../assets/environmentnew1.jpeg";
@@ -77,7 +78,7 @@ export default function GalleryPage() {
     { image: healthcareHero, title: "Blood Donation Camp", category: "Healthcare", description: "Organizing blood donation drives.", accent: "green" },
     { image: healthcarenew1, title: "Mental Health Workshop", category: "Healthcare", description: "Mental health awareness programs.", accent: "green" },
     { image: women, title: "Women Health Camp", category: "Healthcare", description: "Specialized checkups for women.", accent: "green" },
-    { image: childwelfarenew1, title: "Child Vaccination Drive", category: "Healthcare", description: "Essential vaccinations for children.", accent: "green" },
+    { image: childwelfarenew3, title: "Child Vaccination Drive", category: "Healthcare", description: "Essential vaccinations for children.", accent: "green" },
     { image: healthcare, title: "Yoga & Wellness Camp", category: "Healthcare", description: "Physical and mental wellness programs.", accent: "green" },
 
     { image: childwelfareImg, title: "Children's Day Event", category: "Child Welfare", description: "Fun events for children.", accent: "blue" },
@@ -101,7 +102,7 @@ export default function GalleryPage() {
     // { image: skillImg, title: "Soft Skills Training", category: "Skill Development", description: "Communication and interpersonal skills.", accent: "red" },
     { image: digitalImg, title: "Digital Marketing", category: "Skill Development", description: "Modern marketing techniques.", accent: "red" },
     { image: empower, title: "Tailoring & Design", category: "Skill Development", description: "Fashion design skills for women.", accent: "red" },
-    { image: large1, title: "Electrician Training", category: "Skill Development", description: "Certified electrician programs.", accent: "red" },
+    // { image: large1, title: "Electrician Training", category: "Skill Development", description: "Certified electrician programs.", accent: "red" },
     // { image: volunteerImg, title: "Web Development", category: "Skill Development", description: "Coding and web development skills.", accent: "red" },
     { image: image5, title: "Public Speaking", category: "Skill Development", description: "Building confidence through speaking.", accent: "red" },
     { image: image2, title: "Accounting Basics", category: "Skill Development", description: "Financial literacy training.", accent: "red" },
