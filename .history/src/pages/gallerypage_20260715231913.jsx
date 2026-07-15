@@ -18,7 +18,6 @@ import benefitImg3 from "../assets/educatio.png";
 import educationnew12 from "../assets/e.png";
 import healthcarenew1 from "../assets/healthcarenew1.png";
 import childwelfarenew1 from "../assets/child.png";
-import chil1 from "../assets/chil.png";
 import elderlycarenew1 from "../assets/elderlycarenew1.jpeg";
 import enviroinmentnew1 from "../assets/environmentnew1.jpeg";
 import communitynew1 from "../assets/communitynew1.jpeg";
@@ -83,7 +82,7 @@ export default function GalleryPage() {
     { image: childwelfareImg, title: "Children's Day Event", category: "Child Welfare", description: "Fun events for children.", accent: "blue" },
     // { image: childwelfarenew1, title: "Playground Setup", category: "Child Welfare", description: "Safe play areas for kids.", accent: "blue" },
     { image: child, title: "Sports Day", category: "Child Welfare", description: "Physical activity through sports.", accent: "blue" },
-    { image: chil1, title: "Art & Craft Workshop", category: "Child Welfare", description: "Nurturing creativity in children.", accent: "blue" },
+    { image: childwelfarenew1, title: "Art & Craft Workshop", category: "Child Welfare", description: "Nurturing creativity in children.", accent: "blue" },
     { image: childImg, title: "Child Rights Awareness", category: "Child Welfare", description: "Educating about child rights.", accent: "blue" },
     // { image: childwelfareImg, title: "Summer Camp", category: "Child Welfare", description: "Fun and learning during summer.", accent: "blue" },
     // { image: childwelfareImg, title: "Storytelling Sessions", category: "Child Welfare", description: "Inspiring imagination through stories.", accent: "blue" },

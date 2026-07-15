@@ -17,8 +17,7 @@ import benefitImg3 from "../assets/educatio.png";
 
 import educationnew12 from "../assets/e.png";
 import healthcarenew1 from "../assets/healthcarenew1.png";
-import childwelfarenew1 from "../assets/child.png";
-import chil1 from "../assets/chil.png";
+import childwelfarenew1 from "../assets/h.png";
 import elderlycarenew1 from "../assets/elderlycarenew1.jpeg";
 import enviroinmentnew1 from "../assets/environmentnew1.jpeg";
 import communitynew1 from "../assets/communitynew1.jpeg";
@@ -81,36 +80,36 @@ export default function GalleryPage() {
     { image: healthcare, title: "Yoga & Wellness Camp", category: "Healthcare", description: "Physical and mental wellness programs.", accent: "green" },
 
     { image: childwelfareImg, title: "Children's Day Event", category: "Child Welfare", description: "Fun events for children.", accent: "blue" },
-    // { image: childwelfarenew1, title: "Playground Setup", category: "Child Welfare", description: "Safe play areas for kids.", accent: "blue" },
+    { image: childwelfarenew1, title: "Playground Setup", category: "Child Welfare", description: "Safe play areas for kids.", accent: "blue" },
     { image: child, title: "Sports Day", category: "Child Welfare", description: "Physical activity through sports.", accent: "blue" },
-    { image: chil1, title: "Art & Craft Workshop", category: "Child Welfare", description: "Nurturing creativity in children.", accent: "blue" },
+    { image: childwelfarenew1, title: "Art & Craft Workshop", category: "Child Welfare", description: "Nurturing creativity in children.", accent: "blue" },
     { image: childImg, title: "Child Rights Awareness", category: "Child Welfare", description: "Educating about child rights.", accent: "blue" },
-    // { image: childwelfareImg, title: "Summer Camp", category: "Child Welfare", description: "Fun and learning during summer.", accent: "blue" },
-    // { image: childwelfareImg, title: "Storytelling Sessions", category: "Child Welfare", description: "Inspiring imagination through stories.", accent: "blue" },
+    { image: childwelfareImg, title: "Summer Camp", category: "Child Welfare", description: "Fun and learning during summer.", accent: "blue" },
+    { image: childwelfareImg, title: "Storytelling Sessions", category: "Child Welfare", description: "Inspiring imagination through stories.", accent: "blue" },
     { image: childwelfarenew1, title: "School Enrollment", category: "Child Welfare", description: "Getting children into schools.", accent: "blue" },
-    // { image: childwelfareImg, title: "Health & Hygiene", category: "Child Welfare", description: "Teaching hygiene to children.", accent: "blue" },
+    { image: childwelfareImg, title: "Health & Hygiene", category: "Child Welfare", description: "Teaching hygiene to children.", accent: "blue" },
     { image: eventImg, title: "Dance & Music", category: "Child Welfare", description: "Introducing performing arts.", accent: "blue" },
-    // { image: childwelfareImg, title: "Personality Development", category: "Child Welfare", description: "Building confidence in children.", accent: "blue" },
+    { image: childwelfareImg, title: "Personality Development", category: "Child Welfare", description: "Building confidence in children.", accent: "blue" },
     { image: environmentImg, title: "Environmental Education", category: "Child Welfare", description: "Teaching about nature conservation.", accent: "blue" },
     { image: benefitImg3, title: "Gift Distribution", category: "Child Welfare", description: "Spreading joy during festivals.", accent: "blue" },
 
-    // { image: skillImg, title: "Youth Skill Workshop", category: "Skill Development", description: "Career guidance and employability.", accent: "red" },
-    // { image: skillImg, title: "Computer Training", category: "Skill Development", description: "Basic to advanced computer skills.", accent: "red" },
-    // { image: skillImg, title: "Vocational Training", category: "Skill Development", description: "Hands-on vocational skills.", accent: "red" },
+    { image: skillImg, title: "Youth Skill Workshop", category: "Skill Development", description: "Career guidance and employability.", accent: "red" },
+    { image: skillImg, title: "Computer Training", category: "Skill Development", description: "Basic to advanced computer skills.", accent: "red" },
+    { image: skillImg, title: "Vocational Training", category: "Skill Development", description: "Hands-on vocational skills.", accent: "red" },
     { image: skillImg, title: "Entrepreneurship Program", category: "Skill Development", description: "Business skills for entrepreneurs.", accent: "red" },
-    // { image: skillImg, title: "Soft Skills Training", category: "Skill Development", description: "Communication and interpersonal skills.", accent: "red" },
+    { image: skillImg, title: "Soft Skills Training", category: "Skill Development", description: "Communication and interpersonal skills.", accent: "red" },
     { image: digitalImg, title: "Digital Marketing", category: "Skill Development", description: "Modern marketing techniques.", accent: "red" },
     { image: empower, title: "Tailoring & Design", category: "Skill Development", description: "Fashion design skills for women.", accent: "red" },
     { image: large1, title: "Electrician Training", category: "Skill Development", description: "Certified electrician programs.", accent: "red" },
-    // { image: volunteerImg, title: "Web Development", category: "Skill Development", description: "Coding and web development skills.", accent: "red" },
+    { image: volunteerImg, title: "Web Development", category: "Skill Development", description: "Coding and web development skills.", accent: "red" },
     { image: image5, title: "Public Speaking", category: "Skill Development", description: "Building confidence through speaking.", accent: "red" },
     { image: image2, title: "Accounting Basics", category: "Skill Development", description: "Financial literacy training.", accent: "red" },
-    // { image: image5, title: "Photography Workshop", category: "Skill Development", description: "Professional photography skills.", accent: "red" },
+    { image: image5, title: "Photography Workshop", category: "Skill Development", description: "Professional photography skills.", accent: "red" },
     { image: educationnew12, title: "Culinary Arts", category: "Skill Development", description: "Professional cooking training.", accent: "red" },
-    // { image: skillImg, title: "Placement Preparation", category: "Skill Development", description: "Interview and job preparation.", accent: "red" },
+    { image: skillImg, title: "Placement Preparation", category: "Skill Development", description: "Interview and job preparation.", accent: "red" },
     { image: large1, title: "Leadership Program", category: "Skill Development", description: "Building leadership qualities.", accent: "red" },
 
-    // { image: skillImg, title: "Job Placement Drive", category: "Placement", description: "Connecting skills with jobs.", accent: "green" },
+    { image: skillImg, title: "Job Placement Drive", category: "Placement", description: "Connecting skills with jobs.", accent: "green" },
     { image: volunteerImg, title: "Career Fair", category: "Placement", description: "Multiple employer events.", accent: "green" },
     { image: large1, title: "Resume Workshop", category: "Placement", description: "Professional resume building.", accent: "green" },
     // { image: volunteerImg, title: "Mock Interviews", category: "Placement", description: "Interview practice sessions.", accent: "green" },
@@ -122,9 +121,9 @@ export default function GalleryPage() {
     { image: women, title: "Women Employment Drive", category: "Placement", description: "Special placement for women.", accent: "green" },
     { image: image2, title: "Campus Recruitment", category: "Placement", description: "College placement drives.", accent: "green" },
     { image: large1, title: "Skill Assessment", category: "Placement", description: "Matching skills with jobs.", accent: "green" },
-    // { image: communitynew1, title: "Job Portal Registration", category: "Placement", description: "Online job portal assistance.", accent: "green" },
+    { image: communitynew1, title: "Job Portal Registration", category: "Placement", description: "Online job portal assistance.", accent: "green" },
     { image: volunteer1, title: "Networking Event", category: "Placement", description: "Professional networking opportunities.", accent: "green" },
-    // { image: benefitImg2, title: "Offer Distribution", category: "Placement", description: "Celebrating job offer letters.", accent: "green" },
+    { image: benefitImg2, title: "Offer Distribution", category: "Placement", description: "Celebrating job offer letters.", accent: "green" },
 
     // { image: csrImg, title: "CSR Partnership Meet", category: "CSR", description: "Corporate collaborations for impact.", accent: "blue" },
     { image: volunteer1, title: "Corporate Volunteer Day", category: "CSR", description: "Employees volunteering for causes.", accent: "blue" },

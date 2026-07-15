@@ -18,7 +18,7 @@ import benefitImg3 from "../assets/educatio.png";
 import educationnew12 from "../assets/e.png";
 import healthcarenew1 from "../assets/healthcarenew1.png";
 import childwelfarenew1 from "../assets/child.png";
-import chil1 from "../assets/chil.png";
+import chil1 from "../assets/h.png";
 import elderlycarenew1 from "../assets/elderlycarenew1.jpeg";
 import enviroinmentnew1 from "../assets/environmentnew1.jpeg";
 import communitynew1 from "../assets/communitynew1.jpeg";

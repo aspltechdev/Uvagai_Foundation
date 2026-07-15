@@ -4,13 +4,13 @@ import "./Gallery.css";
 
 import educationImg from "../assets/education.jpg";
 import healthcareImg from "../assets/healthcare.jpg";
-import volunteerImg from "../assets/volunteer1.jpg";
-import childImg from "../assets/childwelfare.jpg";
-import elderlyImg from "../assets/elderly1.jpg";
+import volunteerImg from "../assets/volunteer.jpg";
+import childImg from "../assets/child.jpg";
+import elderlyImg from "../assets/elderly.jpg";
 import environmentImg from "../assets/environment.jpg";
-import foodImg from "../assets/food1.jpg";
+import foodImg from "../assets/food.jpg";
 import csrImg from "../assets/csr.jpg";
-import skillImg from "../assets/skill1.jpg";
+import skillImg from "../assets/skill.jpg";
 
 export default function Gallery() {
   const sectionRef = useRef(null);

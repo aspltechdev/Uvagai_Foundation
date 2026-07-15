@@ -10,7 +10,7 @@ import elderlyImg from "../assets/elderly1.jpg";
 import environmentImg from "../assets/environment.jpg";
 import foodImg from "../assets/food1.jpg";
 import csrImg from "../assets/csr.jpg";
-import skillImg from "../assets/skill1.jpg";
+import skillImg from "../assets/skill.jpg";
 
 export default function Gallery() {
   const sectionRef = useRef(null);
