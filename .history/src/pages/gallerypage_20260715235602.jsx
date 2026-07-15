@@ -57,7 +57,6 @@ import environmentHero from "../assets/environment.jpg";
 import foodImg from "../assets/food1.jpg";
 import csrImg from "../assets/csr.jpg";
 import skillImg from "../assets/skill1.jpg";
-import skillImg1 from "../assets/v.jpg";
 
 export default function GalleryPage() {
   const sectionRef = useRef(null);

@@ -3,7 +3,6 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import "./gallerypage.css";
 
 import childwelfareImg from "../assets/Capturechild.PNG";
-import childwelfareImg1 from "../assets/chr2.jpg";
 import communityImg from "../assets/chatcomm.png";
 import digitalImg from "../assets/creativecapture.PNG";
 import educationImg from "../assets/educati.PNG";
@@ -20,7 +19,7 @@ import educationnew12 from "../assets/e.png";
 import healthcarenew1 from "../assets/healthcarenew1.png";
 import childwelfarenew1 from "../assets/child.png";
 import childwelfarenew3 from "../assets/h.png";
-import childwelfarenew4 from "../assets/chr.JPG";
+import childwelfarenew4 from "../assets/ch.g";
 import chil1 from "../assets/chil.png";
 import elderlycarenew1 from "../assets/elderlycarenew1.jpeg";
 import enviroinmentnew1 from "../assets/environmentnew1.jpeg";
@@ -57,7 +56,6 @@ import environmentHero from "../assets/environment.jpg";
 import foodImg from "../assets/food1.jpg";
 import csrImg from "../assets/csr.jpg";
 import skillImg from "../assets/skill1.jpg";
-import skillImg1 from "../assets/v.jpg";
 
 export default function GalleryPage() {
   const sectionRef = useRef(null);
@@ -88,11 +86,11 @@ export default function GalleryPage() {
     { image: healthcare, title: "Yoga & Wellness Camp", category: "Healthcare", description: "Physical and mental wellness programs.", accent: "green" },
 
     { image: childwelfareImg, title: "Children's Day Event", category: "Child Welfare", description: "Fun events for children.", accent: "blue" },
-    { image: childwelfarenew4, title: "Playground Setup", category: "Child Welfare", description: "Safe play areas for kids.", accent: "blue" },
+    { image: childwelfarenew1, title: "Playground Setup", category: "Child Welfare", description: "Safe play areas for kids.", accent: "blue" },
     { image: child, title: "Sports Day", category: "Child Welfare", description: "Physical activity through sports.", accent: "blue" },
     { image: chil1, title: "Art & Craft Workshop", category: "Child Welfare", description: "Nurturing creativity in children.", accent: "blue" },
     { image: childImg, title: "Child Rights Awareness", category: "Child Welfare", description: "Educating about child rights.", accent: "blue" },
-    { image: childwelfareImg1, title: "Christmas ", category: "Child Welfare", description: "Fun and learning during christmas.", accent: "blue" },
+    // { image: childwelfareImg, title: "Summer Camp", category: "Child Welfare", description: "Fun and learning during summer.", accent: "blue" },
     // { image: childwelfareImg, title: "Storytelling Sessions", category: "Child Welfare", description: "Inspiring imagination through stories.", accent: "blue" },
     { image: childwelfarenew1, title: "School Enrollment", category: "Child Welfare", description: "Getting children into schools.", accent: "blue" },
     // { image: childwelfareImg, title: "Health & Hygiene", category: "Child Welfare", description: "Teaching hygiene to children.", accent: "blue" },

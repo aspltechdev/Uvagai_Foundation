@@ -3,7 +3,6 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import "./gallerypage.css";
 
 import childwelfareImg from "../assets/Capturechild.PNG";
-import childwelfareImg1 from "../assets/chr2.jpg";
 import communityImg from "../assets/chatcomm.png";
 import digitalImg from "../assets/creativecapture.PNG";
 import educationImg from "../assets/educati.PNG";
@@ -20,7 +19,6 @@ import educationnew12 from "../assets/e.png";
 import healthcarenew1 from "../assets/healthcarenew1.png";
 import childwelfarenew1 from "../assets/child.png";
 import childwelfarenew3 from "../assets/h.png";
-import childwelfarenew4 from "../assets/chr.JPG";
 import chil1 from "../assets/chil.png";
 import elderlycarenew1 from "../assets/elderlycarenew1.jpeg";
 import enviroinmentnew1 from "../assets/environmentnew1.jpeg";
@@ -30,8 +28,8 @@ import large1 from "../assets/education1.png";
 import image2 from "../assets/image2.jpeg";
 import image5 from "../assets/educat.png";
 import communityimg2 from "../assets/co.jpg";
-import communityimg3 from "../assets/com.jpg";
-import communityimg4 from "../assets/comm.jpg";
+import communityimg3 from "../assets/com.jpeg";
+import communityimg3 from "../assets/communitynew1.jpeg";
 
 import vmBg from "../assets/communitynew1.jpeg";
 import purpose from "../assets/ndimagee.png";
@@ -57,7 +55,6 @@ import environmentHero from "../assets/environment.jpg";
 import foodImg from "../assets/food1.jpg";
 import csrImg from "../assets/csr.jpg";
 import skillImg from "../assets/skill1.jpg";
-import skillImg1 from "../assets/v.jpg";
 
 export default function GalleryPage() {
   const sectionRef = useRef(null);
@@ -88,11 +85,11 @@ export default function GalleryPage() {
     { image: healthcare, title: "Yoga & Wellness Camp", category: "Healthcare", description: "Physical and mental wellness programs.", accent: "green" },
 
     { image: childwelfareImg, title: "Children's Day Event", category: "Child Welfare", description: "Fun events for children.", accent: "blue" },
-    { image: childwelfarenew4, title: "Playground Setup", category: "Child Welfare", description: "Safe play areas for kids.", accent: "blue" },
+    // { image: childwelfarenew1, title: "Playground Setup", category: "Child Welfare", description: "Safe play areas for kids.", accent: "blue" },
     { image: child, title: "Sports Day", category: "Child Welfare", description: "Physical activity through sports.", accent: "blue" },
     { image: chil1, title: "Art & Craft Workshop", category: "Child Welfare", description: "Nurturing creativity in children.", accent: "blue" },
     { image: childImg, title: "Child Rights Awareness", category: "Child Welfare", description: "Educating about child rights.", accent: "blue" },
-    { image: childwelfareImg1, title: "Christmas ", category: "Child Welfare", description: "Fun and learning during christmas.", accent: "blue" },
+    // { image: childwelfareImg, title: "Summer Camp", category: "Child Welfare", description: "Fun and learning during summer.", accent: "blue" },
     // { image: childwelfareImg, title: "Storytelling Sessions", category: "Child Welfare", description: "Inspiring imagination through stories.", accent: "blue" },
     { image: childwelfarenew1, title: "School Enrollment", category: "Child Welfare", description: "Getting children into schools.", accent: "blue" },
     // { image: childwelfareImg, title: "Health & Hygiene", category: "Child Welfare", description: "Teaching hygiene to children.", accent: "blue" },
@@ -139,11 +136,11 @@ export default function GalleryPage() {
     { image: volunteerImg, title: "Employee Engagement", category: "CSR", description: "Staff in social initiatives.", accent: "blue" },
     { image: benefitImg1, title: "Impact Assessment", category: "CSR", description: "Reviewing CSR project outcomes.", accent: "blue" },
     { image: communityImg, title: "Community Development", category: "CSR", description: "CSR-funded infrastructure projects.", accent: "blue" },
-    { image: communityimg2, title: "CSR Strategy Workshop", category: "CSR", description: "Planning with corporate partners.", accent: "blue" },
-    { image: communityimg3, title: "Grant Distribution", category: "CSR", description: "CSR grants for community projects.", accent: "blue" },
+    { image: communityImg2, title: "CSR Strategy Workshop", category: "CSR", description: "Planning with corporate partners.", accent: "blue" },
+    // { image: communitynew1, title: "Grant Distribution", category: "CSR", description: "CSR grants for community projects.", accent: "blue" },
     { image: humanitarian, title: "Partnership Signing", category: "CSR", description: "Formalizing CSR partnerships.", accent: "blue" },
     { image: communityImg, title: "Annual CSR Summit", category: "CSR", description: "CSR leaders knowledge sharing.", accent: "blue" },
-    { image: communityimg4, title: "CSR Reporting", category: "CSR", description: "Compliance and reporting training.", accent: "blue" },
+    // { image: communitynew1, title: "CSR Reporting", category: "CSR", description: "Compliance and reporting training.", accent: "blue" },
     // { image: benefitImg2, title: "Employee Giving", category: "CSR", description: "Mobilizing employee contributions.", accent: "blue" },
     { image: volunteer, title: "NGO Partnership", category: "CSR", description: "Connecting NGOs with CSR programs.", accent: "blue" },
     { image: enviroinmentnew1, title: "Sustainability Initiative", category: "CSR", description: "Environmental CSR projects.", accent: "blue" },
