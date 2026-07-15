@@ -396,7 +396,7 @@ export default function VisionMissionPage() {
     { image: childwelfarenew1, title: "Child Welfare", description: "Nutrition support, education access, and holistic development for children.", accent: "blue" },
     { image: elderlycarenew1, title: "Elderly Care", description: "Healthcare assistance, companionship, and dignity programs for senior citizens.", accent: "red" },
     { image: enviroinmentnew1, title: "Environment", description: "Tree plantation, sustainability campaigns, and green community projects.", accent: "green" },
-    { image: communitynew1, title: "Community", description: "Livelihood programs, awareness campaigns, and social development initiatives.", accent: "blue" },
+    { image: communitynew1, title: "Skilling", description: "Livelihood programs, conducting job drives & awareness campaigns, and social development initiatives.", accent: "blue" },
   ];
 
   const values = [
@@ -707,13 +707,15 @@ export default function VisionMissionPage() {
             </p>
             <div className="vm-cta-buttons">
               <a href="/volunteer" className="vm-cta-primary">
-                <span>Become a Volunteer</span>
+                <span>
+                    Support Our Mission
+                </span>
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
               <a href="/donate" className="vm-cta-secondary">
-                Support Our Mission
+            Become a Volunteer 
                 <span className="vm-cta-secondary-arrow">→</span>
               </a>
             </div>

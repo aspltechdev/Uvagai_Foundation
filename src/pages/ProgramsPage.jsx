@@ -59,9 +59,9 @@ export default function ProgramsPage() {
   const programs = [
   {
     image: education,
-    title: "Education & Youth Empowerment",
+    title: "Education & Skill Development",
     description:
-      "Providing educational support, learning resources, digital literacy, mentorship, scholarships, and skill development opportunities that help students achieve their full potential.",
+      "Providing educational support, placement support, learning resources, digital literacy, mentorship, scholarships, and skill development opportunities that help students achieve their full potential.",
     accent: "red",
     impact: "5,284+ Students",
   },
@@ -281,14 +281,15 @@ export default function ProgramsPage() {
               we continue to create meaningful opportunities and lasting impact for those who need it most.
             </p>
             <div className="programs-cta-buttons">
-              <a href="/volunteer" className="programs-cta-primary">
-                <span>Become a Volunteer</span>
+              <a href="/contact" className="programs-cta-primary">
+                <span>Support Our Programs</span>
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-              <a href="/donate" className="programs-cta-secondary">
-                Support Our Programs
+              <a href="/volunteer" className="programs-cta-secondary">
+                
+                Become a Volunteer
                 <span className="programs-cta-secondary-arrow">→</span>
               </a>
             </div>

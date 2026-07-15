@@ -21,6 +21,7 @@ import VolunteerPage from "./pages/VolunteerPage";
 import CSRPartnerDetails from "./pages/CSRPartnerDetails";
 import Course from "./pages/Course";
 import ProgramsPage from "./pages/ProgramsPage";
+import GalleryHome from "./pages/gallerypage";
 
 export default function AppRoutes() {
   return (
@@ -36,7 +37,7 @@ export default function AppRoutes() {
 
       <Route path="/gallery/:category" element={<CategoryGallery />} />
       <Route path="/gallery" element={<Gallery />} />
-      <Route path="/gallerypage" element={<Gallery />} />
+      <Route path="/gallerypage" element={<GalleryHome />} />
 
       <Route path="/events" element={<Events />} />
       <Route path="/blog" element={<Blog />} />

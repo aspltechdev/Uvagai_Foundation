@@ -66,7 +66,7 @@ export default function ImpactStats() {
     },
     {
       image: livesImpactedImg,
-      tag: "LIVES",
+      tag: "HEALTH CARE",
       number: "1000+",
       title: "Lives Impacted",
       description:
@@ -75,8 +75,8 @@ export default function ImpactStats() {
     },
     {
       image: sharedMissionImg,
-      tag: "SHARED",
-      number: "01",
+      tag: "Nutrition",
+      number: "100+",
       title: "Shared Mission",
       description:
         "Creating hope, dignity, opportunity, and sustainable change through compassion and collective action.",

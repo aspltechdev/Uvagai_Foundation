@@ -33,6 +33,24 @@ export default function EventsHome() {
       accent: "green",
       stat: "50K+",
     },
+     {
+      // Children with notebooks/books at a desk - Swastik Arora on Unsplash
+      image: "https://images.pexels.com/photos/35216547/pexels-photo-35216547.jpeg",
+      title: "Skill Development",
+      category: "Skill Development",
+      location: "Skilling",
+      accent: "red",
+      stat: "10000+",
+    },
+     {
+      // Children with notebooks/books at a desk - Swastik Arora on Unsplash
+      image: "https://images.pexels.com/photos/18067562/pexels-photo-18067562.jpeg",
+      title: "Placement Drive",
+      category: "Placement Drive",
+      location: "Drive",
+      accent: "red",
+      stat: "20000+",
+    },
     {
       // Children with notebooks/books at a desk - Swastik Arora on Unsplash
       image: "https://images.unsplash.com/photo-1692269725827-699e04a11cdf?w=800&q=80&auto=format&fit=crop",

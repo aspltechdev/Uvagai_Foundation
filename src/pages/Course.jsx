@@ -1729,7 +1729,7 @@ export default function Course() {
 
   const courses = [
     {
-      title: "Spoken English & Communication Skills",
+      title: "Communication & Employability Skills",
       duration: "3 Months",
       image: english,
       accent: "red",
@@ -1750,7 +1750,7 @@ export default function Course() {
       mode: "In-Person & Online Sessions",
     },
     {
-      title: "Digital Literacy & Computer Basics",
+      title: "Digital Literacy & Computer Skills",
       duration: "3 Months",
       image: computer,
       accent: "green",
@@ -1855,26 +1855,58 @@ export default function Course() {
       mode: "In-Person Workshops & Field Work",
     },
     {
-      title: "Entrepreneurship & Business Skills",
-      duration: "2 Months",
-      image: entrepreneurship,
-      accent: "red",
-      overview: "Learn business planning, financial management, and startup fundamentals.",
-      description: "Equip yourself with the knowledge to start and grow your own business. Learn business planning, market research, financial management, fundraising, and marketing strategies through case studies and mentorship.",
-      modules: [
-        "Business Idea Validation",
-        "Market Research & Analysis",
-        "Business Plan Development",
-        "Financial Management Basics",
-        "Fundraising & Investment",
-        "Marketing & Branding",
-        "Legal & Registration Process",
-        "Pitching & Presentation Skills"
-      ],
-      eligibility: "Open to all aspiring entrepreneurs",
-      certificate: "Yes - Uvagai Foundation Certificate of Completion",
-      mode: "In-Person with Mentorship",
-    },
+  title: "Advanced Full Stack Development with Python & AI",
+  duration: "6 Months",
+  image: entrepreneurship,
+  accent: "red",
+
+  overview:
+    "Master modern software development using Python, Full Stack technologies, Cloud, DevOps, and AI to become an industry-ready developer.",
+
+  description:
+    "This comprehensive program is designed to build professional software engineers capable of developing scalable web applications using Python, Django, FastAPI, React, PostgreSQL, Docker, Cloud, and AI tools. Students work on real-world projects, follow Agile methodologies, deploy applications to production, and build an impressive portfolio for placements.",
+
+  modules: [
+    "Programming Fundamentals with Python",
+    "Advanced Python & Object-Oriented Programming",
+    "Data Structures & Algorithms",
+    "Git & GitHub Version Control",
+    "SQL & PostgreSQL Database",
+    "HTML5, CSS3 & JavaScript (ES6+)",
+    "React.js & Modern Frontend Development",
+    "Tailwind CSS & Responsive UI",
+    "REST API Development",
+    "Django Framework",
+    "FastAPI for High Performance APIs",
+    "Authentication (JWT, OAuth)",
+    "State Management (Redux Toolkit)",
+    "Docker & Containerization",
+    "Linux & Command Line",
+    "CI/CD with GitHub Actions",
+    "AWS Cloud Deployment",
+    "Nginx & Server Management",
+    "Redis & Caching",
+    "AI Integration using OpenAI APIs",
+    "LangChain & AI Agents",
+    "Prompt Engineering",
+    "Testing & Debugging",
+    "Software Architecture",
+    "Agile & Scrum Methodology",
+    "Capstone Industry Project",
+    "Portfolio Development",
+    "Resume Building",
+    "Mock Interviews & Placement Training"
+  ],
+
+  eligibility:
+    "Students, Graduates, Career Switchers, and Working Professionals",
+
+  certificate:
+    "Yes - Uvagai Foundation Advanced Full Stack Development Certificate",
+
+  mode:
+    "Offline Classroom Training with Live Projects, Industry Mentorship & Internship Support"
+},
     {
       title: "Career Readiness & Employability Skills",
       duration: "2 Months",

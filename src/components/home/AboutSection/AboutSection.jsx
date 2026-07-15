@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./AboutSection.css";
 import about1 from "../../../assets/about11.png";
 import about2 from "../../../assets/about22.png";
-import about3 from "../../../assets/about33.png";
+import about3 from "../../../assets/abt123.png";
 import about4 from "../../../assets/about44.png";
 
 export default function AboutSection() {
@@ -68,10 +68,10 @@ export default function AboutSection() {
 
   const galleryImages = [
     {
-      src: about1,
+      src: about3,
       alt: "Education Initiative",
       accent: "#DC2626",
-      label: "Elderycare",
+      label: "Skilling",
     },
     {
       src: about2,
@@ -80,10 +80,10 @@ export default function AboutSection() {
       label: "Community Welfare",
     },
     {
-      src: about3,
+      src: about1,
       alt: "Community Development",
       accent: "#1E3A8A",
-      label: "Public Health",
+      label: "Elderly Care",
     },
     {
       src: about4,
@@ -178,9 +178,10 @@ export default function AboutSection() {
               <span className="about-headline-red"> Positive </span>
               Change Through
               <br />
-              <span className="about-headline-green"> Education</span>, 
-              <span className="about-headline-blue"> Healthcare </span>
-              & 
+              <span className="about-headline-green"> Education & Placement</span>, 
+              <span className="about-headline-blue"> Healthcare </span>,
+                    
+              
               <span className="about-headline-red"> Compassion</span>
             </motion.h2>
 
@@ -191,7 +192,7 @@ export default function AboutSection() {
             >
               Founded in 2019, Uvagai Foundation is a non-profit organization
               committed to empowering children, families, and communities through
-              impactful social initiatives. Guided by the belief that education
+              impactful social initiatives. Guided by the belief that education, nutrition, shelter
               and healthcare are fundamental rights, we work to create
               opportunities that improve lives and build stronger communities.
             </motion.p>
@@ -200,9 +201,9 @@ export default function AboutSection() {
               className="about-description"
               variants={fadeUpVariants}
             >
-              Our efforts span education support, child welfare, elderly care,
-              healthcare initiatives, humanitarian aid, environmental
-              sustainability, volunteer engagement, and CSR partnerships.
+              Our efforts span Education & Placement support, Child welfare, Elderly care,
+              Healthcare Initiatives, Humanitarian aid, Environmental
+              sustainability, Volunteer engagement, and CSR partnerships.
             </motion.p>
 
             {/* CTA Button */}

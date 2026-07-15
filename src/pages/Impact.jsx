@@ -782,8 +782,8 @@ export default function Impact() {
               a brighter future. Join us by volunteering or supporting our mission.
             </p>
             <div className="imp-final-buttons">
-              <a href="/volunteer" className="imp-final-btn-primary">
-                <span>Volunteer</span>
+              <a href="/contact" className="imp-final-btn-primary">
+                <span>Partner with us</span>
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>

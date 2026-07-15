@@ -1,321 +1,427 @@
-/* VolunteerHome.css - UNIVERSAL VOLUNTEER SECTION */
+/* ============================================
+   UVAGAI FOUNDATION - HOME VOLUNTEER SECTION
+   Unique vlt- Prefix • Image Cards • Clean
+   ============================================ */
+
+:root {
+  --vlt-red: #DC2626;
+  --vlt-red-light: #FEE2E2;
+  --vlt-red-pale: #FFF5F5;
+  --vlt-red-dark: #B91C1C;
+  --vlt-green: #16A34A;
+  --vlt-green-light: #DCFCE7;
+  --vlt-blue: #1E3A5F;
+  --vlt-blue-light: #E8F0FE;
+  
+  --vlt-white: #FFFFFF;
+  --vlt-text-1: #171717;
+  --vlt-text-2: #525252;
+  --vlt-text-3: #737373;
+  --vlt-border: #E8E4DE;
+  --vlt-border-light: #F0EDE8;
+  
+  --vlt-shadow-sm: 0 2px 8px rgba(0,0,0,0.03);
+  --vlt-shadow-md: 0 8px 30px rgba(0,0,0,0.05);
+  --vlt-shadow-lg: 0 15px 50px rgba(0,0,0,0.07);
+  --vlt-shadow-xl: 0 25px 70px rgba(0,0,0,0.09);
+  
+  --vlt-font-display: 'Georgia', 'Times New Roman', serif;
+  --vlt-font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --vlt-ease: cubic-bezier(0.33, 0.1, 0.25, 1);
+}
+
 /* ============================================ */
-.volunteer-section {
-  position: relative; padding: 120px 0;
-  background: #FAFBFC; overflow: hidden;
-  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+/* SECTION */
+/* ============================================ */
+.vlt-section {
+  padding: 80px 0;
+  background: var(--vlt-white);
+  font-family: var(--vlt-font-body);
+  -webkit-font-smoothing: antialiased;
 }
 
-.volunteer-section-bg {
-  position: absolute; inset: -5%;
-  background: radial-gradient(ellipse at 25% 30%, rgba(220,38,38,0.012) 0%, transparent 50%),
-              radial-gradient(ellipse at 70% 60%, rgba(5,150,105,0.012) 0%, transparent 50%);
-  z-index: 0; pointer-events: none;
+.vlt-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
-.volunteer-section-orb {
-  position: absolute; border-radius: 50%;
-  pointer-events: none; filter: blur(100px); z-index: 0;
+/* ============================================ */
+/* HEADER */
+/* ============================================ */
+.vlt-header {
+  text-align: center;
+  margin-bottom: 48px;
 }
 
-.volunteer-section-orb-1 {
-  width: 450px; height: 450px; top: -5%; right: -5%;
-  background: radial-gradient(circle, rgba(220,38,38,0.04) 0%, transparent 70%);
+.vlt-header-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
-.volunteer-section-orb-2 {
-  width: 400px; height: 400px; bottom: -5%; left: -3%;
-  background: radial-gradient(circle, rgba(5,150,105,0.04) 0%, transparent 70%);
+.vlt-header-tag-line {
+  width: 28px;
+  height: 2px;
+  background: var(--vlt-red);
+  border-radius: 1px;
 }
 
-.volunteer-section-container {
-  position: relative; z-index: 2;
-  max-width: 1200px; margin: 0 auto; padding: 0 40px;
+.vlt-header-tag-text {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--vlt-red);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
 }
 
-/* Header */
-.volunteer-section-header {
-  text-align: center; margin-bottom: 56px;
+.vlt-header-title {
+  font-family: var(--vlt-font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: var(--vlt-text-1);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
 }
 
-.volunteer-section-eyebrow {
-  display: flex; align-items: center; justify-content: center;
-  gap: 12px; margin-bottom: 16px;
-  font-size: 0.7rem; font-weight: 600;
-  letter-spacing: 2.5px; text-transform: uppercase; color: #64748b;
+.vlt-text-red { color: var(--vlt-red); }
+.vlt-text-green { color: var(--vlt-green); }
+
+.vlt-header-desc {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--vlt-text-3);
+  max-width: 550px;
+  margin: 0 auto;
 }
 
-.volunteer-section-eyebrow-line {
-  width: 20px; height: 2px; border-radius: 1px;
-  background: linear-gradient(90deg, #DC2626, #059669); display: inline-block;
+/* ============================================ */
+/* BENEFITS CARDS WITH IMAGES */
+/* ============================================ */
+.vlt-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 56px;
 }
 
-.volunteer-section-title {
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  font-weight: 750; color: #0f172a;
-  line-height: 1.2; letter-spacing: -1.5px; margin: 0 0 16px;
+.vlt-benefit-card {
+  background: var(--vlt-white);
+  border: 1px solid var(--vlt-border-light);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--vlt-shadow-sm);
+  transition: all 0.35s var(--vlt-ease);
 }
 
-.text-red { color: #DC2626; }
-.text-green { color: #059669; }
-
-.volunteer-section-subtitle {
-  font-size: 1rem; line-height: 1.6;
-  color: #64748b; max-width: 550px; margin: 0 auto;
+.vlt-benefit-card:hover {
+  box-shadow: var(--vlt-shadow-xl);
+  border-color: transparent;
 }
 
-/* Benefits */
-.volunteer-section-benefits {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 22px; margin-bottom: 60px;
+/* Media */
+.vlt-benefit-media {
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
 }
 
-.volunteer-section-benefit-card {
-  background: white; border-radius: 18px; overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.05);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-  cursor: pointer; transition: all 0.4s ease;
+.vlt-benefit-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--vlt-ease);
 }
 
-.volunteer-section-benefit-card:hover {
-  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-}
-
-.volunteer-section-benefit-image {
-  position: relative; aspect-ratio: 16/10; overflow: hidden;
-}
-
-.volunteer-section-benefit-image img {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform 0.7s ease;
-}
-
-.volunteer-section-benefit-card:hover .volunteer-section-benefit-image img {
+.vlt-benefit-card:hover .vlt-benefit-media img {
   transform: scale(1.06);
 }
 
-.volunteer-section-benefit-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.2) 100%);
+.vlt-benefit-media-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.2) 100%);
+  pointer-events: none;
 }
 
-.volunteer-section-benefit-body {
-  padding: 18px 20px 20px;
+/* Number Badge */
+.vlt-benefit-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--vlt-white);
+  backdrop-filter: blur(8px);
 }
 
-.volunteer-section-benefit-body h3 {
-  font-size: 1rem; font-weight: 650; color: #0f172a;
-  margin: 0 0 8px; letter-spacing: -0.3px;
+.vlt-badge-red { background: rgba(220,38,38,0.9); }
+.vlt-badge-green { background: rgba(22,163,74,0.9); }
+.vlt-badge-blue { background: rgba(30,58,95,0.9); }
+
+/* Body */
+.vlt-benefit-body {
+  padding: 18px 20px 0;
 }
 
-.volunteer-section-benefit-body p {
-  font-size: 0.82rem; color: #64748b;
-  line-height: 1.55; margin: 0;
+.vlt-benefit-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--vlt-text-1);
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
 }
 
-/* Quote Slider */
-.volunteer-section-slider {
-  position: relative; margin-bottom: 60px;
-  border-radius: 24px; overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+.vlt-benefit-red:hover .vlt-benefit-title { color: var(--vlt-red); }
+.vlt-benefit-green:hover .vlt-benefit-title { color: var(--vlt-green); }
+.vlt-benefit-blue:hover .vlt-benefit-title { color: var(--vlt-blue); }
+
+.vlt-benefit-text {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--vlt-text-3);
+  margin: 0;
 }
 
-.volunteer-section-slider-stage {
-  position: relative; overflow: hidden;
+/* Accent Line */
+.vlt-benefit-line {
+  width: 24px;
+  height: 2.5px;
+  border-radius: 2px;
+  margin: 14px 20px 18px;
+  transition: all 0.4s var(--vlt-ease);
 }
 
-.volunteer-section-slide {
-  position: relative; min-height: 360px; display: flex; align-items: center;
+.vlt-line-red { background: var(--vlt-red); }
+.vlt-line-green { background: var(--vlt-green); }
+.vlt-line-blue { background: var(--vlt-blue); }
+
+.vlt-benefit-card:hover .vlt-benefit-line {
+  width: 40px;
 }
 
-.volunteer-section-slide-image {
-  position: absolute; inset: 0;
+/* ============================================ */
+/* WAYS TO VOLUNTEER */
+/* ============================================ */
+.vlt-ways {
+  margin-bottom: 56px;
 }
 
-.volunteer-section-slide-image img {
-  width: 100%; height: 100%; object-fit: cover;
+.vlt-ways-title {
+  font-family: var(--vlt-font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--vlt-text-1);
+  text-align: center;
+  margin-bottom: 28px;
 }
 
-.volunteer-section-slide-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+.vlt-ways-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 
-.volunteer-section-slide-content {
-  position: relative; z-index: 2;
-  max-width: 700px; margin: 0 auto; text-align: center;
-  padding: 60px 40px;
+.vlt-way-card {
+  background: var(--vlt-white);
+  border: 1px solid var(--vlt-border-light);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--vlt-shadow-sm);
+  transition: all 0.3s var(--vlt-ease);
 }
 
-.volunteer-section-slide-content blockquote {
-  font-size: 1.4rem; font-weight: 500; color: white;
-  line-height: 1.5; margin: 0 0 16px; font-style: italic;
+.vlt-way-card:hover {
+  box-shadow: var(--vlt-shadow-md);
+  border-color: transparent;
 }
 
-.volunteer-section-slide-author {
-  font-size: 0.9rem; color: rgba(255,255,255,0.8); font-weight: 500;
+.vlt-way-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--vlt-text-1);
+  margin-bottom: 6px;
 }
 
-/* Arrows */
-.volunteer-section-arrow {
-  position: absolute; top: 50%; transform: translateY(-50%);
-  width: 44px; height: 44px; border-radius: 50%;
-  background: rgba(255,255,255,0.9); border: none;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; z-index: 5; transition: all 0.3s ease;
+.vlt-way-text {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--vlt-text-3);
+  margin-bottom: 12px;
 }
 
-.volunteer-section-arrow:hover { background: white; }
-.volunteer-section-prev { left: 20px; }
-.volunteer-section-next { right: 20px; }
-
-/* Dots */
-.volunteer-section-dots {
-  position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
-  display: flex; gap: 8px; z-index: 5;
+.vlt-way-line {
+  width: 20px;
+  height: 2px;
+  border-radius: 1px;
+  transition: width 0.3s var(--vlt-ease);
 }
 
-.volunteer-section-dot {
-  height: 8px; border-radius: 4px; border: none;
-  cursor: pointer; padding: 0; transition: all 0.3s ease;
+.vlt-way-card:hover .vlt-way-line {
+  width: 36px;
 }
 
-/* Ways to Volunteer */
-.volunteer-section-ways { margin-bottom: 60px; }
-
-.volunteer-section-ways-title {
-  text-align: center; font-size: 1.6rem; font-weight: 700;
-  color: #0f172a; margin: 0 0 36px; letter-spacing: -0.5px;
+/* ============================================ */
+/* CTA */
+/* ============================================ */
+.vlt-cta-card {
+  background: var(--vlt-red-pale);
+  border-radius: 16px;
+  padding: 36px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border: 1px solid var(--vlt-red-light);
 }
 
-.volunteer-section-ways-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+.vlt-cta-content h3 {
+  font-family: var(--vlt-font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--vlt-text-1);
+  margin-bottom: 6px;
 }
 
-.volunteer-section-way-card {
-  background: white; border-radius: 14px; padding: 22px 20px;
-  border: 1px solid rgba(0,0,0,0.04);
-  box-shadow: 0 3px 14px rgba(0,0,0,0.02);
-  cursor: pointer; transition: all 0.3s ease;
+.vlt-cta-content p {
+  font-size: 0.9rem;
+  color: var(--vlt-text-2);
+  margin: 0;
 }
 
-.volunteer-section-way-card:hover {
-  box-shadow: 0 8px 28px rgba(0,0,0,0.05);
+.vlt-cta-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
-.volunteer-section-way-card h4 {
-  font-size: 0.95rem; font-weight: 650; color: #0f172a;
-  margin: 0 0 6px; letter-spacing: -0.2px;
+.vlt-cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: var(--vlt-red);
+  color: var(--vlt-white);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(220,38,38,0.25);
+  transition: all 0.3s var(--vlt-ease);
 }
 
-.volunteer-section-way-card p {
-  font-size: 0.8rem; color: #64748b;
-  line-height: 1.5; margin: 0 0 12px;
+.vlt-cta-btn-primary:hover {
+  background: var(--vlt-red-dark);
+  box-shadow: 0 12px 28px rgba(220,38,38,0.35);
+  transform: translateY(-2px);
 }
 
-.volunteer-section-way-line {
-  width: 24px; height: 2px; border-radius: 1px;
+.vlt-cta-btn-primary svg {
+  transition: transform 0.3s ease;
 }
 
-.way-red .volunteer-section-way-line { background: #DC2626; }
-.way-green .volunteer-section-way-line { background: #059669; }
-.way-blue .volunteer-section-way-line { background: #1E3A8A; }
-
-/* CTA Banner */
-.volunteer-section-banner {
-  position: relative; border-radius: 20px; overflow: hidden;
-  padding: 44px 48px;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+.vlt-cta-btn-primary:hover svg {
+  transform: translateX(3px);
 }
 
-.volunteer-section-banner-content {
-  position: relative; z-index: 2;
-  display: flex; align-items: center; justify-content: space-between; gap: 40px;
+.vlt-cta-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 20px;
+  background: var(--vlt-white);
+  color: var(--vlt-text-1);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1.5px solid var(--vlt-border);
+  border-radius: 10px;
+  transition: all 0.3s var(--vlt-ease);
 }
 
-.volunteer-section-banner-text h3 {
-  font-size: 1.5rem; font-weight: 700; color: white;
-  margin: 0 0 8px; letter-spacing: -0.5px;
+.vlt-cta-btn-secondary:hover {
+  border-color: var(--vlt-red);
+  color: var(--vlt-red);
 }
 
-.volunteer-section-banner-text p {
-  font-size: 0.9rem; color: rgba(255,255,255,0.7);
-  line-height: 1.5; margin: 0; max-width: 450px;
+.vlt-cta-arrow {
+  transition: transform 0.3s ease;
 }
 
-.volunteer-section-banner-actions {
-  display: flex; align-items: center; gap: 16px; flex-shrink: 0;
-}
-
-.volunteer-section-banner-cta {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 14px 28px; border-radius: 10px;
-  background: #C62828;
-  color: white; text-decoration: none;
-  font-size: 0.88rem; font-weight: 600; letter-spacing: -0.2px;
-  transition: all 0.3s ease;
-}
-
-.volunteer-section-banner-secondary {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 14px 24px; border-radius: 10px;
-  border: 1.5px solid rgba(255,255,255,0.3);
-  color: white; text-decoration: none;
-  font-size: 0.88rem; font-weight: 500; transition: all 0.3s ease;
-}
-
-.volunteer-section-banner-secondary:hover {
-  background: rgba(255,255,255,0.1);
-}
-
-.volunteer-section-banner-orb {
-  position: absolute; border-radius: 50%; pointer-events: none; opacity: 0.12;
-}
-
-.banner-orb-red {
-  width: 220px; height: 220px; top: -40px; right: -20px;
-  background: radial-gradient(circle, #DC2626, transparent 70%);
-}
-
-.banner-orb-green {
-  width: 180px; height: 180px; bottom: -30px; left: 25%;
-  background: radial-gradient(circle, #059669, transparent 70%);
+.vlt-cta-btn-secondary:hover .vlt-cta-arrow {
+  transform: translateX(4px);
 }
 
 /* ============================================ */
 /* RESPONSIVE */
 /* ============================================ */
-@media (max-width: 968px) {
-  .volunteer-section-benefits {
+@media (max-width: 900px) {
+  .vlt-benefits {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .vlt-ways-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .volunteer-section-ways-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .volunteer-section-slide-content blockquote {
-    font-size: 1.15rem;
+  .vlt-cta-card {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
-@media (max-width: 640px) {
-  .volunteer-section { padding: 80px 0; }
-  .volunteer-section-container { padding: 0 20px; }
-  
-  .volunteer-section-benefits { grid-template-columns: 1fr; }
-  .volunteer-section-ways-grid { grid-template-columns: 1fr; }
-  
-  .volunteer-section-banner-content {
-    flex-direction: column; text-align: center;
+@media (max-width: 600px) {
+  .vlt-section {
+    padding: 56px 0;
   }
-  .volunteer-section-banner { padding: 32px 24px; }
-  .volunteer-section-banner-actions { flex-direction: column; width: 100%; }
-  .volunteer-section-banner-cta,
-  .volunteer-section-banner-secondary { width: 100%; justify-content: center; }
-  
-  .volunteer-section-slide-content { padding: 40px 24px; }
-  .volunteer-section-slide-content blockquote { font-size: 1rem; }
-  .volunteer-section-arrow { width: 36px; height: 36px; }
-  
-  .volunteer-section-title { font-size: 1.6rem; }
+  .vlt-container {
+    padding: 0 16px;
+  }
+  .vlt-header {
+    margin-bottom: 32px;
+  }
+  .vlt-header-title {
+    font-size: 1.6rem;
+  }
+  .vlt-benefits {
+    margin-bottom: 40px;
+  }
+  .vlt-ways {
+    margin-bottom: 40px;
+  }
+  .vlt-ways-grid {
+    grid-template-columns: 1fr;
+  }
+  .vlt-cta-card {
+    padding: 24px;
+  }
+  .vlt-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .vlt-cta-btn-primary,
+  .vlt-cta-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .vlt-benefit-card,
+  .vlt-benefit-media img,
+  .vlt-benefit-line,
+  .vlt-way-card,
+  .vlt-way-line {
+    transition: none !important;
+  }
+}

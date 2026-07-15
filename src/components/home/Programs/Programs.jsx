@@ -6,7 +6,8 @@ import program2 from "../../../assets/program2.png";
 import program3 from "../../../assets/program44.png";
 import program4 from "../../../assets/program3.png";
 import program5 from "../../../assets/program5.png";
-import program6 from "../../../assets/p.png";
+import program6 from "../../../assets/prog7.png";
+import { Link } from "react-router-dom";
 export default function Programs() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
@@ -81,13 +82,13 @@ const programs = [
   },
   {
     id: 6,
-    category: "CSR & Partnerships",
+    category: "Skilling & Placement",
     image: program6,
-    title: "CSR & Volunteer Partnerships",
+    title: "Skilling & Placement",
     description:
-      "Collaborating with corporates, institutions, volunteers, and social organizations to create meaningful and long-lasting community impact.",
+      "Collaborating with corporates & institutions, conducting job drives to create meaningful and long-lasting community development.",
     accent: "blue",
-    stat: "Collaborative Impact",
+    stat: "Skill Development",
     statLabel: "Partnerships",
   },
 ];
@@ -159,8 +160,8 @@ const programs = [
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            We design and execute high-impact initiatives across education, 
-            healthcare, community development, and environmental sustainability 
+            We design and execute high-impact initiatives across education & placement,
+            healthcare, nutrition programs, community development, rural infrastructure development and environmental sustainability 
             — creating measurable, lasting change.
           </motion.p>
         </motion.div>
@@ -236,9 +237,9 @@ const programs = [
                 <div className="programs-pro-card-footer">
                   <div className="programs-pro-card-stat">
                     <span className="stat-number">{program.stat}</span>
-                    <span className="stat-label">{program.statLabel}</span>
+                    {/* <span className="stat-label">{program.statLabel}</span> */}
                   </div>
-                  
+                  <Link to ="/programs">
                   <motion.a 
                     href="#" 
                     className={`programs-pro-card-link link-${program.accent}`}
@@ -249,6 +250,7 @@ const programs = [
                       <path d="M1 7H13M13 7L8 2M13 7L8 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </motion.a>
+                  </Link>
                 </div>
               </div>
             </motion.article>

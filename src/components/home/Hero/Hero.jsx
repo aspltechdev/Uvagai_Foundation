@@ -2,7 +2,7 @@ import { useEffect, useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform, useScroll, useInView } from "framer-motion";
 import { useNavigate, Link } from "react-router-dom";
 import "./Hero.css";
-import hero1 from "../../../assets/hero11.png";
+import hero1 from "../../../assets/skilldev.png";
 import hero2 from "../../../assets/hero33.png";
 import hero3 from "../../../assets/hero22.png";
 import hero5 from "../../../assets/hero44.png";
@@ -550,14 +550,14 @@ export default function Hero() {
                     </motion.span>
                   </motion.button>
 
-                  <motion.button
+                  {/* <motion.button
                     className="uvagai-cinematic-cta-secondary"
                     whileHover={{ x: 5 }}
                     onClick={handleSecondaryCTA}
                   >
                     {currentSlide.secondaryCTA}
                     <span className="uvagai-cinematic-cta-arrow">→</span>
-                  </motion.button>
+                  </motion.button> */}
                 </motion.div>
 
                 {/* Impact Stat */}
