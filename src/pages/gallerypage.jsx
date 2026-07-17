@@ -3,10 +3,10 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import "./gallerypage.css";
 
 import childwelfareImg from "../assets/Capturechild.PNG";
-import childwelfareImg1 from "../assets/chr2.jpg";
+import childwelfareImg1 from "../assets/chr2.JPG";
 import communityImg from "../assets/chatcomm.png";
 import digitalImg from "../assets/creativecapture.PNG";
-import educationImg from "../assets/educati.PNG";
+import educationImg from "../assets/educati.png";
 import eldeImg from "../assets/elderlycapture.png";
 import environmentImg from "../assets/chatenv.png";
 import eventImg from "../assets/chateve.png";
@@ -29,9 +29,9 @@ import communitynew2 from "../assets/el.png";
 import large1 from "../assets/education1.png";
 import image2 from "../assets/image2.jpeg";
 import image5 from "../assets/educat.png";
-import communityimg2 from "../assets/co.jpg";
-import communityimg3 from "../assets/com.jpg";
-import communityimg4 from "../assets/comm.jpg";
+import communityimg2 from "../assets/co.JPG";
+import communityimg3 from "../assets/com.JPG";
+import communityimg4 from "../assets/comm.JPG";
 
 import vmBg from "../assets/communitynew1.jpeg";
 import purpose from "../assets/ndimagee.png";
