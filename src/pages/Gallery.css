@@ -1,644 +1,417 @@
 /* ============================================
-   UVAGAI FOUNDATION - GALLERY PAGE
-   Unique gly- Prefix • Professional Design
+   UVAGAI FOUNDATION - HOME GALLERY SECTION
+   Unique gly- Prefix • Clean & Simple
    ============================================ */
 
 :root {
   --gly-red: #DC2626;
   --gly-red-light: #FEE2E2;
-  --gly-red-pale: #FFF5F5;
   --gly-red-dark: #B91C1C;
-  
   --gly-green: #16A34A;
   --gly-green-light: #DCFCE7;
-  --gly-green-pale: #F0FDF4;
-  
   --gly-blue: #1E3A5F;
   --gly-blue-light: #E8F0FE;
-  --gly-blue-pale: #F5F8FC;
   
-  --gly-black: #171717;
   --gly-white: #FFFFFF;
-  --gly-cream: #FEFCFB;
-  --gly-soft-bg: #F9F8F6;
-  
-  --gly-text-primary: #171717;
-  --gly-text-secondary: #525252;
-  --gly-text-tertiary: #737373;
-  --gly-text-muted: #A3A3A3;
-  
+  --gly-text-1: #171717;
+  --gly-text-2: #525252;
+  --gly-text-3: #737373;
   --gly-border: #E8E4DE;
   --gly-border-light: #F0EDE8;
   
-  --gly-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
-  --gly-shadow-md: 0 8px 30px rgba(0, 0, 0, 0.05);
-  --gly-shadow-lg: 0 15px 50px rgba(0, 0, 0, 0.07);
-  --gly-shadow-xl: 0 25px 70px rgba(0, 0, 0, 0.09);
+  --gly-shadow-sm: 0 2px 8px rgba(0,0,0,0.03);
+  --gly-shadow-md: 0 8px 30px rgba(0,0,0,0.05);
+  --gly-shadow-lg: 0 15px 50px rgba(0,0,0,0.07);
+  --gly-shadow-xl: 0 25px 70px rgba(0,0,0,0.09);
   
-  --gly-font-display: 'Georgia', 'Times New Roman', 'Playfair Display', serif;
-  --gly-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-  
-  --gly-ease-out: cubic-bezier(0.33, 0.1, 0.25, 1);
+  --gly-font-display: 'Georgia', 'Times New Roman', serif;
+  --gly-font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --gly-ease: cubic-bezier(0.33, 0.1, 0.25, 1);
 }
 
-/* ============================================
-   Global
-   ============================================ */
-.gallery-page {
+/* ============================================ */
+/* SECTION */
+/* ============================================ */
+.gly-section {
+  padding: 80px 0;
+  background: var(--gly-white);
   font-family: var(--gly-font-body);
   -webkit-font-smoothing: antialiased;
 }
 
-.gallery-container {
-  max-width: 1200px;
+.gly-container {
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 32px;
-  position: relative;
-  z-index: 2;
 }
 
-/* ============================================
-   Hero Section
-   ============================================ */
-.gallery-hero {
-  position: relative;
-  padding: 100px 0 64px;
-  background: var(--gly-cream);
-  overflow: hidden;
-}
-
-.gallery-hero-bg {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    var(--gly-white) 0%,
-    var(--gly-cream) 50%,
-    var(--gly-soft-bg) 100%
-  );
-}
-
-.gallery-hero-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
-}
-
-.gallery-hero-glow-1 {
-  width: 450px;
-  height: 450px;
-  background: var(--gly-red);
-  top: -15%;
-  right: -8%;
-  opacity: 0.04;
-}
-
-.gallery-hero-glow-2 {
-  width: 380px;
-  height: 380px;
-  background: var(--gly-green);
-  bottom: -18%;
-  left: -6%;
-  opacity: 0.04;
-}
-
-.gallery-hero-content {
+/* ============================================ */
+/* HEADER */
+/* ============================================ */
+.gly-header {
   text-align: center;
-  max-width: 750px;
-  margin: 0 auto;
+  margin-bottom: 40px;
 }
 
-.gallery-hero-tag {
+.gly-header-tag {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
-.gallery-hero-tag-line {
-  width: 32px;
+.gly-header-tag-line {
+  width: 28px;
   height: 2px;
   background: var(--gly-red);
   border-radius: 1px;
 }
 
-.gallery-hero-tag-text {
-  font-size: 0.72rem;
+.gly-header-tag-text {
+  font-size: 0.7rem;
   font-weight: 600;
   color: var(--gly-red);
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }
 
-.gallery-hero-headline {
+.gly-header-title {
   font-family: var(--gly-font-display);
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   font-weight: 400;
-  line-height: 1.2;
-  color: var(--gly-text-primary);
-  margin-bottom: 16px;
+  color: var(--gly-text-1);
+  margin-bottom: 10px;
   letter-spacing: -0.02em;
 }
 
-.gallery-hero-headline-accent {
-  color: var(--gly-red);
-}
+.gly-text-red { color: var(--gly-red); }
 
-.gallery-hero-subtitle {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--gly-text-tertiary);
-  max-width: 550px;
+.gly-header-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--gly-text-3);
+  max-width: 500px;
   margin: 0 auto;
 }
 
-/* ============================================
-   Filter Section
-   ============================================ */
-.gallery-filter-section {
-  padding: 20px 0;
-  background: var(--gly-white);
-  border-bottom: 1px solid var(--gly-border-light);
-  position: sticky;
-  top: 56px;
-  z-index: 50;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.92);
-}
-
-.gallery-filters {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-}
-
-.gallery-filter-btn {
-  padding: 8px 18px;
-  background: var(--gly-white);
-  color: var(--gly-text-secondary);
-  font-size: 0.78rem;
-  font-weight: 500;
-  border: 1.5px solid var(--gly-border);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.25s var(--gly-ease-out);
-  white-space: nowrap;
-  font-family: var(--gly-font-body);
-}
-
-.gallery-filter-btn:hover {
-  border-color: var(--gly-red);
-  color: var(--gly-red);
-  background: var(--gly-red-light);
-}
-
-.gallery-filter-btn.active {
-  background: var(--gly-red);
-  color: var(--gly-white);
-  border-color: var(--gly-red);
-  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.25);
-}
-
-/* ============================================
-   Gallery Grid
-   ============================================ */
-.gallery-grid-section {
-  padding: 40px 0 80px;
-  background: var(--gly-white);
-}
-
-.gallery-grid {
+/* ============================================ */
+/* GRID */
+/* ============================================ */
+.gly-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 18px;
+  margin-bottom: 36px;
 }
 
-/* ============================================
-   Gallery Card
-   ============================================ */
-.gallery-card {
+/* ============================================ */
+/* CARDS */
+/* ============================================ */
+.gly-card {
   background: var(--gly-white);
   border: 1px solid var(--gly-border-light);
   border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--gly-shadow-sm);
-  transition: all 0.35s var(--gly-ease-out);
+  transition: all 0.35s var(--gly-ease);
   cursor: pointer;
 }
 
-.gallery-card:hover {
+.gly-card:hover {
   box-shadow: var(--gly-shadow-xl);
   border-color: transparent;
 }
 
-/* Card Image */
-.gallery-card-image {
+.gly-card-media {
   position: relative;
   aspect-ratio: 4/3;
   overflow: hidden;
 }
 
-.gallery-card-image img {
+.gly-card-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s var(--gly-ease-out);
+  transition: transform 0.6s var(--gly-ease);
 }
 
-.gallery-card:hover .gallery-card-image img {
+.gly-card:hover .gly-card-media img {
   transform: scale(1.06);
 }
 
-.gallery-card-image-overlay {
+.gly-card-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    transparent 50%,
-    rgba(0, 0, 0, 0.25) 100%
-  );
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.2) 100%);
   opacity: 0;
-  transition: opacity 0.4s var(--gly-ease-out);
+  transition: opacity 0.4s ease;
 }
 
-.gallery-card:hover .gallery-card-image-overlay {
+.gly-card:hover .gly-card-shade {
   opacity: 1;
 }
 
-/* Category Badge */
-.gallery-card-badge {
+/* Badge */
+.gly-card-badge {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 10px;
+  left: 10px;
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 10px;
-  background: rgba(255, 255, 255, 0.92);
+  gap: 5px;
+  padding: 4px 9px;
+  background: rgba(255,255,255,0.92);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 6px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.gallery-card-badge-dot {
-  width: 6px;
-  height: 6px;
+.gly-card-dot {
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
 }
 
-.card-red .gallery-card-badge-dot { background: var(--gly-red); }
-.card-green .gallery-card-badge-dot { background: var(--gly-green); }
-.card-blue .gallery-card-badge-dot { background: var(--gly-blue); }
+.gly-dot-red { background: var(--gly-red); }
+.gly-dot-green { background: var(--gly-green); }
+.gly-dot-blue { background: var(--gly-blue); }
 
-.gallery-card-badge-text {
-  font-size: 0.62rem;
+.gly-card-badge-text {
+  font-size: 0.6rem;
   font-weight: 600;
-  color: var(--gly-text-primary);
+  color: var(--gly-text-1);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
 }
 
 /* View Icon */
-.gallery-card-view {
+.gly-card-view {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.8);
-  width: 44px;
-  height: 44px;
+  transform: translate(-50%,-50%) scale(0.8);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  color: var(--gly-text-primary);
   opacity: 0;
-  transition: all 0.3s var(--gly-ease-out);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 
-.gallery-card:hover .gallery-card-view {
+.gly-card:hover .gly-card-view {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%,-50%) scale(1);
 }
 
-/* Card Content */
-.gallery-card-content {
-  padding: 16px 18px;
+/* Body */
+.gly-card-body {
+  padding: 14px 16px;
 }
 
-.gallery-card-title {
-  font-size: 0.92rem;
+.gly-card-title {
+  font-size: 0.88rem;
   font-weight: 600;
-  color: var(--gly-text-primary);
+  color: var(--gly-text-1);
   margin-bottom: 4px;
   line-height: 1.3;
   transition: color 0.3s ease;
 }
 
-.card-red:hover .gallery-card-title { color: var(--gly-red); }
-.card-green:hover .gallery-card-title { color: var(--gly-green); }
-.card-blue:hover .gallery-card-title { color: var(--gly-blue); }
+.gly-card-red:hover .gly-card-title { color: var(--gly-red); }
+.gly-card-green:hover .gly-card-title { color: var(--gly-green); }
+.gly-card-blue:hover .gly-card-title { color: var(--gly-blue); }
 
-.gallery-card-description {
-  font-size: 0.8rem;
+.gly-card-text {
+  font-size: 0.78rem;
   line-height: 1.5;
-  color: var(--gly-text-tertiary);
+  color: var(--gly-text-3);
+  margin: 0;
 }
 
 /* Accent Line */
-.gallery-card-accent {
-  width: 22px;
+.gly-card-line {
+  width: 20px;
   height: 2px;
   border-radius: 1px;
-  margin: 12px 18px 16px;
-  transition: width 0.4s var(--gly-ease-out);
+  margin: 10px 16px 14px;
+  transition: width 0.4s var(--gly-ease);
 }
 
-.card-red .gallery-card-accent { background: var(--gly-red); }
-.card-green .gallery-card-accent { background: var(--gly-green); }
-.card-blue .gallery-card-accent { background: var(--gly-blue); }
+.gly-line-red { background: var(--gly-red); }
+.gly-line-green { background: var(--gly-green); }
+.gly-line-blue { background: var(--gly-blue); }
 
-.gallery-card:hover .gallery-card-accent {
-  width: 38px;
+.gly-card:hover .gly-card-line {
+  width: 34px;
 }
 
-/* ============================================
-   Empty State
-   ============================================ */
-.gallery-empty {
+/* ============================================ */
+/* CTA */
+/* ============================================ */
+.gly-cta {
   text-align: center;
-  padding: 60px 20px;
 }
 
-.gallery-empty p {
-  font-size: 1rem;
-  color: var(--gly-text-muted);
-  margin-bottom: 16px;
-}
-
-.gallery-empty button {
-  padding: 10px 24px;
+.gly-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
   background: var(--gly-red);
   color: var(--gly-white);
-  font-size: 0.9rem;
-  font-weight: 500;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-family: var(--gly-font-body);
-  transition: background 0.3s ease;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(220,38,38,0.25);
+  transition: all 0.35s var(--gly-ease);
 }
 
-.gallery-empty button:hover {
+.gly-cta-btn:hover {
   background: var(--gly-red-dark);
+  box-shadow: 0 12px 32px rgba(220,38,38,0.35);
+  transform: translateY(-2px);
 }
 
-/* ============================================
-   Lightbox
-   ============================================ */
-.gallery-lightbox {
+.gly-cta-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.gly-cta-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* ============================================ */
+/* LIGHTBOX */
+/* ============================================ */
+.gly-lightbox {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0,0,0,0.9);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
-  backdrop-filter: blur(10px);
 }
 
-.gallery-lightbox-content {
-  max-width: 800px;
+.gly-lightbox-dialog {
+  max-width: 650px;
   width: 100%;
-  max-height: 90vh;
   background: var(--gly-white);
   border-radius: 16px;
   overflow: hidden;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.3);
 }
 
-/* Close Button */
-.gallery-lightbox-close {
+.gly-lightbox-close {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 12px;
+  right: 12px;
   z-index: 10;
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.9);
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  color: var(--gly-text-primary);
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
 }
 
-.gallery-lightbox-close:hover {
+.gly-lightbox-close:hover {
   background: var(--gly-white);
   transform: scale(1.1);
 }
 
-/* Lightbox Image */
-.gallery-lightbox-image {
-  width: 100%;
+.gly-lightbox-image {
   aspect-ratio: 16/10;
   overflow: hidden;
 }
 
-.gallery-lightbox-image img {
+.gly-lightbox-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Lightbox Info */
-.gallery-lightbox-info {
-  padding: 24px;
+.gly-lightbox-info {
+  padding: 20px 24px;
 }
 
-.gallery-lightbox-category {
+.gly-lightbox-cat {
   display: inline-block;
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 600;
-  color: var(--gly-red);
+  color: var(--gly-white);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 8px;
+  letter-spacing: 0.08em;
   padding: 4px 10px;
-  background: var(--gly-red-pale);
   border-radius: 4px;
+  margin-bottom: 8px;
 }
 
-.gallery-lightbox-title {
+.gly-cat-red { background: var(--gly-red); }
+.gly-cat-green { background: var(--gly-green); }
+.gly-cat-blue { background: var(--gly-blue); }
+
+.gly-lightbox-title {
   font-family: var(--gly-font-display);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: var(--gly-text-primary);
-  margin-bottom: 6px;
-  letter-spacing: -0.01em;
+  color: var(--gly-text-1);
+  margin-bottom: 4px;
 }
 
-.gallery-lightbox-description {
-  font-size: 0.9rem;
+.gly-lightbox-desc {
+  font-size: 0.88rem;
   line-height: 1.6;
-  color: var(--gly-text-secondary);
+  color: var(--gly-text-2);
 }
 
-/* Lightbox Navigation */
-.gallery-lightbox-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 14px 24px;
-  border-top: 1px solid var(--gly-border-light);
-}
-
-.gallery-lightbox-nav-btn {
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--gly-white);
-  border: 1.5px solid var(--gly-border);
-  border-radius: 50%;
-  cursor: pointer;
-  color: var(--gly-text-primary);
-  transition: all 0.3s ease;
-}
-
-.gallery-lightbox-nav-btn:hover {
-  border-color: var(--gly-red);
-  color: var(--gly-red);
-  background: var(--gly-red-pale);
-}
-
-.gallery-lightbox-counter {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--gly-text-muted);
-  min-width: 60px;
-  text-align: center;
-}
-
-/* ============================================
-   Responsive
-   ============================================ */
-@media (max-width: 1024px) {
-  .gallery-grid {
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+@media (max-width: 900px) {
+  .gly-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
   }
 }
 
-@media (max-width: 768px) {
-  .gallery-hero {
-    padding: 72px 0 48px;
+@media (max-width: 600px) {
+  .gly-section {
+    padding: 56px 0;
   }
-  
-  .gallery-container {
-    padding: 0 20px;
-  }
-  
-  .gallery-filter-section {
-    padding: 16px 0;
-    top: 48px;
-  }
-  
-  .gallery-grid-section {
-    padding: 28px 0 56px;
-  }
-  
-  .gallery-hero-headline {
-    font-size: 1.8rem;
-  }
-  
-  .gallery-lightbox-content {
-    max-height: 95vh;
-  }
-  
-  .gallery-lightbox-info {
-    padding: 20px;
-  }
-  
-  .gallery-lightbox-title {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 540px) {
-  .gallery-container {
+  .gly-container {
     padding: 0 16px;
   }
-  
-  .gallery-hero {
-    padding: 56px 0 36px;
+  .gly-header {
+    margin-bottom: 28px;
   }
-  
-  .gallery-grid {
+  .gly-grid {
     grid-template-columns: 1fr;
     gap: 14px;
+    margin-bottom: 28px;
   }
-  
-  .gallery-filters {
-    gap: 6px;
-  }
-  
-  .gallery-filter-btn {
-    padding: 6px 14px;
-    font-size: 0.7rem;
-  }
-  
-  .gallery-lightbox {
-    padding: 12px;
-  }
-  
-  .gallery-lightbox-close {
-    top: 10px;
-    right: 10px;
-    width: 32px;
-    height: 32px;
-  }
-  
-  .gallery-lightbox-info {
-    padding: 16px;
-  }
-  
-  .gallery-lightbox-nav {
-    padding: 10px 16px;
-    gap: 14px;
+  .gly-cta-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 
-/* ============================================
-   Reduced Motion
-   ============================================ */
 @media (prefers-reduced-motion: reduce) {
-  .gallery-card {
-    transition: none;
-  }
-  
-  .gallery-card-image img {
-    transition: none;
-  }
-  
-  .gallery-card-image-overlay,
-  .gallery-card-view,
-  .gallery-card-accent {
-    transition: none;
+  .gly-card,
+  .gly-card-media img,
+  .gly-card-line {
+    transition: none !important;
   }
 }
