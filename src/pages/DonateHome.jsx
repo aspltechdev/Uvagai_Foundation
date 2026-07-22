@@ -754,7 +754,7 @@
 import { useRef, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import "./Donate.css";
+import "./DonateHome.css";
 
 import childedu from "../assets/childedu.png";
 import community from "../assets/community.png";
