@@ -373,9 +373,9 @@ export default function Donate() {
                     <div className="stat-back-accent" />
                     <h3>{stat.title}</h3>
                     <p>{stat.desc}</p>
-                    {/* <span className="stat-back-note">
+                    <span className="stat-back-note">
                       Thank you for supporting Uvagai Foundation.
-                    </span> */}
+                    </span>
                   </div>
                 </div>
               </motion.div>

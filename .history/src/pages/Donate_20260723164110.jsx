@@ -52,11 +52,7 @@ export default function Donate() {
       impact: "Provides learning materials, school supplies and educational support for one child.",
       accent: "red",
       popular: false,
-      benefits: [
-        "Learning Materials",
-        "School Essentials",
-        "Tax Benefit"
-      ]
+      benefits: ["Learning Materials", "School Essentials", "Tax Benefit"]
     },
     {
       amount: "1000",
@@ -64,11 +60,7 @@ export default function Donate() {
       impact: "Supports medical camps, health awareness programs and medicines.",
       accent: "green",
       popular: true,
-      benefits: [
-        "Medical Support",
-        "Community Health",
-        "Tax Benefit"
-      ]
+      benefits: ["Medical Support", "Community Health", "Tax Benefit"]
     },
     {
       amount: "2500",
@@ -76,11 +68,7 @@ export default function Donate() {
       impact: "Provides nutritious meals and welfare assistance for vulnerable families.",
       accent: "blue",
       popular: false,
-      benefits: [
-        "Nutritious Meals",
-        "Family Support",
-        "Tax Benefit"
-      ]
+      benefits: ["Nutritious Meals", "Family Support", "Tax Benefit"]
     },
     {
       amount: "5000",
@@ -88,11 +76,7 @@ export default function Donate() {
       impact: "Helps build sustainable community projects and livelihood initiatives.",
       accent: "red",
       popular: false,
-      benefits: [
-        "Community Projects",
-        "Skill Development",
-        "Tax Benefit"
-      ]
+      benefits: ["Community Projects", "Skill Development", "Tax Benefit"]
     }
   ];
 
@@ -126,7 +110,6 @@ export default function Donate() {
     return () => clearInterval(interval);
   }, []);
 
-  // Counter animation effect
   useEffect(() => {
     if (isInView) {
       const targetValues = {
@@ -135,42 +118,24 @@ export default function Donate() {
         communities: 200,
         years: 12
       };
-
-      const duration = 2000; // 2 seconds
+      const duration = 2000;
       const steps = 60;
       const interval = duration / steps;
-
       let step = 0;
       const timer = setInterval(() => {
         step++;
         const progress = step / steps;
-
         setCounts({
           transparency: Math.round(progress * targetValues.transparency),
           lives: Math.round(progress * targetValues.lives),
           communities: Math.round(progress * targetValues.communities),
           years: Math.round(progress * targetValues.years)
         });
-
-        if (step >= steps) {
-          clearInterval(timer);
-        }
+        if (step >= steps) clearInterval(timer);
       }, interval);
-
       return () => clearInterval(timer);
     }
   }, [isInView]);
-
-  const handleDonate = (amount) => {
-    setSelectedAmount(amount);
-  };
-
-  const handleCustomDonate = (e) => {
-    e.preventDefault();
-    if (customAmount) {
-      setSelectedAmount(customAmount);
-    }
-  };
 
   const statCards = [
     {
@@ -204,39 +169,19 @@ export default function Donate() {
       {/* Hero Section */}
       <section className="donate-hero">
         <div className="donate-hero-bg" />
-
         <motion.div
           className="donate-hero-blob donate-hero-blob-red"
-          animate={{
-            y: [0, -25, 0],
-            x: [0, 15, 0],
-            scale: [1, 1.08, 1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          animate={{ y: [0, -25, 0], x: [0, 15, 0], scale: [1, 1.08, 1] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
-
         <motion.div
           className="donate-hero-blob donate-hero-blob-green"
-          animate={{
-            y: [0, 20, 0],
-            x: [0, -15, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          animate={{ y: [0, 20, 0], x: [0, -15, 0], scale: [1, 1.1, 1] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         />
-
         <div className="donate-overlay-dark" />
         <div className="donate-overlay-gradient" />
         <div className="donate-overlay-vignette" />
-
         <div className="donate-hero-container">
           <AnimatePresence mode="wait">
             <motion.div
@@ -251,21 +196,18 @@ export default function Donate() {
                 <span className="donate-hero-tag-line" />
                 <span className="donate-hero-tag-text">{currentSlide_hero.tag}</span>
               </div>
-
               <h1 className="donate-hero-headline">{currentSlide_hero.title}</h1>
               <p className="donate-hero-subtitle">{currentSlide_hero.subtitle}</p>
-
               <div className="donate-hero-buttons">
                 <motion.button
                   type="button"
                   className="donate-hero-primary-btn"
                   whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: .97 }}
+                  whileTap={{ scale: 0.97 }}
                   onClick={() => navigate("/contact#contact-form")}
                 >
                   Donate Now →
                 </motion.button>
-
                 <motion.a
                   href="#why-donate"
                   className="donate-hero-secondary-btn"
@@ -279,7 +221,6 @@ export default function Donate() {
             </motion.div>
           </AnimatePresence>
         </div>
-
         <div className="donate-slide-nav">
           {heroSlides.map((_, index) => (
             <button
@@ -296,7 +237,6 @@ export default function Donate() {
             </button>
           ))}
         </div>
-
         <div className="donate-slide-counter">
           <span className="donate-counter-current">{(current + 1).toString().padStart(2, '0')}</span>
           <span className="donate-counter-sep">/</span>
@@ -304,7 +244,7 @@ export default function Donate() {
         </div>
       </section>
 
-      {/* ========== WHY DONATE INTRO ========== */}
+      {/* WHY DONATE INTRO */}
       <section className="donate-intro-section" id="why-donate">
         <div className="donate-container">
           <motion.div
@@ -327,7 +267,7 @@ export default function Donate() {
         </div>
       </section>
 
-      {/* ========== STATS GRID — GLASS FLIP CARDS ========== */}
+      {/* STATS GRID */}
       <section className="donate-stats-section">
         <div className="donate-container">
           <motion.div
@@ -349,7 +289,6 @@ export default function Donate() {
                 }}
               >
                 <div className="stat-card-inner">
-                  {/* FRONT — background image + glass panel */}
                   <div
                     className="stat-card-front"
                     style={{ backgroundImage: `url(${stat.img})` }}
@@ -367,15 +306,13 @@ export default function Donate() {
                       <span className="stat-flip-hint">Hover to read more</span>
                     </div>
                   </div>
-
-                  {/* BACK — glass panel, no image */}
                   <div className="stat-card-back">
                     <div className="stat-back-accent" />
                     <h3>{stat.title}</h3>
                     <p>{stat.desc}</p>
-                    {/* <span className="stat-back-note">
+                    <span className="stat-back-note">
                       Thank you for supporting Uvagai Foundation.
-                    </span> */}
+                    </span>
                   </div>
                 </div>
               </motion.div>
@@ -384,7 +321,7 @@ export default function Donate() {
         </div>
       </section>
 
-      {/* ========== DONATION OPTIONS WITH childd.png BACKDROP ========== */}
+      {/* DONATION OPTIONS */}
       <section className="donate-options-section" id="donate-options">
         <div className="donate-options-slider-wrapper">
           <div className="donate-container">
@@ -405,7 +342,6 @@ export default function Donate() {
                 and community development. Every donation directly transforms lives.
               </p>
             </motion.div>
-
             <motion.div
               className="donation-slider"
               initial={{ opacity: 0, y: 30 }}
@@ -418,7 +354,6 @@ export default function Donate() {
                   <path d="M12 5L7 10L12 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
-
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlide}
@@ -431,25 +366,19 @@ export default function Donate() {
                   {activeDonation.popular && (
                     <div className="slider-badge">MOST IMPACTFUL</div>
                   )}
-
                   <div className="slider-price">
                     <span className="slider-currency">₹</span>
                     <span className="slider-amount">{activeDonation.amount}</span>
                   </div>
-
                   <h2 className="slider-title">{activeDonation.title}</h2>
                   <p className="slider-impact">{activeDonation.impact}</p>
-
                   <div className="slider-tags">
                     {activeDonation.benefits.map((item, index) => (
-                      <span key={index} className="slider-tag">
-                        {item}
-                      </span>
+                      <span key={index} className="slider-tag">{item}</span>
                     ))}
                   </div>
-
                   <motion.button
-                    className="slider-donate"
+                    className="slider-donate-btn"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => navigate("/contact#contact-form")}
@@ -458,14 +387,12 @@ export default function Donate() {
                   </motion.button>
                 </motion.div>
               </AnimatePresence>
-
               <button className="slider-btn slider-right" onClick={nextSlide}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path d="M8 5L13 10L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
             </motion.div>
-
             <div className="slider-dots">
               {donationOptions.map((_, index) => (
                 <button
@@ -477,84 +404,109 @@ export default function Donate() {
             </div>
           </div>
         </div>
-
-        {/* Custom donation card removed – kept only as comment */}
       </section>
 
-      {/* Impact Areas */}
+      {/* ========== IMPACT AREAS — PREMIUM REDESIGN ========== */}
       <section className="impact-section">
         <div className="donate-container">
-          <div className="impact-heading">
-            <span>OUR IMPACT</span>
+          <motion.div
+            className="impact-heading"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.33, 0.1, 0.25, 1] }}
+          >
+            <div className="impact-heading-tag">
+              <span className="impact-heading-line" />
+              <span>OUR IMPACT</span>
+            </div>
             <h2>
               Areas We <span>Support</span>
             </h2>
             <p>
-              Every donation directly contributes to initiatives that improve
-              lives and strengthen communities.
+              Every donation directly contributes to initiatives that improve lives and strengthen communities.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="impact-grid">
+          <motion.div
+            className="impact-grid"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-40px" }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+            }}
+          >
             {[
               {
                 tag: "Education",
                 title: "Education & Youth Empowerment",
                 desc: "Supporting learning opportunities, digital literacy, mentorship, and educational resources.",
                 img: childedu,
+                color: "red"
               },
               {
                 tag: "Healthcare",
                 title: "Healthcare & Wellness",
                 desc: "Organizing medical camps, health awareness programs and preventive healthcare initiatives.",
                 img: community,
+                color: "green"
               },
               {
-                tag: "child",
+                tag: "Child",
                 title: "Child Welfare",
                 desc: "Promoting education, nutrition, healthcare and protection for every child.",
                 img: childincards,
+                color: "blue"
               },
               {
-                tag: "elderly care",
+                tag: "Elderly",
                 title: "Elderly Care",
                 desc: "Improving the quality of life of senior citizens through care, support and wellness.",
                 img: seniorciti,
+                color: "red"
               },
               {
                 tag: "Environment",
                 title: "Environmental Sustainability",
                 desc: "Tree plantation drives, environmental awareness and green community initiatives.",
                 img: environment,
+                color: "green"
               },
               {
                 tag: "Community",
                 title: "Community Development",
                 desc: "Creating sustainable livelihood opportunities and empowering rural communities.",
                 img: communityy,
+                color: "blue"
               },
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className="impact-card"
-                whileHover={{ y: -10 }}
+                className={`impact-card impact-${item.color}`}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                whileHover={{ y: -8, transition: { duration: 0.3, ease: [0.33, 0.1, 0.25, 1] } }}
               >
-                <div className="impact-image">
-                  <img src={item.img} alt={item.title} />
-                </div>
-                <div className="impact-content">
-                  <div className="impact-header">
-                    <div className="impact-tag">
-                      {item.tag}
-                    </div>
-                    <h3>{item.title}</h3>
+                <div className="impact-card-image">
+                  <img src={item.img} alt={item.title} loading="lazy" />
+                  <div className="impact-card-overlay" />
+                  <div className="impact-card-badge">
+                    <span className={`impact-badge-dot impact-badge-${item.color}`} />
+                    <span className="impact-badge-text">{item.tag}</span>
                   </div>
-                  <span className="impact-line"></span>
-                  <p>{item.desc}</p>
+                </div>
+                <div className="impact-card-content">
+                  <h3 className="impact-card-title">{item.title}</h3>
+                  <div className={`impact-card-accent impact-accent-${item.color}`} />
+                  <p className="impact-card-desc">{item.desc}</p>
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 

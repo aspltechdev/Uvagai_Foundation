@@ -82,34 +82,40 @@
   cursor: default;
 }
 
-.donate-slides-container {
-  position: absolute;
-  inset: -5%;
-}
-
-.donate-slide-bg {
+.donate-hero-bg {
   position: absolute;
   inset: 0;
-  opacity: 0;
-  transition: opacity 1.2s ease;
+  background: radial-gradient(ellipse at center, #1a1a1a, #000);
 }
 
-.donate-slide-bg.active {
-  opacity: 1;
+.donate-hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.25;
+  pointer-events: none;
 }
 
-.donate-slide-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 35%;
+.donate-hero-blob-red {
+  width: 500px;
+  height: 500px;
+  background: var(--dn-red);
+  top: -100px;
+  right: -100px;
 }
 
-/* Overlays */
+.donate-hero-blob-green {
+  width: 400px;
+  height: 400px;
+  background: var(--dn-green);
+  bottom: -100px;
+  left: -100px;
+}
+
 .donate-overlay-dark {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.55);
   z-index: 1;
 }
 
@@ -220,14 +226,6 @@
   transform: translateY(-2px);
 }
 
-.donate-hero-primary-btn svg {
-  transition: transform 0.3s ease;
-}
-
-.donate-hero-primary-btn:hover svg {
-  transform: translateX(3px);
-}
-
 .donate-hero-secondary-btn {
   display: inline-flex;
   align-items: center;
@@ -259,7 +257,6 @@
   transform: translateX(4px);
 }
 
-/* Slide Navigation */
 .donate-slide-nav {
   position: absolute;
   bottom: 2rem;
@@ -323,7 +320,7 @@
 }
 
 /* ============================================
-   Intro Section (Shared)
+   Intro Section
    ============================================ */
 
 .donate-intro-section {
@@ -376,7 +373,7 @@
 }
 
 /* ============================================
-   Stats Section wrapper + subtle bg
+   Stats Section
    ============================================ */
 
 .donate-stats-section {
@@ -390,10 +387,6 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
-
-/* ============================================
-   Stat Cards — 3D Glass Flip
-   ============================================ */
 
 .donate-stat-card {
   position: relative;
@@ -434,7 +427,6 @@
   text-align: center;
 }
 
-/* Front face */
 .stat-card-front {
   background-size: cover;
   background-position: center;
@@ -463,7 +455,6 @@
   z-index: 1;
   width: 100%;
   padding: 1.75rem 1.25rem;
-  transition: transform 0.4s ease;
 }
 
 .stat-top-line {
@@ -500,7 +491,6 @@
   letter-spacing: 0.1em;
 }
 
-/* Back face — clean glass panel */
 .stat-card-back {
   flex-direction: column;
   background: rgba(255, 255, 255, 0.85);
@@ -548,8 +538,7 @@
 }
 
 /* ============================================
-   DONATION OPTIONS SECTION
-   Only Slider area has students.png backdrop - LESS DIMMER
+   Donation Options
    ============================================ */
 
 .donate-options-section {
@@ -559,7 +548,6 @@
   background: var(--dn-white);
 }
 
-/* Container that wraps ONLY the slider section with backdrop */
 .donate-options-slider-wrapper {
   position: relative;
   padding: 2rem 0 3rem;
@@ -568,7 +556,6 @@
   overflow: hidden;
 }
 
-/* students.png Background - ONLY for the slider area - LESS DIMMER */
 .donate-options-slider-wrapper::before {
   content: '';
   position: absolute;
@@ -587,13 +574,11 @@
   transition: transform 8s ease, opacity 1s ease;
 }
 
-/* Hover animation - subtle zoom effect */
 .donate-options-slider-wrapper:hover::before {
   transform: scale(1.03);
   opacity: 0.92;
 }
 
-/* Dark overlay for the slider backdrop - LESS DIM */
 .donate-options-slider-wrapper::after {
   content: '';
   position: absolute;
@@ -602,66 +587,32 @@
   right: 0;
   bottom: 0;
   background:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.45) 0%,
-      rgba(0, 0, 0, 0.35) 20%,
-      rgba(0, 0, 0, 0.30) 50%,
-      rgba(0, 0, 0, 0.35) 80%,
-      rgba(0, 0, 0, 0.45) 100%
-    ),
-    linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.60) 0%,
-      rgba(0, 0, 0, 0.45) 20%,
-      rgba(0, 0, 0, 0.25) 40%,
-      rgba(0, 0, 0, 0.15) 60%,
-      rgba(0, 0, 0, 0.08) 75%,
-      transparent 100%
-    ),
-    radial-gradient(
-      ellipse at center,
-      transparent 35%,
-      rgba(0, 0, 0, 0.15) 100%
-    );
+    linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.35) 20%, rgba(0,0,0,0.30) 50%, rgba(0,0,0,0.35) 80%, rgba(0,0,0,0.45) 100%),
+    linear-gradient(to right, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.45) 20%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0.08) 75%, transparent 100%),
+    radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.15) 100%);
   z-index: 0;
   pointer-events: none;
-  transition: opacity 0.6s ease;
 }
 
-/* Hover effect - overlay becomes slightly less dark on hover */
-.donate-options-slider-wrapper:hover::after {
-  opacity: 0.92;
-}
-
-/* Make sure content appears above backdrop */
 .donate-options-slider-wrapper .donate-container {
   position: relative;
   z-index: 1;
 }
 
-/* Intro text within slider wrapper - white text for contrast */
 .donate-options-slider-wrapper .donate-intro-tag-text {
   color: rgba(255, 255, 255, 0.9);
 }
-
 .donate-options-slider-wrapper .donate-intro-tag-line {
   background: var(--dn-red);
 }
-
 .donate-options-slider-wrapper .donate-intro-headline {
   color: var(--dn-white);
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
-
 .donate-options-slider-wrapper .donate-intro-description {
   color: rgba(255, 255, 255, 0.8);
   text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
 }
-
-/* ============================================
-   Donation Slider
-   ============================================ */
 
 .donation-slider {
   display: flex;
@@ -692,11 +643,6 @@
   background: var(--dn-red-pale);
 }
 
-/* ============================================
-   Slider Cards - Enhanced Hover Effects
-   ============================================ */
-
-/* Base slider card styles */
 .slider-card {
   background: var(--dn-white);
   border: 1px solid var(--dn-border-light);
@@ -711,161 +657,21 @@
   transform: translateY(0);
 }
 
-/* Glass effect for slider cards in the backdrop section */
 .donate-options-slider-wrapper .slider-card {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  transition: all 0.5s cubic-bezier(0.33, 0.1, 0.25, 1);
-  transform: translateY(0);
 }
 
-/* Hover effect for slider cards - changes to off-white/grey */
 .donate-options-slider-wrapper .slider-card:hover {
   background: rgba(245, 245, 245, 0.96);
   backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 16px 56px rgba(0, 0, 0, 0.18),
-              0 0 0 1px rgba(220, 38, 38, 0.08);
+  box-shadow: 0 16px 56px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(220, 38, 38, 0.08);
   transform: translateY(-12px) scale(1.02);
   border-color: rgba(220, 38, 38, 0.15);
 }
-
-/* Add a subtle glow effect on hover */
-.donate-options-slider-wrapper .slider-card::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: 17px;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(220, 38, 38, 0.2), transparent 50%, rgba(220, 38, 38, 0.1));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.donate-options-slider-wrapper .slider-card:hover::before {
-  opacity: 1;
-}
-
-/* Ripple effect on card hover */
-.donate-options-slider-wrapper .slider-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(220, 38, 38, 0.03), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-
-.donate-options-slider-wrapper .slider-card:hover::after {
-  opacity: 1;
-}
-
-/* Hover effect for slider title */
-.donate-options-slider-wrapper .slider-card:hover .slider-title {
-  color: var(--dn-red);
-  transform: translateY(-2px);
-}
-
-/* Hover effect for slider amount */
-.donate-options-slider-wrapper .slider-card:hover .slider-amount {
-  color: var(--dn-red);
-  transform: scale(1.03);
-}
-
-/* Hover effect for slider impact text */
-.donate-options-slider-wrapper .slider-card:hover .slider-impact {
-  color: var(--dn-text-secondary);
-}
-
-/* Hover effect for slider tags */
-.donate-options-slider-wrapper .slider-card:hover .slider-tag {
-  background: rgba(220, 38, 38, 0.08);
-  color: var(--dn-red);
-  transform: translateY(-2px);
-}
-
-/* Hover effect for slider badge */
-.donate-options-slider-wrapper .slider-card:hover .slider-badge {
-  transform: translateX(-50%) scale(1.05);
-  box-shadow: 0 4px 20px rgba(22, 163, 74, 0.4);
-}
-
-/* Hover effect for donate button */
-.donate-options-slider-wrapper .slider-card:hover .slider-donate-btn {
-  background: var(--dn-red-dark);
-  box-shadow: 0 12px 35px -10px rgba(220, 38, 38, 0.5);
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Individual card transition details */
-.slider-card .slider-title,
-.slider-card .slider-amount,
-.slider-card .slider-impact,
-.slider-card .slider-tag,
-.slider-card .slider-badge,
-.slider-card .slider-donate-btn {
-  transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
-}
-
-/* Slider card price area hover */
-.slider-card:hover .slider-price {
-  transform: translateY(-4px);
-}
-
-.slider-price {
-  transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
-}
-
-/* Slider card tags container hover */
-.slider-card:hover .slider-tags {
-  gap: 0.75rem;
-}
-
-.slider-tags {
-  transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
-}
-
-/* Slider buttons with glass effect */
-.donate-options-slider-wrapper .slider-btn {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  transition: all 0.4s var(--dn-ease-out);
-}
-
-.donate-options-slider-wrapper .slider-btn:hover {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: var(--dn-red);
-  color: var(--dn-red);
-  transform: scale(1.1);
-}
-
-/* Slider dots with glass effect */
-.donate-options-slider-wrapper .slider-dot {
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  transition: all 0.4s var(--dn-ease-out);
-}
-
-.donate-options-slider-wrapper .slider-dot.active {
-  background: var(--dn-red);
-  width: 32px;
-}
-
-/* ============================================
-   Slider Card Components
-   ============================================ */
 
 .slider-badge {
   position: absolute;
@@ -881,7 +687,6 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
-  transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
 }
 
 .slider-price {
@@ -890,14 +695,12 @@
   align-items: baseline;
   justify-content: center;
   gap: 0.15rem;
-  transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
 }
 
 .slider-currency {
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--dn-text-muted);
-  transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
 }
 
 .slider-amount {
@@ -906,7 +709,6 @@
   font-weight: 400;
   color: var(--dn-text-primary);
   letter-spacing: -0.02em;
-  transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
 }
 
 .slider-title {
@@ -914,7 +716,6 @@
   font-weight: 600;
   color: var(--dn-text-primary);
   margin-bottom: 0.75rem;
-  transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
 }
 
 .slider-impact {
@@ -922,7 +723,6 @@
   line-height: 1.7;
   color: var(--dn-text-tertiary);
   margin-bottom: 1.25rem;
-  transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
 }
 
 .slider-tags {
@@ -932,7 +732,6 @@
   gap: 0.5rem;
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
-  transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
 }
 
 .slider-tag {
@@ -942,7 +741,6 @@
   border-radius: 6px;
   color: var(--dn-text-secondary);
   font-weight: 500;
-  transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
 }
 
 .slider-donate-btn {
@@ -965,14 +763,6 @@
   background: var(--dn-red-dark);
   box-shadow: 0 12px 35px -10px rgba(220, 38, 38, 0.45);
   transform: translateY(-2px);
-}
-
-.slider-donate-btn svg {
-  transition: transform 0.3s ease;
-}
-
-.slider-donate-btn:hover svg {
-  transform: translateX(3px);
 }
 
 .slider-dots {
@@ -1000,163 +790,83 @@
 }
 
 /* ============================================
-   CUSTOM DONATION CARD - NO BACKDROP
-   Clean white background - WIDER & TALLER
-   ============================================ */
-
-.donate-custom-card-wrapper {
-  padding: 2rem 0 1rem;
-  background: var(--dn-white);
-  position: relative;
-  z-index: 2;
-}
-
-.donate-custom-card {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  background: var(--dn-white);
-  border: 1px solid var(--dn-border-light);
-  border-radius: 16px;
-  padding: 3rem 2.5rem;
-  box-shadow: var(--dn-shadow-sm);
-  max-width: 850px;
-  margin: 0 auto;
-  transition: all 0.4s var(--dn-ease-out);
-}
-
-.donate-custom-card:hover {
-  box-shadow: var(--dn-shadow-xl);
-  transform: translateY(-4px);
-  border-color: var(--dn-red-light);
-}
-
-.donate-custom-content {
-  flex: 1;
-}
-
-.donate-custom-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--dn-text-primary);
-  margin-bottom: 0.5rem;
-}
-
-.donate-custom-text {
-  font-size: 0.9rem;
-  line-height: 1.7;
-  color: var(--dn-text-tertiary);
-}
-
-.custom-donate-form {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-shrink: 0;
-}
-
-.custom-input-wrapper {
-  display: flex;
-  align-items: center;
-  border: 1.5px solid var(--dn-border);
-  border-radius: 10px;
-  padding: 0 1rem;
-  transition: all 0.3s ease;
-  background: var(--dn-white);
-}
-
-.custom-input-wrapper:focus-within {
-  border-color: var(--dn-red);
-  box-shadow: 0 0 0 3px var(--dn-red-light);
-}
-
-.rupee-symbol {
-  font-size: 1rem;
-  color: var(--dn-text-muted);
-  font-weight: 500;
-}
-
-.custom-amount-input {
-  border: none;
-  outline: none;
-  padding: 0.9rem 0.5rem;
-  font-size: 0.95rem;
-  width: 160px;
-  font-family: var(--dn-font-body);
-  color: var(--dn-text-primary);
-  background: transparent;
-}
-
-.custom-amount-input::-webkit-inner-spin-button,
-.custom-amount-input::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.custom-donate-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.9rem 1.75rem;
-  background: var(--dn-red);
-  color: var(--dn-white);
-  border: none;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  box-shadow: 0 8px 25px -8px rgba(220, 38, 38, 0.35);
-  transition: all 0.4s var(--dn-ease-out);
-  white-space: nowrap;
-}
-
-.custom-donate-btn:hover {
-  background: var(--dn-red-dark);
-  box-shadow: 0 12px 35px -10px rgba(220, 38, 38, 0.45);
-  transform: translateY(-2px) scale(1.02);
-}
-
-.custom-donate-btn svg {
-  transition: transform 0.3s ease;
-}
-
-.custom-donate-btn:hover svg {
-  transform: translateX(3px);
-}
-
-/* ============================================
-   Impact Grid - Compact
+   IMPACT AREAS — PREMIUM REDESIGN
    ============================================ */
 
 .impact-section {
-  padding: 4rem 0 5rem;
+  padding: 5rem 0 6rem;
   background: var(--dn-white);
+}
+
+.impact-heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.impact-heading-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.impact-heading-line {
+  width: 28px;
+  height: 2px;
+  background: var(--dn-red);
+  border-radius: 1px;
+}
+
+.impact-heading-tag span:last-child {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--dn-red);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.impact-heading h2 {
+  font-family: var(--dn-font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 400;
+  color: var(--dn-text-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.impact-heading h2 span {
+  color: var(--dn-red);
+}
+
+.impact-heading p {
+  font-size: 0.95rem;
+  color: var(--dn-text-tertiary);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
 .impact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin-top: 2.5rem;
 }
 
 .impact-card {
   background: var(--dn-white);
-  border: 1px solid var(--dn-border-light);
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--dn-shadow-sm);
-  transition: all 0.4s var(--dn-ease-out);
-  cursor: pointer;
+  border: 1px solid var(--dn-border-light);
+  transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .impact-card:hover {
   box-shadow: var(--dn-shadow-xl);
   border-color: transparent;
-  transform: translateY(-4px);
 }
 
 .impact-card-image {
@@ -1170,22 +880,22 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s var(--dn-ease-out);
+  transition: transform 0.7s cubic-bezier(0.33, 0.1, 0.25, 1);
 }
 
 .impact-card:hover .impact-card-image img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
-.impact-card-image-overlay {
+.impact-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.15) 100%);
+  background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.20) 100%);
   opacity: 0;
-  transition: opacity 0.4s var(--dn-ease-out);
+  transition: opacity 0.4s ease;
 }
 
-.impact-card:hover .impact-card-image-overlay {
+.impact-card:hover .impact-card-overlay {
   opacity: 1;
 }
 
@@ -1195,33 +905,25 @@
   left: 0.75rem;
   display: flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.25rem 0.65rem;
+  gap: 0.4rem;
+  padding: 0.25rem 0.7rem;
   background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
   border-radius: 6px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
-.impact-card-badge-dot {
-  width: 5px;
-  height: 5px;
+.impact-badge-dot {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
 }
 
-.impact-red .impact-card-badge-dot {
-  background: var(--dn-red);
-}
+.impact-badge-red   { background: var(--dn-red); }
+.impact-badge-green { background: var(--dn-green); }
+.impact-badge-blue  { background: var(--dn-blue); }
 
-.impact-green .impact-card-badge-dot {
-  background: var(--dn-green);
-}
-
-.impact-blue .impact-card-badge-dot {
-  background: var(--dn-blue);
-}
-
-.impact-card-badge-text {
+.impact-badge-text {
   font-size: 0.55rem;
   font-weight: 700;
   color: var(--dn-text-primary);
@@ -1230,70 +932,50 @@
 }
 
 .impact-card-content {
-  padding: 1rem 1.25rem 1.25rem;
+  padding: 1.25rem 1.5rem 1.5rem;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
 
 .impact-card-title {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--dn-text-primary);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.25rem;
   line-height: 1.3;
   transition: color 0.3s ease;
 }
 
-.impact-red:hover .impact-card-title {
-  color: var(--dn-red);
+.impact-red:hover .impact-card-title   { color: var(--dn-red); }
+.impact-green:hover .impact-card-title { color: var(--dn-green); }
+.impact-blue:hover .impact-card-title  { color: var(--dn-blue); }
+
+.impact-card-accent {
+  width: 28px;
+  height: 2.5px;
+  border-radius: 2px;
+  margin: 0.4rem 0 0.6rem;
+  transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
 }
 
-.impact-green:hover .impact-card-title {
-  color: var(--dn-green);
+.impact-accent-red   { background: var(--dn-red); }
+.impact-accent-green { background: var(--dn-green); }
+.impact-accent-blue  { background: var(--dn-blue); }
+
+.impact-card:hover .impact-card-accent {
+  width: 48px;
 }
 
-.impact-blue:hover .impact-card-title {
-  color: var(--dn-blue);
-}
-
-.impact-card-description {
-  font-size: 0.78rem;
-  line-height: 1.5;
+.impact-card-desc {
+  font-size: 0.82rem;
+  line-height: 1.6;
   color: var(--dn-text-tertiary);
-  margin-bottom: 0.5rem;
   flex: 1;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-.impact-card-accent {
-  width: 25px;
-  height: 2.5px;
-  border-radius: 2px;
-  opacity: 0;
-  transition: all 0.4s var(--dn-ease-out);
-  margin-top: 0.25rem;
-  flex-shrink: 0;
-}
-
-.impact-red .impact-card-accent {
-  background: var(--dn-red);
-}
-
-.impact-green .impact-card-accent {
-  background: var(--dn-green);
-}
-
-.impact-blue .impact-card-accent {
-  background: var(--dn-blue);
-}
-
-.impact-card:hover .impact-card-accent {
-  opacity: 0.6;
-  width: 40px;
 }
 
 /* ============================================
@@ -1369,20 +1051,14 @@
   border-radius: 10px;
   transition: all 0.4s var(--dn-ease-out);
   box-shadow: 0 10px 30px -10px rgba(220, 38, 38, 0.35);
+  border: none;
+  cursor: pointer;
 }
 
 .donate-cta-primary:hover {
   background: var(--dn-red-dark);
   box-shadow: 0 15px 40px -12px rgba(220, 38, 38, 0.45);
   transform: translateY(-2px);
-}
-
-.donate-cta-primary svg {
-  transition: transform 0.3s ease;
-}
-
-.donate-cta-primary:hover svg {
-  transform: translateX(3px);
 }
 
 .donate-cta-secondary {
@@ -1416,27 +1092,7 @@
 }
 
 /* ============================================
-   Counter Animation
-   ============================================ */
-
-.count-up-number {
-  display: inline-block;
-  animation: countFade 0.5s ease;
-}
-
-@keyframes countFade {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ============================================
-   Responsive Styles
+   Responsive
    ============================================ */
 
 @media (max-width: 1024px) {
@@ -1444,15 +1100,12 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
   }
-
   .donate-stat-card {
     height: 280px;
   }
-
   .stat-card-front .donate-stat-value {
     font-size: 2rem;
   }
-
   .impact-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
@@ -1474,112 +1127,33 @@
   .donate-container {
     padding: 0 1.5rem;
   }
-
   .donate-stat-card {
     height: 260px;
   }
-
-  .stat-card-front,
-  .stat-card-back {
-    padding: 1.25rem;
-  }
-
   .stat-card-front .donate-stat-value {
     font-size: 1.8rem;
   }
-
-  .stat-card-front .stat-title {
-    font-size: 0.85rem;
-  }
-
-  .stat-card-back h3 {
-    font-size: 1rem;
-  }
-
-  .stat-card-back p {
-    font-size: 0.78rem;
-  }
-
-  .donate-options-slider-wrapper {
-    border-radius: 12px;
-    padding: 1.5rem 0 2rem;
-  }
-
-  .donate-options-slider-wrapper::before {
-    opacity: 0.75;
-    background-position: center 35%;
-  }
-
-  .donate-options-slider-wrapper::after {
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.45) 0%,
-        rgba(0, 0, 0, 0.35) 20%,
-        rgba(0, 0, 0, 0.30) 50%,
-        rgba(0, 0, 0, 0.35) 80%,
-        rgba(0, 0, 0, 0.45) 100%
-      ),
-      linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.60) 0%,
-        rgba(0, 0, 0, 0.45) 30%,
-        rgba(0, 0, 0, 0.25) 55%,
-        rgba(0, 0, 0, 0.15) 75%,
-        transparent 95%
-      );
-  }
-
-  .donate-options-slider-wrapper .slider-card {
-    background: rgba(255, 255, 255, 0.90);
-  }
-
-  .donate-options-slider-wrapper .slider-card:hover {
-    transform: translateY(-8px) scale(1.01);
-    background: rgba(245, 245, 245, 0.94);
-  }
-
-  .donate-custom-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 2rem 1.5rem;
-    max-width: 100%;
-    margin: 0 1rem;
-  }
-
-  .custom-donate-form {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .custom-input-wrapper {
-    width: 100%;
-  }
-
-  .custom-amount-input {
-    width: 100%;
-  }
-
-  .custom-donate-btn {
-    width: 100%;
-    justify-content: center;
-  }
-
   .donation-slider {
     gap: 0.75rem;
+  }
+  .slider-card {
+    padding: 1.5rem;
+  }
+  .slider-amount {
+    font-size: 2rem;
   }
   .impact-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
   }
-  .impact-card-image {
-    aspect-ratio: 16/10;
+  .impact-card-content {
+    padding: 1rem 1.25rem 1.25rem;
   }
   .impact-card-title {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
-  .impact-card-description {
-    font-size: 0.75rem;
+  .impact-card-desc {
+    font-size: 0.78rem;
     -webkit-line-clamp: 2;
   }
 }
@@ -1589,34 +1163,17 @@
     height: 55vh;
     min-height: 360px;
   }
-  .donate-hero-container {
-    padding: 0 1.25rem;
-  }
   .donate-hero-headline {
     font-size: 1.4rem;
   }
-  .donate-container {
-    padding: 0 1.25rem;
-  }
-
   .donate-stats-grid {
     grid-template-columns: 1fr;
     max-width: 360px;
     margin: 0 auto;
   }
-
   .donate-stat-card {
     height: 240px;
   }
-
-  .stat-card-front .donate-stat-value {
-    font-size: 1.7rem;
-  }
-
-  .stat-card-front .stat-title {
-    font-size: 0.8rem;
-  }
-
   .impact-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem;
@@ -1624,16 +1181,13 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .impact-card-image {
-    aspect-ratio: 16/9;
-  }
   .impact-card-content {
     padding: 0.9rem 1rem 1rem;
   }
   .impact-card-title {
     font-size: 0.9rem;
   }
-  .impact-card-description {
+  .impact-card-desc {
     font-size: 0.8rem;
     -webkit-line-clamp: 3;
   }
@@ -1648,59 +1202,17 @@
   .slider-card {
     padding: 1.5rem;
   }
-  .slider-amount {
-    font-size: 2rem;
-  }
-
-  .donate-options-slider-wrapper::before {
-    opacity: 0.70;
-    background-position: center 40%;
-  }
-
-  .donate-options-slider-wrapper {
-    padding: 1rem 0 1.5rem;
-    border-radius: 8px;
-  }
-
-  .donate-options-slider-wrapper .donate-intro-headline {
-    font-size: 1.3rem;
-  }
-
-  .donate-options-slider-wrapper .donate-intro-description {
-    font-size: 0.85rem;
-  }
-
-  .donate-options-slider-wrapper .slider-card:hover {
-    transform: translateY(-6px) scale(1.005);
-    background: rgba(242, 242, 242, 0.92);
-  }
-
-  .donate-custom-card {
-    padding: 1.5rem 1rem;
-  }
 }
 
-/* ============================================
-   Reduced Motion Preference
-   ============================================ */
-
 @media (prefers-reduced-motion: reduce) {
-  .donate-slide-bg {
-    transition: none !important;
-  }
-  .impact-card {
-    transition: none;
-  }
-  .impact-card-image img {
-    transition: none;
-  }
-  .impact-card-accent {
-    transition: none;
-  }
   .donate-stat-card,
   .stat-card-inner,
-  .stat-card-front-overlay,
-  .stat-card-front-content {
+  .impact-card,
+  .impact-card-image img,
+  .impact-card-accent,
+  .slider-card,
+  .slider-btn,
+  .slider-dot {
     transition: none !important;
   }
   .donate-stat-card:hover .stat-card-inner {
@@ -1714,308 +1226,11 @@
   .impact-card:hover {
     transform: none !important;
   }
-  .donate-options-slider-wrapper::before {
-    transition: none !important;
-  }
+  .donate-options-slider-wrapper::before,
   .donate-options-slider-wrapper::after {
-    transition: none !important;
-  }
-  .donate-options-slider-wrapper .slider-card {
     transition: none !important;
   }
   .donate-options-slider-wrapper .slider-card:hover {
     transform: none !important;
-    animation: none !important;
-  }
-  .donate-options-slider-wrapper .slider-btn {
-    transition: none !important;
-  }
-  .donate-options-slider-wrapper .slider-dot {
-    transition: none !important;
-  }
-  .donate-options-slider-wrapper .slider-card::before,
-  .donate-options-slider-wrapper .slider-card::after {
-    display: none !important;
-  }
-  .slider-card .slider-title,
-  .slider-card .slider-amount,
-  .slider-card .slider-impact,
-  .slider-card .slider-tag,
-  .slider-card .slider-badge,
-  .slider-card .slider-donate-btn {
-    transition: none !important;
-  }
-}
-/* ========================================
-   IMPACT SECTION STYLES (RED THEME)
-   ======================================== */
-
-:root {
-  /* ----- RED THEME (active) ----- */
-  --primary-color: #e63946;
-  --primary-light: #f28b96;
-  --primary-rgb: 230, 57, 70;
-  /* ------------------------------ */
-
-  /* Blue theme (commented out) */
-  /* --primary-color: #2a7de1;        */
-  /* --primary-light: #6ba3f5;        */
-  /* --primary-rgb: 42, 125, 225;     */
-
-  /* Green theme (commented out) */
-  /* --primary-color: #2a9d8f;        */
-  /* --primary-light: #6cc4b8;        */
-  /* --primary-rgb: 42, 157, 143;     */
-}
-
-.impact-section {
-  padding: 80px 0;
-  background: #f8faff;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-.donate-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* ---- HEADING ---- */
-.impact-heading {
-  text-align: center;
-  margin-bottom: 56px;
-}
-
-.impact-heading span:first-child {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--primary-color);
-  background: rgba(var(--primary-rgb), 0.10);
-  padding: 6px 18px;
-  border-radius: 50px;
-  margin-bottom: 14px;
-}
-
-.impact-heading h2 {
-  font-size: 40px;
-  font-weight: 700;
-  color: #0b1b33;
-  margin: 0 0 12px 0;
-  letter-spacing: -0.5px;
-}
-
-.impact-heading h2 span {
-  color: var(--primary-color);
-  position: relative;
-}
-
-.impact-heading h2 span::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
-  border-radius: 4px;
-  opacity: 0.4;
-}
-
-.impact-heading p {
-  max-width: 580px;
-  margin: 0 auto;
-  font-size: 17px;
-  line-height: 1.7;
-  color: #4a5a72;
-}
-
-/* ---- GRID ---- */
-.impact-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-
-/* ---- CARD ---- */
-.impact-card {
-  background: #ffffff;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(11, 27, 51, 0.06);
-  transition: box-shadow 0.35s ease, transform 0.35s ease;
-  cursor: default;
-  display: flex;
-  flex-direction: column;
-}
-
-.impact-card:hover {
-  box-shadow: 0 16px 48px rgba(var(--primary-rgb), 0.13);
-  transform: translateY(-10px);
-}
-
-/* ---- CARD IMAGE ---- */
-.impact-image {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  background: #eef3fc;
-  flex-shrink: 0;
-}
-
-.impact-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-  display: block;
-}
-
-.impact-card:hover .impact-image img {
-  transform: scale(1.04);
-}
-
-/* ---- CARD CONTENT ---- */
-.impact-content {
-  padding: 22px 24px 28px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.impact-header {
-  margin-bottom: 10px;
-}
-
-.impact-tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--primary-color);
-  background: rgba(var(--primary-rgb), 0.08);
-  padding: 3px 14px;
-  border-radius: 50px;
-  margin-bottom: 10px;
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.impact-card:hover .impact-tag {
-  background: var(--primary-color);
-  color: #ffffff;
-}
-
-.impact-header h3 {
-  font-size: 19px;
-  font-weight: 700;
-  color: #0b1b33;
-  margin: 0;
-  line-height: 1.3;
-  letter-spacing: -0.3px;
-}
-
-.impact-line {
-  display: block;
-  width: 36px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
-  border-radius: 4px;
-  margin: 12px 0 14px 0;
-  transition: width 0.35s ease;
-}
-
-.impact-card:hover .impact-line {
-  width: 54px;
-}
-
-.impact-content p {
-  font-size: 15px;
-  line-height: 1.65;
-  color: #4a5a72;
-  margin: 0;
-  flex: 1;
-}
-
-/* ========================================
-   RESPONSIVE
-   ======================================== */
-
-/* Tablets & small laptops */
-@media (max-width: 1024px) {
-  .impact-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  .impact-heading h2 {
-    font-size: 34px;
-  }
-
-  .impact-image {
-    height: 180px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 640px) {
-  .impact-section {
-    padding: 56px 0;
-  }
-
-  .impact-heading {
-    margin-bottom: 40px;
-  }
-
-  .impact-heading h2 {
-    font-size: 28px;
-  }
-
-  .impact-heading p {
-    font-size: 15px;
-    padding: 0 4px;
-  }
-
-  .impact-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .impact-image {
-    height: 170px;
-  }
-
-  .impact-content {
-    padding: 18px 18px 22px;
-  }
-
-  .impact-header h3 {
-    font-size: 17px;
-  }
-
-  .impact-content p {
-    font-size: 14px;
-  }
-
-  .impact-tag {
-    font-size: 10px;
-    padding: 2px 12px;
-  }
-}
-
-/* Small phones */
-@media (max-width: 380px) {
-  .impact-heading h2 {
-    font-size: 24px;
-  }
-
-  .impact-image {
-    height: 150px;
-  }
-
-  .impact-content {
-    padding: 14px 14px 18px;
   }
 }

@@ -1747,25 +1747,30 @@
   }
 }
 /* ========================================
-   IMPACT SECTION STYLES (RED THEME)
+   IMPACT SECTION STYLES (Color Variables)
    ======================================== */
 
 :root {
-  /* ----- RED THEME (active) ----- */
+  /* ----- DEFAULT: BLUE THEME ----- */
+  :root {
+  /* ----- RED THEME ----- */
   --primary-color: #e63946;
   --primary-light: #f28b96;
   --primary-rgb: 230, 57, 70;
-  /* ------------------------------ */
+}
+  /* -------------------------------- */
 
-  /* Blue theme (commented out) */
-  /* --primary-color: #2a7de1;        */
-  /* --primary-light: #6ba3f5;        */
-  /* --primary-rgb: 42, 125, 225;     */
+  /* ----- TO SWITCH TO RED THEME ----- */
+  /* --primary-color: #e63946;          */
+  /* --primary-light: #f28b96;          */
+  /* --primary-rgb: 230, 57, 70;        */
+  /* ---------------------------------- */
 
-  /* Green theme (commented out) */
-  /* --primary-color: #2a9d8f;        */
-  /* --primary-light: #6cc4b8;        */
-  /* --primary-rgb: 42, 157, 143;     */
+  /* ----- TO SWITCH TO GREEN THEME --- */
+  /* --primary-color: #2a9d8f;          */
+  /* --primary-light: #6cc4b8;          */
+  /* --primary-rgb: 42, 157, 143;       */
+  /* ---------------------------------- */
 }
 
 .impact-section {

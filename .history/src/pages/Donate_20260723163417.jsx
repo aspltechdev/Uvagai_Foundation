@@ -373,9 +373,9 @@ export default function Donate() {
                     <div className="stat-back-accent" />
                     <h3>{stat.title}</h3>
                     <p>{stat.desc}</p>
-                    {/* <span className="stat-back-note">
+                    <span className="stat-back-note">
                       Thank you for supporting Uvagai Foundation.
-                    </span> */}
+                    </span>
                   </div>
                 </div>
               </motion.div>
@@ -502,55 +502,61 @@ export default function Donate() {
                 title: "Education & Youth Empowerment",
                 desc: "Supporting learning opportunities, digital literacy, mentorship, and educational resources.",
                 img: childedu,
+                color: "blue",
               },
               {
                 tag: "Healthcare",
                 title: "Healthcare & Wellness",
                 desc: "Organizing medical camps, health awareness programs and preventive healthcare initiatives.",
                 img: community,
+                color: "red",
               },
               {
-                tag: "child",
+                tag: "Child",
                 title: "Child Welfare",
                 desc: "Promoting education, nutrition, healthcare and protection for every child.",
                 img: childincards,
+                color: "green",
               },
               {
-                tag: "elderly care",
+                tag: "Elderly Care",
                 title: "Elderly Care",
                 desc: "Improving the quality of life of senior citizens through care, support and wellness.",
                 img: seniorciti,
+                color: "blue",
               },
               {
                 tag: "Environment",
                 title: "Environmental Sustainability",
                 desc: "Tree plantation drives, environmental awareness and green community initiatives.",
                 img: environment,
+                color: "green",
               },
               {
                 tag: "Community",
                 title: "Community Development",
                 desc: "Creating sustainable livelihood opportunities and empowering rural communities.",
                 img: communityy,
+                color: "red",
               },
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className="impact-card"
+                className={`impact-card impact-${item.color}`}
                 whileHover={{ y: -10 }}
               >
-                <div className="impact-image">
+                <div className="impact-card-image">
                   <img src={item.img} alt={item.title} />
-                </div>
-                <div className="impact-content">
-                  <div className="impact-header">
-                    <div className="impact-tag">
-                      {item.tag}
-                    </div>
-                    <h3>{item.title}</h3>
+                  <div className="impact-card-image-overlay" />
+                  <div className="impact-card-badge">
+                    <span className="impact-card-badge-dot" />
+                    <span className="impact-card-badge-text">{item.tag}</span>
                   </div>
-                  <span className="impact-line"></span>
-                  <p>{item.desc}</p>
+                </div>
+                <div className="impact-card-content">
+                  <h3 className="impact-card-title">{item.title}</h3>
+                  <p className="impact-card-description">{item.desc}</p>
+                  <span className="impact-card-accent" />
                 </div>
               </motion.div>
             ))}

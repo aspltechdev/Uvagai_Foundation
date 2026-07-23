@@ -373,9 +373,9 @@ export default function Donate() {
                     <div className="stat-back-accent" />
                     <h3>{stat.title}</h3>
                     <p>{stat.desc}</p>
-                    {/* <span className="stat-back-note">
+                    <span className="stat-back-note">
                       Thank you for supporting Uvagai Foundation.
-                    </span> */}
+                    </span>
                   </div>
                 </div>
               </motion.div>
@@ -482,81 +482,61 @@ export default function Donate() {
       </section>
 
       {/* Impact Areas */}
-      <section className="impact-section">
-        <div className="donate-container">
-          <div className="impact-heading">
-            <span>OUR IMPACT</span>
-            <h2>
-              Areas We <span>Support</span>
-            </h2>
-            <p>
-              Every donation directly contributes to initiatives that improve
-              lives and strengthen communities.
-            </p>
-          </div>
+<section className="impact-section">
+  <div className="donate-container">
+    <motion.div
+      className="donate-intro"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
+    >
+      <div className="donate-intro-tag">
+        <span className="donate-intro-tag-line" />
+        <span className="donate-intro-tag-text">Our Impact</span>
+      </div>
+      <h2 className="donate-intro-headline">Areas We Support</h2>
+      <p className="donate-intro-description">
+        Every donation directly contributes to initiatives that improve
+        lives and strengthen communities.
+      </p>
+    </motion.div>
 
-          <div className="impact-grid">
-            {[
-              {
-                tag: "Education",
-                title: "Education & Youth Empowerment",
-                desc: "Supporting learning opportunities, digital literacy, mentorship, and educational resources.",
-                img: childedu,
-              },
-              {
-                tag: "Healthcare",
-                title: "Healthcare & Wellness",
-                desc: "Organizing medical camps, health awareness programs and preventive healthcare initiatives.",
-                img: community,
-              },
-              {
-                tag: "child",
-                title: "Child Welfare",
-                desc: "Promoting education, nutrition, healthcare and protection for every child.",
-                img: childincards,
-              },
-              {
-                tag: "elderly care",
-                title: "Elderly Care",
-                desc: "Improving the quality of life of senior citizens through care, support and wellness.",
-                img: seniorciti,
-              },
-              {
-                tag: "Environment",
-                title: "Environmental Sustainability",
-                desc: "Tree plantation drives, environmental awareness and green community initiatives.",
-                img: environment,
-              },
-              {
-                tag: "Community",
-                title: "Community Development",
-                desc: "Creating sustainable livelihood opportunities and empowering rural communities.",
-                img: communityy,
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                className="impact-card"
-                whileHover={{ y: -10 }}
-              >
-                <div className="impact-image">
-                  <img src={item.img} alt={item.title} />
-                </div>
-                <div className="impact-content">
-                  <div className="impact-header">
-                    <div className="impact-tag">
-                      {item.tag}
-                    </div>
-                    <h3>{item.title}</h3>
-                  </div>
-                  <span className="impact-line"></span>
-                  <p>{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
+    <div className="impact-grid">
+      {[
+        { tag: "Education", color: "red", title: "Education & Youth Empowerment", desc: "Supporting learning opportunities, digital literacy, mentorship, and educational resources.", img: childedu },
+        { tag: "Healthcare", color: "green", title: "Healthcare & Wellness", desc: "Organizing medical camps, health awareness programs and preventive healthcare initiatives.", img: community },
+        { tag: "Child Welfare", color: "blue", title: "Child Welfare", desc: "Promoting education, nutrition, healthcare and protection for every child.", img: childincards },
+        { tag: "Elderly Care", color: "red", title: "Elderly Care", desc: "Improving the quality of life of senior citizens through care, support and wellness.", img: seniorciti },
+        { tag: "Environment", color: "green", title: "Environmental Sustainability", desc: "Tree plantation drives, environmental awareness and green community initiatives.", img: environment },
+        { tag: "Community", color: "blue", title: "Community Development", desc: "Creating sustainable livelihood opportunities and empowering rural communities.", img: communityy },
+      ].map((item, index) => (
+        <motion.div
+          key={index}
+          className={`impact-card impact-${item.color}`}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: index * 0.08 }}
+        >
+          <div className="impact-card-image">
+            <img src={item.img} alt={item.title} />
+            <div className="impact-card-image-overlay" />
+            <div className="impact-card-badge">
+              <span className="impact-card-badge-dot" />
+              <span className="impact-card-badge-text">{item.tag}</span>
+            </div>
           </div>
-        </div>
-      </section>
+          <div className="impact-card-content">
+            <h3 className="impact-card-title">{item.title}</h3>
+            <p className="impact-card-description">{item.desc}</p>
+            <div className="impact-card-accent" />
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* CTA Section */}
       <section className="donate-cta-section">
