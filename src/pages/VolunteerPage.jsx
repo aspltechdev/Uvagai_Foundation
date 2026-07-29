@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./VolunteerPage.css";
 
-import childwelfareImg from "../assets/child.PNG";
+import childwelfareImg from "../assets/child.png";
 import communityImg from "../assets/cv.jpg";
 import digitalImg from "../assets/creativecapture.PNG";
 import educationImg from "../assets/eventherof.jpeg";

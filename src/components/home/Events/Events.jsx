@@ -5,7 +5,7 @@ import "./Events.css";
 import skillImg1 from "../../../assets/abtech.png";
 import educationImg from "../../../assets/edi.JPG";
 import volunteer from "../../../assets/v1.jpg";
-import childwelfareImg from "../../../assets/Chi.jpg";
+import childwelfareImg from "../../../assets/chi.JPG";
 import elderly from "../../../assets/vco11.JPG";
 // ← FIXED: Changed to correct path
 

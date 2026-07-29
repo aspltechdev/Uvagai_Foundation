@@ -335,7 +335,7 @@ import elderlycarenew1 from "../assets/ev.jpg";
 import enviroinmentnew1 from "../assets/env.JPG";
 import communitynew1 from "../assets/abtech.png";
 import large1 from "../assets/vco.jpg";
-import image2 from "../assets/vco1.JPG";
+import image2 from "../assets/vco1.jpg";
 import image5 from "../assets/vco11.JPG";
 import vmBg from "../assets/communitynew1.jpeg";
 
