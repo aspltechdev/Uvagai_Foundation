@@ -12,7 +12,7 @@ import childImg from "../assets/chii.JPG";
 import elderlyImg from "../assets/OI.jpeg";
 import environmentImg from "../assets/fi.JPG";
 import foodImg from "../assets/food1.jpg";
-import csrImg from "../assets/ci.jpg";
+import csrImg from "../assets/ci.JPG";
 import skillImg from "../assets/skill1.jpg";
 
 const heroSlides = [
