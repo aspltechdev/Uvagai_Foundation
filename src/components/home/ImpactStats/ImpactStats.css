@@ -101,18 +101,20 @@
 }
 
 .impact-tag {
-  display: flex;
+  display: flex !important;
   align-items: center;
   gap: 14px;
   justify-content: center;
   margin-bottom: 20px;
+  background: none !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
 
 .impact-tag-line {
-  width: 24px;
-  height: 2px;
-  border-radius: 1px;
-  background: linear-gradient(90deg, #DC2626, #059669);
+  display: none !important;
 }
 
 .impact-tag-text {
@@ -133,6 +135,38 @@
   line-height: 1.25;
   letter-spacing: -1.5px;
   margin: 0 0 16px;
+}
+
+/* Reset any global styling (pill background / underline bar) bleeding
+   onto these spans from elsewhere in the codebase */
+.impact-headline .impact-headline-red,
+.impact-headline .impact-headline-green,
+.impact-headline .impact-headline-blue {
+  background: none !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  text-decoration: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  font-family: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: none !important;
+  line-height: inherit !important;
+  vertical-align: baseline !important;
+  margin: 0 0.2em !important;
+  display: inline-block;
+}
+
+.impact-headline .impact-headline-red::before,
+.impact-headline .impact-headline-green::before,
+.impact-headline .impact-headline-blue::before,
+.impact-headline .impact-headline-red::after,
+.impact-headline .impact-headline-green::after,
+.impact-headline .impact-headline-blue::after {
+  content: none !important;
+  display: none !important;
 }
 
 .impact-headline-red { color: #DC2626; }
@@ -428,8 +462,4 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-}
-.impact-cta {
-  padding: 26px 20px !important;
-  font-size: 29 rem;
 }

@@ -222,7 +222,7 @@ export default function Footer() {
                     <path d="M3 2H5.5L6.5 5L4.5 6C5.5 8 7.5 10 9.5 11L10.5 9L13.5 10V12.5C13.5 13.3 12.8 14 12 14C6.5 14 2 9.5 2 4C2 3.2 2.7 2.5 3.5 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <a href="tel:+919944002040" className="footer-contact-link">+91 99440 02040</a>
+                <a href="tel:+9195517 34422" className="footer-contact-link">+91 99440 02040</a>
               </motion.div>
 
               <motion.div 

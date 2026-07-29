@@ -1,12 +1,12 @@
 import { useRef, useState, useEffect } from "react";
 import "./Contact.css";
 import img1 from  "../assets/communityy.png";
-import img2 from  "../assets/humanitarian.png";
+import img2 from  "../assets/edi.JPG";
 import img3 from  "../assets/ndimagee.png";
 
 const heroSlides = [
   {
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80",
+    image: img1,
     title: "Let's Create Impact Together",
     subtitle: "Whether you would like to volunteer, donate, partner with us, support our initiatives, or learn more about our work, we'd love to hear from you.",
     tag: "Contact Uvagai Foundation",
@@ -61,7 +61,7 @@ export default function Contact() {
 
   const contactInfo = [
     { label: "Office Address", value: "Chennai, Tamil Nadu, India", detail: "Uvagai Foundation" },
-    { label: "Phone", value: "+91 99440 02040" },
+    { label: "Phone", value: "+9195517 34422" },
     { label: "Email", value: "info@uvagai.org" },
     { label: "Website", value: "www.uvagai.org" },
     { label: "Working Hours", value: "Monday - Saturday", detail: "9:00 AM – 6:00 PM" },

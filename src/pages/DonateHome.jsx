@@ -760,9 +760,9 @@ import childedu from "../assets/childedu.png";
 import community from "../assets/community.png";
 import childincards from "../assets/childincards.png";
 import seniorciti from "../assets/senior.png";
-import environment from "../assets/environment.png";
+// import environment from "../assets/environment.png";
 import communityy from "../assets/communityy.png";
-import skillImg from "../assets/abt123.png";
+import skillImg from "../assets/abtech.png";
 import placementImg from "../assets/prog7.png";
 
 export default function Donate() {
@@ -783,7 +783,7 @@ export default function Donate() {
     { tag: "Healthcare", title: "Healthcare & Wellness", img: community, accent: "green" },
     { tag: "Child Welfare", title: "Child Welfare", img: childincards, accent: "blue" },
     { tag: "Elderly Care", title: "Elderly Care", img: seniorciti, accent: "red" },
-    { tag: "Environment", title: "Environment", img: environment, accent: "green" },
+    // { tag: "Environment", title: "Environment", img: environment, accent: "green" },
     { tag: "Community", title: "Community Development", img: communityy, accent: "blue" },
     { tag: "Skilling", title: "Skill Development", img: skillImg, accent: "red" },
     { tag: "Placement", title: "Placement Support", img: placementImg, accent: "green" },

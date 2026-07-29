@@ -1,0 +1,476 @@
+/* ============================================
+   Uvagai Foundation - Vision & Mission Page
+   Professional Design - Brand Theme
+   ============================================ */
+
+:root {
+  --vm-red: #DC2626;
+  --vm-red-light: #FEE2E2;
+  --vm-red-pale: #FFF5F5;
+  --vm-red-dark: #B91C1C;
+  --vm-red-glow: rgba(220, 38, 38, 0.3);
+  
+  --vm-green: #16A34A;
+  --vm-green-light: #DCFCE7;
+  --vm-green-pale: #F0FDF4;
+  
+  --vm-blue: #1E3A5F;
+  --vm-blue-light: #E8F0FE;
+  --vm-blue-pale: #F5F8FC;
+  
+  --vm-dark: #0A0A0A;
+  
+  --vm-white: #FFFFFF;
+  --vm-white-90: rgba(255, 255, 255, 0.9);
+  --vm-white-80: rgba(255, 255, 255, 0.8);
+  --vm-white-70: rgba(255, 255, 255, 0.7);
+  --vm-white-60: rgba(255, 255, 255, 0.6);
+  --vm-white-50: rgba(255, 255, 255, 0.5);
+  --vm-white-40: rgba(255, 255, 255, 0.4);
+  --vm-white-30: rgba(255, 255, 255, 0.3);
+  --vm-white-20: rgba(255, 255, 255, 0.2);
+  --vm-white-15: rgba(255, 255, 255, 0.15);
+  
+  --vm-cream: #FEFCFB;
+  --vm-soft-bg: #F9F8F6;
+  
+  --vm-text-primary: #171717;
+  --vm-text-secondary: #525252;
+  --vm-text-tertiary: #737373;
+  --vm-text-muted: #A3A3A3;
+  
+  --vm-border: #E8E4DE;
+  --vm-border-light: #F0EDE8;
+  
+  --vm-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
+  --vm-shadow-md: 0 8px 30px rgba(0, 0, 0, 0.05);
+  --vm-shadow-lg: 0 15px 50px rgba(0, 0, 0, 0.07);
+  --vm-shadow-xl: 0 25px 70px rgba(0, 0, 0, 0.09);
+  
+  --vm-font-display: 'Georgia', 'Times New Roman', 'Playfair Display', serif;
+  --vm-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  
+  --vm-ease-out: cubic-bezier(0.33, 0.1, 0.25, 1);
+}
+
+/* Global */
+.vm-page { font-family: var(--vm-font-body); -webkit-font-smoothing: antialiased; }
+.vm-container { max-width: 1200px; margin: 0 auto; padding: 0 2.5rem; position: relative; z-index: 2; }
+.vm-section-header { text-align: center; margin-bottom: 3rem; }
+.vm-section-tag { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 1rem; }
+.vm-section-tag-line { width: 28px; height: 2px; background: var(--vm-red); border-radius: 1px; }
+.vm-section-tag-text { font-size: 0.7rem; font-weight: 600; color: var(--vm-red); text-transform: uppercase; letter-spacing: 0.15em; }
+.vm-section-headline { font-family: var(--vm-font-display); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 400; color: var(--vm-text-primary); letter-spacing: -0.02em; }
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.vm-hero {
+  position: relative; width: 100%; height: 75vh; min-height: 500px; max-height: 680px;
+  overflow: hidden; background: var(--vm-dark); cursor: default;
+}
+.vm-slides-container { position: absolute; inset: -5%; }
+.vm-slide-bg { position: absolute; inset: 0; }
+.vm-slide-bg img {width: 100%; height: 100%; object-fit: cover; object-position: 45% center;}
+.vm-overlay-dark { position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 1; }
+.vm-overlay-gradient { position: absolute; bottom: 0; left: 0; right: 0; height: 70%; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.35) 50%, transparent 100%); z-index: 1; }
+.vm-overlay-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.45) 100%); z-index: 1; }
+.vm-hero-container { position: relative; z-index: 2; height: 100%; display: flex; align-items: center; justify-content: center; padding: 0 2.5rem; max-width: 800px; margin: 0 auto; }
+.vm-hero-content { text-align: center; width: 100%; }
+.vm-hero-tag { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 1rem; }
+.vm-hero-tag-line { width: 30px; height: 2px; background: var(--vm-red); border-radius: 1px; }
+.vm-hero-tag-text { font-size: 0.68rem; font-weight: 600; color: var(--vm-white-80); text-transform: uppercase; letter-spacing: 0.15em; }
+.vm-hero-headline { font-family: var(--vm-font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; line-height: 1.15; color: var(--vm-white); margin-bottom: 0.75rem; letter-spacing: -0.02em; text-shadow: 0 2px 20px rgba(0,0,0,0.5); }
+.vm-hero-subtitle { font-size: 0.95rem; line-height: 1.6; color: var(--vm-white-70); max-width: 600px; margin: 0 auto; }
+.vm-slide-nav { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 0.5rem; }
+.vm-slide-dot { width: 24px; height: 3px; border: none; border-radius: 2px; background: var(--vm-white-20); cursor: pointer; padding: 0; position: relative; overflow: hidden; transition: all 0.3s ease; }
+.vm-slide-dot.active { width: 32px; background: var(--vm-white-30); }
+.vm-slide-dot-fill { position: absolute; inset: 0; background: var(--vm-red); border-radius: 2px; }
+.vm-slide-counter { position: absolute; bottom: 2rem; right: 2.5rem; z-index: 3; display: flex; align-items: baseline; gap: 0.2rem; }
+.vm-counter-current { font-size: 1.1rem; font-weight: 300; color: var(--vm-white); letter-spacing: 0.04em; }
+.vm-counter-sep { font-size: 0.75rem; color: var(--vm-white-30); }
+.vm-counter-total { font-size: 0.85rem; color: var(--vm-white-30); }
+
+/* ============================================
+   Vision & Mission Cards
+   ============================================ */
+.vm-core-section { padding: 6rem 0; background: var(--vm-white); }
+.vm-core-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.vm-core-card { background: var(--vm-white); border: 1px solid var(--vm-border-light); border-radius: 14px; padding: 2.5rem; box-shadow: var(--vm-shadow-sm); transition: all 0.4s var(--vm-ease-out); position: relative; overflow: hidden; }
+.vm-core-card:hover { box-shadow: var(--vm-shadow-lg); border-color: transparent; }
+.vm-core-card-accent { position: absolute; top: 0; left: 0; width: 100%; height: 4px; transform: scaleX(0); transform-origin: left; transition: transform 0.6s var(--vm-ease-out); }
+.vm-vision-card .vm-core-card-accent { background: var(--vm-red); }
+.vm-mission-card .vm-core-card-accent { background: var(--vm-green); }
+.vm-core-card:hover .vm-core-card-accent { transform: scaleX(1); }
+.vm-core-card-header { margin-bottom: 1.5rem; }
+.vm-core-card-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem; display: block; }
+.vm-vision-card .vm-core-card-label { color: var(--vm-red); }
+.vm-mission-card .vm-core-card-label { color: var(--vm-green); }
+.vm-core-card-title { font-family: var(--vm-font-display); font-size: 2rem; font-weight: 700; color: var(--vm-text-primary); letter-spacing: -0.02em; }
+.vm-core-card-body p { font-size: 0.92rem; line-height: 1.8; color: var(--vm-text-secondary); margin-bottom: 0.85rem; }
+.vm-core-motto { margin-top: 1.5rem; padding: 1.25rem 1.5rem; border-radius: 10px; border-left: 3px solid; }
+.vm-vision-card .vm-core-motto { background: var(--vm-red-pale); border-color: var(--vm-red); }
+.vm-motto-green { background: var(--vm-green-pale); border-color: var(--vm-green); }
+.vm-core-motto-quote { display: block; font-family: var(--vm-font-display); font-size: 2.5rem; line-height: 0.5; color: var(--vm-red); opacity: 0.3; margin-bottom: 0.5rem; }
+.vm-motto-green .vm-core-motto-quote { color: var(--vm-green); }
+.vm-core-motto p { font-family: var(--vm-font-display); font-size: 1rem; font-weight: 600; font-style: italic; color: var(--vm-text-primary); margin: 0; }
+
+/* ============================================
+   Impact Pillars
+   ============================================ */
+.vm-pillars-section { position: relative; padding: 6rem 0; overflow: hidden; }
+.vm-pillars-bg { position: absolute; inset: 0; background: var(--vm-soft-bg); }
+.vm-pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.vm-pillar-card { background: var(--vm-white); border: 1px solid var(--vm-border-light); border-radius: 14px; overflow: hidden; box-shadow: var(--vm-shadow-sm); transition: all 0.4s var(--vm-ease-out); cursor: pointer; }
+.vm-pillar-card:hover { box-shadow: var(--vm-shadow-xl); border-color: transparent; }
+.vm-pillar-image { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+.vm-pillar-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--vm-ease-out); }
+.vm-pillar-card:hover .vm-pillar-image img { transform: scale(1.06); }
+.vm-pillar-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.4) 100%); }
+.vm-pillar-badge { position: absolute; bottom: 0.85rem; left: 0.85rem; padding: 0.35rem 0.85rem; border-radius: 5px; font-size: 0.72rem; font-weight: 600; color: var(--vm-white); }
+.badge-red { background: var(--vm-red); }
+.badge-green { background: var(--vm-green); }
+.badge-blue { background: var(--vm-blue); }
+.vm-pillar-content { padding: 1.25rem 1.5rem; }
+.vm-pillar-content p { font-size: 0.85rem; line-height: 1.6; color: var(--vm-text-tertiary); }
+
+/* ============================================
+   Core Principles
+   ============================================ */
+.vm-principles-section { padding: 6rem 0; background: var(--vm-white); }
+.vm-principles-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.vm-principle-card { background: var(--vm-white); border: 1px solid var(--vm-border-light); border-radius: 12px; padding: 2rem 1.75rem; box-shadow: var(--vm-shadow-sm); transition: all 0.4s var(--vm-ease-out); cursor: default; position: relative; overflow: hidden; }
+.vm-principle-card:hover { box-shadow: var(--vm-shadow-lg); border-color: transparent; }
+.vm-principle-stripe { position: absolute; top: 0; left: 0; width: 3px; height: 100%; border-radius: 0 3px 3px 0; transform: scaleY(0.3); transform-origin: center; transition: transform 0.4s var(--vm-ease-out); opacity: 0.4; }
+.principle-red .vm-principle-stripe { background: var(--vm-red); }
+.principle-green .vm-principle-stripe { background: var(--vm-green); }
+.principle-blue .vm-principle-stripe { background: var(--vm-blue); }
+.vm-principle-card:hover .vm-principle-stripe { transform: scaleY(1); opacity: 1; }
+.vm-principle-number { font-family: var(--vm-font-display); font-size: 1.6rem; font-weight: 700; color: var(--vm-text-muted); opacity: 0.2; margin-bottom: 0.75rem; display: block; padding-left: 0.5rem; transition: all 0.3s ease; }
+.vm-principle-card:hover .vm-principle-number { color: var(--vm-red); opacity: 0.5; }
+.vm-principle-title { font-size: 1.05rem; font-weight: 600; color: var(--vm-text-primary); margin-bottom: 0.5rem; padding-left: 0.5rem; }
+.vm-principle-description { font-size: 0.85rem; line-height: 1.6; color: var(--vm-text-tertiary); padding-left: 0.5rem; }
+
+/* ============================================
+   Values
+   ============================================ */
+.vm-values-section{
+    position:relative;
+    padding:6rem 0;
+    overflow:hidden;
+}
+.vm-values-bg{position:absolute;inset:0;background-image:url("../assets/transparentblack.png");background-size:cover;background-position:center;background-repeat:no-repeat;z-index:0;}
+.vm-values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.vm-value-card{
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:12px;
+    padding:2rem 1.75rem;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.18);
+
+    transition:.4s;
+}
+.vm-value-card:hover { box-shadow: var(--vm-shadow-lg); border-color: transparent; }
+.vm-value-number { font-family: var(--vm-font-display); font-size: 1.8rem; font-weight: 700; color: var(--vm-text-muted); opacity: 0.2; margin-bottom: 0.75rem; transition: all 0.3s ease; }
+.vm-value-card:hover .vm-value-number { color: var(--vm-red); opacity: 0.5; }
+.vm-value-title { font-size: 1.1rem; font-weight: 600; color: var(--vm-text-primary); margin-bottom: 0.5rem; }
+.vm-value-description { font-size: 0.88rem; line-height: 1.6; color: var(--vm-text-tertiary); }
+
+/* ============================================
+   CTA
+   ============================================ */
+.vm-cta-section { position: relative; padding: 5rem 0; overflow: hidden; }
+.vm-cta-bg { position: absolute; inset: 0; background: var(--vm-red-pale); }
+.vm-cta-glow { position: absolute; width: 400px; height: 400px; background: var(--vm-red); border-radius: 50%; filter: blur(130px); top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.07; pointer-events: none; }
+.vm-cta-content { text-align: center; max-width: 600px; margin: 0 auto; }
+.vm-cta-headline { font-family: var(--vm-font-display); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 400; color: var(--vm-text-primary); margin-bottom: 1rem; letter-spacing: -0.02em; }
+.vm-cta-description { font-size: 0.95rem; line-height: 1.7; color: var(--vm-text-secondary); margin-bottom: 2rem; }
+.vm-cta-buttons { display: flex; align-items: center; justify-content: center; gap: 1.25rem; flex-wrap: wrap; }
+.vm-cta-primary { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2rem; background: var(--vm-red); color: var(--vm-white); font-size: 0.9rem; font-weight: 500; text-decoration: none; border-radius: 10px; transition: all 0.4s var(--vm-ease-out); box-shadow: 0 10px 30px -10px rgba(220,38,38,0.35); }
+.vm-cta-primary:hover { background: var(--vm-red-dark); box-shadow: 0 15px 40px -12px rgba(220,38,38,0.45); }
+.vm-cta-primary svg { transition: transform 0.3s ease; }
+.vm-cta-primary:hover svg { transform: translateX(3px); }
+.vm-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 1.75rem; background: var(--vm-white); color: var(--vm-text-primary); font-size: 0.9rem; font-weight: 500; text-decoration: none; border: 1.5px solid var(--vm-border); border-radius: 10px; transition: all 0.4s var(--vm-ease-out); }
+.vm-cta-secondary:hover { border-color: var(--vm-red); color: var(--vm-red); background: var(--vm-red-pale); }
+.vm-cta-secondary-arrow { transition: transform 0.3s ease; }
+.vm-cta-secondary:hover .vm-cta-secondary-arrow { transform: translateX(4px); }
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 1024px) {
+  .vm-core-grid { grid-template-columns: 1fr; }
+  .vm-pillars-grid { grid-template-columns: repeat(2, 1fr); }
+  .vm-principles-grid { grid-template-columns: repeat(2, 1fr); }
+  .vm-values-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .vm-hero { height: 65vh; min-height: 440px; max-height: 550px; }
+  .vm-hero-container { padding: 0 1.5rem; }
+  .vm-hero-headline { font-size: 1.6rem; }
+  .vm-container { padding: 0 1.5rem; }
+  .vm-core-section, .vm-pillars-section, .vm-principles-section, .vm-values-section { padding: 4rem 0; }
+}
+@media (max-width: 540px) {
+  .vm-hero { height: 60vh; min-height: 380px; }
+  .vm-hero-container { padding: 0 1.25rem; }
+  .vm-hero-headline { font-size: 1.4rem; }
+  .vm-container { padding: 0 1.25rem; }
+  .vm-pillars-grid { grid-template-columns: 1fr; }
+  .vm-principles-grid { grid-template-columns: 1fr; }
+  .vm-values-grid { grid-template-columns: 1fr; }
+  .vm-cta-buttons { flex-direction: column; }
+  .vm-cta-primary, .vm-cta-secondary { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vm-slide-bg { transition: none !important; }
+  .vm-core-card, .vm-pillar-card, .vm-principle-card, .vm-value-card { transition: none; }
+}
+/* ===== Core Values Section ===== */
+
+.vm-values-section .vm-section-headline{
+    color:#ffffff !important;
+}
+
+.vm-values-section .vm-section-tag-text{
+    color:#ffffff !important;
+}
+
+.vm-values-section .vm-section-tag-line{
+    background:#ffffff !important;
+}
+
+/* Vision & Mission card images */
+.vm-core-section {
+  padding: 6rem 0;
+  background: var(--vm-white);
+}
+
+.vm-core-card {
+  padding: 0;
+  overflow: hidden;
+  background: var(--vm-white);
+}
+
+.vm-core-card:hover .vm-core-card-image img {
+  transform: scale(1.08);
+}
+
+.vm-core-card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+}
+
+.vm-core-card-header {
+  padding: 2rem 2.5rem 0;
+  margin-bottom: 1.5rem;
+}
+
+.vm-core-card-body {
+  padding: 0 2.5rem 2.5rem;
+}
+
+@media (max-width: 540px) {
+  .vm-core-card-image {
+    height: 190px;
+  }
+
+  .vm-core-card-header {
+    padding: 1.5rem 1.5rem 0;
+  }
+
+  .vm-core-card-body {
+    padding: 0 1.5rem 1.5rem;
+  }
+}
+
+/* One common background only behind the 6 value cards */
+.vm-values-section {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.vm-values-bg {
+  display: none !important;
+}
+
+.vm-values-section .vm-container {
+  position: relative;
+  z-index: 2;
+}
+
+.vm-values-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.7rem;
+
+  width: 100%;
+  padding: 3rem;
+
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+.vm-values-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/communitynew1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.vm-values-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.vm-value-card {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 2rem;
+  min-height: 170px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
+@media (max-width: 1024px) {
+  .vm-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .vm-values-grid {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+}
+
+.vm-values-section .vm-container {
+  max-width: 100%;
+  padding: 0 2.5rem;
+}
+
+.vm-values-grid {
+  width: 100%;
+}
+
+/* ===== FIX: Remove big gap between Core Principles and Core Values ===== */
+
+.vm-principles-section {
+  padding: 6rem 0 2rem !important;
+}
+
+.vm-values-section {
+  position: relative;
+  padding: 2rem 0 6rem !important;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Keep title visible */
+.vm-values-section .vm-section-headline {
+  color: var(--vm-text-primary) !important;
+}
+
+.vm-values-section .vm-section-tag-text {
+  color: var(--vm-red) !important;
+}
+
+.vm-values-section .vm-section-tag-line {
+  background: var(--vm-red) !important;
+}
+
+/* Hide old full section background */
+.vm-values-bg {
+  display: none !important;
+}
+
+/* Make values section wider */
+.vm-values-section .vm-container {
+  max-width: 100% !important;
+  padding: 0 2.5rem !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* One common background behind only the 6 cards */
+.vm-values-grid {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.7rem !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+
+  padding: 3rem !important;
+  border-radius: 26px !important;
+  overflow: hidden !important;
+}
+
+.vm-values-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/communitynew1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.vm-values-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Cards on top of background */
+.vm-value-card {
+  position: relative !important;
+  z-index: 2 !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-radius: 16px !important;
+  padding: 2rem !important;
+  min-height: 170px !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .vm-values-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 2rem !important;
+  }
+}
+
+@media (max-width: 540px) {
+  .vm-values-grid {
+    grid-template-columns: 1fr !important;
+    padding: 1.25rem !important;
+  }
+}

@@ -474,3 +474,29 @@
     padding: 1.25rem !important;
   }
 }
+/* ============================================
+   Justify descriptive paragraphs — Vision & Mission page
+   (headings, buttons, motto quotes, hero text untouched)
+   ============================================ */
+
+.vm-core-card-body p,
+.vm-pillar-content p,
+.vm-principle-description,
+.vm-value-description,
+.vm-cta-description {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.75;
+  hyphens: auto;
+}
+
+/* Avoid ragged/short last-line justify artifacts on narrow screens */
+@media (max-width: 540px) {
+  .vm-core-card-body p,
+  .vm-pillar-content p,
+  .vm-principle-description,
+  .vm-value-description,
+  .vm-cta-description {
+    text-align: left;
+  }
+}

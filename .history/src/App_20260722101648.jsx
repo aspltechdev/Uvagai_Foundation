@@ -15,7 +15,7 @@ function App() {
       <ScrollToTop />
 
       <a
-        href="https://wa.me/9944002040"
+        href="https://wa.me/95517 34422"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"

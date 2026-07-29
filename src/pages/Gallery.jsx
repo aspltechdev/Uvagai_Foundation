@@ -338,15 +338,32 @@ import { Link } from "react-router-dom";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import "./Gallery.css";
 
+// Education
 import educationImg from "../assets/e.png";
-import healthcareImg from "../assets/healthcare.jpg";
-import volunteerImg from "../assets/volunteer1.jpg";
+
+// Healthcare
+import healthcareImg from "../assets/healthab.png";
+
+// Volunteer
+import volunteerImg from "../assets/voli.jpeg";
+
+// Child Welfare
 import childImg from "../assets/Capturechild.PNG";
-import elderlyImg from "../assets/elderly1.jpg";
-import environmentImg from "../assets/environment.jpg";
-import foodImg from "../assets/food1.jpg";
-import csrImg from "../assets/csr.jpg";
-import skillImg from "../assets/skill1.jpg";
+
+// Elderly Care
+import elderlyImg from "../assets/senior.png";
+
+// Environment
+import environmentImg from "../assets/abf.png";
+
+// Food Distribution (if this section is about community support)
+import foodImg from "../assets/cov1.jpg";
+
+// CSR
+import csrImg from "../assets/ecr.JPG";
+
+// Skill Development
+import skillImg from "../assets/abtech.png";
 
 export default function Gallery() {
   const sectionRef = useRef(null);

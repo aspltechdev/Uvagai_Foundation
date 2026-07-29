@@ -1,10 +1,10 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./ImpactStats.css";
-import foundedImg from "../../../assets/founded.jpeg";
+import foundedImg from "../../../assets/about2.jpg";
 import focusAreasImg from "../../../assets/focus-areas.jpeg";
 import communityImg from "../../../assets/community.png";
-import volunteersImg from "../../../assets/volunteers.jpeg";
+import volunteersImg from "../../../assets/v1.jpg";
 import livesImpactedImg from "../../../assets/lives-impacted.jpeg";
 import sharedMissionImg from "../../../assets/shared-mission.jpeg";
 

@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./VolunteerPage.css";
 
-import childwelfareImg from "../assets/Capturechild.PNG";
-import communityImg from "../assets/chatcomm.png";
+import childwelfareImg from "../assets/child.PNG";
+import communityImg from "../assets/cv.jpg";
 import digitalImg from "../assets/creativecapture.PNG";
-import educationImg from "../assets/educationCapture.PNG";
+import educationImg from "../assets/eventherof.jpeg";
 import eldeImg from "../assets/elderlycapture.png";
-import environmentImg from "../assets/chatenv.png";
+import environmentImg from "../assets/program5.png";
 import eventImg from "../assets/chateve.png";
-import healthcareImg from "../assets/healthCapture.PNG";
+import healthcareImg from "../assets/healthcaree.png";
 
 const opportunities = [
   {
@@ -23,7 +23,7 @@ const opportunities = [
     accent: "green",
     title: "Healthcare Volunteer",
     description: "Assist during medical camps, health awareness drives, blood donation initiatives, wellness programs, and community healthcare outreach activities.",
-    image: healthcareImg,
+    image:   healthcareImg,
   },
   {
     accent: "blue",
@@ -39,9 +39,10 @@ const opportunities = [
   },
   {
     accent: "green",
-    title: "Environmental Volunteer",
-    description: "Join tree plantation drives, sustainability campaigns, clean-up activities, and environmental awareness initiatives.",
-    image: environmentImg,
+title: "Disaster Relief Volunteer",
+description:
+  "Support relief efforts by distributing essential supplies and assisting communities during emergencies.",
+image: environmentImg,
   },
   {
     accent: "blue",

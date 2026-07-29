@@ -330,13 +330,13 @@ import "./VisionMission.css";
 //import transparentBlack from "../assets/transparentblack.png";//
 import educationnew12 from "../assets/educationnew12.jpeg";
 import healthcarenew1 from "../assets/healthcarenew1.png";
-import childwelfarenew1 from "../assets/childwelfareprogram.png";
-import elderlycarenew1 from "../assets/elderlycarenew1.jpeg";
-import enviroinmentnew1 from "../assets/environmentnew1.jpeg";
-import communitynew1 from "../assets/communitynew1.jpeg";
-import large1 from "../assets/large1.jpeg";
-import image2 from "../assets/image2.jpeg";
-import image5 from "../assets/image1.jpeg";
+import childwelfarenew1 from "../assets/cv.jpeg";
+import elderlycarenew1 from "../assets/ev.jpg";
+import enviroinmentnew1 from "../assets/env.JPG";
+import communitynew1 from "../assets/abtech.png";
+import large1 from "../assets/vco.jpg";
+import image2 from "../assets/vco1.JPG";
+import image5 from "../assets/vco11.JPG";
 import vmBg from "../assets/communitynew1.jpeg";
 
 
@@ -395,8 +395,13 @@ export default function VisionMissionPage() {
     { image: healthcarenew1, title: "Healthcare", description: "Medical camps, preventive care, health awareness, and wellness initiatives.", accent: "green" },
     { image: childwelfarenew1, title: "Child Welfare", description: "Nutrition support, education access, and holistic development for children.", accent: "blue" },
     { image: elderlycarenew1, title: "Elderly Care", description: "Healthcare assistance, companionship, and dignity programs for senior citizens.", accent: "red" },
-    { image: enviroinmentnew1, title: "Environment", description: "Tree plantation, sustainability campaigns, and green community projects.", accent: "green" },
-    { image: communitynew1, title: "Skilling", description: "Livelihood programs, conducting job drives & awareness campaigns, and social development initiatives.", accent: "blue" },
+{
+  image: enviroinmentnew1,
+  title: "Community Outreach",
+  description:
+    "Organizing inclusive beach visits to promote social participation, recreation, and community engagement for all.",
+  accent: "green",
+},    { image: communitynew1, title: "Skilling", description: "Livelihood programs, conducting job drives & awareness campaigns, and social development initiatives.", accent: "blue" },
   ];
 
   const values = [

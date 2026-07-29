@@ -5,7 +5,7 @@ import "./Volunteer.css";
 
 import benefitImg1 from "../assets/secondimage.png";
 import benefitImg2 from "../assets/anotherimage.png";
-import benefitImg3 from "../assets/newfrstimage.png";
+import benefitImg3 from "../assets/cv.jpg";
 
 export default function VolunteerHome() {
   const sectionRef = useRef(null);

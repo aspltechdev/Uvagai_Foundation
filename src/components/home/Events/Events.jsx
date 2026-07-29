@@ -1,11 +1,12 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./Events.css";
-import healthcarehome from "../../../assets/healthcarehome.png"; 
-import educationhome from "../../../assets/educationhome.png";
-import newbg from "../../../assets/newbg.png";
-import elders from "../../../assets/elders.png";
-import child from "../../../assets/childhome.png";
+ import healthcareImg from "../../../assets/healthab.png";
+import skillImg1 from "../../../assets/abtech.png";
+import educationImg from "../../../assets/edi.JPG";
+import volunteer from "../../../assets/v1.jpg";
+import childwelfareImg from "../../../assets/Chi.jpg";
+import elderly from "../../../assets/vco11.JPG";
 // ← FIXED: Changed to correct path
 
 
@@ -27,80 +28,76 @@ export default function EventsHome() {
   const marqueeX = useTransform(scrollYProgress, [0, 0.8], [0, -200]);
 
 
-  const events = [
-    {
-      // Compassionate care for an elderly man - Pexels (India-based photographer)
-      image: "https://images.pexels.com/photos/28141441/pexels-photo-28141441.jpeg",
-      title: "Community Healthcare Camp",
-      category: "Healthcare",
-      location: "Rural Outreach",
-      accent: "green",
-      stat: "50K+",
-    },
-     {
-      // Children with notebooks/books at a desk - Swastik Arora on Unsplash
-      image: "https://images.pexels.com/photos/35216547/pexels-photo-35216547.jpeg",
-      title: "Skill Development",
-      category: "Skill Development",
-      location: "Skilling",
-      accent: "red",
-      stat: "10000+",
-    },
-     {
-      // Children with notebooks/books at a desk - Swastik Arora on Unsplash
-      image: "https://images.pexels.com/photos/18067562/pexels-photo-18067562.jpeg",
-      title: "Placement Drive",
-      category: "Placement Drive",
-      location: "Drive",
-      accent: "red",
-      stat: "20000+",
-    },
-    {
-      // Children with notebooks/books at a desk - Swastik Arora on Unsplash
-      image: "https://images.unsplash.com/photo-1692269725827-699e04a11cdf?w=800&q=80&auto=format&fit=crop",
-      title: "Education Support Program",
-      category: "Education",
-      location: "Youth Empowerment",
-      accent: "red",
-      stat: "5,284+",
-    },
-    {
-      // Volunteers sorting canned food donations - real volunteer activity - Joel Muniz on Unsplash
-      image: "https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?w=800&q=80&auto=format&fit=crop",
-      title: "Volunteer Engagement Drive",
-      category: "Volunteer",
-      location: "Community Service",
-      accent: "blue",
-      stat: "500+",
-    },
-    {
-      // Volunteers giving food to children in India - Plato Terentev on Pexels
-      image: "https://images.pexels.com/photos/5909876/pexels-photo-5909876.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Child Welfare Activities",
-      category: "Child Welfare",
-      location: "Community Impact",
-      accent: "red",
-      stat: "10K+",
-    },
-    {
-      // Volunteer delivering food to a senior at home - Kampus Production on Pexels
-      image: "https://images.pexels.com/photos/16364307/pexels-photo-16364307.jpeg",
-      title: "Elderly Care Program",
-      category: "Senior Care",
-      location: "Care & Compassion",
-      accent: "blue",
-      stat: "2,500+",
-    },
-    {
-      // Green grass and trees, India forest cover - Ankit Choudhary on Unsplash
-      image: "https://images.unsplash.com/photo-1603612692333-7bac35e43500?w=800&q=80&auto=format&fit=crop",
-      title: "Environmental Campaign",
-      category: "Sustainability",
-      location: "Green Initiative",
-      accent: "green",
-      stat: "1M+",
-    },
-  ];
+ 
+
+
+const events = [
+  {
+    image: healthcareImg,
+    title: "Community Healthcare Camp",
+    category: "Healthcare",
+    location: "Rural Outreach",
+    accent: "green",
+    stat: "50K+",
+  },
+  {
+    image: skillImg1,
+    title: "Skill Development",
+    category: "Skill Development",
+    location: "Skilling",
+    accent: "red",
+    stat: "10000+",
+  },
+  // {
+  //   image: placementImg,
+  //   title: "Placement Drive",
+  //   category: "Placement Drive",
+  //   location: "Drive",
+  //   accent: "red",
+  //   stat: "20000+",
+  // },
+  {
+    image: educationImg,
+    title: "Education Support Program",
+    category: "Education",
+    location: "Youth Empowerment",
+    accent: "red",
+    stat: "5,284+",
+  },
+  {
+    image: volunteer,
+    title: "Volunteer Engagement Drive",
+    category: "Volunteer",
+    location: "Community Service",
+    accent: "blue",
+    stat: "500+",
+  },
+  {
+    image: childwelfareImg,
+    title: "Child Welfare Activities",
+    category: "Child Welfare",
+    location: "Community Impact",
+    accent: "red",
+    stat: "10K+",
+  },
+  {
+    image: elderly,
+    title: "Elderly Care Program",
+    category: "Senior Care",
+    location: "Care & Compassion",
+    accent: "blue",
+    stat: "2,500+",
+  },
+  // {
+  //   image: environment,
+  //   title: "Environmental Campaign",
+  //   category: "Sustainability",
+  //   location: "Green Initiative",
+  //   accent: "green",
+  //   stat: "1M+",
+  // },
+];
+
 
 
   // Duplicate events for seamless infinite marquee

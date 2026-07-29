@@ -4,7 +4,7 @@ import "./gallerypage.css";
 
 import childwelfareImg from "../assets/Capturechild.PNG";
 import communityImg from "../assets/chatcomm.png";
-import digitalImg from "../assets/creativecapture.PNG";
+// import digitalImg from "../assets/creativecapture.PNG";
 import educationImg from "../assets/educationCapture.PNG";
 import eldeImg from "../assets/elderlycapture.png";
 import environmentImg from "../assets/chatenv.png";
@@ -130,14 +130,14 @@ export default function GalleryPage() {
       accent: "red",
       type: "image",
     },
-    {
-      image: digitalImg,
-      title: "Reading Campaign",
-      category: "Education",
-      description: "Promoting reading in rural areas.",
-      accent: "red",
-      type: "image",
-    },
+    // {
+    //   image: digitalImg,
+    //   title: "Reading Campaign",
+    //   category: "Education",
+    //   description: "Promoting reading in rural areas.",
+    //   accent: "red",
+    //   type: "image",
+    // },
 
     {
       image: healthcareImg,

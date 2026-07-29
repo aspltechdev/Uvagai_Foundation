@@ -491,19 +491,19 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./AboutUs.css";
-import aboutImage from "../assets/aboutpage.png";
-import educationImg from "../assets/childedu.png";
-import healthcareImg from "../assets/community.png";
+import aboutImage from "../assets/about3.jpg";
+import educationImg from "../assets/ae.png";
+import healthcareImg from "../assets/healthab.png";
 import childWelfareImg from "../assets/childincards.png";
 import elderlyImg from "../assets/senior.png";
-import environmentImg from "../assets/environment.png";
+import environmentImg from "../assets/abf.png";
 import communityDevImg from "../assets/communityy.png";
-import skillImg from "../assets/abt123.png";
+import skillImg from "../assets/abtech.png";
 import placementImg from "../assets/prog7.png";
-import abouthero1 from "../assets/abouthero1.png";
-import abouthero2 from "../assets/abouthero2.jpeg";
-import abouthero3 from "../assets/abouthero3.jpeg";
-import highlight1 from "../assets/highlight1.png";
+import abouthero1 from "../assets/about.jpg";
+import abouthero2 from "../assets/about1.jpg";
+import abouthero3 from "../assets/about22.jpg";
+import highlight1 from "../assets/abl.jpg";
 import highlight2 from "../assets/highlight2.png";
 import highlight3 from "../assets/highlight3.png";
 
@@ -596,10 +596,11 @@ export default function AboutUsPage() {
       accent: "blue"
     },
     {
-      title: "Environmental Sustainability",
-      description: "Encouraging environmental responsibility through awareness and action.",
-      image: environmentImg,
-      accent: "red"
+      title: "Community Field Visit",
+description:
+  "Engaging with communities to understand their needs and support sustainable development initiatives.",
+image: environmentImg,
+accent: "red",
     },
     {
       title: "Community Development",

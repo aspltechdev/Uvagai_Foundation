@@ -169,7 +169,7 @@
 //                     <path d="M3 2H5.5L6.5 5L4.5 6C5.5 8 7.5 10 9.5 11L10.5 9L13.5 10V12.5C13.5 13.3 12.8 14 12 14C6.5 14 2 9.5 2 4C2 3.2 2.7 2.5 3.5 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 //                   </svg>
 //                 </span>
-//                 <a href="tel:+919944002040" className="footer-contact-link">+91 99440 02040</a>
+//                 <a href="tel:+9195517 34422" className="footer-contact-link">+91 99440 02040</a>
 //               </motion.div>
 
 //               <div className="ftr-contact-row">
@@ -417,13 +417,13 @@ export default function Footer() {
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M2.5 1.5H5L5.8 4.2L4 5.2C4.8 7 6.8 8.8 8.5 9.8L9.2 8L12.2 8.8V11.5C12.2 12.3 11.5 13 10.7 13C5.5 13 1.5 9 1.5 3.8C1.5 3 2.2 2.3 3 2.3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                <a href="tel:+919944002040" className="ftr-contact-link">+91 99440 02040</a>
+                <a href="tel:+9195517 34422" className="ftr-contact-link">+91 99440 02040</a>
               </div>
               <div className="ftr-contact-item">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M2.5 1.5H5L5.8 4.2L4 5.2C4.8 7 6.8 8.8 8.5 9.8L9.2 8L12.2 8.8V11.5C12.2 12.3 11.5 13 10.7 13C5.5 13 1.5 9 1.5 3.8C1.5 3 2.2 2.3 3 2.3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                <a href="tel:+919944002040" className="ftr-contact-link">9447867174</a>
+                <a href="tel:+9195517 34422" className="ftr-contact-link">9447867174</a>
               </div>
 
               <div className="ftr-contact-item">

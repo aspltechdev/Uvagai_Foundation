@@ -1,0 +1,475 @@
+/* ============================================
+   UVAGAI FOUNDATION - VISION & MISSION SECTION
+   Unique vms- Prefix • Clean Alignment
+   ============================================ */
+
+:root {
+  --vms-red: #DC2626;
+  --vms-red-light: #FEE2E2;
+  --vms-green: #16A34A;
+  --vms-green-light: #DCFCE7;
+  --vms-blue: #1E3A5F;
+
+  --vms-white: #FFFFFF;
+  --vms-bg: #FAFBFC;
+
+  --vms-text-1: #171717;
+  --vms-text-2: #525252;
+  --vms-text-3: #737373;
+
+  --vms-border: #E8E4DE;
+  --vms-border-light: #F0EDE8;
+
+  --vms-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
+  --vms-shadow-md: 0 8px 30px rgba(0, 0, 0, 0.05);
+  --vms-shadow-lg: 0 15px 50px rgba(0, 0, 0, 0.07);
+  --vms-shadow-xl: 0 25px 70px rgba(0, 0, 0, 0.09);
+
+  --vms-font-display: 'Georgia', 'Times New Roman', serif;
+  --vms-font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --vms-ease: cubic-bezier(0.33, 0.1, 0.25, 1);
+}
+
+/* ============================================ */
+/* SECTION */
+/* ============================================ */
+.vms-section {
+  padding: 80px 0;
+  background: var(--vms-white);
+  font-family: var(--vms-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.vms-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ============================================ */
+/* HEADER */
+/* ============================================ */
+.vms-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.vms-header-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.vms-header-tag-line {
+  width: 28px;
+  height: 2px;
+  background: var(--vms-red);
+  border-radius: 1px;
+}
+
+.vms-header-tag-text {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--vms-red);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.vms-header-title {
+  font-family: var(--vms-font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: var(--vms-text-1);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.vms-text-red {
+  color: var(--vms-red);
+}
+.vms-text-green {
+  color: var(--vms-green);
+}
+
+.vms-header-desc {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--vms-text-3);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ============================================ */
+/* GRID */
+/* ============================================ */
+.vms-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ============================================ */
+/* CARDS */
+/* ============================================ */
+.vms-card {
+  background: var(--vms-white);
+  border: 1px solid var(--vms-border-light);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--vms-shadow-sm);
+  transition: all 0.35s var(--vms-ease);
+}
+
+.vms-card:hover {
+  box-shadow: var(--vms-shadow-lg);
+  border-color: transparent;
+}
+
+/* Card Media */
+.vms-card-media {
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+
+.vms-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--vms-ease);
+}
+
+.vms-card:hover .vms-card-media img {
+  transform: scale(1.05);
+}
+
+.vms-card-media-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.vms-card-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--vms-white);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.vms-badge-red {
+  background: rgba(220, 38, 38, 0.9);
+}
+.vms-badge-green {
+  background: rgba(22, 163, 74, 0.9);
+}
+
+/* Card Body */
+.vms-card-body {
+  padding: 24px 28px 0;
+}
+
+.vms-card-num {
+  font-family: var(--vms-font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--vms-text-1);
+  opacity: 0.06;
+  line-height: 1;
+  margin-bottom: -12px;
+}
+
+.vms-card-title {
+  font-family: var(--vms-font-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--vms-text-1);
+  margin-bottom: 12px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+/* --- JUSTIFIED PARAGRAPHS --- */
+.vms-card-text {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--vms-text-2);
+  margin-bottom: 10px;
+  text-align: justify;
+  /* Improve justification appearance */
+  text-justify: inter-word;
+  /* Enable hyphenation for cleaner breaks */
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  /* Slightly tighten letter spacing for a polished look */
+  letter-spacing: 0.002em;
+}
+
+/* Quote */
+.vms-card-quote {
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: #FAFBFC;
+  border-radius: 8px;
+  border-left: 3px solid var(--vms-red);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.vms-card-mission .vms-card-quote {
+  border-left-color: var(--vms-green);
+}
+
+.vms-card-quote-mark {
+  font-family: var(--vms-font-display);
+  font-size: 2rem;
+  line-height: 0.6;
+  color: var(--vms-red);
+  opacity: 0.25;
+  flex-shrink: 0;
+}
+
+.vms-card-mission .vms-card-quote-mark {
+  color: var(--vms-green);
+}
+
+/* --- JUSTIFIED QUOTE TEXT --- */
+.vms-card-quote p {
+  font-family: var(--vms-font-display);
+  font-size: 0.95rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--vms-text-1);
+  margin: 0;
+  padding-top: 2px;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+/* Accent Line */
+.vms-card-line {
+  width: 32px;
+  height: 3px;
+  border-radius: 2px;
+  margin: 20px 28px 24px;
+  transition: all 0.4s var(--vms-ease);
+}
+
+.vms-line-red {
+  background: var(--vms-red);
+}
+.vms-line-green {
+  background: var(--vms-green);
+}
+
+.vms-card:hover .vms-card-line {
+  width: 50px;
+}
+
+/* ============================================ */
+/* BOTTOM LINK */
+/* ============================================ */
+.vms-bottom {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.vms-bottom-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--vms-red);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap 0.3s ease;
+}
+
+.vms-bottom-link:hover {
+  gap: 14px;
+}
+
+.vms-bottom-link svg {
+  transition: transform 0.3s ease;
+}
+
+.vms-bottom-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+@media (max-width: 900px) {
+  .vms-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .vms-section {
+    padding: 56px 0;
+  }
+  .vms-container {
+    padding: 0 16px;
+  }
+  .vms-header {
+    margin-bottom: 32px;
+  }
+  .vms-header-title {
+    font-size: 1.6rem;
+  }
+  .vms-card-body {
+    padding: 18px 20px 0;
+  }
+  .vms-card-title {
+    font-size: 1.15rem;
+  }
+  .vms-card-line {
+    margin: 16px 20px 20px;
+  }
+  .vms-card-quote {
+    padding: 12px 14px;
+  }
+  /* Improve justification on small screens */
+  .vms-card-text {
+    text-align: left;
+  }
+  .vms-card-quote p {
+    text-align: left;
+  }
+}
+
+@media (max-width: 400px) {
+  .vms-card-text {
+    font-size: 0.84rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vms-card,
+  .vms-card-media img,
+  .vms-card-line {
+    transition: none !important;
+  }
+}
+/* ============================================
+   EVEN SPACING FIXES
+   ============================================ */
+
+/* Make cards full height and flex columns */
+.vms-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensures both cards stretch equally */
+  background: var(--vms-white);
+  border: 1px solid var(--vms-border-light);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--vms-shadow-sm);
+  transition: all 0.35s var(--vms-ease);
+}
+
+/* Card Body – now a flex column to push line down */
+.vms-card-body {
+  padding: 24px 28px 0; /* top, sides, bottom (0 for now) */
+  flex: 1; /* Takes all remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Consistent vertical rhythm (12px base unit) */
+.vms-card-title {
+  font-family: var(--vms-font-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--vms-text-1);
+  margin-bottom: 12px; /* even gap */
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.vms-card-text {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--vms-text-2);
+  margin-bottom: 12px; /* even gap */
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  word-spacing: 0.04em; /* reduces rivers in justified text */
+  letter-spacing: 0.002em;
+}
+
+/* Last text paragraph has no bottom margin (quote handles spacing) */
+.vms-card-text:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Quote block – consistent 16px top/bottom */
+.vms-card-quote {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 14px 18px;
+  background: #FAFBFC;
+  border-radius: 8px;
+  border-left: 3px solid var(--vms-red);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* --- ACCENT LINE (Now lives inside card-body) --- */
+.vms-card-line {
+  width: 40px; /* slightly wider for visual balance */
+  height: 3px;
+  border-radius: 2px;
+  margin-top: auto; /* PUSHES IT TO THE BOTTOM – perfect alignment */
+  margin-bottom: 24px; /* space below the line inside the card */
+  transition: all 0.4s var(--vms-ease);
+  flex-shrink: 0; /* prevents shrinking */
+}
+
+.vms-line-red { background: var(--vms-red); }
+.vms-line-green { background: var(--vms-green); }
+
+.vms-card:hover .vms-card-line {
+  width: 60px; /* nice hover effect */
+}
+
+/* Grid gap – even spacing between cards */
+.vms-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px; /* even gap left-right and top-bottom */
+  align-items: stretch; /* makes both cards equal height */
+}
+
+/* Responsive: keep left-align on small screens */
+@media (max-width: 600px) {
+  .vms-card-body {
+    padding: 18px 20px 0;
+  }
+  .vms-card-text {
+    text-align: left;
+  }
+  .vms-card-quote p {
+    text-align: left;
+  }
+  .vms-card-line {
+    margin-bottom: 18px;
+  }
+}

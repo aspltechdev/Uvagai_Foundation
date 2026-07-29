@@ -975,13 +975,13 @@ import "./CSRPartnerDetails.css";
 
 import whyCardEducation from "../assets/educationsupport.png";
 import whyCardHealth from "../assets/healthcamp.png";
-import whyCardVolunteers from "../assets/skill2.jpg";
-import whyCardSupport from "../assets/seniorcitizenwelfare.png";
+import whyCardVolunteers from "../assets/abtech.png";
+import whyCardSupport from "../assets/ecr.JPG";
 
 
-import educationImg from "../assets/education.jpg";
-import healthcareImg from "../assets/healthcare.jpg";
-import environmentImg from "../assets/environment.jpg";
+import educationImg from "../assets/ED.JPG";
+import healthcareImg from "../assets/hcamp.jpeg";
+import environmentImg from "../assets/csrc.JPG";
 
 import logo1 from "../assets/logo1.png";
 import logo2 from "../assets/logo2.png";
@@ -1009,10 +1009,11 @@ const heroSlides = [
   },
   {
     image: environmentImg,
-    title: "Protecting Our Planet for Future Generations",
-    subtitle: "Through tree plantations, sustainability campaigns, and green initiatives, we're nurturing a healthier planet and inspiring communities to embrace environmental responsibility.",
-    tag: "Environmental Action",
-    accent: "green"
+title: "Empowering Communities, Creating Lasting Change",
+subtitle:
+  "Through community outreach, development initiatives, and collaborative programs, we're strengthening lives, fostering inclusion, and building resilient communities for a better future.",
+tag: "Community Development",
+accent: "green",
   }
 ];
 

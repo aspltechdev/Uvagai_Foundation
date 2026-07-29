@@ -4,11 +4,11 @@ import "./gallerypage.css";
 
 import childwelfareImg from "../assets/Capturechild.PNG";
 import childwelfareImg1 from "../assets/chr2.JPG";
-import communityImg from "../assets/chatcomm.png";
+// import communityImg from "../assets/chatcomm.png";
 import digitalImg from "../assets/creativecapture.PNG";
 import educationImg from "../assets/educati.png";
 import eldeImg from "../assets/elderlycapture.png";
-import environmentImg from "../assets/chatenv.png";
+// import environmentImg from "../assets/chatenv.png";
 import eventImg from "../assets/chateve.png";
 import healthcareImg from "../assets/healthCapture.PNG";
 import healthcareImg1 from "../assets/prog7.png";
@@ -24,17 +24,13 @@ import childwelfarenew3 from "../assets/h.png";
 import childwelfarenew4 from "../assets/chr.JPG";
 import chil1 from "../assets/chil.png";
 import elderlycarenew1 from "../assets/elderlycarenew1.jpeg";
-import enviroinmentnew1 from "../assets/environmentnew1.jpeg";
 import communitynew1 from "../assets/communitynew1.jpeg";
-import communitynew2 from "../assets/el.png";
 import large1 from "../assets/education1.png";
-import image2 from "../assets/image2.jpeg";
 import image5 from "../assets/educat.png";
 import communityimg2 from "../assets/co.JPG";
 import communityimg3 from "../assets/com.JPG";
 import communityimg4 from "../assets/comm.JPG";
 
-import vmBg from "../assets/communitynew1.jpeg";
 import purpose from "../assets/ndimagee.png";
 import empower from "../assets/voli.jpeg";
 import volunteer from "../assets/volent.jpeg";
@@ -48,20 +44,49 @@ import humanitarian from "../assets/humani.jpeg";
 import women from "../assets/womenempfinal.png";
 
 import healthcare1 from "../assets/healthcare1.jpg";
-import volunteer1 from "../assets/volunteer1.jpg";
-import educationHero from "../assets/educat.png";
-import healthcareHero from "../assets/healthcare.jpg";
-import volunteerImg from "../assets/volunteer.png";
-import childImg from "../assets/childd.png";
-import elderlyImg from "../assets/elder.png";
-import environmentHero from "../assets/environment.jpg";
-import foodImg from "../assets/food1.jpg";
-import csrImg from "../assets/csr.jpg";
-import skillImg from "../assets/skill1.jpg";
 import skillImg1 from "../assets/v.jpg";
-import skillImg11 from "../assets/volunteer3.jpg";
-import skillImg111 from "../assets/newfrstimage.png";
-import skillImg1111 from "../assets/impact3.png";
+
+import img1 from "../assets/communityy.png";
+import img2 from "../assets/edi.JPG";
+import img3 from "../assets/ndimagee.png";
+import whyCardEducation from "../assets/educationsupport.png";
+import whyCardHealth from "../assets/healthcamp.png";
+import whyCardVolunteers from "../assets/abtech.png";
+import whyCardSupport from "../assets/ecr.JPG";
+import educationImg2 from "../assets/ED.JPG";
+import healthcareImg2 from "../assets/hcamp.jpeg";
+import environmentImg2 from "../assets/csrc.JPG";
+import aboutImage from "../assets/about3.jpg";
+import educationImg3 from "../assets/ae.png";
+import healthcareImg3 from "../assets/healthab.png";
+import childWelfareImg from "../assets/childincards.png";
+import elderlyImg2 from "../assets/senior.png";
+import environmentImg3 from "../assets/abf.png";
+import communityDevImg from "../assets/communityy.png";
+import skillImg2 from "../assets/abtech.png";
+import placementImg from "../assets/prog7.png";
+import abouthero1 from "../assets/about.jpg";
+import abouthero2 from "../assets/about1.jpg";
+import abouthero3 from "../assets/about22.jpg";
+import highlight1 from "../assets/abl.jpg";
+import highlight2 from "../assets/highlight2.png";
+import highlight3 from "../assets/highlight3.png";
+import engage from "../assets/voli.jpeg";
+import community2 from "../assets/eventherof.jpeg";
+import together from "../assets/humani.jpeg";
+import camp from "../assets/camp.jpeg";
+import educ from "../assets/edu.jpg";
+import volunteer2 from "../assets/voli.jpeg";
+import child2 from "../assets/childwell.jpg";
+import senior from "../assets/eldi.jpeg";
+import sustain from "../assets/cov1.jpg";
+import educationnew12_2 from "../assets/educationnew12.jpeg";
+import childwelfarenew1_2 from "../assets/cv.jpeg";
+import elderlycarenew1_2 from "../assets/ev.jpg";
+import enviroinmentnew1_2 from "../assets/env.JPG";
+import communitynew1_2 from "../assets/abtech.png";
+import large1_2 from "../assets/vco.jpg";
+import image5_2 from "../assets/vco11.JPG";
 
 export default function GalleryPage() {
   const sectionRef = useRef(null);
@@ -70,100 +95,121 @@ export default function GalleryPage() {
   const [filter, setFilter] = useState("All");
   const [visibleCount, setVisibleCount] = useState(12);
 
+  // Every gallery card below now points to a real, imported image.
+  // The cards that used to reference commented-out imports
+  // (skillImg, skillImg11, skillImg111, skillImg1111, healthcareHero,
+  // environmentHero, foodImg, volunteerImg, volunteer1, image2, image2_2,
+  // communitynew2, enviroinmentnew1) have been removed entirely rather
+  // than substituted. Add them back in once those assets actually exist.
+
   const galleryItems = [
-   { image: educationImg, category: "Education", accent: "red" },
-    { image: benefitImg1, category: "Education", accent: "red" },
-    { image: educationnew12, category: "Education", accent: "red" },
-    { image: education, category: "Education", accent: "red" },
-    { image: benefitImg2, category: "Education", accent: "red" },
-    { image: benefitImg3, category: "Education", accent: "red" },
-    { image: large1, category: "Education", accent: "red" },
-    { image: image2, category: "Education", accent: "red" },
-    { image: image5, category: "Education", accent: "red" },
-    { image: digitalImg, category: "Education", accent: "red" },
-    { image: healthcareImg1, category: "Education", accent: "red" },
-    { image: skillImg11, category: "Education", accent: "red" },
-   
+    { image: educationImg, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
+    { image: benefitImg1, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
+    { image: educationnew12, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
+    { image: education, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
+    { image: benefitImg2, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
+    { image: benefitImg3, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
+    { image: large1, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
+    { image: image5, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
+    { image: digitalImg, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
+    { image: healthcareImg1, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
+    { image: img2, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
+    // { image: whyCardEducation, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
+    { image: educationImg2, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
+    { image: educationImg3, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
+    { image: educ, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
+    { image: educationnew12_2, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
 
-    { image: healthcareImg, category: "Healthcare", accent: "green" },
-    { image: healthcare1, category: "Healthcare", accent: "green" },
-    { image: healthcarenew1, category: "Healthcare", accent: "green" },
-    { image: healthcareHero, category: "Healthcare", accent: "green" },
-    { image: healthcarenew1, category: "Healthcare", accent: "green" },
-    { image: women, category: "Healthcare", accent: "green" },
-    { image: childwelfarenew3, category: "Healthcare", accent: "green" },
-    { image: healthcare, category: "Healthcare", accent: "green" },
+    { image: healthcareImg, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
+    { image: healthcare1, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
+    { image: healthcarenew1, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
+    // { image: healthcarenew1, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
+    { image: women, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
+    { image: childwelfarenew3, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
+    { image: healthcare, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
+    { image: whyCardHealth, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
+    { image: healthcareImg2, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
+    { image: healthcareImg3, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
+    { image: camp, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
 
-    { image: childwelfareImg, category: "Child Welfare", accent: "blue" },
-    { image: childwelfarenew4, category: "Child Welfare", accent: "blue" },
-    { image: child, category: "Child Welfare", accent: "blue" },
-    { image: chil1, category: "Child Welfare", accent: "blue" },
-    { image: skillImg1111, category: "Child Welfare", accent: "blue" },
-    { image: childwelfareImg1, category: "Child Welfare", accent: "blue" },
-    { image: childwelfarenew1, category: "Child Welfare", accent: "blue" },
-    { image: eventImg, category: "Child Welfare", accent: "blue" },
-    { image: large1, category: "Child Welfare", accent: "blue" },
-    { image: benefitImg3, category: "Child Welfare", accent: "blue" },
-    { image: skillImg111, category: "Child Welfare", accent: "blue" },
-    { image: skillImg11, category: "Child Welfare", accent: "blue" },
-    
-    
+    { image: childwelfareImg, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
+    { image: childwelfarenew4, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
+    { image: child, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
+    { image: chil1, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
+    { image: childwelfareImg1, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
+    { image: childwelfarenew1, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
+    { image: eventImg, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
+    { image: large1, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
+    { image: benefitImg3, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
+    { image: childWelfareImg, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
+    { image: childwelfarenew1_2, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
+    { image: child2, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
 
-    { image: skillImg, category: "Skill Development", accent: "red" },
-    { image: digitalImg, category: "Skill Development", accent: "red" },
-    { image: empower, category: "Skill Development", accent: "red" },
-    { image: image5, category: "Skill Development", accent: "red" },
-    { image: image2, category: "Skill Development", accent: "red" },
-    { image: educationnew12, category: "Skill Development", accent: "red" },
-    { image: large1, category: "Skill Development", accent: "red" },
-    { image:  healthcareImg1, category: "Skill Development", accent: "red" },
-    
-    
+    { image: digitalImg, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
+    { image: empower, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
+    { image: image5, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
+    { image: educationnew12, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
+    { image: large1, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
+    { image: healthcareImg1, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
+    { image: whyCardVolunteers, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
+    // { image: skillImg2, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
+    // { image: engage, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
+    // { image: volunteer2, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
 
-    // { image: volunteerImg, category: "Placement", accent: "green" },
-    // { image: large1, category: "Placement", accent: "green" },
-    { image: humanitarian, category: "Placement", accent: "green" },
-    // { image: childwelfarenew1, category: "Placement", accent: "green" },
-    { image: skillImg, category: "Placement", accent: "green" },
-    // { image: women, category: "Placement", accent: "green" },
-    { image: image2, category: "Placement", accent: "green" },
-    { image:  healthcareImg1, category: "Placement", accent: "green" },
-    
+    { image: humanitarian, category: "Placement", accent: "green", title: "Placement Program", description: "Connecting trained youth with sustainable livelihoods." },
+    { image: healthcareImg1, category: "Placement", accent: "green", title: "Placement Program", description: "Connecting trained youth with sustainable livelihoods." },
+    // { image: placementImg, category: "Placement", accent: "green", title: "Placement Program", description: "Connecting trained youth with sustainable livelihoods." },
 
-    { image: volunteer1, category: "CSR", accent: "blue" },
-    { image: communitynew1, category: "CSR", accent: "blue" },
-    { image: volunteerImg, category: "CSR", accent: "blue" },
-    { image: benefitImg1, category: "CSR", accent: "blue" },
-    { image: communityImg, category: "CSR", accent: "blue" },
-    { image: communityimg2, category: "CSR", accent: "blue" },
-    { image: communityimg3, category: "CSR", accent: "blue" },
-    { image: humanitarian, category: "CSR", accent: "blue" },
-    { image: communityImg, category: "CSR", accent: "blue" },
-    { image: communityimg4, category: "CSR", accent: "blue" },
-    { image: volunteer, category: "CSR", accent: "blue" },
-    { image: enviroinmentnew1, category: "CSR", accent: "blue" },
-    { image: benefitImg3, category: "CSR", accent: "blue" },
+    { image: communitynew1, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
+    { image: volunteer, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
+    { image: benefitImg1, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
+    // { image: communityImg, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
+    // { image: communityimg2, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
+    { image: communityimg3, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
+    { image: humanitarian, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
+    // { image: communityImg, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
+    { image: communityimg4, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
+    { image: volunteer, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
+    // { image: benefitImg3, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
+    { image: whyCardSupport, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
+    { image: environmentImg2, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
+    { image: together, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
+    { image: large1_2, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
+    { image: image5_2, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
 
-    { image: environmentHero, category: "Environment", accent: "red" },
-    { image: environmentImg, category: "Environment", accent: "red" },
-    { image: enviroinmentnew1, category: "Environment", accent: "red" },
-    { image: environment, category: "Environment", accent: "red" },
+    // { image: environmentImg, category: "Environment", accent: "red", title: "Environment Initiatives", description: "Restoring and protecting our natural surroundings." },
+    { image: environment, category: "Environment", accent: "red", title: "Environment Initiatives", description: "Restoring and protecting our natural surroundings." },
+    { image: environmentImg3, category: "Environment", accent: "red", title: "Environment Initiatives", description: "Restoring and protecting our natural surroundings." },
+    { image: sustain, category: "Environment", accent: "red", title: "Environment Initiatives", description: "Restoring and protecting our natural surroundings." },
+    { image: enviroinmentnew1_2, category: "Environment", accent: "red", title: "Environment Initiatives", description: "Restoring and protecting our natural surroundings." },
 
-    { image: foodImg, category: "Community", accent: "green" },
-    { image: communityImg, category: "Community", accent: "green" },
-    { image: communitynew2, category: "Community", accent: "green" },
-    { image: community, category: "Community", accent: "green" },
-    { image: volunteer1, category: "Community", accent: "green" },
-    { image: elderly, category: "Community", accent: "green" },
-    { image: women, category: "Community", accent: "green" },
-    { image: communitynew1, category: "Community", accent: "green" },
-    { image: community, category: "Community", accent: "green" },
-    { image: volunteerImg, category: "Community", accent: "green" },
-    { image: humanitarian, category: "Community", accent: "green" },
-    { image: elderlycarenew1, category: "Community", accent: "green" },
-    { image: eldeImg, category: "Community", accent: "green" },
-    { image: purpose, category: "Community", accent: "green" },
+    // { image: communityImg, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: community, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: elderly, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: women, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: communitynew1, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    // { image: community, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: humanitarian, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: elderlycarenew1, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: eldeImg, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: purpose, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: img1, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    // { image: img3, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: aboutImage, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: elderlyImg2, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: communityDevImg, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: abouthero1, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: abouthero2, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: abouthero3, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: highlight1, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: highlight2, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: highlight3, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: community2, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: senior, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: elderlycarenew1_2, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
+    { image: communitynew1_2, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
   ];
+
   const categories = ["All", "Education", "Healthcare", "Child Welfare", "Skill Development", "Placement", "CSR", "Environment", "Community"];
   const filteredItems = filter === "All" ? galleryItems : galleryItems.filter((item) => item.category === filter);
   const displayedItems = filteredItems.slice(0, visibleCount);
@@ -215,7 +261,7 @@ export default function GalleryPage() {
               {displayedItems.map((item, index) => (
                 <motion.div
                   className={`glp-card glp-card-${item.accent}`}
-                  key={`${item.title}-${index}`}
+                  key={`${item.category}-${index}`}
                   initial={{ opacity: 0, y: 25 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.9 }}
@@ -242,7 +288,6 @@ export default function GalleryPage() {
                     <h3 className="glp-card-title">{item.title}</h3>
                     <p className="glp-card-text">{item.description}</p>
                   </div>
-                  {/* <div className={`glp-card-line glp-line-${item.accent}`} /> */}
                 </motion.div>
               ))}
             </AnimatePresence>

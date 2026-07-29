@@ -329,28 +329,35 @@ import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./VisionMission.css";
 
+import visionImg from "../assets/vco.jpg";
+import missionImg from "../assets/vco.jpg";
+import commitmentImg from "../assets/vco.jpg";
+
 const heroSlides = [
   {
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
+    image: visionImg,
     title: "Inspiring Hope, Empowering Lives & Creating Sustainable Social Impact",
-    subtitle: "Our vision and mission guide every initiative we undertake to empower communities, improve lives, and create lasting positive change.",
+    subtitle:
+      "Our vision and mission guide every initiative we undertake to empower communities, improve lives, and create lasting positive change.",
     tag: "Vision • Mission • Values",
-    accent: "red"
+    accent: "red",
   },
   {
-    image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1200&q=80",
+    image: missionImg,
     title: "Guided by Vision, Driven by Mission",
-    subtitle: "Since 2019, Uvagai Foundation has been dedicated to empowering children, families, and communities through education, healthcare, and sustainable development.",
+    subtitle:
+      "Since 2019, Uvagai Foundation has been dedicated to empowering children, families, and communities through education, healthcare, and sustainable development.",
     tag: "Our Purpose & Promise",
-    accent: "green"
+    accent: "green",
   },
   {
-    image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1200&q=80",
+    image: commitmentImg,
     title: "Turning Compassion Into Action",
-    subtitle: "Through education support, healthcare initiatives, child welfare, elderly care, and community development, we create meaningful opportunities for all.",
+    subtitle:
+      "Through education support, healthcare initiatives, child welfare, elderly care, and community development, we create meaningful opportunities for all.",
     tag: "Our Commitment",
-    accent: "blue"
-  }
+    accent: "blue",
+  },
 ];
 
 export default function VisionMissionPage() {

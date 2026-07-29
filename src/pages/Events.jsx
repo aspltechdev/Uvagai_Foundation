@@ -302,8 +302,8 @@ import educ from "../assets/edu.jpg";
 import volunteer from "../assets/voli.jpeg";
 import child from "../assets/childwell.jpg";
 import senior from "../assets/eldi.jpeg";
-import sustain from "../assets/finalenvironment.jpeg";
-import skillImg from "../assets/abt123.png";
+import sustain from "../assets/cov1.jpg";
+import skillImg from "../assets/abtech.png";
 import placementImg from "../assets/prog7.png";
 
 const heroSlides = [
@@ -404,14 +404,15 @@ export default function Events() {
       description: "Connecting skilled individuals with employers through job fairs, placement drives, and career counseling sessions.",
       accent: "red",
     },
-    {
-      image: sustain,
-      title: "Environmental Awareness Campaign",
-      category: "Sustainability Initiative",
-      location: "Green Community Program",
-      description: "Promoting environmental responsibility through tree plantation drives, awareness campaigns, and sustainable community initiatives.",
-      accent: "green",
-    },
+  {
+  image: sustain,
+  title: "COVID-19 Relief Initiative",
+  category: "Humanitarian Support",
+  location: "Community Relief Program",
+  description:
+    "Providing food, hygiene kits, and emergency support to families during the COVID-19 pandemic.",
+  accent: "green",
+},
   ];
 
   return (

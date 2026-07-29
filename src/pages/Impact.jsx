@@ -3,16 +3,16 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView, animate } from "framer-motion";
 import "./Impact.css";
 
-import healthcare1 from "../assets/healthcare1.jpg";
+import healthcare1 from "../assets/mi.JPG";
 import volunteer1 from "../assets/volunteer1.jpg";
-import educationImg from "../assets/education0.png";
+import educationImg from "../assets/yi.jpeg";
 import healthcareImg from "../assets/healthcare.jpg";
 import volunteerImg from "../assets/volunteer.png";
-import childImg from "../assets/education.jpg";
-import elderlyImg from "../assets/elder.png";
-import environmentImg from "../assets/impact3.png";
+import childImg from "../assets/chii.JPG";
+import elderlyImg from "../assets/OI.jpeg";
+import environmentImg from "../assets/fi.JPG";
 import foodImg from "../assets/food1.jpg";
-import csrImg from "../assets/csr.jpg";
+import csrImg from "../assets/ci.jpg";
 import skillImg from "../assets/skill1.jpg";
 
 const heroSlides = [
