@@ -303,3 +303,178 @@
     transition: none !important;
   }
 }
+
+/* ============================================
+   UVAGAI FOUNDATION - AWARDS & RECOGNITION
+   Grid Cards • aw- Prefix
+   ============================================ */
+.aw-section {
+  padding: 72px 0 24px;
+  background: var(--sw-white);
+  font-family: var(--sw-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.aw-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Header */
+.aw-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.aw-header-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.aw-header-tag-line {
+  width: 28px;
+  height: 2px;
+  background: var(--sw-red);
+  border-radius: 1px;
+}
+
+.aw-header-tag-text {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--sw-red);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.aw-header-title {
+  font-family: var(--sw-font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  color: var(--sw-text-1);
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.aw-text-red { color: var(--sw-red); }
+
+.aw-header-desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--sw-text-3);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Grid */
+.aw-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.aw-card {
+  background: var(--sw-white);
+  border: 1px solid var(--sw-border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--sw-shadow-sm);
+  transition: all 0.3s var(--sw-ease);
+}
+
+.aw-card:hover {
+  box-shadow: var(--sw-shadow-md);
+  transform: translateY(-4px);
+  border-color: var(--sw-red);
+}
+
+.aw-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #F3F4F6;
+}
+
+.aw-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--sw-ease);
+}
+
+.aw-card:hover .aw-card-img {
+  transform: scale(1.06);
+}
+
+.aw-card-year {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--sw-red);
+  color: var(--sw-white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.aw-card-body {
+  padding: 18px 20px 22px;
+  text-align: center;
+}
+
+.aw-card-title {
+  font-family: var(--sw-font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--sw-text-1);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.aw-card-org {
+  font-size: 0.82rem;
+  color: var(--sw-text-3);
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .aw-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .aw-section {
+    padding: 56px 0 20px;
+  }
+  .aw-container {
+    padding: 0 20px;
+  }
+  .aw-header {
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  .aw-grid {
+    grid-template-columns: 1fr;
+  }
+  .aw-card-body {
+    padding: 16px 18px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aw-card {
+    transition: none !important;
+  }
+}

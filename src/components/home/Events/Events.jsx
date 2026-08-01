@@ -2,11 +2,11 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./Events.css";
  import healthcareImg from "../../../assets/healthab.png";
-import skillImg1 from "../../../assets/abtech.png";
+import skillImg1 from "../../../assets/education12.png";
 import educationImg from "../../../assets/edi.JPG";
-import volunteer from "../../../assets/v1.jpg";
+import volunteer from "../../../assets/volu.jpg";
 import childwelfareImg from "../../../assets/chi.JPG";
-import elderly from "../../../assets/vco11.JPG";
+import elderly from "../../../assets/elder.jpg";
 // ← FIXED: Changed to correct path
 
 

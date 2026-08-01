@@ -1720,7 +1720,7 @@ export default function Course() {
     if (!isHovered) {
       const timer = setInterval(() => {
         setCurrent((prev) => (prev + 1) % heroSlides.length);
-      }, 4000);
+      }, 3000);
       return () => clearInterval(timer);
     }
   }, [isHovered]);
@@ -1985,7 +1985,7 @@ export default function Course() {
               className={`crs-hero-slide ${index === current ? 'crs-hero-slide-active' : ''}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: index === current ? 1 : 0, scale: index === current ? 1 : 1.1 }}
-              transition={{ duration: 1.3, ease: [0.33, 0.1, 0.25, 1] }}
+              transition={{ duration: 0.4, ease: "linear" }}
             >
               <img src={slide.image} alt={slide.title} />
             </motion.div>
@@ -2004,7 +2004,7 @@ export default function Course() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
-              transition={{ duration: 0.5, ease: [0.33, 0.1, 0.25, 1] }}
+              transition={{ duration: 0.1, ease: "linear" }}
             >
               <div className="crs-hero-tag">
                 <span className="crs-hero-tag-line" />
@@ -2027,7 +2027,7 @@ export default function Course() {
                 className="crs-hero-dot-fill"
                 initial={{ width: '0%' }}
                 animate={{ width: index === current && !isHovered ? '100%' : '0%' }}
-                transition={{ duration: index === current ? 4 : 0.3, ease: "linear" }}
+                transition={{ duration: index === current ? 3 : 0.3, ease: "linear" }}
               />
             </button>
           ))}

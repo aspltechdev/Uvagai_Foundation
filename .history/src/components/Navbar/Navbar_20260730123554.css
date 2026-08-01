@@ -1,0 +1,562 @@
+/* ============================================
+   UVAGAI FOUNDATION - REFINED NAVIGATION
+   Apple-Inspired • Compact • Dark Red Primary
+   ============================================ */
+
+/* ============================================ */
+/* DESIGN TOKENS */
+/* ============================================ */
+:root {
+  /* Primary - Rich Dark Red */
+  --nv-red: #C62828;
+  --nv-red-hover: #B71C1C;
+  --nv-red-dark: #8B0000;
+  --nv-red-light: #FFEBEE;
+  --nv-red-glow: rgba(198, 40, 40, 0.25);
+  
+  /* Support Colors */
+  --nv-green: #059669;
+  --nv-green-light: #ECFDF5;
+  --nv-blue: #1E3A8A;
+  --nv-blue-light: #EFF6FF;
+  
+  /* Neutrals */
+  --nv-white: #FFFFFF;
+  --nv-gray-50: #FAFAFA;
+  --nv-gray-100: #F5F5F5;
+  --nv-gray-200: #E5E5E5;
+  --nv-gray-300: #D4D4D4;
+  --nv-gray-400: #A3A3A3;
+  --nv-gray-500: #737373;
+  --nv-gray-600: #525252;
+  --nv-gray-700: #404040;
+  --nv-gray-800: #262626;
+  --nv-gray-900: #171717;
+  
+  /* Shadows */
+  --nv-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --nv-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --nv-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --nv-shadow-cta: 0 2px 8px rgba(198, 40, 40, 0.3);
+  --nv-shadow-cta-hover: 0 4px 16px rgba(198, 40, 40, 0.4);
+  
+  /* Border Radius */
+  --nv-radius-sm: 6px;
+  --nv-radius-md: 8px;
+  --nv-radius-lg: 10px;
+  --nv-radius-full: 9999px;
+  
+  /* Typography */
+  --nv-font-display: 'Georgia', 'Times New Roman', serif;
+  --nv-font-body: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+  --nv-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* ============================================ */
+/* HEADER - COMPACT & SLEEK */
+/* ============================================ */
+.nv-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.3s var(--nv-ease);
+  font-family: var(--nv-font-body);
+}
+
+.nv-header-scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* ============================================ */
+/* CONTAINER */
+/* ============================================ */
+.nv-container {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+/* ============================================ */
+/* BRAND / LOGO - SLIGHTLY BIGGER */
+/* ============================================ */
+.nv-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nv-brand-logo-wrap {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--nv-radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: all 0.2s var(--nv-ease);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.nv-brand:hover .nv-brand-logo-wrap {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nv-brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nv-brand-logo-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nv-brand-text {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.nv-brand-name {
+  font-family: var(--nv-font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--nv-red);
+  letter-spacing: -0.3px;
+}
+
+.nv-brand-tagline {
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: #8B0000;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ============================================ */
+/* DESKTOP NAVIGATION - MINIMAL */
+/* ============================================ */
+.nv-nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nv-nav-list {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nv-nav-link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+  text-decoration: none;
+  color: var(--nv-gray-600);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: -0.1px;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+.nv-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: calc(100% - 24px);
+  height: 2px;
+  background: var(--nv-red);
+  transition: transform 0.2s var(--nv-ease);
+}
+
+.nv-nav-link:hover {
+  color: var(--nv-gray-900);
+}
+
+.nv-nav-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.nv-nav-link-active {
+  color: var(--nv-red-dark);
+  font-weight: 600;
+}
+
+.nv-nav-link-active::after {
+  transform: translateX(-50%) scaleX(1);
+  background: var(--nv-red-dark);
+}
+
+/* ============================================ */
+/* DONATE CTA - DARK RED PILL BUTTON */
+/* ============================================ */
+.nv-cta-wrap {
+  flex-shrink: 0;
+}
+
+.nv-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 18px;
+  border-radius: var(--nv-radius-full);
+  text-decoration: none;
+  
+  /* Darker Rich Red */
+  background: var(--nv-red);
+  color: var(--nv-white);
+  
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  
+  box-shadow: var(--nv-shadow-cta);
+  transition: all 0.2s var(--nv-ease);
+}
+
+.nv-cta-btn:hover {
+  background: var(--nv-red-hover);
+  box-shadow: var(--nv-shadow-cta-hover);
+  transform: scale(1.04);
+}
+
+.nv-cta-btn:active {
+  transform: scale(0.98);
+}
+
+.nv-cta-text {
+  position: relative;
+  z-index: 1;
+}
+
+.nv-cta-arrow {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.2s ease;
+}
+
+.nv-cta-btn:hover .nv-cta-arrow {
+  transform: translateX(2px);
+}
+
+/* ============================================ */
+/* MOBILE TOGGLE */
+/* ============================================ */
+.nv-toggle {
+  display: none;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--nv-radius-sm);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+  padding: 0;
+}
+
+.nv-toggle:hover {
+  background: var(--nv-gray-100);
+}
+
+.nv-toggle-bars {
+  width: 16px;
+  height: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nv-bar {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--nv-gray-700);
+  border-radius: 1px;
+  transition: all 0.25s var(--nv-ease);
+  transform-origin: center;
+}
+
+.nv-toggle-open .nv-bar-1 {
+  transform: translateY(5.25px) rotate(45deg);
+}
+
+.nv-toggle-open .nv-bar-2 {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nv-toggle-open .nv-bar-3 {
+  transform: translateY(-5.25px) rotate(-45deg);
+}
+
+/* ============================================ */
+/* MOBILE MENU */
+/* ============================================ */
+.nv-mobile-menu {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.nv-mobile-inner {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px 20px 32px;
+}
+
+.nv-mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.nv-mobile-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: var(--nv-radius-md);
+  text-decoration: none;
+  color: var(--nv-gray-700);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.1px;
+  transition: all 0.15s ease;
+}
+
+.nv-mobile-link:hover {
+  background: var(--nv-gray-100);
+  color: var(--nv-red);
+}
+
+.nv-mobile-link-active {
+  background: var(--nv-red-light);
+  color: var(--nv-red-dark);
+  font-weight: 600;
+}
+
+.nv-mobile-link svg {
+  color: var(--nv-gray-300);
+  transition: all 0.15s ease;
+  width: 14px;
+  height: 14px;
+}
+
+.nv-mobile-link:hover svg {
+  color: var(--nv-red);
+  transform: translateX(3px);
+}
+
+/* Mobile CTA */
+.nv-mobile-cta {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--nv-gray-100);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nv-mobile-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 24px;
+  border-radius: var(--nv-radius-full);
+  text-decoration: none;
+  background: var(--nv-red);
+  color: var(--nv-white);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  box-shadow: var(--nv-shadow-cta);
+  transition: all 0.2s var(--nv-ease);
+}
+
+.nv-mobile-cta-btn:hover {
+  background: var(--nv-red-hover);
+  box-shadow: var(--nv-shadow-cta-hover);
+}
+
+.nv-mobile-cta-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.nv-mobile-cta-btn:hover svg {
+  transform: translateX(3px);
+}
+
+.nv-mobile-contact {
+  text-align: center;
+  padding-top: 4px;
+}
+
+.nv-mobile-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--nv-gray-600);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.nv-mobile-phone:hover {
+  color: var(--nv-red-dark);
+}
+
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+@media (max-width: 1024px) {
+  .nv-nav {
+    display: none;
+  }
+  
+  .nv-toggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .nv-container {
+    padding: 0 16px;
+  }
+  
+  .nv-header {
+    height: 52px;
+  }
+  
+  .nv-mobile-menu {
+    top: 52px;
+  }
+  
+  .nv-brand-logo-wrap {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .nv-brand-name {
+    font-size: 1.15rem;
+  }
+  
+  .nv-brand-tagline {
+    display: none;
+  }
+  
+  .nv-cta-btn {
+    height: 30px;
+    padding: 0 14px;
+    font-size: 0.75rem;
+  }
+  
+  .nv-mobile-link {
+    padding: 11px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .nv-mobile-cta-btn {
+    height: 40px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .nv-container {
+    padding: 0 12px;
+    gap: 12px;
+  }
+  
+  .nv-cta-btn {
+    padding: 0 10px;
+    font-size: 0.7rem;
+    gap: 4px;
+  }
+  
+  .nv-cta-btn svg {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+/* ============================================ */
+/* ACCESSIBILITY */
+/* ============================================ */
+.nv-nav-link:focus-visible,
+.nv-cta-btn:focus-visible,
+.nv-mobile-link:focus-visible,
+.nv-toggle:focus-visible {
+  outline: 2px solid var(--nv-red);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nv-header *,
+  .nv-header *::before,
+  .nv-header *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+.nv-brand-logo-wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--nv-radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: all 0.2s var(--nv-ease);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+@media (max-width: 640px) {
+  .nv-brand-logo-wrap {
+    width: 40px;
+    height: 40px;
+  }
+  /* ...rest stays the same */
+}

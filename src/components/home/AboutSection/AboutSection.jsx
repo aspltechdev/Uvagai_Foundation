@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./AboutSection.css";
 import about1 from "../../../assets/about11.png";
 import about2 from "../../../assets/about22.png";
-import about3 from "../../../assets/abtech.png";
+import about3 from "../../../assets/abt123.png";
 import about4 from "../../../assets/about44.png";
 
 export default function AboutSection() {

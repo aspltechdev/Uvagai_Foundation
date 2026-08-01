@@ -4,13 +4,15 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import "./Donate.css";
 import bgofslides from "../assets/bgofslides.png";
-import childincards from "../assets/childincards.png";
-import community from "../assets/community.png";
-import childedu from "../assets/childedu.png";
-import seniorciti from "../assets/senior.png";
-import communityy from "../assets/communityy.png";
+import childincards from "../assets/DON.png";
+import community from "../assets/camp.jpg";
+import childedu from "../assets/educ.jpg";
+import seniorciti from "../assets/cn.png";
+import communityy from "../assets/COM.jpeg";
 import environment from "../assets/environment.png";
-
+import seniorciti1 from "../assets/ld.jpg";
+import childincards1 from "../assets/ch.JPG";
+import communityy1 from "../assets/CO.jpeg";
 const heroSlides = [
   {
     tag: "Make a Difference",
@@ -513,13 +515,13 @@ export default function Donate() {
                 tag: "child",
                 title: "Child Welfare",
                 desc: "Promoting education, nutrition, healthcare and protection for every child.",
-                img: childincards,
+                img: childincards1,
               },
               {
                 tag: "elderly care",
                 title: "Elderly Care",
                 desc: "Improving the quality of life of senior citizens through care, support and wellness.",
-                img: seniorciti,
+                img: seniorciti1,
               },
               {
                 tag: "Environment",
@@ -531,7 +533,7 @@ export default function Donate() {
                 tag: "Community",
                 title: "Community Development",
                 desc: "Creating sustainable livelihood opportunities and empowering rural communities.",
-                img: communityy,
+                img: communityy1,
               },
             ].map((item, index) => (
               <motion.div

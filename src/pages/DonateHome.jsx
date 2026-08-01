@@ -756,13 +756,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./DonateHome.css";
 
-import childedu from "../assets/childedu.png";
-import community from "../assets/community.png";
-import childincards from "../assets/childincards.png";
-import seniorciti from "../assets/senior.png";
+import childedu from "../assets/childed.jpg";
+import community from "../assets/hell.jpg";
+import childincards from "../assets/well.JPG";
+import seniorciti from "../assets/OLDERR.JPG";
 // import environment from "../assets/environment.png";
-import communityy from "../assets/communityy.png";
-import skillImg from "../assets/abtech.png";
+import communityy from "../assets/77.jpeg";
+import skillImg from "../assets/sky.jpeg";
 import placementImg from "../assets/prog7.png";
 
 export default function Donate() {

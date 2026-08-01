@@ -100,9 +100,32 @@ export default function Navbar() {
               </div>
             </div>
             <div className="nv-brand-text">
-              <span className="nv-brand-name">Uvagai</span>
-              <span className="nv-brand-tagline">Foundation</span>
-            </div>
+  <span
+    className="nv-brand-name"
+    style={{
+      fontFamily: "'Rye', serif",
+      fontSize: "1.45rem",
+      fontWeight: 400,
+      letterSpacing: "0",
+      textTransform: "none"
+    }}
+  >
+    Uvagai
+  </span>
+
+  <span
+    className="nv-brand-tagline"
+    style={{
+      fontFamily: "'Rye', serif",
+      fontSize: "1.45rem",
+      fontWeight: 400,
+      letterSpacing: "0",
+      textTransform: "none"
+    }}
+  >
+    Foundation
+  </span>
+</div>
           </Link>
         </motion.div>
 
@@ -203,6 +226,7 @@ export default function Navbar() {
                     <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </Link>
+                
                 
                 <div className="nv-mobile-contact">
                   <a href="tel:+919876543210" className="nv-mobile-phone">

@@ -18,7 +18,7 @@ import benefitImg3 from "../assets/educatio.png";
 import image5 from "../assets/educat.png";
 import educationImg2 from "../assets/ED.JPG";
 
-import healthcareImg from "../assets/healthCapture.PNG";
+import healthcareImg from "../assets/H.JPG";
 import healthcare1 from "../assets/healthcare1.jpg";
 import healthcarenew1 from "../assets/healthcarenew1.png";
 import whyCardHealth from "../assets/healthcamp.png";
@@ -28,7 +28,7 @@ import healthcareImg3 from "../assets/healthab.png";
 import camp from "../assets/camp.jpeg";
 import healthcare from "../assets/healthfinal.png";
 
-import childwelfareImg from "../assets/Capturechild.PNG";
+import childwelfareImg from "../assets/ha.JPG";
 import childwelfareImg1 from "../assets/chr2.JPG";
 import childwelfarenew1 from "../assets/child.png";
 import chil1 from "../assets/chil.png";

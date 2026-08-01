@@ -297,13 +297,13 @@ import "./Events.css";
 import engage from "../assets/voli.jpeg";
 import community from "../assets/eventherof.jpeg";
 import together from "../assets/humani.jpeg";
-import camp from "../assets/camp.jpeg";
-import educ from "../assets/edu.jpg";
+import camp from "../assets/hlth.JPG";
+import educ from "../assets/scl.jpg";
 import volunteer from "../assets/voli.jpeg";
 import child from "../assets/childwell.jpg";
 import senior from "../assets/eldi.jpeg";
 import sustain from "../assets/cov1.jpg";
-import skillImg from "../assets/abtech.png";
+import skillImg from "../assets/skill.jpeg";
 import placementImg from "../assets/prog7.png";
 
 const heroSlides = [
@@ -430,7 +430,7 @@ export default function Events() {
               className={`events-slide-bg ${index === current ? 'active' : ''}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: index === current ? 1 : 0, scale: index === current ? 1 : 1.08 }}
-              transition={{ duration: 1.2, ease: [0.33, 0.1, 0.25, 1] }}
+              transition={{ duration: 0.4, ease: "linear" }}
             >
               <img src={slide.image} alt={slide.title} />
             </motion.div>
@@ -449,7 +449,7 @@ export default function Events() {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -25 }}
-              transition={{ duration: 0.5, ease: [0.33, 0.1, 0.25, 1] }}
+              transition={{ duration: 0.1, ease: "linear" }}
             >
               <div className="events-hero-tag">
                 <span className="events-hero-tag-line" />
@@ -473,7 +473,7 @@ export default function Events() {
                 className="events-slide-dot-fill"
                 initial={{ width: '0%' }}
                 animate={{ width: index === current && !isHovered ? '100%' : '0%' }}
-                transition={{ duration: index === current ? 5 : 0.3, ease: "linear" }}
+                transition={{ duration: index === current ? 3 : 0.3, ease: "linear" }}
               />
             </button>
           ))}
@@ -550,14 +550,14 @@ export default function Events() {
                   <h3 className="event-card-title">{event.title}</h3>
                   <p className="event-card-description">{event.description}</p>
 
-                  <div className="event-card-footer">
+                  {/* <div className="event-card-footer">
                     <span className="event-card-link">Explore Initiative</span>
                     <span className="event-card-link-arrow">
                       <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
                         <path d="M2 7.5H13M13 7.5L8.5 3M13 7.5L8.5 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </span>
-                  </div>
+                  </div> */}
 
                   <div className={`event-card-accent accent-${event.accent}`} />
                 </div>

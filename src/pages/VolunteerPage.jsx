@@ -9,8 +9,8 @@ import digitalImg from "../assets/creativecapture.PNG";
 import educationImg from "../assets/eventherof.jpeg";
 import eldeImg from "../assets/elderlycapture.png";
 import environmentImg from "../assets/program5.png";
-import eventImg from "../assets/chateve.png";
-import healthcareImg from "../assets/healthcaree.png";
+import eventImg from "../assets/evn.jpg";
+import healthcareImg from "../assets/bl.jpeg";
 
 const opportunities = [
   {
@@ -87,7 +87,7 @@ export default function VolunteerPage() {
     if (!isHovered) {
       const timer = setInterval(() => {
         setCurrent((prev) => (prev + 1) % heroSlides.length);
-      }, 4000);
+      }, 3000);
       return () => clearInterval(timer);
     }
   }, [isHovered]);
@@ -126,7 +126,7 @@ export default function VolunteerPage() {
               className="vl-hero-slide-item"
               initial={false}
               animate={{ opacity: index === current ? 1 : 0 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              transition={{ duration: 0.4, ease: "linear" }}
             >
               <img src={slide.image} alt={slide.title} />
             </motion.div>
@@ -160,14 +160,14 @@ export default function VolunteerPage() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.1, ease: "linear" }}
             >
               <span className="vl-hero-badge-text">{currentSlide.title}</span>
             </motion.div>
           </AnimatePresence>
 
           <div className="vl-hero-action">
-            <button
+            {/* <button
               className="vl-hero-action-btn"
               onClick={() => handleVolunteerClick()}
             >
@@ -175,7 +175,7 @@ export default function VolunteerPage() {
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </button>
+            </button> */}
           </div>
         </div>
 

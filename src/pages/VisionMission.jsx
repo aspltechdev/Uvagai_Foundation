@@ -329,11 +329,11 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./VisionMission.css";
 //import transparentBlack from "../assets/transparentblack.png";//
 import educationnew12 from "../assets/educationnew12.jpeg";
-import healthcarenew1 from "../assets/healthcarenew1.png";
+import healthcarenew1 from "../assets/VH.JPG";
 import childwelfarenew1 from "../assets/cv.jpeg";
 import elderlycarenew1 from "../assets/ev.jpg";
 import enviroinmentnew1 from "../assets/env.JPG";
-import communitynew1 from "../assets/abtech.png";
+import communitynew1 from "../assets/skil.JPG";
 import large1 from "../assets/vco.jpg";
 import image2 from "../assets/vco1.jpg";
 import image5 from "../assets/vco11.JPG";

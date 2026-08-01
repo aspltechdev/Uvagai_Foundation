@@ -52,19 +52,22 @@ export default function Contact() {
     if (!isHovered) {
       const timer = setInterval(() => {
         setCurrent((prev) => (prev + 1) % heroSlides.length);
-      }, 5000);
+      }, 1000);
       return () => clearInterval(timer);
     }
   }, [isHovered]);
 
   const currentSlide = heroSlides[current];
 
+  // Ledger entries — each tagged with a channel color so the spine
+  // reads like a running register of ways to reach the Foundation.
+  // Office Address carries a "detail2" (a 3rd line), matching the visiting card.
   const contactInfo = [
-    { label: "Office Address", value: "Chennai, Tamil Nadu, India", detail: "Uvagai Foundation" },
-    { label: "Phone", value: "+9195517 34422" },
-    { label: "Email", value: "info@uvagai.org" },
-    { label: "Website", value: "www.uvagai.org" },
-    { label: "Working Hours", value: "Monday - Saturday", detail: "9:00 AM – 6:00 PM" },
+    { label: "Office Address", value: "No 7, 2nd Main Road,", detail: "Anna Nagar East, I Block,", detail2: "Chennai 600102.", tone: "red" },
+    { label: "Phone", value: "+9195517 34422", tone: "green" },
+    { label: "Email", value: "info@uvagai.org", tone: "blue" },
+    { label: "Website", value: "www.uvagai.org", tone: "green" },
+    { label: "Working Hours", value: "Monday - Saturday", detail: "9:00 AM – 6:00 PM", tone: "blue" },
   ];
 
   const connectOptions = [
@@ -79,28 +82,17 @@ export default function Contact() {
 
     if (name === "name") {
       const filteredValue = value.replace(/[^A-Za-z\s]/g, "");
-
-      setFormData((prev) => ({
-        ...prev,
-        name: filteredValue,
-      }));
+      setFormData((prev) => ({ ...prev, name: filteredValue }));
       return;
     }
 
     if (name === "phone") {
       const filteredValue = value.replace(/\D/g, "").slice(0, 10);
-
-      setFormData((prev) => ({
-        ...prev,
-        phone: filteredValue,
-      }));
+      setFormData((prev) => ({ ...prev, phone: filteredValue }));
       return;
     }
 
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
@@ -111,7 +103,7 @@ export default function Contact() {
   return (
     <div className="contact-page" ref={sectionRef}>
       {/* Hero Section */}
-      <section 
+      <section
         className="contact-hero"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -179,8 +171,11 @@ export default function Contact() {
       <section className="contact-main-section" id="contact-form">
         <div className="contact-container">
           <div className="contact-grid">
+
+            {/* LEFT — the ledger */}
             <div className="contact-info">
               <div className="contact-info-header">
+                <span className="contact-eyebrow">Register Of Contact</span>
                 <h2 className="contact-info-title">Get In Touch</h2>
                 <p className="contact-info-intro">
                   Reach out to our team for partnerships, volunteering,
@@ -189,26 +184,38 @@ export default function Contact() {
                 </p>
               </div>
 
-              <div className="contact-info-cards">
+              <div className="contact-ledger">
+                <div className="contact-ledger-spine" />
                 {contactInfo.map((info, index) => (
-                  <div
-                    className="contact-info-card"
-                    key={index}
-                  >
-                    <div className="contact-info-card-accent" />
-                    <div className="contact-info-card-content">
-                      <span className="contact-info-card-label">{info.label}</span>
-                      <span className="contact-info-card-value">{info.value}</span>
-                      {info.detail && <span className="contact-info-card-detail">{info.detail}</span>}
+                  <div className="contact-ledger-entry" key={index}>
+                    <span className={`contact-ledger-tick tone-${info.tone}`} />
+                    <div className="contact-ledger-content">
+                      <span className="contact-ledger-label">{info.label}</span>
+
+                      {/* Office Address gets its own dedicated classes (3 lines);
+                          every other entry keeps the standard value/detail classes. */}
+                      <span className={info.detail2 ? "office-address-line1" : "contact-ledger-value"}>
+                        {info.value}
+                      </span>
+                      {info.detail && (
+                        <span className={info.detail2 ? "office-address-line2" : "contact-ledger-detail"}>
+                          {info.detail}
+                        </span>
+                      )}
+                      {info.detail2 && (
+                        <span className="office-address-line3">{info.detail2}</span>
+                      )}
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
+            {/* RIGHT — the submission slip */}
             <div className="contact-form-wrapper">
               <div className="contact-form-card">
                 <div className="contact-form-header">
+                  <span className="contact-eyebrow">Submission Slip</span>
                   <h2 className="contact-form-title">Send Us A Message</h2>
                   <p className="contact-form-subtitle">
                     Fill out the form below and our team will get back to you as soon as possible.
@@ -279,7 +286,7 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  <div className="form-group form-group-full">
+                  <div className="form-group form-group-full form-group-message">
                     <label className="form-label">Your Message</label>
                     <textarea name="message" rows="5" placeholder="Tell us how we can help you..." value={formData.message} onChange={handleChange} required className="form-textarea"></textarea>
                   </div>
@@ -325,6 +332,7 @@ export default function Contact() {
                 </form>
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -334,10 +342,7 @@ export default function Contact() {
         <div className="contact-connect-bg" />
         <div className="contact-container">
           <div className="contact-section-header">
-            <div className="contact-section-tag">
-              <span className="contact-section-tag-line" />
-              <span className="contact-section-tag-text">Connect With Us</span>
-            </div>
+            <span className="contact-eyebrow contact-eyebrow-center">Connect With Us</span>
             <h2 className="contact-section-headline">Ways You Can Get Involved</h2>
           </div>
 
@@ -362,7 +367,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map Section - NOW EMBEDDED */}
+      {/* Map Section */}
       <section className="contact-map-section">
         <div className="contact-container">
           <div className="contact-section-header">
@@ -385,9 +390,9 @@ export default function Contact() {
               className="contact-map-iframe"
             ></iframe>
             <div className="contact-map-credit">
-              <a 
-                href="https://maps.app.goo.gl/mnN2vrukf6pYCWkU8" 
-                target="_blank" 
+              <a
+                href="https://maps.app.goo.gl/mnN2vrukf6pYCWkU8"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="contact-map-exact-link"
               >
@@ -415,10 +420,6 @@ export default function Contact() {
                   <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
-              {/* <a href="/donate" className="contact-cta-secondary">
-                Support Our Mission
-                <span className="contact-cta-secondary-arrow">→</span>
-              </a> */}
             </div>
           </div>
         </div>

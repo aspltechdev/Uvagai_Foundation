@@ -2,91 +2,368 @@ import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import "./gallerypage.css";
 
-import childwelfareImg from "../assets/Capturechild.PNG";
-import childwelfareImg1 from "../assets/chr2.JPG";
-// import communityImg from "../assets/chatcomm.png";
-import digitalImg from "../assets/creativecapture.PNG";
-import educationImg from "../assets/educati.png";
-import eldeImg from "../assets/elderlycapture.png";
-// import environmentImg from "../assets/chatenv.png";
-import eventImg from "../assets/chateve.png";
-import healthcareImg from "../assets/healthCapture.PNG";
-import healthcareImg1 from "../assets/prog7.png";
+// ---------- ES IMPORTS (by folder) ----------
 
-import benefitImg1 from "../assets/edu.png";
-import benefitImg2 from "../assets/educa.png";
-import benefitImg3 from "../assets/educatio.png";
+// ---- childewelfare ----
+import cw1 from "../assets/uvagai/childewelfare/.trashed-1670688497-IMG20221109202246.jpg";
+import cw2 from "../assets/uvagai/childewelfare/.trashed-1673976447-IMG20221218133743.jpg";
+import cw3 from "../assets/uvagai/childewelfare/.trashed-1674050894-IMG20221218134145.jpg";
+import cw4 from "../assets/uvagai/childewelfare/.trashed-1674050942-IMG20221218134010.jpg";
+import cw5 from "../assets/uvagai/childewelfare/.trashed-1674050946-IMG20221218133958.jpg";
+import cw6 from "../assets/uvagai/childewelfare/.trashed-1674050952-IMG20221218133945.jpg";
+import cw7 from "../assets/uvagai/childewelfare/.trashed-1674050956-IMG20221218133933.jpg";
+import cw8 from "../assets/uvagai/childewelfare/.trashed-1674050962-IMG20221218133918.jpg";
+import cw9 from "../assets/uvagai/childewelfare/.trashed-1674050966-IMG20221218133900.jpg";
+import cw10 from "../assets/uvagai/childewelfare/.trashed-1674050980-IMG20221218133823.jpg";
+import cw11 from "../assets/uvagai/childewelfare/.trashed-1674050985-IMG20221218133812.jpg";
+import cw12 from "../assets/uvagai/childewelfare/IMG-20221109-WA0001.jpg";
+import cw13 from "../assets/uvagai/childewelfare/IMG_4227.JPG";
+import cw14 from "../assets/uvagai/childewelfare/IMG_4230.JPG";
+import cw15 from "../assets/uvagai/childewelfare/IMG_4231.JPG";
+import cw16 from "../assets/uvagai/childewelfare/PHOTO-2020-08-09-16-23-12_19.jpg";
+import cw17 from "../assets/uvagai/childewelfare/PHOTO-2020-08-09-16-23-13_1.jpg";
+import cw18 from "../assets/uvagai/childewelfare/PHOTO-2020-08-09-16-23-13_4.jpg";
+import cw19 from "../assets/uvagai/childewelfare/WhatsApp Image 2025-03-05 at 3.13.04 PM (1).jpeg";
+import cw20 from "../assets/uvagai/childewelfare/WhatsApp Image 2025-03-05 at 3.13.05 PM (1).jpeg";
 
-import educationnew12 from "../assets/e.png";
-import healthcarenew1 from "../assets/healthcarenew1.png";
-import childwelfarenew1 from "../assets/child.png";
-import childwelfarenew3 from "../assets/h.png";
-import childwelfarenew4 from "../assets/chr.JPG";
-import chil1 from "../assets/chil.png";
-import elderlycarenew1 from "../assets/elderlycarenew1.jpeg";
-import communitynew1 from "../assets/communitynew1.jpeg";
-import large1 from "../assets/education1.png";
-import image5 from "../assets/educat.png";
-import communityimg2 from "../assets/co.JPG";
-import communityimg3 from "../assets/com.JPG";
-import communityimg4 from "../assets/comm.JPG";
+// ---- community ----
+import com21 from "../assets/pol1.png";
+import com22 from "../assets/pol2.jpeg";
+import com1 from "../assets/uvagai/community/ABGS1486.JPG";
+import com2 from "../assets/uvagai/community/AHGU2756.JPG";
+import com3 from "../assets/uvagai/community/ARMC6200.JPG";
+import com4 from "../assets/uvagai/community/BCIQ6690.JPG";
+import com5 from "../assets/uvagai/community/DNPR6985.JPG";
+import com6 from "../assets/uvagai/community/FPWI8543.JPG";
+import com7 from "../assets/uvagai/community/IMG_4968.JPG";
+import com8 from "../assets/uvagai/community/IMG_4971.JPG";
+import com9 from "../assets/uvagai/community/IMG_4972.JPG";
+import com10 from "../assets/uvagai/community/IMG_4973.JPG";
+import com11 from "../assets/uvagai/community/IMG_5300.JPG";
+import com12 from "../assets/uvagai/community/IMG_5458.JPG";
+import com13 from "../assets/uvagai/community/IMG_5459.JPG";
+import com14 from "../assets/uvagai/community/IMG_5462.JPG";
+import com15 from "../assets/uvagai/community/IMG_5464.JPG";
+import com16 from "../assets/uvagai/community/IMG_6148.JPG";
+import com17 from "../assets/uvagai/community/IMG_6165.JPG";
+import com18 from "../assets/uvagai/community/TBSV6252.JPG";
+import com19 from "../assets/uvagai/community/WhatsApp Image 2025-04-20 at 8.01.47 PM.jpeg";
+import com20 from "../assets/uvagai/community/WKFT8164.JPG";
 
-import purpose from "../assets/ndimagee.png";
-import empower from "../assets/voli.jpeg";
-import volunteer from "../assets/volent.jpeg";
-import education from "../assets/ed.png";
-import healthcare from "../assets/healthfinal.png";
-import child from "../assets/childwelf.jpeg";
-import elderly from "../assets/oldage.jpeg";
-import environment from "../assets/env.jpeg";
-import community from "../assets/community.png";
-import humanitarian from "../assets/humani.jpeg";
-import women from "../assets/womenempfinal.png";
+// ---- csr ----
+import csr1 from "../assets/uvagai/csr/003A7790.jpg";
+import csr2 from "../assets/uvagai/csr/003A7924.jpg";
+import csr3 from "../assets/uvagai/csr/003A7926.jpg";
+import csr4 from "../assets/uvagai/csr/003A8140.jpg";
+import csr5 from "../assets/uvagai/csr/003A8160 (1).jpg";
+import csr6 from "../assets/uvagai/csr/ANTO8549.JPG";
+import csr7 from "../assets/uvagai/csr/ANTO8590.JPG";
+import csr8 from "../assets/uvagai/csr/ANTO8758.JPG";
+import csr9 from "../assets/uvagai/csr/ANTO8762.JPG";
+import csr10 from "../assets/uvagai/csr/ANTO9183.JPG";
+import csr11 from "../assets/uvagai/csr/ANTO9280.JPG";
+import csr12 from "../assets/uvagai/csr/ANTO9349 (1).JPG";
+import csr13 from "../assets/uvagai/csr/WhatsApp Image 2026-02-08 at 8.24.21 AM (2).jpeg";
+import csr14 from "../assets/uvagai/csr/WhatsApp Image 2026-02-08 at 8.24.22 AM (8).jpeg";
+import csr15 from "../assets/uvagai/csr/WhatsApp Image 2026-02-09 at 8.49.48 PM.jpeg";
+import csr16 from "../assets/uvagai/csr/WhatsApp Image 2026-02-09 at 8.49.49 PM (3).jpeg";
+import csr17 from "../assets/uvagai/csr/WhatsApp Image 2026-07-15 at 12.12.15 PM.jpeg";
+import csr18 from "../assets/uvagai/csr/WhatsApp Image 2026-07-15 at 12.12.18 PM (1).jpeg";
+import csr19 from "../assets/uvagai/csr/WhatsApp Image 2026-07-15 at 12.12.19 PM (1).jpeg";
+import csr20 from "../assets/uvagai/csr/WhatsApp Image 2026-07-15 at 12.12.22 PM (2).jpeg";
 
-import healthcare1 from "../assets/healthcare1.jpg";
-import skillImg1 from "../assets/v.jpg";
+// ---- education ----
+import edu1 from "../assets/uvagai/education/003A7811.jpg";
+import edu2 from "../assets/uvagai/education/003A8126.jpg";
+import edu3 from "../assets/uvagai/education/003A8164 (1).jpg";
+import edu4 from "../assets/uvagai/education/003A8330.jpg";
+import edu5 from "../assets/uvagai/education/13.jpeg";
+import edu6 from "../assets/uvagai/education/17.jpeg";
+import edu7 from "../assets/uvagai/education/27.jpeg";
+import edu8 from "../assets/uvagai/education/41.jpeg";
+import edu9 from "../assets/uvagai/education/43.jpeg";
+import edu10 from "../assets/uvagai/education/a.jpeg";
+import edu11 from "../assets/uvagai/education/c.jpeg";
+import edu12 from "../assets/uvagai/education/g.jpeg";
+import edu13 from "../assets/uvagai/education/IMG_20251124_105139.jpg";
+import edu14 from "../assets/uvagai/education/IMG_20251124_105340.jpg";
+import edu15 from "../assets/uvagai/education/IMG_20251124_105631.jpg";
+import edu16 from "../assets/uvagai/education/IMG_20251124_110418.jpg";
+import edu17 from "../assets/uvagai/education/IMG_20251124_111617.jpg";
+import edu18 from "../assets/uvagai/education/IMG_20251124_112751.jpg";
+import edu19 from "../assets/uvagai/education/IMG_20251124_121559.jpg";
+import edu20 from "../assets/uvagai/education/IMG_20251124_121951.jpg";
+import edu21 from "../assets/uvagai/education/IMG_7822.JPG";
+import edu22 from "../assets/uvagai/education/IMG_7824.JPG";
+import edu23 from "../assets/uvagai/education/IMG_9570.JPG";
+import edu24 from "../assets/uvagai/education/WhatsApp Image 2025-10-31 at 17.32.08.jpeg";
+import edu25 from "../assets/uvagai/education/WhatsApp Image 2025-11-07 at 18.44.48.jpeg";
+import edu26 from "../assets/uvagai/education/WhatsApp Image 2025-11-14 at .jpeg";
+import edu27 from "../assets/uvagai/education/WhatsApp Image 2025-11-14 at 23.05.03.jpeg";
+import edu28 from "../assets/uvagai/education/WhatsApp Image 2026-07-10 at 1.16.53 PM (4).jpeg";
+import edu29 from "../assets/uvagai/education/WhatsApp Image 2026-07-10 at 1.16.53 PM (5).jpeg";
+import edu30 from "../assets/uvagai/education/WhatsApp Image 2026-07-10 at 1.16.53 PM.jpeg";
 
-import img1 from "../assets/communityy.png";
-import img2 from "../assets/edi.JPG";
-import img3 from "../assets/ndimagee.png";
-import whyCardEducation from "../assets/educationsupport.png";
-import whyCardHealth from "../assets/healthcamp.png";
-import whyCardVolunteers from "../assets/abtech.png";
-import whyCardSupport from "../assets/ecr.JPG";
-import educationImg2 from "../assets/ED.JPG";
-import healthcareImg2 from "../assets/hcamp.jpeg";
-import environmentImg2 from "../assets/csrc.JPG";
-import aboutImage from "../assets/about3.jpg";
-import educationImg3 from "../assets/ae.png";
-import healthcareImg3 from "../assets/healthab.png";
-import childWelfareImg from "../assets/childincards.png";
-import elderlyImg2 from "../assets/senior.png";
-import environmentImg3 from "../assets/abf.png";
-import communityDevImg from "../assets/communityy.png";
-import skillImg2 from "../assets/abtech.png";
-import placementImg from "../assets/prog7.png";
-import abouthero1 from "../assets/about.jpg";
-import abouthero2 from "../assets/about1.jpg";
-import abouthero3 from "../assets/about22.jpg";
-import highlight1 from "../assets/abl.jpg";
-import highlight2 from "../assets/highlight2.png";
-import highlight3 from "../assets/highlight3.png";
-import engage from "../assets/voli.jpeg";
-import community2 from "../assets/eventherof.jpeg";
-import together from "../assets/humani.jpeg";
-import camp from "../assets/camp.jpeg";
-import educ from "../assets/edu.jpg";
-import volunteer2 from "../assets/voli.jpeg";
-import child2 from "../assets/childwell.jpg";
-import senior from "../assets/eldi.jpeg";
-import sustain from "../assets/cov1.jpg";
-import educationnew12_2 from "../assets/educationnew12.jpeg";
-import childwelfarenew1_2 from "../assets/cv.jpeg";
-import elderlycarenew1_2 from "../assets/ev.jpg";
-import enviroinmentnew1_2 from "../assets/env.JPG";
-import communitynew1_2 from "../assets/abtech.png";
-import large1_2 from "../assets/vco.jpg";
-import image5_2 from "../assets/vco11.JPG";
+// ---- elder ---- (renamed display category to "Senior Citizen Care")
+import eld1 from "../assets/uvagai/elder/IMG-20190506-WA0001.jpg";
+import eld2 from "../assets/uvagai/elder/IMG-20190506-WA0002.jpg";
+import eld3 from "../assets/uvagai/elder/IMG-20190506-WA0007.jpg";
+import eld4 from "../assets/uvagai/elder/IMG_5090.JPG";
+import eld5 from "../assets/uvagai/elder/IMG_5098.JPG";
+import eld6 from "../assets/uvagai/elder/IMG_5103.JPG";
+import eld7 from "../assets/uvagai/elder/IMG_6391.JPG";
+import eld8 from "../assets/uvagai/elder/IMG_6394.JPG";
+import eld9 from "../assets/uvagai/elder/IMG_6399.JPG";
+import eld10 from "../assets/uvagai/elder/IMG_6407.JPG";
+import eld11 from "../assets/uvagai/elder/IMG_6423.JPG";
+import eld12 from "../assets/uvagai/elder/IMG_6433.JPG";
+import eld13 from "../assets/uvagai/elder/IMG_6439.JPG";
+import eld14 from "../assets/uvagai/elder/IMG_E6307.JPG";
+import eld15 from "../assets/uvagai/elder/IMG_E6317.JPG";
+import eld16 from "../assets/uvagai/elder/IMG_E6410.JPG";
+import eld17 from "../assets/uvagai/elder/IMG_E6412.JPG";
+import eld18 from "../assets/uvagai/elder/IMG_E6413.JPG";
+import eld19 from "../assets/uvagai/elder/WhatsApp Image 2025-03-11 at 3.12.32 PM (1).jpeg";
+import eld20 from "../assets/uvagai/elder/WhatsApp Image 2025-03-11 at 3.13.45 PM (1).jpeg";
+
+// ---- healthcare ----
+import hc1 from "../assets/uvagai/healthcare/IMG_6566.JPG";
+import hc2 from "../assets/uvagai/healthcare/IMG_6573.JPG";
+import hc3 from "../assets/uvagai/healthcare/WhatsApp Image 2023-12-30 at 3.38.17 PM (2).jpeg";
+import hc4 from "../assets/uvagai/healthcare/WhatsApp Image 2023-12-30 at 3.38.19 PM.jpeg";
+import hc5 from "../assets/uvagai/healthcare/WhatsApp Image 2023-12-30 at 3.38.25 PM (1).jpeg";
+import hc6 from "../assets/uvagai/healthcare/WhatsApp Image 2023-12-30 at 4.10.17 PM.jpeg";
+import hc7 from "../assets/uvagai/healthcare/WhatsApp Image 2023-12-31 at 1.41.06 PM (1).jpeg";
+import hc8 from "../assets/uvagai/healthcare/WhatsApp Image 2024-01-01 at 7.13.46 PM (3).jpeg";
+import hc9 from "../assets/uvagai/healthcare/WhatsApp Image 2024-01-01 at 7.13.49 PM (1).jpeg";
+import hc10 from "../assets/uvagai/healthcare/WhatsApp Image 2024-01-01 at 7.13.49 PM (2).jpeg";
+import hc11 from "../assets/uvagai/healthcare/WhatsApp Image 2024-01-01 at 7.13.50 PM (1).jpeg";
+import hc12 from "../assets/uvagai/healthcare/WhatsApp Image 2024-01-01 at 7.13.50 PM (2).jpeg";
+import hc13 from "../assets/uvagai/healthcare/WhatsApp Image 2024-01-01 at 7.13.51 PM (1).jpeg";
+import hc14 from "../assets/uvagai/healthcare/WhatsApp Image 2024-01-01 at 7.13.52 PM.jpeg";
+import hc15 from "../assets/uvagai/healthcare/WhatsApp Image 2024-04-09 at 1.02.35 PM.jpeg";
+import hc16 from "../assets/uvagai/healthcare/WhatsApp Image 2024-04-09 at 1.02.37 PM.jpeg";
+import hc17 from "../assets/uvagai/healthcare/WhatsApp Image 2024-04-09 at 1.02.39 PM (1).jpeg";
+import hc18 from "../assets/uvagai/healthcare/WhatsApp Image 2025-10-11 at 7.36.33 PM.jpeg";
+import hc19 from "../assets/uvagai/healthcare/WhatsApp Image 2025-10-11 at 7.37.42 PM (1).jpeg";
+import hc20 from "../assets/uvagai/healthcare/WhatsApp Image 2025-10-11 at 7.37.42 PM.jpeg";
+
+// ---- placement ----
+import pl1 from "../assets/uvagai/placement/WhatsApp Image 2026-02-19 at 6.52.57 PM.jpeg";
+import pl2 from "../assets/uvagai/placement/WhatsApp Image 2026-02-19 at 6.53.06 PM.jpeg";
+import pl3 from "../assets/uvagai/placement/WhatsApp Image 2026-02-19 at 6.53.59 PM.jpeg";
+import pl4 from "../assets/uvagai/placement/WhatsApp Image 2026-02-19 at 6.54.02 PM.jpeg";
+import pl5 from "../assets/uvagai/placement/WhatsApp Image 2026-02-19 at 6.54.04 PM.jpeg";
+import pl6 from "../assets/uvagai/placement/WhatsApp Image 2026-02-19 at 6.54.08 PM.jpeg";
+import pl7 from "../assets/uvagai/placement/WhatsApp Image 2026-02-19 at 6.54.16 PM.jpeg";
+import pl8 from "../assets/uvagai/placement/WhatsApp Image 2026-02-19 at 6.54.18 PM.jpeg";
+import pl9 from "../assets/uvagai/placement/WhatsApp Image 2026-02-19 at 6.54.19 PM.jpeg";
+import pl10 from "../assets/uvagai/placement/WhatsApp Image 2026-02-19 at 6.54.21 PM.jpeg";
+import pl11 from "../assets/uvagai/placement/WhatsApp Image 2026-02-19 at 6.54.23 PM.jpeg";
+
+// ---- skilldevelopment ----
+import sd1 from "../assets/uvagai/skilldevelopment/BLEP5955.JPG";
+import sd2 from "../assets/uvagai/skilldevelopment/BNUW8073.JPG";
+import sd3 from "../assets/uvagai/skilldevelopment/HUQT7200.JPG";
+import sd4 from "../assets/uvagai/skilldevelopment/IMG_0285.JPG";
+import sd5 from "../assets/uvagai/skilldevelopment/IMG_0287.JPG";
+import sd6 from "../assets/uvagai/skilldevelopment/IMG_0294.JPG";
+import sd7 from "../assets/uvagai/skilldevelopment/IMG_0301.JPG";
+import sd8 from "../assets/uvagai/skilldevelopment/IMG_2342.JPG";
+import sd9 from "../assets/uvagai/skilldevelopment/IMG_2828.JPG";
+import sd10 from "../assets/uvagai/skilldevelopment/IMG_2831.JPG";
+import sd11 from "../assets/uvagai/skilldevelopment/IMG_2991.JPG";
+import sd12 from "../assets/uvagai/skilldevelopment/WhatsApp Image 2023-01-15 at 2.38.32 PM.jpeg";
+
+// ---------- BUILD GALLERY ITEMS ----------
+const galleryItems = [
+  // childewelfare
+  { image: cw1, category: "childewelfare", accent: "blue" },
+  { image: cw2, category: "childewelfare", accent: "blue" },
+  { image: cw3, category: "childewelfare", accent: "blue" },
+  { image: cw4, category: "childewelfare", accent: "blue" },
+  { image: cw5, category: "childewelfare", accent: "blue" },
+  { image: cw6, category: "childewelfare", accent: "blue" },
+  { image: cw7, category: "childewelfare", accent: "blue" },
+  { image: cw8, category: "childewelfare", accent: "blue" },
+  { image: cw9, category: "childewelfare", accent: "blue" },
+  { image: cw10, category: "childewelfare", accent: "blue" },
+  { image: cw11, category: "childewelfare", accent: "blue" },
+  { image: cw12, category: "childewelfare", accent: "blue" },
+  { image: cw13, category: "childewelfare", accent: "blue" },
+  { image: cw14, category: "childewelfare", accent: "blue" },
+  { image: cw15, category: "childewelfare", accent: "blue" },
+  { image: cw16, category: "childewelfare", accent: "blue" },
+  { image: cw17, category: "childewelfare", accent: "blue" },
+  { image: cw18, category: "childewelfare", accent: "blue" },
+  { image: cw19, category: "childewelfare", accent: "blue" },
+  { image: cw20, category: "childewelfare", accent: "blue" },
+
+  // community
+  { image: com21, category: "community", accent: "green" },
+  { image: com22, category: "community", accent: "green" },
+  { image: com1, category: "community", accent: "green" },
+  { image: com2, category: "community", accent: "green" },
+  { image: com3, category: "community", accent: "green" },
+  { image: com4, category: "community", accent: "green" },
+  { image: com5, category: "community", accent: "green" },
+  { image: com6, category: "community", accent: "green" },
+  { image: com7, category: "community", accent: "green" },
+  { image: com8, category: "community", accent: "green" },
+  { image: com9, category: "community", accent: "green" },
+  { image: com10, category: "community", accent: "green" },
+  { image: com11, category: "community", accent: "green" },
+  { image: com12, category: "community", accent: "green" },
+  { image: com13, category: "community", accent: "green" },
+  { image: com14, category: "community", accent: "green" },
+  { image: com15, category: "community", accent: "green" },
+  { image: com16, category: "community", accent: "green" },
+  { image: com17, category: "community", accent: "green" },
+  { image: com18, category: "community", accent: "green" },
+  { image: com19, category: "community", accent: "green" },
+  { image: com20, category: "community", accent: "green" },
+
+  // csr
+  { image: csr1, category: "csr", accent: "blue" },
+  { image: csr2, category: "csr", accent: "blue" },
+  { image: csr3, category: "csr", accent: "blue" },
+  { image: csr4, category: "csr", accent: "blue" },
+  { image: csr5, category: "csr", accent: "blue" },
+  { image: csr6, category: "csr", accent: "blue" },
+  { image: csr7, category: "csr", accent: "blue" },
+  { image: csr8, category: "csr", accent: "blue" },
+  { image: csr9, category: "csr", accent: "blue" },
+  { image: csr10, category: "csr", accent: "blue" },
+  { image: csr11, category: "csr", accent: "blue" },
+  { image: csr12, category: "csr", accent: "blue" },
+  { image: csr13, category: "csr", accent: "blue" },
+  { image: csr14, category: "csr", accent: "blue" },
+  { image: csr15, category: "csr", accent: "blue" },
+  { image: csr16, category: "csr", accent: "blue" },
+  { image: csr17, category: "csr", accent: "blue" },
+  { image: csr18, category: "csr", accent: "blue" },
+  { image: csr19, category: "csr", accent: "blue" },
+  { image: csr20, category: "csr", accent: "blue" },
+
+  // education
+  { image: edu1, category: "education", accent: "red" },
+  { image: edu2, category: "education", accent: "red" },
+  { image: edu3, category: "education", accent: "red" },
+  { image: edu4, category: "education", accent: "red" },
+  { image: edu5, category: "education", accent: "red" },
+  { image: edu6, category: "education", accent: "red" },
+  { image: edu7, category: "education", accent: "red" },
+  { image: edu8, category: "education", accent: "red" },
+  { image: edu9, category: "education", accent: "red" },
+  { image: edu10, category: "education", accent: "red" },
+  { image: edu11, category: "education", accent: "red" },
+  { image: edu12, category: "education", accent: "red" },
+  { image: edu13, category: "education", accent: "red" },
+  { image: edu14, category: "education", accent: "red" },
+  { image: edu15, category: "education", accent: "red" },
+  { image: edu16, category: "education", accent: "red" },
+  { image: edu17, category: "education", accent: "red" },
+  { image: edu18, category: "education", accent: "red" },
+  { image: edu19, category: "education", accent: "red" },
+  { image: edu20, category: "education", accent: "red" },
+  { image: edu21, category: "education", accent: "red" },
+  { image: edu22, category: "education", accent: "red" },
+  { image: edu23, category: "education", accent: "red" },
+  { image: edu24, category: "education", accent: "red" },
+  { image: edu25, category: "education", accent: "red" },
+  { image: edu26, category: "education", accent: "red" },
+  { image: edu27, category: "education", accent: "red" },
+  { image: edu28, category: "education", accent: "red" },
+  { image: edu29, category: "education", accent: "red" },
+  { image: edu30, category: "education", accent: "red" },
+
+  // elder → display as "Senior Citizen Care"
+  { image: eld1, category: "Senior Citizen Care", accent: "green" },
+  { image: eld2, category: "Senior Citizen Care", accent: "green" },
+  { image: eld3, category: "Senior Citizen Care", accent: "green" },
+  { image: eld4, category: "Senior Citizen Care", accent: "green" },
+  { image: eld5, category: "Senior Citizen Care", accent: "green" },
+  { image: eld6, category: "Senior Citizen Care", accent: "green" },
+  { image: eld7, category: "Senior Citizen Care", accent: "green" },
+  { image: eld8, category: "Senior Citizen Care", accent: "green" },
+  { image: eld9, category: "Senior Citizen Care", accent: "green" },
+  { image: eld10, category: "Senior Citizen Care", accent: "green" },
+  { image: eld11, category: "Senior Citizen Care", accent: "green" },
+  { image: eld12, category: "Senior Citizen Care", accent: "green" },
+  { image: eld13, category: "Senior Citizen Care", accent: "green" },
+  { image: eld14, category: "Senior Citizen Care", accent: "green" },
+  { image: eld15, category: "Senior Citizen Care", accent: "green" },
+  { image: eld16, category: "Senior Citizen Care", accent: "green" },
+  { image: eld17, category: "Senior Citizen Care", accent: "green" },
+  { image: eld18, category: "Senior Citizen Care", accent: "green" },
+  { image: eld19, category: "Senior Citizen Care", accent: "green" },
+  { image: eld20, category: "Senior Citizen Care", accent: "green" },
+
+  // healthcare
+  { image: hc1, category: "healthcare", accent: "green" },
+  { image: hc2, category: "healthcare", accent: "green" },
+  { image: hc3, category: "healthcare", accent: "green" },
+  { image: hc4, category: "healthcare", accent: "green" },
+  { image: hc5, category: "healthcare", accent: "green" },
+  { image: hc6, category: "healthcare", accent: "green" },
+  { image: hc7, category: "healthcare", accent: "green" },
+  { image: hc8, category: "healthcare", accent: "green" },
+  { image: hc9, category: "healthcare", accent: "green" },
+  { image: hc10, category: "healthcare", accent: "green" },
+  { image: hc11, category: "healthcare", accent: "green" },
+  { image: hc12, category: "healthcare", accent: "green" },
+  { image: hc13, category: "healthcare", accent: "green" },
+  { image: hc14, category: "healthcare", accent: "green" },
+  { image: hc15, category: "healthcare", accent: "green" },
+  { image: hc16, category: "healthcare", accent: "green" },
+  { image: hc17, category: "healthcare", accent: "green" },
+  { image: hc18, category: "healthcare", accent: "green" },
+  { image: hc19, category: "healthcare", accent: "green" },
+  { image: hc20, category: "healthcare", accent: "green" },
+
+  // placement
+  { image: pl1, category: "placement", accent: "orange" },
+  { image: pl2, category: "placement", accent: "orange" },
+  { image: pl3, category: "placement", accent: "orange" },
+  { image: pl4, category: "placement", accent: "orange" },
+  { image: pl5, category: "placement", accent: "orange" },
+  { image: pl6, category: "placement", accent: "orange" },
+  { image: pl7, category: "placement", accent: "orange" },
+  { image: pl8, category: "placement", accent: "orange" },
+  { image: pl9, category: "placement", accent: "orange" },
+  { image: pl10, category: "placement", accent: "orange" },
+  { image: pl11, category: "placement", accent: "orange" },
+
+  // skilldevelopment
+  { image: sd1, category: "skilldevelopment", accent: "red" },
+  { image: sd2, category: "skilldevelopment", accent: "red" },
+  { image: sd3, category: "skilldevelopment", accent: "red" },
+  { image: sd4, category: "skilldevelopment", accent: "red" },
+  { image: sd5, category: "skilldevelopment", accent: "red" },
+  { image: sd6, category: "skilldevelopment", accent: "red" },
+  { image: sd7, category: "skilldevelopment", accent: "red" },
+  { image: sd8, category: "skilldevelopment", accent: "red" },
+  { image: sd9, category: "skilldevelopment", accent: "red" },
+  { image: sd10, category: "skilldevelopment", accent: "red" },
+  { image: sd11, category: "skilldevelopment", accent: "red" },
+  { image: sd12, category: "skilldevelopment", accent: "red" },
+];
+
+// Add title & description – capitalise first letter except for "Senior Citizen Care"
+galleryItems.forEach((item) => {
+  if (item.category === "Senior Citizen Care") {
+    item.title = "Senior Citizen Care";
+    item.description = "Images from Senior Citizen Care activities.";
+  } else {
+    const displayName = item.category.charAt(0).toUpperCase() + item.category.slice(1);
+    item.title = displayName;
+    item.description = `Images from ${displayName} activities.`;
+  }
+});
+
+// ---------- EXTRACT UNIQUE CATEGORIES ----------
+const categorySet = new Set(galleryItems.map((item) => item.category));
+const categories = ["All", ...Array.from(categorySet)];
 
 export default function GalleryPage() {
   const sectionRef = useRef(null);
@@ -95,123 +372,11 @@ export default function GalleryPage() {
   const [filter, setFilter] = useState("All");
   const [visibleCount, setVisibleCount] = useState(12);
 
-  // Every gallery card below now points to a real, imported image.
-  // The cards that used to reference commented-out imports
-  // (skillImg, skillImg11, skillImg111, skillImg1111, healthcareHero,
-  // environmentHero, foodImg, volunteerImg, volunteer1, image2, image2_2,
-  // communitynew2, enviroinmentnew1) have been removed entirely rather
-  // than substituted. Add them back in once those assets actually exist.
+  const filteredItems =
+    filter === "All"
+      ? galleryItems
+      : galleryItems.filter((item) => item.category === filter);
 
-  const galleryItems = [
-    { image: educationImg, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
-    { image: benefitImg1, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
-    { image: educationnew12, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
-    { image: education, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
-    { image: benefitImg2, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
-    { image: benefitImg3, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
-    { image: large1, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
-    { image: image5, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
-    { image: digitalImg, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
-    { image: healthcareImg1, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
-    { image: img2, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
-    // { image: whyCardEducation, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
-    { image: educationImg2, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
-    { image: educationImg3, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
-    { image: educ, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
-    { image: educationnew12_2, category: "Education", accent: "red", title: "Education Support", description: "Empowering students through learning initiatives." },
-
-    { image: healthcareImg, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
-    { image: healthcare1, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
-    { image: healthcarenew1, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
-    // { image: healthcarenew1, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
-    { image: women, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
-    { image: childwelfarenew3, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
-    { image: healthcare, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
-    { image: whyCardHealth, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
-    { image: healthcareImg2, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
-    { image: healthcareImg3, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
-    { image: camp, category: "Healthcare", accent: "green", title: "Healthcare Outreach", description: "Bringing medical care to underserved communities." },
-
-    { image: childwelfareImg, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
-    { image: childwelfarenew4, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
-    { image: child, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
-    { image: chil1, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
-    { image: childwelfareImg1, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
-    { image: childwelfarenew1, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
-    { image: eventImg, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
-    { image: large1, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
-    { image: benefitImg3, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
-    { image: childWelfareImg, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
-    { image: childwelfarenew1_2, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
-    { image: child2, category: "Child Welfare", accent: "blue", title: "Child Welfare", description: "Protecting and nurturing the wellbeing of children." },
-
-    { image: digitalImg, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
-    { image: empower, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
-    { image: image5, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
-    { image: educationnew12, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
-    { image: large1, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
-    { image: healthcareImg1, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
-    { image: whyCardVolunteers, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
-    // { image: skillImg2, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
-    // { image: engage, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
-    // { image: volunteer2, category: "Skill Development", accent: "red", title: "Skill Development", description: "Building capabilities for a self-reliant future." },
-
-    { image: humanitarian, category: "Placement", accent: "green", title: "Placement Program", description: "Connecting trained youth with sustainable livelihoods." },
-    { image: healthcareImg1, category: "Placement", accent: "green", title: "Placement Program", description: "Connecting trained youth with sustainable livelihoods." },
-    // { image: placementImg, category: "Placement", accent: "green", title: "Placement Program", description: "Connecting trained youth with sustainable livelihoods." },
-
-    { image: communitynew1, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
-    { image: volunteer, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
-    { image: benefitImg1, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
-    // { image: communityImg, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
-    // { image: communityimg2, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
-    { image: communityimg3, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
-    { image: humanitarian, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
-    // { image: communityImg, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
-    { image: communityimg4, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
-    { image: volunteer, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
-    // { image: benefitImg3, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
-    { image: whyCardSupport, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
-    { image: environmentImg2, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
-    { image: together, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
-    { image: large1_2, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
-    { image: image5_2, category: "CSR", accent: "blue", title: "CSR Partnerships", description: "Collaborating with corporates for lasting social good." },
-
-    // { image: environmentImg, category: "Environment", accent: "red", title: "Environment Initiatives", description: "Restoring and protecting our natural surroundings." },
-    { image: environment, category: "Environment", accent: "red", title: "Environment Initiatives", description: "Restoring and protecting our natural surroundings." },
-    { image: environmentImg3, category: "Environment", accent: "red", title: "Environment Initiatives", description: "Restoring and protecting our natural surroundings." },
-    { image: sustain, category: "Environment", accent: "red", title: "Environment Initiatives", description: "Restoring and protecting our natural surroundings." },
-    { image: enviroinmentnew1_2, category: "Environment", accent: "red", title: "Environment Initiatives", description: "Restoring and protecting our natural surroundings." },
-
-    // { image: communityImg, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: community, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: elderly, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: women, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: communitynew1, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    // { image: community, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: humanitarian, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: elderlycarenew1, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: eldeImg, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: purpose, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: img1, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    // { image: img3, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: aboutImage, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: elderlyImg2, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: communityDevImg, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: abouthero1, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: abouthero2, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: abouthero3, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: highlight1, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: highlight2, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: highlight3, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: community2, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: senior, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: elderlycarenew1_2, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-    { image: communitynew1_2, category: "Community", accent: "green", title: "Community Building", description: "Strengthening neighborhoods through shared action." },
-  ];
-
-  const categories = ["All", "Education", "Healthcare", "Child Welfare", "Skill Development", "Placement", "CSR", "Environment", "Community"];
-  const filteredItems = filter === "All" ? galleryItems : galleryItems.filter((item) => item.category === filter);
   const displayedItems = filteredItems.slice(0, visibleCount);
   const hasMore = visibleCount < filteredItems.length;
 
@@ -222,20 +387,35 @@ export default function GalleryPage() {
         <div className="glp-hero-glow glp-hero-glow-1" />
         <div className="glp-hero-glow glp-hero-glow-2" />
         <div className="glp-container">
-          <motion.div className="glp-hero-content" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}>
+          <motion.div
+            className="glp-hero-content"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9 }}
+          >
             <div className="glp-hero-tag">
               <span className="glp-hero-tag-line" />
               <span className="glp-hero-tag-text">Gallery</span>
             </div>
-            <h1 className="glp-hero-headline">Capturing Moments Of <span className="glp-hero-accent">Impact</span></h1>
-            <p className="glp-hero-desc">Explore the journey of Uvagai Foundation through our initiatives and social impact projects.</p>
+            <h1 className="glp-hero-headline">
+              Capturing Moments Of <span className="glp-hero-accent">Impact</span>
+            </h1>
+            <p className="glp-hero-desc">
+              Explore the journey of Uvagai Foundation through our initiatives
+              and social impact projects.
+            </p>
           </motion.div>
         </div>
       </section>
 
       <section className="glp-filter-section">
         <div className="glp-container">
-          <motion.div className="glp-filters" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
+          <motion.div
+            className="glp-filters"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+          >
             {categories.map((category) => (
               <motion.button
                 key={category}
@@ -328,7 +508,9 @@ export default function GalleryPage() {
                 <img src={selectedImage.image} alt={selectedImage.title} />
               </div>
               <div className="glp-lightbox-info">
-                <span className={`glp-lightbox-cat glp-cat-${selectedImage.accent}`}>{selectedImage.category}</span>
+                <span className={`glp-lightbox-cat glp-cat-${selectedImage.accent}`}>
+                  {selectedImage.category}
+                </span>
                 <h3 className="glp-lightbox-title">{selectedImage.title}</h3>
                 <p className="glp-lightbox-desc">{selectedImage.description}</p>
               </div>

@@ -490,15 +490,16 @@
 
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
+import { Link } from "react-router-dom";
 import "./AboutUs.css";
 import aboutImage from "../assets/about3.jpg";
 import educationImg from "../assets/ae.png";
-import healthcareImg from "../assets/healthab.png";
-import childWelfareImg from "../assets/childincards.png";
-import elderlyImg from "../assets/senior.png";
+import healthcareImg from "../assets/awar.png";
+import childWelfareImg from "../assets/CHILD.JPG";
+import elderlyImg from "../assets/OLD.jpg";
 import environmentImg from "../assets/abf.png";
 import communityDevImg from "../assets/communityy.png";
-import skillImg from "../assets/abtech.png";
+import skillImg from "../assets/skil.jpeg";
 import placementImg from "../assets/prog7.png";
 import abouthero1 from "../assets/about.jpg";
 import abouthero2 from "../assets/about1.jpg";
@@ -551,7 +552,7 @@ export default function AboutUsPage() {
     if (!isHovered) {
       const timer = setInterval(() => {
         setCurrent((prev) => (prev + 1) % heroSlides.length);
-      }, 5000);
+      }, 3000);
       return () => clearInterval(timer);
     }
   }, [isHovered]);
@@ -635,7 +636,7 @@ accent: "red",
               className={`abt-hero-slide-bg ${index === current ? 'abt-hero-slide-active' : ''}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: index === current ? 1 : 0, scale: index === current ? 1 : 1.12 }}
-              transition={{ duration: 1.4, ease: [0.33, 0.1, 0.25, 1] }}
+              transition={{ duration: 0.4, ease: "linear" }}
             >
               <img src={slide.image} alt={slide.title} />
             </motion.div>
@@ -654,7 +655,7 @@ accent: "red",
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
-              transition={{ duration: 0.6, ease: [0.33, 0.1, 0.25, 1] }}
+              transition={{ duration: 0.1, ease: "linear" }}
             >
               <div className="abt-hero-tag">
                 <span className="abt-hero-tag-line" />
@@ -678,7 +679,7 @@ accent: "red",
                 className="abt-hero-nav-dot-fill"
                 initial={{ width: '0%' }}
                 animate={{ width: index === current && !isHovered ? '100%' : '0%' }}
-                transition={{ duration: index === current ? 5 : 0.3, ease: "linear" }}
+                transition={{ duration: index === current ? 3 : 0.3, ease: "linear" }}
               />
             </button>
           ))}
@@ -931,10 +932,10 @@ accent: "red",
                   <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
-              <a href="/volunteer" className="abt-closing-btn-secondary">
+              <Link to="/volunteers" className="abt-closing-btn-secondary">
                 Become a Volunteer 
                 <span className="abt-closing-btn-arrow">→</span>
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

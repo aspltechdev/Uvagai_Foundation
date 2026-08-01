@@ -199,3 +199,17 @@
 @media (prefers-reduced-motion: reduce) {
   .abt-hero-slide-bg, .abt-impact-card, .abt-impact-card-image, .abt-highlight-img-card, .abt-value-card { transition: none !important; }
 }
+.abt-impact-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Only for pol2.jpeg */
+.move-pol2 {
+  object-position: center 15%;   /* try 10%, 15%, 20%, 25% */
+}
+.abt-impact-card-image {
+  object-fit: contain;
+  background: #f5f5f5;
+}

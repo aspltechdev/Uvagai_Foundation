@@ -544,3 +544,13 @@
     transition-duration: 0.01ms !important;
   }
 }
+.nv-brand-logo-wrap {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+.nv-brand-logo-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
