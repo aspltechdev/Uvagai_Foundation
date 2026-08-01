@@ -163,26 +163,31 @@ const instagramPosts = [
 ];
 
 const facebookPosts = [
-  {
-    id: "fb-1",
-    embedUrl: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fuvagaifoundation%2Fposts%2Fpfbid02example1&show_text=true&width=350",
-  },
-  {
-    id: "fb-2",
-    embedUrl: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fuvagaifoundation%2Fposts%2Fpfbid02example2&show_text=true&width=350",
-  },
-  {
-    id: "fb-3",
-    embedUrl: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fuvagaifoundation%2Fposts%2Fpfbid02example3&show_text=true&width=350",
-  },
-  {
-    id: "fb-4",
-    embedUrl: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fuvagaifoundation%2Fposts%2Fpfbid02example4&show_text=true&width=350",
-  },
-  {
-    id: "fb-5",
-    embedUrl: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fuvagaifoundation%2Fposts%2Fpfbid02example5&show_text=true&width=350",
-  },
+ {
+  id: "fb-1",
+  embedUrl:
+    "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fuvagaifoundation%2Fposts%2Fpfbid02dqCJmppVaJdzM1t4QPvHnQEM5GWH869N8Lwz8DxRdC2uVj5EEtpM3GPWnBowg5fgl&show_text=true&width=350",
+},
+{
+  id: "fb-2",
+  embedUrl:
+    "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1380508440699700%2F&show_text=false&width=350&t=0",
+},
+{
+  id: "fb-3",
+  embedUrl:
+    "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fuvagaifoundation%2Fposts%2Fpfbid02HzSzAKBFLvJ499yKSbsGKSETyDHvLjbKUD3AePiYekHPvqBfyTwiCynsANfEbFmrl&show_text=true&width=350",
+},
+{
+  id: "fb-4",
+  embedUrl:
+    "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fuvagaifoundation%2Fposts%2Fpfbid022hzPwFzbmXHKQtfZkvRMbx1YkyHVsLtaJsRAFijCFjBbb843M5idRpiWEsEnb2Mml&show_text=true&width=350",
+},
+{
+  id: "fb-5",
+  embedUrl:
+    "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fuvagaifoundation%2Fposts%2Fpfbid02dqCJmppVaJdzM1t4QPvHnQEM5GWH869N8Lwz8DxRdC2uVj5EEtpM3GPWnBowg5fgl&show_text=true&width=350",
+},
 ];
 
 function loadInstagramEmbedScript() {
