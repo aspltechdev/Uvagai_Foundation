@@ -757,7 +757,7 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./DonateHome.css";
 
 import childedu from "../assets/childed.jpg";
-import community from "../assets/hell.jpg";
+import community from "../assets/hell.JPG";
 import childincards from "../assets/well.JPG";
 import seniorciti from "../assets/OLDERR.JPG";
 // import environment from "../assets/environment.png";

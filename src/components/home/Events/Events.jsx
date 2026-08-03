@@ -4,9 +4,9 @@ import "./Events.css";
  import healthcareImg from "../../../assets/healthab.png";
 import skillImg1 from "../../../assets/education12.png";
 import educationImg from "../../../assets/edi.JPG";
-import volunteer from "../../../assets/volu.jpg";
+import volunteer from "../../../assets/volu.JPG";
 import childwelfareImg from "../../../assets/chi.JPG";
-import elderly from "../../../assets/elder.jpg";
+import elderly from "../../../assets/elder.JPG";
 // ← FIXED: Changed to correct path
 
 
