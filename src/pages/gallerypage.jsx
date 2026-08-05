@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import "./gallerypage.css";
 
@@ -174,6 +174,35 @@ import sd9 from "../assets/uvagai/skilldevelopment/IMG_2828.JPG";
 import sd10 from "../assets/uvagai/skilldevelopment/IMG_2831.JPG";
 import sd11 from "../assets/uvagai/skilldevelopment/IMG_2991.JPG";
 import sd12 from "../assets/uvagai/skilldevelopment/WhatsApp Image 2023-01-15 at 2.38.32 PM.jpeg";
+
+// ---------- HERO SLIDESHOW IMAGES ----------
+import galleryHero1 from "../assets/g1.JPG";
+import galleryHero2 from "../assets/g2.JPG";
+import galleryHero3 from "../assets/g3.JPG";
+
+const heroSlides = [
+  {
+    image: galleryHero1,
+    title: "Capturing Moments Of Impact",
+    subtitle: "Explore the journey of Uvagai Foundation through our initiatives and social impact projects.",
+    tag: "Gallery",
+    accent: "red"
+  },
+  {
+    image: galleryHero2,
+    title: "Every Picture Tells A Story",
+    subtitle: "From classrooms to community events, see how our programs are changing lives across communities.",
+    tag: "Our Journey",
+    accent: "green"
+  },
+  {
+    image: galleryHero3,
+    title: "Moments That Matter",
+    subtitle: "A visual record of partnerships, outreach, and the people at the heart of everything we do.",
+    tag: "Behind The Work",
+    accent: "blue"
+  }
+];
 
 // ---------- BUILD GALLERY ITEMS ----------
 const galleryItems = [
@@ -372,6 +401,21 @@ export default function GalleryPage() {
   const [filter, setFilter] = useState("All");
   const [visibleCount, setVisibleCount] = useState(12);
 
+  // Hero slideshow state
+  const [current, setCurrent] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (!isHovered) {
+      const timer = setInterval(() => {
+        setCurrent((prev) => (prev + 1) % heroSlides.length);
+      }, 4000);
+      return () => clearInterval(timer);
+    }
+  }, [isHovered]);
+
+  const currentSlide = heroSlides[current];
+
   const filteredItems =
     filter === "All"
       ? galleryItems
@@ -382,11 +426,29 @@ export default function GalleryPage() {
 
   return (
     <div className="glp-page" ref={sectionRef}>
-      <section className="glp-hero">
-        <div className="glp-hero-bg" />
-        <div className="glp-hero-glow glp-hero-glow-1" />
-        <div className="glp-hero-glow glp-hero-glow-2" />
-        <div className="glp-container">
+      {/* Hero Section — Cinematic Slideshow */}
+      <section
+        className="glp-hero"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div className="glp-slides-container">
+          {heroSlides.map((slide, index) => (
+            <div
+              key={index}
+              className={`glp-slide-bg ${index === current ? "active" : ""}`}
+              style={{ opacity: index === current ? 1 : 0 }}
+            >
+              <img src={slide.image} alt={slide.title} />
+            </div>
+          ))}
+        </div>
+
+        <div className="glp-overlay-dark" />
+        <div className="glp-overlay-gradient" />
+        <div className="glp-overlay-vignette" />
+
+        <div className="glp-container glp-hero-container">
           <motion.div
             className="glp-hero-content"
             initial={{ opacity: 0, y: 40 }}
@@ -395,16 +457,32 @@ export default function GalleryPage() {
           >
             <div className="glp-hero-tag">
               <span className="glp-hero-tag-line" />
-              <span className="glp-hero-tag-text">Gallery</span>
+              <span className="glp-hero-tag-text">{currentSlide.tag}</span>
             </div>
-            <h1 className="glp-hero-headline">
-              Capturing Moments Of <span className="glp-hero-accent">Impact</span>
-            </h1>
-            <p className="glp-hero-desc">
-              Explore the journey of Uvagai Foundation through our initiatives
-              and social impact projects.
-            </p>
+            <h1 className="glp-hero-headline">{currentSlide.title}</h1>
+            <p className="glp-hero-desc">{currentSlide.subtitle}</p>
           </motion.div>
+        </div>
+
+        <div className="glp-slide-nav">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              className={`glp-slide-dot ${index === current ? "active" : ""}`}
+              onClick={() => setCurrent(index)}
+            >
+              <span
+                className="glp-slide-dot-fill"
+                style={{ width: index === current && !isHovered ? "100%" : "0%" }}
+              />
+            </button>
+          ))}
+        </div>
+
+        <div className="glp-slide-counter">
+          <span className="glp-counter-current">{(current + 1).toString().padStart(2, "0")}</span>
+          <span className="glp-counter-sep">/</span>
+          <span className="glp-counter-total">{heroSlides.length.toString().padStart(2, "0")}</span>
         </div>
       </section>
 

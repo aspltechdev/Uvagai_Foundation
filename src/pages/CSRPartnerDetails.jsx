@@ -15,7 +15,7 @@ import environmentImg from "../assets/csrc.JPG";
 import logo1 from "../assets/logo1.png";
 import logo2 from "../assets/logo2.png";
 import logo3 from "../assets/logo3.png";
-import logo4 from "../assets/logo4.png";
+// import logo4 from "../assets/logo4.png";
 import logo6 from "../assets/logo6.png";
 import logo7 from "../assets/end.jpeg";
 import logo8 from "../assets/ind.png";
@@ -49,7 +49,7 @@ const heroSlides = [
 ];
 
 // Partner logos used in the "Our Partners" marquee
-const partnerLogos = [logo1, logo2, logo3, logo4, logo6, logo7, logo8];
+const partnerLogos = [logo1, logo2, logo3,  logo6, logo7, logo8];
 
 export default function CSRPartnerDetails() {
   const sectionRef = useRef(null);
