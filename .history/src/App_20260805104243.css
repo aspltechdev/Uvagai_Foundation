@@ -3,7 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+html, body {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
 
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none !important;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -36,9 +44,7 @@ ul {
 section {
   position: relative;
 }
-/* App.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 /* =========================
    WHATSAPP FLOAT BUTTON

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Navbar.css";
-import logoimg from "../../assets/logo.jpeg";
+import logoimg from "../../assets/l.png";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -104,7 +104,7 @@ export default function Navbar() {
     className="nv-brand-name"
     style={{
       fontFamily: "'Rye', serif",
-      fontSize: "1.45rem",
+      fontSize: "0.95rem",
       fontWeight: 400,
       letterSpacing: "0",
       textTransform: "none"
@@ -117,7 +117,7 @@ export default function Navbar() {
     className="nv-brand-tagline"
     style={{
       fontFamily: "'Rye', serif",
-      fontSize: "1.45rem",
+      fontSize: "0.95rem",
       fontWeight: 400,
       letterSpacing: "0",
       textTransform: "none"

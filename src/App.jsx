@@ -15,7 +15,7 @@ function App() {
       <Footer />
 
       <a
-        href="https://wa.me/95517 34422"
+      href="https://wa.me/+919551734422"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"
