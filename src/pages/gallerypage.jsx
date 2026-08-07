@@ -32,7 +32,7 @@ import com22 from "../assets/pol2.jpeg";
 import com1 from "../assets/uvagai/community/ABGS1486.JPG";
 import com2 from "../assets/uvagai/community/AHGU2756.JPG";
 import com3 from "../assets/uvagai/community/ARMC6200.JPG";
-import com4 from "../assets/uvagai/community/BCIQ6690.JPG";
+// import com4 from "../assets/uvagai/community/BCIQ6690.JPG";
 import com5 from "../assets/uvagai/community/DNPR6985.JPG";
 import com6 from "../assets/uvagai/community/FPWI8543.JPG";
 import com7 from "../assets/uvagai/community/IMG_4968.JPG";
@@ -234,7 +234,7 @@ const galleryItems = [
   { image: com1, category: "community", accent: "green" },
   { image: com2, category: "community", accent: "green" },
   { image: com3, category: "community", accent: "green" },
-  { image: com4, category: "community", accent: "green" },
+  // { image: com4, category: "community", accent: "green" },
   { image: com5, category: "community", accent: "green" },
   { image: com6, category: "community", accent: "green" },
   { image: com7, category: "community", accent: "green" },
