@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./Events.css";
  import healthcareImg from "../../../assets/healthab.png";
-import skillImg1 from "../../../assets/education12.png";
+import skillImg1 from "../../../assets/s.JPG";
 import educationImg from "../../../assets/edi.JPG";
 import volunteer from "../../../assets/volu.JPG";
 import childwelfareImg from "../../../assets/chi.JPG";

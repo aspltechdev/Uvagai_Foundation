@@ -5,7 +5,7 @@ import "./Hero.css";
 import hero1 from "../../../assets/skilldev.png";
 import hero2 from "../../../assets/hero33.png";
 import hero3 from "../../../assets/hero22.png";
-import hero5 from "../../../assets/hero44.png";
+import hero5 from "../../../assets/h44.jpeg";
 
 export default function Hero() {
   const navigate = useNavigate();

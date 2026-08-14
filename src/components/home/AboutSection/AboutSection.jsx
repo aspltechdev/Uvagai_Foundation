@@ -4,7 +4,7 @@ import "./AboutSection.css";
 import about1 from "../../../assets/about11.png";
 import about2 from "../../../assets/about22.png";
 import about3 from "../../../assets/abt123.png";
-import about4 from "../../../assets/about44.png";
+import about4 from "../../../assets/about444.jpeg";
 
 export default function AboutSection() {
   const sectionRef = useRef(null);

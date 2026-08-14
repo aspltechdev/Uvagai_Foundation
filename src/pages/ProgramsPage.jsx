@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import "./ProgramsPage.css";
 
 // Hero slideshow images
-import purpose from "../assets/ndimagee.png";
+import purpose from "../assets/prog.jpeg";
 import empower from "../assets/voli.jpeg";
 import volunteer from "../assets/volent.jpeg";
 
