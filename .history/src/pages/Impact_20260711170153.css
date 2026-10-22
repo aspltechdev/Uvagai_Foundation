@@ -1,0 +1,43 @@
+/* Impact.css - Modern NGO Quality */
+.impact-page{font-family:var(--gal-font-body);background:var(--gal-cream);color:var(--gal-text-primary);overflow-x:hidden}
+.container{width:min(1180px,92%);margin:auto}
+.impact-hero{padding:120px 0 90px;background:linear-gradient(135deg,var(--gal-blue),var(--gal-blue-dark));color:#fff;text-align:center;position:relative;overflow:hidden}
+.impact-hero:before,.impact-hero:after{content:"";position:absolute;border-radius:50%;filter:blur(45px)}
+.impact-hero:before{width:420px;height:420px;background:var(--gal-red-glow);top:-160px;right:-120px}
+.impact-hero:after{width:360px;height:360px;background:var(--gal-green-glow);bottom:-140px;left:-100px}
+.section-tag{display:inline-block;padding:10px 22px;border-radius:30px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;font-weight:600;margin-bottom:22px}
+.impact-hero h1{font-family:var(--gal-font-display);font-size:clamp(2.7rem,5vw,4.5rem);margin-bottom:20px}
+.impact-hero p{max-width:720px;margin:auto;line-height:1.8;color:var(--gal-white-80)}
+.impact-stats-section{padding:90px 0;background:var(--gal-soft-bg)}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+.stat-card{background:#fff;padding:40px 25px;border-radius:18px;text-align:center;box-shadow:var(--gal-shadow-md);transition:.3s;border:1px solid var(--gal-border-light)}
+.stat-card:hover{transform:translateY(-8px)}
+.stat-card h2{color:var(--gal-red);font-size:2.6rem}.stat-card p{font-weight:600}
+.impact-story{padding:100px 0;background:#fff}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.story-image img{width:100%;border-radius:20px;display:block;box-shadow:var(--gal-shadow-lg)}
+.story-content .section-tag{background:var(--gal-red-light);color:var(--gal-red);border:none}
+.story-content h2{font-family:var(--gal-font-display);font-size:2.7rem;color:var(--gal-blue)}
+.story-content p{line-height:1.8;color:var(--gal-text-secondary)}
+.focus-section{padding:100px 0;background:var(--gal-warm-bg)}
+.section-header{text-align:center;margin-bottom:60px}
+.section-header h2{font-family:var(--gal-font-display);font-size:3rem;color:var(--gal-blue)}
+.focus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
+.focus-card{background:#fff;border-top:5px solid var(--gal-red);border-radius:18px;padding:38px 32px;box-shadow:var(--gal-shadow-sm);transition:.3s}
+.focus-card:hover{transform:translateY(-8px);box-shadow:var(--gal-shadow-lg)}
+.focus-card h3{color:var(--gal-blue);margin-bottom:14px;font-size:1.5rem}
+.focus-card p{line-height:1.8;color:var(--gal-text-secondary)}
+.focus-card:nth-child(2),.focus-card:nth-child(5){border-top-color:var(--gal-blue)}
+.focus-card:nth-child(3),.focus-card:nth-child(6){border-top-color:var(--gal-green)}
+.impact-cta{width:100%;margin-top:100px;background:linear-gradient(135deg,var(--gal-red),var(--gal-blue));padding:100px 20px}
+.impact-cta .container{text-align:center;max-width:1200px;margin:auto}
+.impact-cta h2{color:#fff;font-family:var(--gal-font-display);font-size:3rem}
+.impact-cta p{max-width:700px;margin:20px auto 40px;color:rgba(255,255,255,.9);line-height:1.8}
+.cta-buttons{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.primary-btn,.secondary-btn{text-decoration:none;padding:16px 36px;border-radius:50px;font-weight:600;transition:.3s}
+.primary-btn{background:#fff;color:var(--gal-red)}
+.secondary-btn{border:2px solid #fff;color:#fff}
+.primary-btn:hover,.secondary-btn:hover{transform:translateY(-4px)}
+.secondary-btn:hover{background:#fff;color:var(--gal-blue)}
+@media(max-width:900px){.story-grid{grid-template-columns:1fr}.story-content{text-align:center}.section-header h2,.impact-cta h2,.story-content h2{font-size:2.2rem}}
+@media(max-width:768px){.focus-grid,.stats-grid{grid-template-columns:1fr}.cta-buttons{flex-direction:column;align-items:center}.primary-btn,.secondary-btn{width:220px;text-align:center}}

@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import VisionMission from "./pages/VisionMission";
+
 import LeadershipTeam from "./pages/LeadershipTeam";
 import Programs from "./pages/Programs";
 import Impact from "./pages/Impact";
@@ -20,6 +21,7 @@ import VolunteerPage from "./pages/VolunteerPage";
 import CSRPartnerDetails from "./pages/CSRPartnerDetails";
 import Course from "./pages/Course";
 import ProgramsPage from "./pages/ProgramsPage";
+import GalleryHome from "./pages/gallerypage";
 
 export default function AppRoutes() {
   return (
@@ -27,14 +29,15 @@ export default function AppRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/vision-mission" element={<VisionMission />} />
+      <Route path="/impact" element={<Impact />} />
       <Route path="/leadership-team" element={<LeadershipTeam />} />
       <Route path="/programs" element={<ProgramsPage />} />
-      <Route path="/impact" element={<Impact />} />
+    
       <Route path="/impact-stories" element={<ImpactSection />} />
 
       <Route path="/gallery/:category" element={<CategoryGallery />} />
       <Route path="/gallery" element={<Gallery />} />
-      <Route path="/gallerypage" element={<Gallery />} />
+      <Route path="/gallerypage" element={<GalleryHome />} />
 
       <Route path="/events" element={<Events />} />
       <Route path="/blog" element={<Blog />} />

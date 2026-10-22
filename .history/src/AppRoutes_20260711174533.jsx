@@ -1,0 +1,55 @@
+import { Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import VisionMission from "./pages/VisionMission";
+import Impact from "./pages/Impact";
+import LeadershipTeam from "./pages/LeadershipTeam";
+import Programs from "./pages/Programs";
+import Impact from "./pages/Impact";
+import ImpactSection from "./pages/ImpactStories";
+import Gallery from "./pages/gallerypage";
+import CategoryGallery from "./pages/CategoryGallery";
+import Events from "./pages/Events";
+import Blog from "./pages/Blog";
+import Volunteer from "./pages/Volunteer";
+import CSRPartnership from "./pages/CSRPartnership";
+import Donate from "./pages/Donate";
+import AnnualReports from "./pages/AnnualReports";
+import Contact from "./pages/Contact";
+import VolunteerPage from "./pages/VolunteerPage";
+import CSRPartnerDetails from "./pages/CSRPartnerDetails";
+import Course from "./pages/Course";
+import ProgramsPage from "./pages/ProgramsPage";
+
+export default function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about-us" element={<AboutUs />} />
+      <Route path="/vision-mission" element={<VisionMission />} />
+      <Route path="/impact" element={<Impact />} />
+      <Route path="/leadership-team" element={<LeadershipTeam />} />
+      <Route path="/programs" element={<ProgramsPage />} />
+      <Route path="/impact" element={<Impact />} />
+      <Route path="/impact-stories" element={<ImpactSection />} />
+
+      <Route path="/gallery/:category" element={<CategoryGallery />} />
+      <Route path="/gallery" element={<Gallery />} />
+      <Route path="/gallerypage" element={<Gallery />} />
+
+      <Route path="/events" element={<Events />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/volunteer" element={<Volunteer />} />
+      <Route path="/volunteers" element={<VolunteerPage />} />
+      {/* <Route path="/internship" element={<Internship />} /> */}
+      <Route path="/csr-partnership" element={<CSRPartnerDetails />} />
+      {/* <Route path="/internship" element={<Internship />} /> */}
+       <Route path="/course" element={<Course/>} />
+      {/* <Route path="/csr-partnership" element={<CSRPartnerDetails />} /> */}
+      <Route path="/donate" element={<Donate />} />
+      <Route path="/annual-reports" element={<AnnualReports />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
+  );
+}

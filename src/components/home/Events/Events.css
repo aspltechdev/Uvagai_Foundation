@@ -261,7 +261,7 @@
   padding: 15px 30px;
   border-radius: 12px;
   text-decoration: none;
-  background: linear-gradient(135deg, #DC2626 0%, #059669 100%);
+  background: #C62828;
   color: white;
   font-size: 0.92rem;
   font-weight: 600;
@@ -339,4 +339,37 @@
   .events-marquee-track-wrapper::after {
     width: 40px;
   }
+}
+/* Smooth marquee movement */
+.events-marquee-track-wrapper {
+  overflow: hidden;
+  will-change: transform;
+}
+
+.events-marquee-track {
+  display: flex;
+  gap: 1.25rem; /* or your existing gap */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.events-marquee-card {
+  flex: 0 0 280px; /* or your existing card width */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+.events-marquee-card-image {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.events-marquee-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s ease;
 }

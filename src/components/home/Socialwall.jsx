@@ -1,7 +1,144 @@
 import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import "./Socialwall.css";
 
-// Real Instagram post/reel URLs
+/* ============================================
+   AWARDS & RECOGNITION SECTION — COMMENTED OUT
+   Uncomment this whole block (glob import, data,
+   component) plus the <AwardsRecognition /> usage
+   further down to bring it back.
+   ============================================
+
+// =======================
+// Awards & Skill Development Images
+// -----------------------------------
+// This glob grabs EVERY image in src/assets whose name starts with
+// "csr" or "skill" (any case, any of jpg/jpeg/JPG/png) so mismatched
+// capitalization or extensions (e.g. csr1.JPG vs csr1.jpg) can never
+// break the build again. { eager: true, import: "default" } returns
+// a plain { "/full/path/filename.ext": url } object immediately.
+// =======================
+const awardImageModules = import.meta.glob(
+  "../../assets/{csr,skill}*.{jpg,jpeg,JPG,JPEG,png,PNG}",
+  { eager: true, import: "default" }
+);
+
+// Build a lookup like { csr1: url, skill4: url, ... } regardless of
+// the exact case/extension the file was saved with.
+const awardImages = {};
+Object.entries(awardImageModules).forEach(([path, url]) => {
+  const fileName = path.split("/").pop(); // e.g. "csr1.JPG"
+  const key = fileName.replace(/\.[^.]+$/, "").toLowerCase(); // "csr1"
+  awardImages[key] = url;
+});
+
+const awardsData = [
+  {
+    id: "award-1",
+    year: "2025",
+    title: "Best NGO for Rural Education",
+    org: "National CSR Council",
+    image: awardImages["csr1"],
+  },
+  {
+    id: "award-2",
+    year: "2024",
+    title: "Excellence in Community Service",
+    org: "State Social Welfare Board",
+    image: awardImages["csr2"],
+  },
+  {
+    id: "award-3",
+    year: "2024",
+    title: "Outstanding Contribution to Women Empowerment",
+    org: "District Development Authority",
+    image: awardImages["csr3"],
+  },
+  {
+    id: "award-4",
+    year: "2023",
+    title: "Champion of Change Award",
+    org: "Rotary Club International",
+    image: awardImages["csr4"],
+  },
+  {
+    id: "award-5",
+    year: "2023",
+    title: "Top Grassroots Foundation",
+    org: "India NGO Awards",
+    image: awardImages["skill1"],
+  },
+  {
+    id: "award-6",
+    year: "2022",
+    title: "Recognition for Blood Donation Drives",
+    org: "Indian Red Cross Society",
+    image: awardImages["skill2"],
+  },
+];
+
+function AwardsRecognition() {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-50px" });
+
+  return (
+    <section className="aw-section" ref={sectionRef}>
+      <div className="aw-container">
+        <motion.div
+          className="aw-header"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
+        >
+          <div className="aw-header-tag">
+            <span className="aw-header-tag-line" />
+            <span className="aw-header-tag-text">Awards &amp; Recognition</span>
+          </div>
+          <h2 className="aw-header-title">
+            Honoured For Our <span className="aw-text-red">Impact</span>
+          </h2>
+          <p className="aw-header-desc">
+            Every recognition reflects the trust of the communities we serve
+            and the dedication of our volunteers, partners, and donors.
+          </p>
+        </motion.div>
+
+        <div className="aw-grid">
+          {awardsData.map((award, index) => (
+            <motion.div
+              className="aw-card"
+              key={award.id}
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                duration: 0.6,
+                delay: 0.1 + index * 0.08,
+                ease: [0.33, 0.1, 0.25, 1],
+              }}
+            >
+              <div className="aw-card-img-wrap">
+                <img
+                  src={award.image}
+                  alt={award.title}
+                  className="aw-card-img"
+                  loading="lazy"
+                />
+                <span className="aw-card-year">{award.year}</span>
+              </div>
+              <div className="aw-card-body">
+                <h3 className="aw-card-title">{award.title}</h3>
+                <p className="aw-card-org">{award.org}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+   ============================================ */
+
 const instagramPosts = [
   {
     id: "ig-1",
@@ -25,61 +162,51 @@ const instagramPosts = [
   },
 ];
 
-// Real LinkedIn post URLs (company page: uvagai-foundation)
-// LinkedIn's official embeddable format is built from the post's activity ID:
-// https://www.linkedin.com/embed/feed/update/urn:li:activity:<ID>
-const linkedinPosts = [
-  {
-    id: "li-1",
-    activityId: "7476170472624181249",
-    link: "https://www.linkedin.com/posts/uvagai-foundation_internationaldayagainstdrugabuse-drugfreesociety-activity-7476170472624181249-w_mx",
-  },
-  {
-    id: "li-2",
-    activityId: "7474397453971202048",
-    link: "https://www.linkedin.com/posts/uvagai-foundation_internationalyogaday2026-yogaday-yogaforoneearthonehealth-activity-7474397453971202048-gDBv",
-  },
-  {
-    id: "li-3",
-    activityId: "7472203675268993024",
-    link: "https://www.linkedin.com/posts/uvagai-foundation_uvagaifoundation-educationforall-communityimpact-activity-7472203675268993024-Cl-m",
-  },
-  {
-    id: "li-4",
-    activityId: "7470736485638545408",
-    link: "https://www.linkedin.com/posts/uvagai-foundation_uvagaifoundation-educationforall-womenempowerment-activity-7470736485638545408-VTd0",
-  },
-  {
-    id: "li-5",
-    activityId: "7471851061188653056",
-    link: "https://www.linkedin.com/posts/uvagai-foundation_worldblooddonorday-givebloodgivehope-donatebloodsavelives-activity-7471851061188653056-Attd",
-  },
+const facebookPosts = [
+ {
+  id: "fb-1",
+  embedUrl:
+    "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fuvagaifoundation%2Fposts%2Fpfbid02dqCJmppVaJdzM1t4QPvHnQEM5GWH869N8Lwz8DxRdC2uVj5EEtpM3GPWnBowg5fgl&show_text=true&width=350",
+},
+{
+  id: "fb-2",
+  embedUrl:
+    "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1380508440699700%2F&show_text=false&width=350&t=0",
+},
+{
+  id: "fb-3",
+  embedUrl:
+    "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fuvagaifoundation%2Fposts%2Fpfbid02HzSzAKBFLvJ499yKSbsGKSETyDHvLjbKUD3AePiYekHPvqBfyTwiCynsANfEbFmrl&show_text=true&width=350",
+},
+{
+  id: "fb-4",
+  embedUrl:
+    "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fuvagaifoundation%2Fposts%2Fpfbid022hzPwFzbmXHKQtfZkvRMbx1YkyHVsLtaJsRAFijCFjBbb843M5idRpiWEsEnb2Mml&show_text=true&width=350",
+},
+{
+  id: "fb-5",
+  embedUrl:
+    "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fuvagaifoundation%2Fposts%2Fpfbid02dqCJmppVaJdzM1t4QPvHnQEM5GWH869N8Lwz8DxRdC2uVj5EEtpM3GPWnBowg5fgl&show_text=true&width=350",
+},
 ];
 
-// Loads Instagram's embed.js script once, and re-processes embeds
-// whenever it's called (needed because Instagram's script only scans
-// the DOM once on load, but React mounts content after that).
-function loadInstagramEmbedScript(callback) {
-  const existingScript = document.getElementById("instagram-embed-script");
-
+function loadInstagramEmbedScript() {
+  const existingScript = document.getElementById("sw-instagram-embed-script");
   if (existingScript) {
-    // Script already loaded — just re-process any new blockquotes
     if (window.instgrm) {
       window.instgrm.Embeds.process();
     }
-    if (callback) callback();
     return;
   }
 
   const script = document.createElement("script");
-  script.id = "instagram-embed-script";
+  script.id = "sw-instagram-embed-script";
   script.src = "https://www.instagram.com/embed.js";
   script.async = true;
   script.onload = () => {
     if (window.instgrm) {
       window.instgrm.Embeds.process();
     }
-    if (callback) callback();
   };
   document.body.appendChild(script);
 }
@@ -92,7 +219,7 @@ function InstagramEmbed({ link }) {
   }, [link]);
 
   return (
-    <div className="igw-embed-wrap" ref={containerRef}>
+    <div className="sw-embed-wrap" ref={containerRef}>
       <blockquote
         className="instagram-media"
         data-instgrm-permalink={link}
@@ -102,8 +229,8 @@ function InstagramEmbed({ link }) {
           border: 0,
           borderRadius: "12px",
           margin: "0",
-          maxWidth: "360px",
-          minWidth: "300px",
+          maxWidth: "320px",
+          minWidth: "280px",
           width: "100%",
         }}
       >
@@ -115,157 +242,157 @@ function InstagramEmbed({ link }) {
   );
 }
 
-// LinkedIn uses a simple iframe embed (no script needed). The official
-// embeddable URL format is built from the post's activity ID.
-function LinkedInEmbed({ activityId, link }) {
-  const src = `https://www.linkedin.com/embed/feed/update/urn:li:activity:${activityId}`;
-
+function FacebookEmbed({ embedUrl }) {
   return (
-    <div className="igw-embed-wrap igw-li-embed-wrap">
+    <div className="sw-embed-wrap sw-fb-embed">
       <iframe
-        src={src}
-        title={`LinkedIn post ${activityId}`}
-        className="igw-li-iframe"
+        src={embedUrl}
+        title="Facebook post"
+        className="sw-fb-iframe"
+        style={{
+          border: "none",
+          overflow: "hidden",
+          width: "320px",
+          height: "380px",
+          borderRadius: "12px",
+          background: "#FFF",
+        }}
+        scrolling="no"
         frameBorder="0"
         allowFullScreen
-        loading="lazy"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
       />
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="igw-li-fallback-link"
-      >
-        View this post on LinkedIn
-      </a>
     </div>
   );
 }
 
-function SocialWall() {
-  // Which platform's posts are currently shown in the marquee
+export default function SocialWall() {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-50px" });
   const [activeTab, setActiveTab] = useState("instagram");
 
-  // Re-process embeds after every render in case Instagram's script
-  // loaded before all blockquotes were in the DOM
   useEffect(() => {
     loadInstagramEmbedScript();
   }, []);
 
-  // Re-process Instagram embeds whenever we switch back to the
-  // Instagram tab, since the blockquotes are freshly mounted
   useEffect(() => {
     if (activeTab === "instagram") {
       loadInstagramEmbedScript();
     }
   }, [activeTab]);
 
-  const activePosts = activeTab === "instagram" ? instagramPosts : linkedinPosts;
-  // Duplicate posts for seamless infinite marquee
+  const activePosts = activeTab === "instagram" ? instagramPosts : facebookPosts;
   const marqueeItems = [...activePosts, ...activePosts];
 
   return (
-    <section className="igw-section" id="social-wall">
-      <div className="igw-inner">
-        <div className="igw-header">
-          <span className="igw-eyebrow">
-            <span className="igw-dot" />
-            From the Field
-          </span>
-          <h2 className="igw-title">
-            Moments, As They <em>Happen</em>
-          </h2>
-          <p className="igw-subtitle">
-            Real classrooms, real volunteers, real progress — straight from our
-            Instagram and LinkedIn, where every post is a small part of the
-            bigger mission.
-          </p>
+    <>
+      {/* Awards & Recognition Section — commented out.
+          Uncomment the block above and this line to restore it. */}
+      {/* <AwardsRecognition /> */}
 
-          <div className="igw-tabs">
-            <button
-              type="button"
-              className={`igw-tab-btn${activeTab === "instagram" ? " igw-tab-btn-active" : ""}`}
-              onClick={() => setActiveTab("instagram")}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="2" />
-                <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="2" />
-                <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" />
-              </svg>
-              Instagram
-            </button>
-            <button
-              type="button"
-              className={`igw-tab-btn${activeTab === "linkedin" ? " igw-tab-btn-active" : ""}`}
-              onClick={() => setActiveTab("linkedin")}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="2" />
-                <circle cx="7.2" cy="8" r="1.4" fill="currentColor" />
-                <rect x="6" y="10.5" width="2.4" height="7.5" fill="currentColor" />
-                <path
-                  d="M11.5 10.5h2.3v1.3c.5-.8 1.4-1.5 2.9-1.5 2.2 0 3.3 1.4 3.3 3.9v4.8h-2.4v-4.3c0-1.2-.4-2-1.5-2-.8 0-1.3.6-1.5 1.1-.1.2-.1.5-.1.8v4.4h-2.4v-7.5z"
-                  fill="currentColor"
-                />
-              </svg>
-              LinkedIn
-            </button>
-          </div>
-
-          <a
-            href={
-              activeTab === "instagram"
-                ? "https://www.instagram.com/uvagaifoundation?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                : "https://www.linkedin.com/company/uvagai-foundation/"
-            }
-            target="_blank"
-            rel="noopener noreferrer"
-            className="igw-handle"
+      <section className="sw-section" ref={sectionRef}>
+        <div className="sw-container">
+          
+          {/* Header */}
+          <motion.div
+            className="sw-header"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, ease: [0.33, 0.1, 0.25, 1] }}
           >
-            {activeTab === "instagram" ? "@uvagaifoundation" : "UVAGAI Foundation on LinkedIn"}
-          </a>
+            <div className="sw-header-tag">
+              <span className="sw-header-tag-line" />
+              <span className="sw-header-tag-text">Social Wall</span>
+            </div>
+            <h2 className="sw-header-title">
+              Moments, As They <span className="sw-text-red">Happen</span>
+            </h2>
+            <p className="sw-header-desc">
+              Real classrooms, real volunteers, real progress — straight from our 
+              social media, where every post is a small part of the bigger mission.
+            </p>
+
+            {/* Toggle Tabs */}
+            <div className="sw-tabs">
+              <button
+                className={`sw-tab ${activeTab === "instagram" ? "sw-tab-active sw-tab-ig" : ""}`}
+                onClick={() => setActiveTab("instagram")}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="2"/>
+                  <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="2"/>
+                  <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/>
+                </svg>
+                Instagram
+              </button>
+              <button
+                className={`sw-tab ${activeTab === "facebook" ? "sw-tab-active sw-tab-fb" : ""}`}
+                onClick={() => setActiveTab("facebook")}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Facebook
+              </button>
+            </div>
+          </motion.div>
         </div>
 
-        <div className="igw-marquee-outer">
-          <div className="igw-marquee-track">
-            {marqueeItems.map((post, i) => (
-              <div className="igw-marquee-item" key={`${post.id}-${i}`}>
-                {activeTab === "linkedin" ? (
-                  <LinkedInEmbed activityId={post.activityId} link={post.link} />
-                ) : (
+        {/* Single Marquee Row */}
+        <div className="sw-marquee-wrap" key={`marquee-${activeTab}`}>
+          <motion.div 
+            className="sw-marquee-track"
+            animate={{
+              x: [0, "-50%"],
+            }}
+            transition={{
+              x: {
+                duration: 40,
+                repeat: Infinity,
+                ease: "linear",
+              },
+            }}
+          >
+            {marqueeItems.map((post, index) => (
+              <div className="sw-marquee-item" key={`${post.id}-${index}`}>
+                {activeTab === "instagram" ? (
                   <InstagramEmbed link={post.link} />
+                ) : (
+                  <FacebookEmbed embedUrl={post.embedUrl} />
                 )}
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
-        <div className="igw-footer">
-          <a
-            href={
-              activeTab === "instagram"
-                ? "https://instagram.com/uvagai_in"
-                : "https://www.linkedin.com/company/uvagai-foundation/"
-            }
-            target="_blank"
-            rel="noopener noreferrer"
-            className="igw-cta"
+        {/* CTA */}
+        {/* <div className="sw-container">
+          <motion.div
+            className="sw-cta"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.5 }}
           >
-            Follow our journey
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M5 12h14M13 6l6 6-6 6"
-                stroke="white"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
+            <a
+              href={
+                activeTab === "instagram"
+                  ? "https://www.instagram.com/uvagaifoundation"
+                  : "https://www.facebook.com/uvagaifoundation"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`sw-cta-btn ${activeTab === "instagram" ? "sw-cta-ig" : "sw-cta-fb"}`}
+            >
+              <span>
+                {activeTab === "instagram" ? "Follow on Instagram" : "Follow on Facebook"}
+              </span>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+          </motion.div>
+        </div> */}
+      </section>
+    </>
   );
 }
-
-export default SocialWall;

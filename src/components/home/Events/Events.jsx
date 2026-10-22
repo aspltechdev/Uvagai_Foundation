@@ -1,15 +1,25 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./Events.css";
+ import healthcareImg from "../../../assets/healthab.png";
+import skillImg1 from "../../../assets/s.JPG";
+import educationImg from "../../../assets/edi.JPG";
+import volunteer from "../../../assets/volu.JPG";
+import childwelfareImg from "../../../assets/chi.JPG";
+import elderly from "../../../assets/elder.JPG";
+// ← FIXED: Changed to correct path
+
 
 export default function EventsHome() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
 
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
+
 
   const bgY = useTransform(scrollYProgress, [0, 1], [0, -30]);
   const headingY = useTransform(scrollYProgress, [0, 0.3], [40, 0]);
@@ -17,59 +27,83 @@ export default function EventsHome() {
   const glowOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 0.5, 0.5, 0]);
   const marqueeX = useTransform(scrollYProgress, [0, 0.8], [0, -200]);
 
-  const events = [
-    {
-      image: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80",
-      title: "Community Healthcare Camp",
-      category: "Healthcare",
-      location: "Rural Outreach",
-      accent: "green",
-      stat: "50K+",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80",
-      title: "Education Support Program",
-      category: "Education",
-      location: "Youth Empowerment",
-      accent: "red",
-      stat: "5,284+",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80",
-      title: "Volunteer Engagement Drive",
-      category: "Volunteer",
-      location: "Community Service",
-      accent: "blue",
-      stat: "500+",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=800&q=80",
-      title: "Child Welfare Activities",
-      category: "Child Welfare",
-      location: "Community Impact",
-      accent: "red",
-      stat: "10K+",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=80",
-      title: "Elderly Care Program",
-      category: "Senior Care",
-      location: "Care & Compassion",
-      accent: "blue",
-      stat: "2,500+",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-      title: "Environmental Campaign",
-      category: "Sustainability",
-      location: "Green Initiative",
-      accent: "green",
-      stat: "1M+",
-    },
-  ];
+
+ 
+
+
+const events = [
+  {
+    image: healthcareImg,
+    title: "Community Healthcare Camp",
+    category: "Healthcare",
+    location: "Rural Outreach",
+    accent: "green",
+    stat: "50K+",
+  },
+  {
+    image: skillImg1,
+    title: "Skill Development",
+    category: "Skill Development",
+    location: "Skilling",
+    accent: "red",
+    stat: "10000+",
+  },
+  // {
+  //   image: placementImg,
+  //   title: "Placement Drive",
+  //   category: "Placement Drive",
+  //   location: "Drive",
+  //   accent: "red",
+  //   stat: "20000+",
+  // },
+  {
+    image: educationImg,
+    title: "Education Support Program",
+    category: "Education",
+    location: "Youth Empowerment",
+    accent: "red",
+    stat: "5,284+",
+  },
+  {
+    image: volunteer,
+    title: "Volunteer Engagement Drive",
+    category: "Volunteer",
+    location: "Community Service",
+    accent: "blue",
+    stat: "500+",
+  },
+  {
+    image: childwelfareImg,
+    title: "Child Welfare Activities",
+    category: "Child Welfare",
+    location: "Community Impact",
+    accent: "red",
+    stat: "10K+",
+  },
+  {
+    image: elderly,
+    title: "Elderly Care Program",
+    category: "Senior Care",
+    location: "Care & Compassion",
+    accent: "blue",
+    stat: "2,500+",
+  },
+  // {
+  //   image: environment,
+  //   title: "Environmental Campaign",
+  //   category: "Sustainability",
+  //   location: "Green Initiative",
+  //   accent: "green",
+  //   stat: "1M+",
+  // },
+];
+
+
 
   // Duplicate events for seamless infinite marquee
   const marqueeEvents = [...events, ...events, ...events];
+  const marqueeEventsReversed = [...marqueeEvents].reverse();
+
 
   return (
     <section className="events-marquee" ref={sectionRef}>
@@ -86,6 +120,7 @@ export default function EventsHome() {
         className="events-marquee-orb events-marquee-orb-green"
         style={{ opacity: glowOpacity }}
       />
+
 
       <div className="events-marquee-container">
         
@@ -113,6 +148,7 @@ export default function EventsHome() {
             />
           </motion.div>
 
+
           <motion.h2 
             className="events-marquee-title"
             initial={{ opacity: 0, y: 20 }}
@@ -125,18 +161,20 @@ export default function EventsHome() {
           </motion.h2>
         </motion.div>
 
+
       </div>
+
 
       {/* Marquee Row 1 - Left to Right */}
       <div className="events-marquee-track-wrapper">
         <motion.div 
           className="events-marquee-track"
           animate={{
-            x: [0, -50 + "%"],
+            x: [0, "-50%"],
           }}
           transition={{
             x: {
-              duration: 30,
+              duration: 45, // smoother, slower
               repeat: Infinity,
               ease: "linear",
             },
@@ -153,7 +191,7 @@ export default function EventsHome() {
               }}
             >
               <div className="events-marquee-card-image">
-                <img src={event.image} alt={event.title} />
+                <img src={event.image} alt={event.title} loading="lazy" />
                 <div className="events-marquee-card-overlay" />
                 
                 {/* Category Badge */}
@@ -161,11 +199,13 @@ export default function EventsHome() {
                   {event.category}
                 </span>
 
+
                 {/* Stat */}
                 <div className="events-marquee-card-stat">
                   <span>{event.stat}</span>
                 </div>
               </div>
+
 
               <div className="events-marquee-card-body">
                 <div className="events-marquee-card-location">
@@ -182,22 +222,23 @@ export default function EventsHome() {
         </motion.div>
       </div>
 
+
       {/* Marquee Row 2 - Right to Left (Different speed) */}
       <div className="events-marquee-track-wrapper">
         <motion.div 
           className="events-marquee-track"
           animate={{
-            x: [-50 + "%", 0],
+            x: ["-50%", 0],
           }}
           transition={{
             x: {
-              duration: 35,
+              duration: 50, // smoother, slightly different speed
               repeat: Infinity,
               ease: "linear",
             },
           }}
         >
-          {marqueeEvents.reverse().map((event, index) => (
+          {marqueeEventsReversed.map((event, index) => (
             <motion.div 
               className={`events-marquee-card card-${event.accent}`}
               key={`row2-${index}`}
@@ -208,17 +249,19 @@ export default function EventsHome() {
               }}
             >
               <div className="events-marquee-card-image">
-                <img src={event.image} alt={event.title} />
+                <img src={event.image} alt={event.title} loading="lazy" />
                 <div className="events-marquee-card-overlay" />
                 
                 <span className={`events-marquee-card-badge badge-${event.accent}`}>
                   {event.category}
                 </span>
 
+
                 <div className="events-marquee-card-stat">
                   <span>{event.stat}</span>
                 </div>
               </div>
+
 
               <div className="events-marquee-card-body">
                 <div className="events-marquee-card-location">
@@ -234,6 +277,7 @@ export default function EventsHome() {
           ))}
         </motion.div>
       </div>
+
 
       {/* Bottom CTA */}
       <div className="events-marquee-container">
@@ -261,6 +305,7 @@ export default function EventsHome() {
           </motion.a>
         </motion.div>
       </div>
+
 
     </section>
   );

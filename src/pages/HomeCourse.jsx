@@ -1,8 +1,54 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
+import { useNavigate, Link } from "react-router-dom";
 import "./HomeCourse.css";
 
+import course1 from "../assets/english.png";
+import course2 from "../assets/computer.jpeg";
+import course3 from "../assets/graphic.jpeg";
+import course4 from "../assets/marketing.jpeg";
+import course5 from "../assets/web.png";
+import course6 from "../assets/leadership.png";
+
+// Splits a stat string like "5K+" or "85%" into a numeric part to animate
+// and a suffix to keep static (e.g. value: 5, suffix: "K+")
+function parseStat(raw) {
+  const match = raw.match(/^(\d+)(.*)$/);
+  if (!match) return { value: 0, suffix: raw };
+  return { value: parseInt(match[1], 10), suffix: match[2] };
+}
+
+function AnimatedStat({ raw, isInView, duration = 1.5 }) {
+  const { value, suffix } = parseStat(raw);
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    let frame;
+    let start = null;
+
+    const step = (timestamp) => {
+      if (start === null) start = timestamp;
+      const progress = Math.min((timestamp - start) / (duration * 1000), 1);
+      // ease-out for a nice deceleration into the final number
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setDisplay(Math.floor(eased * value));
+      if (progress < 1) {
+        frame = requestAnimationFrame(step);
+      } else {
+        setDisplay(value);
+      }
+    };
+
+    frame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frame);
+  }, [isInView, value, duration]);
+
+  return <>{display}{suffix}</>;
+}
+
 export default function HomeCourse() {
+  const navigate = useNavigate();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
   const [activeTab, setActiveTab] = useState(0);
@@ -13,8 +59,8 @@ export default function HomeCourse() {
     {
       id: 1,
       category: "Communication",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80",
-      title: "Spoken English & Communication Skills",
+      image: course1,
+      title: "Communication & Employability Skills",
       description: "Master English speaking, presentation skills, and professional communication for career growth and workplace confidence.",
       accent: "red",
       stat: "3 Months",
@@ -24,8 +70,8 @@ export default function HomeCourse() {
     {
       id: 2,
       category: "Technology",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80",
-      title: "Digital Literacy & Computer Basics",
+      image: course2,
+      title: "Digital Literacy & Computer Skills",
       description: "Learn essential computer skills, MS Office suite, internet usage, and digital tools for everyday professional tasks.",
       accent: "green",
       stat: "3 Months",
@@ -35,7 +81,7 @@ export default function HomeCourse() {
     {
       id: 3,
       category: "Creative",
-      image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&q=80",
+      image: course3,
       title: "Graphic Design & Visual Creativity",
       description: "Explore design principles, color theory, typography, and create stunning visual content using industry-standard tools.",
       accent: "blue",
@@ -46,8 +92,8 @@ export default function HomeCourse() {
     {
       id: 4,
       category: "Business",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
-      title: "Digital Marketing Fundamentals",
+      image: course4,
+      title: "Digital Marketing ",
       description: "Understand SEO, social media marketing, content strategy, and online brand building for business growth.",
       accent: "red",
       stat: "3 Months",
@@ -57,8 +103,8 @@ export default function HomeCourse() {
     {
       id: 5,
       category: "Technology",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80",
-      title: "Web Development Basics",
+      image: course5,
+      title: "Web Development ",
       description: "Build responsive websites using HTML, CSS, JavaScript, and modern frameworks with hands-on projects.",
       accent: "green",
       stat: "4 Months",
@@ -68,7 +114,7 @@ export default function HomeCourse() {
     {
       id: 6,
       category: "Communication",
-      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80",
+      image: course6,
       title: "Leadership & Community Engagement",
       description: "Develop leadership skills, team management, public speaking, and community outreach capabilities.",
       accent: "blue",
@@ -98,6 +144,19 @@ export default function HomeCourse() {
       transition: { duration: 0.6, ease: [0.33, 0.1, 0.25, 1] },
     },
   };
+
+  const handleLearnMore = (course) => {
+    navigate("/course", {
+      state: { 
+        selectedCourseId: course.id,
+        selectedCourseTitle: course.title,
+        selectedCourseAccent: course.accent,
+      },
+    });
+    window.scrollTo(0, 0);
+  };
+
+  const scrollTop = () => window.scrollTo(0, 0);
 
   return (
     <section className="home-course" ref={sectionRef}>
@@ -150,7 +209,9 @@ export default function HomeCourse() {
             { number: "500+", label: "Learning Hours", accent: "red" },
           ].map((stat, index) => (
             <div key={index} className={`home-course-stat stat-${stat.accent}`}>
-              <span className="home-course-stat-number">{stat.number}</span>
+              <span className="home-course-stat-number">
+                <AnimatedStat raw={stat.number} isInView={isInView} />
+              </span>
               <span className="home-course-stat-label">{stat.label}</span>
             </div>
           ))}
@@ -197,6 +258,8 @@ export default function HomeCourse() {
               className={`home-course-card card-${course.accent}`}
               variants={cardVariants}
               layout
+              onClick={() => handleLearnMore(course)}
+              style={{ cursor: "pointer" }}
             >
               {/* Image Container */}
               <div className="home-course-card-media">
@@ -235,40 +298,56 @@ export default function HomeCourse() {
                     <span className="stat-label">{course.statLabel}</span>
                   </div>
                   
-                  <motion.a 
-                    href="/courses" 
-                    className={`home-course-card-link link-${course.accent}`}
+                  {/* "Learn more" – motion on wrapper, normal Link inside */}
+                  <motion.div
                     whileHover={{ x: 4 }}
+                    className={`home-course-card-link link-${course.accent}`}
+                    style={{ display: 'inline-flex', alignItems: 'center' }}
                   >
-                    Learn more
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <path d="M1 7H13M13 7L8 2M13 7L8 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </motion.a>
+                    <Link
+                      to="/course"
+                      state={{
+                        selectedCourseId: course.id,
+                        selectedCourseTitle: course.title,
+                        selectedCourseAccent: course.accent,
+                      }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        scrollTop();
+                      }}
+                      style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '4px' }}
+                    >
+                      Learn more
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M1 7H13M13 7L8 2M13 7L8 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </Link>
+                  </motion.div>
                 </div>
               </div>
             </motion.article>
           ))}
         </motion.div>
 
-        {/* Bottom CTA */}
+        {/* Bottom CTA – motion wrapper + normal Link */}
         <motion.div 
           className="home-course-bottom"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <motion.a 
-            href="/courses" 
-            className="home-course-cta"
+          <motion.div
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
+            style={{ display: 'inline-block' }}
           >
-            <span>View all courses</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M2 8H14M14 8L9 3M14 8L9 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </motion.a>
+            <Link to="/course" className="home-course-cta" onClick={scrollTop}>
+              <span>View all courses</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M2 8H14M14 8L9 3M14 8L9 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+          </motion.div>
         </motion.div>
 
       </div>

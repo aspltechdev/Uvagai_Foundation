@@ -101,18 +101,20 @@
 }
 
 .impact-tag {
-  display: flex;
+  display: flex !important;
   align-items: center;
   gap: 14px;
   justify-content: center;
   margin-bottom: 20px;
+  background: none !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
 
 .impact-tag-line {
-  width: 24px;
-  height: 2px;
-  border-radius: 1px;
-  background: linear-gradient(90deg, #DC2626, #059669);
+  display: none !important;
 }
 
 .impact-tag-text {
@@ -120,7 +122,7 @@
   font-weight: 600;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  background: linear-gradient(135deg, #DC2626, #059669);
+  background: #C62828;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -133,6 +135,38 @@
   line-height: 1.25;
   letter-spacing: -1.5px;
   margin: 0 0 16px;
+}
+
+/* Reset any global styling (pill background / underline bar) bleeding
+   onto these spans from elsewhere in the codebase */
+.impact-headline .impact-headline-red,
+.impact-headline .impact-headline-green,
+.impact-headline .impact-headline-blue {
+  background: none !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  text-decoration: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  font-family: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: none !important;
+  line-height: inherit !important;
+  vertical-align: baseline !important;
+  margin: 0 0.2em !important;
+  display: inline-block;
+}
+
+.impact-headline .impact-headline-red::before,
+.impact-headline .impact-headline-green::before,
+.impact-headline .impact-headline-blue::before,
+.impact-headline .impact-headline-red::after,
+.impact-headline .impact-headline-green::after,
+.impact-headline .impact-headline-blue::after {
+  content: none !important;
+  display: none !important;
 }
 
 .impact-headline-red { color: #DC2626; }
@@ -278,18 +312,31 @@
 }
 
 .impact-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 32px;
-  border-radius: 12px;
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: max-content !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  flex: 0 0 auto !important;
+  box-sizing: content-box !important;
+  padding: 9px 20px !important;
+  border-radius: 999px !important;
   text-decoration: none;
-  background: linear-gradient(135deg, #DC2626 0%, #059669 100%);
+  background: #C62828;
   color: white;
-  font-size: 0.92rem;
+  font-size: 0.8rem;
+  line-height: 1.3 !important;
   font-weight: 600;
-  letter-spacing: -0.2px;
-  box-shadow: 0 6px 24px rgba(220, 38, 38, 0.2), 0 3px 10px rgba(5, 150, 105, 0.15);
+  letter-spacing: -0.1px;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.18), 0 2px 6px rgba(5, 150, 105, 0.12);
   transition: all 0.4s cubic-bezier(0.33, 0.1, 0.25, 1);
   position: relative;
   overflow: hidden;
@@ -317,6 +364,11 @@
 .impact-cta-arrow {
   display: flex;
   align-items: center;
+}
+
+.impact-cta-arrow svg {
+  width: 13px;
+  height: 13px;
 }
 
 /* ============================================ */
@@ -392,9 +444,9 @@
   }
 
   .impact-cta {
-    padding: 14px 26px;
-    font-size: 0.85rem;
-    width: 100%;
+    padding: 9px 20px;
+    font-size: 0.78rem;
+    width: auto;
     justify-content: center;
   }
 }

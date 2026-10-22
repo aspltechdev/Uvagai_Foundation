@@ -1,7 +1,13 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import "./Programs.css";
-
+import program1 from "../../../assets/program1.png";
+import program2 from "../../../assets/program2.png";
+import program3 from "../../../assets/pro.jpeg";
+import program4 from "../../../assets/program3.png";
+import program5 from "../../../assets/program5.png";
+import program6 from "../../../assets/prog7.png";
+import { Link } from "react-router-dom";
 export default function Programs() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
@@ -22,7 +28,7 @@ const programs = [
   {
     id: 1,
     category: "Education",
-    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1200&q=80",
+   image: program1,
     title: "Education & Youth Empowerment",
     description:
       "Supporting students through educational assistance, learning resources, mentorship programs, and opportunities that help build brighter futures.",
@@ -33,7 +39,7 @@ const programs = [
   {
     id: 2,
     category: "Healthcare",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80",
+   image: program2,
     title: "Healthcare & Wellness",
     description:
       "Organizing medical camps, health awareness drives, preventive healthcare initiatives, and community wellness programs for underserved communities.",
@@ -44,7 +50,7 @@ const programs = [
   {
     id: 3,
     category: "Child Welfare",
-    image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=1200&q=80",
+   image: program3,
     title: "Child Welfare & Development",
     description:
       "Promoting child welfare through nutrition support, educational programs, health initiatives, and activities that encourage holistic development.",
@@ -55,7 +61,7 @@ const programs = [
   {
     id: 4,
     category: "Elderly Care",
-    image: "https://images.unsplash.com/photo-1516307365426-bea591f05011?w=1200&q=80",
+    image: program4,
     title: "Elderly Care & Support",
     description:
       "Enhancing the quality of life for senior citizens through healthcare support, community engagement, welfare programs, and compassionate care initiatives.",
@@ -66,7 +72,7 @@ const programs = [
   {
     id: 5,
     category: "Environment",
-    image: "https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?w=1200&q=80",
+    image: program5,
     title: "Environmental Sustainability",
     description:
       "Creating awareness about environmental responsibility through tree plantation drives, sustainability campaigns, clean-up initiatives, and green community projects.",
@@ -76,13 +82,13 @@ const programs = [
   },
   {
     id: 6,
-    category: "CSR & Partnerships",
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80",
-    title: "CSR & Volunteer Partnerships",
+    category: "Skilling & Placement",
+    image: program6,
+    title: "Skilling & Placement",
     description:
-      "Collaborating with corporates, institutions, volunteers, and social organizations to create meaningful and long-lasting community impact.",
+      "Collaborating with corporates & institutions, conducting job drives to create meaningful and long-lasting community development.",
     accent: "blue",
-    stat: "Collaborative Impact",
+    stat: "Skill Development",
     statLabel: "Partnerships",
   },
 ];
@@ -154,8 +160,8 @@ const programs = [
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            We design and execute high-impact initiatives across education, 
-            healthcare, community development, and environmental sustainability 
+            We design and execute high-impact initiatives across education & placement,
+            healthcare, nutrition programs, community development, rural infrastructure development and environmental sustainability 
             — creating measurable, lasting change.
           </motion.p>
         </motion.div>
@@ -231,9 +237,9 @@ const programs = [
                 <div className="programs-pro-card-footer">
                   <div className="programs-pro-card-stat">
                     <span className="stat-number">{program.stat}</span>
-                    <span className="stat-label">{program.statLabel}</span>
+                    {/* <span className="stat-label">{program.statLabel}</span> */}
                   </div>
-                  
+                  <Link to ="/programs">
                   <motion.a 
                     href="#" 
                     className={`programs-pro-card-link link-${program.accent}`}
@@ -244,6 +250,7 @@ const programs = [
                       <path d="M1 7H13M13 7L8 2M13 7L8 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </motion.a>
+                  </Link>
                 </div>
               </div>
             </motion.article>

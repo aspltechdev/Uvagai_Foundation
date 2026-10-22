@@ -16,7 +16,7 @@ export default function TestimonialsHome() {
 
   const testimonials = [
     {
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
+      image: "https://images.unsplash.com/photo-1757351122515-21a7b61d682e?w=300&h=300&fit=crop&crop=faces&q=80",
       name: "Lakshmi Devi",
       role: "Parent Beneficiary",
       quote:
@@ -25,7 +25,7 @@ export default function TestimonialsHome() {
       rating: 5,
     },
     {
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
+      image: "https://images.unsplash.com/photo-1590233357551-265f689a51ea?w=300&h=300&fit=crop&crop=faces&q=80",
       name: "Dr. Ramesh Kumar",
       role: "Healthcare Volunteer",
       quote:
@@ -34,7 +34,7 @@ export default function TestimonialsHome() {
       rating: 5,
     },
     {
-      image: "https://randomuser.me/api/portraits/women/28.jpg",
+      image: "https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?w=300&h=300&fit=crop&crop=faces&q=80",
       name: "Meena S",
       role: "Community Volunteer",
       quote:
@@ -43,7 +43,7 @@ export default function TestimonialsHome() {
       rating: 5,
     },
     {
-      image: "https://randomuser.me/api/portraits/men/45.jpg",
+      image: "https://images.unsplash.com/photo-1601972678306-c2bc15613615?w=300&h=300&fit=crop&crop=faces&q=80",
       name: "Rajesh Krishnan",
       role: "CSR Partner",
       quote:
@@ -52,7 +52,7 @@ export default function TestimonialsHome() {
       rating: 5,
     },
     {
-      image: "https://randomuser.me/api/portraits/women/63.jpg",
+      image: "https://images.unsplash.com/photo-1558377235-802c801ab268?w=300&h=300&fit=crop&crop=faces&q=80",
       name: "Saraswathi Amma",
       role: "Senior Citizen Beneficiary",
       quote:
@@ -61,7 +61,7 @@ export default function TestimonialsHome() {
       rating: 5,
     },
     {
-      image: "https://randomuser.me/api/portraits/men/22.jpg",
+      image: "https://images.unsplash.com/photo-1629114488955-bf6390a59c21?w=300&h=300&fit=crop&crop=faces&q=80",
       name: "Arun Prakash",
       role: "Youth Program Participant",
       quote:

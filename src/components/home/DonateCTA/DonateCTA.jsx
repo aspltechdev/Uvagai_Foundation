@@ -2,11 +2,22 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
+import { Link, useNavigate } from "react-router-dom";
 import "./Donate.css";
 import bgofslides from "../assets/bgofslides.png";
 import chil from "../assets/chil.jpg"
 
+// ⚠️ Replace this with your real UPI ID (VPA). Ask whoever manages your
+// bank/UPI account — it usually looks like "name@okaxis", "name@ybl", etc.
+const UPI_ID = "uvagaifoundation@upi";
+const PAYEE_NAME = "Uvagai Foundation";
+
+// Wraps react-router's Link so it can take framer-motion props
+// (whileHover, whileTap, animate, etc.) just like motion.a did.
+const MotionLink = motion(Link);
+
 export default function Donate() {
+  const navigate = useNavigate();
   const sectionRef = useRef(null);
 const isInView = useInView(sectionRef, {
   once: true,
@@ -19,6 +30,7 @@ const [subtitleWords, setSubtitleWords] = useState(1);
   const [customAmount, setCustomAmount] = useState("");
   const [donationStep, setDonationStep] = useState(1);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [paymentStatus, setPaymentStatus] = useState(null); // null | "redirecting"
 
   const [counts, setCounts] = useState({
   transparency: 0,
@@ -198,11 +210,67 @@ useEffect(() => {
 
   const handleCustomDonate = (e) => {
     e.preventDefault();
-    if (customAmount) {
+    if (customAmount && Number(customAmount) > 0) {
       setSelectedAmount(customAmount);
       setDonationStep(2);
+      navigate("/contact");
     }
   };
+
+  const closePaymentModal = () => {
+    setDonationStep(1);
+    setSelectedAmount(null);
+    setCustomAmount("");
+    setPaymentStatus(null);
+  };
+
+  // Detects if we're on a mobile device — UPI apps like GPay only
+  // register the "upi://" protocol handler on phones, not desktop browsers.
+  const isMobileDevice = () => {
+    if (typeof navigator === "undefined") return false;
+    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  };
+
+  // Builds a standard UPI deep link. This is the exact mechanism
+  // Instamart/Swiggy/Zomato use to hand off to whichever UPI app the
+  // user has installed (GPay, PhonePe, Paytm all listen on "upi://").
+  const buildUpiLink = (amount) => {
+    const params = new URLSearchParams({
+      pa: UPI_ID, // payee VPA
+      pn: PAYEE_NAME, // payee name
+      am: String(amount), // amount
+      cu: "INR",
+      tn: `Donation to ${PAYEE_NAME}`, // transaction note
+    });
+    return `upi://pay?${params.toString()}`;
+  };
+
+  const handleGPayPayment = () => {
+    const amount = selectedAmount || customAmount;
+    if (!amount) return;
+
+    if (!isMobileDevice()) {
+      setPaymentStatus("desktop-warning");
+      return;
+    }
+
+    setPaymentStatus("redirecting");
+    const upiLink = buildUpiLink(amount);
+
+    // Google Pay's own app-specific scheme (falls back to the generic
+    // "upi://" link below if gpay isn't installed but another UPI app is).
+    const gpayLink = `tez://upi/pay?${upiLink.split("?")[1]}`;
+
+    window.location.href = gpayLink;
+
+    // Fallback: if nothing intercepted the tez:// link within ~1.2s
+    // (e.g. GPay app isn't installed), try the generic UPI intent so
+    // whatever app the user does have (PhonePe, Paytm, etc.) can open it.
+    setTimeout(() => {
+      window.location.href = upiLink;
+    }, 1200);
+  };
+
   useEffect(() => {
 
   const words = [
@@ -400,8 +468,8 @@ useEffect(() => {
 
         <div className="donate-hero-buttons">
 
-          <motion.a
-            href="#donate-options"
+          <MotionLink
+            to="/contact"
             className="donate-hero-primary-btn"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: .97 }}
@@ -409,7 +477,7 @@ useEffect(() => {
 
             Donate Now →
 
-          </motion.a>
+          </MotionLink>
 
           <motion.a
            href="#donate-options"
@@ -891,27 +959,17 @@ useEffect(() => {
 
     </div>
 
-    <motion.button
-
-      className="slider-donate"
-
-      whileHover={{
-        scale:1.05
-      }}
-
-      whileTap={{
-        scale:.95
-      }}
-
-      onClick={() =>
-        handleDonate(activeDonation.amount)
-      }
-
-    >
-
-      Donate Now →
-
-    </motion.button>
+   <motion.button
+  className="slider-donate"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  onClick={() => {
+    handleDonate(activeDonation.amount);
+    navigate("/contact");
+  }}
+>
+  Donate Now →
+</motion.button>
 
   </motion.div>
   </AnimatePresence>
@@ -1043,7 +1101,35 @@ useEffect(() => {
 
   ))}
 
-</p>  
+</p>
+
+              {/* Custom amount input + Donate button */}
+              <form
+                className="donate-custom-form"
+                onSubmit={handleCustomDonate}
+              >
+                <div className="donate-custom-input-wrap">
+                  <span className="donate-custom-currency">₹</span>
+                  <input
+                    type="number"
+                    min="1"
+                    placeholder="Enter amount"
+                    className="donate-custom-input"
+                    value={customAmount}
+                    onChange={(e) => setCustomAmount(e.target.value)}
+                  />
+                </div>
+
+                <motion.button
+                  type="submit"
+                  className="donate-custom-submit"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  disabled={!customAmount || Number(customAmount) <= 0}
+                >
+                  Donate Now →
+                </motion.button>
+              </form>
             </div>
         
           </motion.div>
@@ -1072,12 +1158,12 @@ useEffect(() => {
               creating sustainable social change through your generosity.
             </p>
             <div className="donate-cta-buttons">
-              <a href="#donate-options" className="donate-cta-primary">
+              <Link to="/contact" className="donate-cta-primary">
                 <span>Donate Now</span>
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
+              </Link>
               <a href="#" className="donate-cta-secondary">
                 Become A Volunteer
                 <span className="donate-cta-secondary-arrow">→</span>
@@ -1086,6 +1172,90 @@ useEffect(() => {
           </motion.div>
         </div>
       </section>
+
+      {/* ===========================
+          GPay Payment Modal
+          Shown whenever donationStep === 2, i.e. right after
+          the user picks a slider amount or submits a custom amount.
+      =========================== */}
+      <AnimatePresence>
+        {donationStep === 2 && (
+          <motion.div
+            className="payment-modal-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closePaymentModal}
+          >
+            <motion.div
+              className="payment-modal"
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="payment-modal-close"
+                onClick={closePaymentModal}
+                aria-label="Close"
+              >
+                ✕
+              </button>
+
+              <h3 className="payment-modal-title">Complete Your Donation</h3>
+
+              <div className="payment-modal-amount">
+                ₹<span>{selectedAmount}</span>
+              </div>
+
+              <p className="payment-modal-subtext">
+                You're donating to <strong>{PAYEE_NAME}</strong>. Tap below to
+                pay securely through Google Pay.
+              </p>
+
+              <motion.button
+                className="gpay-button"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={handleGPayPayment}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"
+                    fill="#fff"
+                  />
+                  <path
+                    d="M12 5.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13z"
+                    fill="#4285F4"
+                  />
+                </svg>
+                Pay ₹{selectedAmount} with GPay
+              </motion.button>
+
+              {paymentStatus === "redirecting" && (
+                <p className="payment-modal-status">
+                  Opening Google Pay… if nothing happens, make sure GPay is
+                  installed on this device.
+                </p>
+              )}
+
+              {paymentStatus === "desktop-warning" && (
+                <p className="payment-modal-status payment-modal-warning">
+                  GPay opens directly only on a mobile phone. On desktop,
+                  scan a UPI QR code with GPay on your phone instead, or
+                  open this page on your mobile device to continue.
+                </p>
+              )}
+
+              {/* <p className="payment-modal-note">
+                Works on mobile devices with Google Pay, PhonePe, or Paytm
+                installed.
+              </p> */}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

@@ -19,6 +19,8 @@ import TestimonialsHome from "./Testimonials";
 import HomeCourse from "./HomeCourse";
 
 import Socialwall from "../components/home/Socialwall";
+import DonateHome from "./DonateHome";
+import FinalCTA from "./FinalCTA";
 
 
 export default function Home() {
@@ -51,6 +53,7 @@ export default function Home() {
 
       {/* Volunteer Section */}
       {/* <Volunteer /> */}
+       <DonateHome/>
   <VolunteerHome/>
 
       {/* Gallery */}
@@ -62,7 +65,8 @@ export default function Home() {
       <TestimonialsHome />
 
   
-      <Donate/>
+     
+      <FinalCTA/>
 
 
     </main>

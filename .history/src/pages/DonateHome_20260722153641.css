@@ -1,0 +1,421 @@
+/* ============================================
+   UVAGAI FOUNDATION - HOME DONATE SECTION
+   Marquee Cards • dnt- Prefix • Clean
+   ============================================ */
+
+:root {
+  --dnt-red: #DC2626;
+  --dnt-red-dark: #B91C1C;
+  --dnt-red-light: #FEE2E2;
+  --dnt-green: #16A34A;
+  --dnt-blue: #1E3A5F;
+  --dnt-white: #FFFFFF;
+  --dnt-text-1: #171717;
+  --dnt-text-2: #525252;
+  --dnt-text-3: #737373;
+  --dnt-border: #E8E4DE;
+  --dnt-border-light: #F0EDE8;
+  --dnt-shadow-sm: 0 2px 8px rgba(0,0,0,0.03);
+  --dnt-shadow-md: 0 8px 30px rgba(0,0,0,0.05);
+  --dnt-shadow-lg: 0 15px 50px rgba(0,0,0,0.07);
+  --dnt-font-display: 'Georgia', 'Times New Roman', serif;
+  --dnt-font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --dnt-ease: cubic-bezier(0.33, 0.1, 0.25, 1);
+    --dnt-soft-bg: #f4dada;
+}
+
+/* Section */
+.dnt-section {
+  padding: 72px 0 0;
+  background: var(--dnt-white);
+  font-family: var(--dnt-font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+.dnt-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Header */
+.dnt-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.dnt-header-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.dnt-header-tag-line {
+  width: 24px;
+  height: 2px;
+  background: var(--dnt-red);
+  border-radius: 1px;
+}
+
+.dnt-header-tag-text {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--dnt-red);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.dnt-header-title {
+  font-family: var(--dnt-font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  font-weight: 400;
+  color: var(--dnt-text-1);
+  margin-bottom: 8px;
+}
+
+.dnt-text-red { color: var(--dnt-red); }
+
+.dnt-header-desc {
+  font-size: 0.88rem;
+  color: var(--dnt-text-3);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Slider */
+.dnt-slider-wrap {
+  max-width: 420px;
+  margin: 0 auto 40px;
+}
+
+.dnt-slider-card {
+  background: var(--dnt-white);
+  border: 1px solid var(--dnt-border-light);
+  border-radius: 14px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: var(--dnt-shadow-md);
+  position: relative;
+}
+
+.dnt-slider-badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dnt-green);
+  color: var(--dnt-white);
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.dnt-slider-amount {
+  margin-bottom: 8px;
+}
+
+.dnt-slider-currency {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dnt-text-3);
+}
+
+.dnt-slider-value {
+  font-family: var(--dnt-font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--dnt-text-1);
+}
+
+.dnt-slider-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dnt-text-1);
+  margin-bottom: 6px;
+}
+
+.dnt-slider-desc {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--dnt-text-3);
+  margin-bottom: 18px;
+}
+
+.dnt-slider-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 11px 24px;
+  background: var(--dnt-red);
+  color: var(--dnt-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--dnt-font-body);
+  transition: all 0.3s var(--dnt-ease);
+}
+
+.dnt-slider-btn:hover {
+  background: var(--dnt-red-dark);
+  transform: translateY(-1px);
+}
+
+/* Dots */
+.dnt-slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.dnt-slider-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  background: #D1D5DB;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.dnt-slider-dot-active {
+  background: var(--dnt-red);
+  width: 22px;
+  border-radius: 4px;
+}
+
+/* ============================================ */
+/* MARQUEE SECTION */
+/* ============================================ */
+.dnt-marquee-section {
+  padding: 40px 0 20px;
+  background: #FAFBFC;
+}
+
+.dnt-impact-heading {
+  font-family: var(--dnt-font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--dnt-text-1);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.dnt-marquee-wrap {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.dnt-marquee-wrap::before,
+.dnt-marquee-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.dnt-marquee-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, #FAFBFC 0%, transparent 100%);
+}
+
+.dnt-marquee-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, #FAFBFC 0%, transparent 100%);
+}
+
+.dnt-marquee-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  padding: 8px 0;
+}
+
+.dnt-marquee-card {
+  flex-shrink: 0;
+  width: 180px;
+  background: var(--dnt-white);
+  border: 1px solid var(--dnt-border-light);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--dnt-shadow-sm);
+  transition: all 0.3s var(--dnt-ease);
+}
+
+.dnt-marquee-card:hover {
+  box-shadow: var(--dnt-shadow-lg);
+  transform: translateY(-4px);
+}
+
+.dnt-marquee-media {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.dnt-marquee-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--dnt-ease);
+}
+
+.dnt-marquee-card:hover .dnt-marquee-media img {
+  transform: scale(1.08);
+}
+
+.dnt-marquee-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.56rem;
+  font-weight: 600;
+  color: var(--dnt-white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dnt-marquee-badge-red { background: rgba(220,38,38,0.9); }
+.dnt-marquee-badge-green { background: rgba(22,163,74,0.9); }
+.dnt-marquee-badge-blue { background: rgba(30,58,95,0.9); }
+
+.dnt-marquee-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--dnt-text-1);
+  padding: 10px 12px;
+  margin: 0;
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* CTA */
+.dnt-cta {
+  text-align: center;
+  padding: 40px 0 48px;
+}
+
+.dnt-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  background: var(--dnt-red);
+  color: var(--dnt-white);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(220,38,38,0.25);
+  transition: all 0.3s var(--dnt-ease);
+}
+
+.dnt-cta-btn:hover {
+  background: var(--dnt-red-dark);
+  box-shadow: 0 12px 28px rgba(220,38,38,0.35);
+  transform: translateY(-2px);
+}
+
+.dnt-cta-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.dnt-cta-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dnt-marquee-wrap::before,
+  .dnt-marquee-wrap::after {
+    width: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dnt-section {
+    padding: 56px 0 0;
+  }
+  .dnt-container {
+    padding: 0 16px;
+  }
+  .dnt-header {
+    margin-bottom: 28px;
+  }
+  .dnt-slider-wrap {
+    margin-bottom: 32px;
+  }
+  .dnt-slider-card {
+    padding: 22px 18px;
+  }
+  .dnt-slider-value {
+    font-size: 2rem;
+  }
+  .dnt-marquee-section {
+    padding: 32px 0 16px;
+  }
+  .dnt-marquee-wrap::before,
+  .dnt-marquee-wrap::after {
+    width: 30px;
+  }
+  .dnt-marquee-card {
+    width: 160px;
+  }
+  .dnt-cta {
+    padding: 32px 0 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dnt-marquee-track {
+    animation: none !important;
+  }
+  .dnt-marquee-card,
+  .dnt-marquee-media img {
+    transition: none !important;
+  }
+}
+.dnt-section {
+  padding: 72px 0 0;
+  background: var(--dnt-white);
+  font-family: var(--dnt-font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+.dnt-marquee-section {
+  padding: 40px 0 20px;
+  background: var(--dnt-soft-bg);
+}
+
+.dnt-cta {
+  text-align: center;
+  padding: 40px 0 48px;
+  background: var(--dnt-soft-bg);
+}
+.dnt-cta {
+  text-align: center;
+  padding: 40px 0 48px;
+  background: var(--dnt-soft-bg);
+  box-shadow: 0 0 0 100vmax var(--dnt-soft-bg);
+  clip-path: inset(0 -100vmax);
+}
+.dnt-marquee-section,
+.dnt-cta {
+  background: #F8F4EE;
+}
