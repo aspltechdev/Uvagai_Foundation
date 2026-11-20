@@ -435,7 +435,7 @@ export default function Footer() {
                   <circle cx="7" cy="5" r="1.5" stroke="currentColor" strokeWidth="1.5" />
                 </svg>
                <span>
-  No 10, 13h Main Road,<br />
+  No. 10, 2113, Pearl Apartment,<br />
   Anna Nagar West, L Block,<br />
   Chennai 600040.
 </span>

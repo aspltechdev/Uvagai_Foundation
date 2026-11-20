@@ -63,7 +63,7 @@ export default function Contact() {
   // reads like a running register of ways to reach the Foundation.
   // Office Address carries a "detail2" (a 3rd line), matching the visiting card.
   const contactInfo = [
-    { label: "Office Address", value: "No 10, 13th Main Road,", detail: "Anna Nagar West, L Block,", detail2: "Chennai 600040.", tone: "red" },
+    { label: "Office Address", value: "No. 10, 2113, Pearl Apartment,", detail: "Anna Nagar West, L Block,", detail2: "Chennai 600040.", tone: "red" },
     { label: "Phone", value: "+9195517 34422", tone: "green" },
     { label: "Email", value: "info@uvagai.org", tone: "blue" },
     { label: "Website", value: "www.uvagai.org", tone: "green" },
