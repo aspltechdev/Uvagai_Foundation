@@ -67,6 +67,7 @@ export default function Contact() {
     { label: "Phone", value: "+9195517 34422", tone: "green" },
     { label: "Email", value: "info@uvagai.org", tone: "blue" },
     { label: "Website", value: "www.uvagai.org", tone: "green" },
+    
     { label: "Working Hours", value: "Monday - Saturday", detail: "9:00 AM – 6:00 PM", tone: "blue" },
   ];
 
